@@ -5,5 +5,5 @@ set TTMODELS=.
 set DMODELS=.
 set CFG_PATH=.
 set CONFIG_CONFIG=:configpath=CFG_PATH
-python -i toontown/toon/RobotToonManager.py
+python.exe -i toontown/toon/RobotToonManager.py
 pause
