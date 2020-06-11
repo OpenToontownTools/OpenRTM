@@ -16,10 +16,10 @@ from pandac.PandaModules import *
 from toontown.leveleditor.PieMenu import *
 from direct.directtools.DirectSelection import SelectionRay
 from direct.showbase.TkGlobal import *
-from Tkinter import *
-from tkFileDialog import askopenfilename, asksaveasfilename
-from tkSimpleDialog import askstring, askfloat
-from tkMessageBox import showwarning
+from tkinter import *
+from tkinter.filedialog import askopenfilename, asksaveasfilename
+from tkinter.simpledialog import askstring, askfloat
+from tkinter.messagebox import showwarning
 from direct.tkwidgets.AppShell import *
 from direct.tkwidgets.SceneGraphExplorer import *
 from direct.interval.IntervalGlobal import *
