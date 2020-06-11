@@ -10,7 +10,6 @@ from direct.distributed import ClockDelta
 from otp.avatar.ShadowCaster import ShadowCaster
 import random
 from otp.otpbase import OTPRender
-from direct.showbase.PythonUtil import recordCreationStack
 
 def reconsiderAllUnderstandable():
     """
@@ -28,11 +27,11 @@ class Avatar(Actor, ShadowCaster):
     and talk
     """
     notify = directNotify.newCategory("Avatar")
-    
+
     # This is the list of Avatars that are currently known
     # to the player--all those that have been recently generated, and not
     # yet deleted or disabled.
-    ActiveAvatars = []    
+    ActiveAvatars = []
 
     # by default Avatar listens for nametagAmbientLightChanged events starting at __init__
     # and stops when delete is called
@@ -62,12 +61,12 @@ class Avatar(Actor, ShadowCaster):
         self.__font = OTPGlobals.getInterfaceFont()
 
         self.soundChatBubble = None
-        
+
         # Holds Type of Avatar
         self.avatarType = ""
 
         self.nametagNodePath = None
-        
+
         # Set up a nametag (actually, a group of nametags,
         # including a Nametag2d and a Nametag3d) for the avatar.
         # The nametag won't be visible until it is managed, which
@@ -98,7 +97,7 @@ class Avatar(Actor, ShadowCaster):
 
         self.collTube = None
         self.battleTube = None
-        
+
         # set some initial values
         self.scale = 1.0
         self.nametagScale = 1.0
@@ -120,7 +119,7 @@ class Avatar(Actor, ShadowCaster):
         self.setPlayerType(NametagGroup.CCNormal)
 
         self.ghostMode = 0
-        
+
         # Page chat private vars
         self.__chatParagraph = None
         self.__chatMessage = None
@@ -136,7 +135,7 @@ class Avatar(Actor, ShadowCaster):
 
         # since whiteListChatFlags is not a required field, init it just in case
         self.whitelistChatFlags = 0
-        
+
 
     def delete(self):
         try:
@@ -181,7 +180,7 @@ class Avatar(Actor, ShadowCaster):
         chat messages from this avatar should be garbled.
         """
         self.playerType = playerType
-                
+
         if self.isUnderstandable():
             self.nametag.setColorCode(self.playerType)
             #self.nametag.setColorCode(NametagGroup.CCFreeChat)
@@ -212,7 +211,7 @@ class Avatar(Actor, ShadowCaster):
         if self == base.localAvatar:
             # If we change the common chat flags on localtoon, that
             # affects everyone.
-            reconsiderAllUnderstandable()            
+            reconsiderAllUnderstandable()
 
 
     def considerUnderstandable(self):
@@ -263,7 +262,7 @@ class Avatar(Actor, ShadowCaster):
             # This is the avatar of my player friend.  Is the player friendship open chat?
             playerInfo = base.cr.playerFriendsManager.findPlayerInfoFromAvId(self.doId)
             if playerInfo.openChatFriendshipYesNo:
-                self.understandable = 1                
+                self.understandable = 1
                 self.nametag.setColorCode(NametagGroup.CCFreeChat)
             elif playerInfo.isUnderstandable():
                 self.understandable = 1
@@ -276,7 +275,7 @@ class Avatar(Actor, ShadowCaster):
         else:
             # Too bad.
             self.understandable = 0
-        
+
         #if self.understandable:
         self.nametag.setColorCode(self.playerType)
         #else:
@@ -378,11 +377,11 @@ class Avatar(Actor, ShadowCaster):
         Return the avatar's Type
         """
         return self.avatarType
-    
+
     def setName(self, name):
         """
         name is a string
-        
+
         Set the avatar's name
         """
         # if we are disguised, don't mess up our custom nametag
@@ -450,7 +449,7 @@ class Avatar(Actor, ShadowCaster):
             base.playSfx(dialogue, node=self)
         # If it is a speech-type chat message, and the avatar isn't
         # too far away to hear, play the appropriate sound effect.
-        elif ((chatFlags & CFSpeech) != 0 and 
+        elif ((chatFlags & CFSpeech) != 0 and
             self.nametag.getNumChatPages() > 0):
             # play the dialogue sample
 
@@ -461,7 +460,7 @@ class Avatar(Actor, ShadowCaster):
             self.playDialogueForString(self.nametag.getChat())
             if (self.soundChatBubble != None):
                 base.playSfx(self.soundChatBubble, node=self)
-    
+
     def playDialogueForString(self, chatString):
         """
         Play dialogue samples to match the given chat string
@@ -505,12 +504,12 @@ class Avatar(Actor, ShadowCaster):
 
         # Inheritors may override this function or getDialogueArray(),
         # above.
-        
+
         # Choose the appropriate sound effect.
         dialogueArray = self.getDialogueArray()
         if dialogueArray == None:
             return
-        
+
         sfxIndex = None
         if (type == "statementA" or type == "statementB"):
             if (length == 1):
@@ -539,7 +538,7 @@ class Avatar(Actor, ShadowCaster):
         dialogueArray = self.getDialogueArray()
         if dialogueArray == None:
             return None
-        
+
         sfxIndex = None
         if (type == "statementA" or type == "statementB"):
             if (length == 1):
@@ -573,23 +572,23 @@ class Avatar(Actor, ShadowCaster):
         # Update current dialogue, first making sure and active dialogue
         # is stopped first
         self.playCurrentDialogue(dialogue, chatFlags, interrupt)
-        
+
     def displayTalk(self, chatString):
         if not base.cr.avatarFriendsManager.checkIgnored(self.doId):
             if base.talkAssistant.isThought(chatString):
                 self.nametag.setChat(base.talkAssistant.removeThoughtPrefix(chatString), CFThought)
             else:
                 self.nametag.setChat(chatString, CFSpeech | CFTimeout)
-        
+
 
     def clearChat(self):
         """
         Clears the last chat message
         """
         self.nametag.clearChat()
-    
+
     # util
-    
+
     def isInView(self):
         """
         Check to see if avatar is in view. Use a point near the eye height
@@ -598,7 +597,7 @@ class Avatar(Actor, ShadowCaster):
         pos = self.getPos(camera)
         eyePos = Point3(pos[0], pos[1], pos[2] + self.getHeight())
         return base.camNode.isInView(eyePos)
-                                  
+
     # name methods
 
     def getNameVisible(self):
@@ -676,7 +675,7 @@ class Avatar(Actor, ShadowCaster):
             self.advancePageNumber()
         # Only throw the click event if the nametag is active. This
         # prevents a subtle error when double-clicking on a nametag
-        # with a button in the same frame. 
+        # with a button in the same frame.
         elif self.nametag.isActive():
             # No page button, so just click on the nametag normally.
             messenger.send("clickedNametag", [self])
@@ -765,7 +764,7 @@ class Avatar(Actor, ShadowCaster):
 
         self.setChatAbsolute(message, self.__chatFlags, dialogue)
         self.setPageNumber(None, 0)
-        
+
     def setPageNumber(self, paragraph, pageNumber, timestamp = None):
         """
         setPageNumber(self, int paragraph, int pageNumber)
@@ -778,7 +777,7 @@ class Avatar(Actor, ShadowCaster):
             elapsed = 0.0
         else:
             elapsed = ClockDelta.globalClockDelta.localElapsedTime(timestamp)
-        
+
         self.__chatPageNumber = [paragraph, pageNumber]
         self.__updatePageChat()
 
@@ -796,7 +795,7 @@ class Avatar(Actor, ShadowCaster):
                 messenger.send("nextChatPage", [pageNumber, elapsed])
             else:
                 messenger.send("doneChatPage", [elapsed])
-            
+
 
     def advancePageNumber(self):
         """
@@ -860,7 +859,7 @@ class Avatar(Actor, ShadowCaster):
 
     def getAirborneHeight(self):
         """
-        Get  the avatar height from the ground. 
+        Get  the avatar height from the ground.
         """
         assert self.shadowPlacer
         height = self.getPos(self.shadowPlacer.shadowNodePath)
@@ -897,7 +896,7 @@ class Avatar(Actor, ShadowCaster):
             cJoint.clearNetTransforms()
             cJoint.addNetTransform(nametagNode)
 
-        
+
     def nametagAmbientLightChanged(self,newlight):
         """
         Get new ambient light when this avatar has changed locations/TODmanagers
@@ -905,7 +904,7 @@ class Avatar(Actor, ShadowCaster):
         self.nametag3d.setLightOff()
         if newlight:
             self.nametag3d.setLight(newlight)
-            
+
 ##     def deleteNametag3d(self):
 ##         """
 ##         Lose the 3-d nametag
@@ -931,7 +930,7 @@ class Avatar(Actor, ShadowCaster):
         self.collNode = CollisionNode(collIdStr)
         self.collNode.addSolid(self.collTube)
         self.collNodePath = self.attachNewNode(self.collNode)
-        
+
         if self.ghostMode:
             self.collNode.setCollideMask(OTPGlobals.GhostBitmask)
         else:
@@ -958,13 +957,13 @@ class Avatar(Actor, ShadowCaster):
         """
         if (base.wantNametags):
             assert self.notify.debug('Adding avatar %s' % self.getName())
-            
+
             # Just in case it was already there through some screw-up.
             try:
                 Avatar.ActiveAvatars.remove(self)
             except ValueError:
                 pass
-            
+
             Avatar.ActiveAvatars.append(self)
             self.nametag.manage(base.marginManager)
 
@@ -984,7 +983,7 @@ class Avatar(Actor, ShadowCaster):
 
             self.nametag.unmanage(base.marginManager)
             self.ignore(self.nametag.getUniqueId())
-    
+
     if __debug__:
         def debugPrint(self, message):
             """for debugging"""
