@@ -3,8 +3,8 @@ from pandac.PandaModules import *
 import direct.gui.DirectGuiGlobals as DGG
 from direct.gui.DirectGui import *
 
-from PieMenu import *
-from ScrollMenu import *
+from .PieMenu import *
+from .ScrollMenu import *
 
 dnaDirectory = Filename.expandFrom(base.config.GetString("dna-directory", "$TTMODELS/src/dna"))
 
@@ -356,7 +356,7 @@ class LevelStyleManager:
             if l == 'baselineStyle':
                 # Start of new style, strip off first line then extract style
                 style, styleData = self.extractBaselineStyle(styleData)
-                style.name = code + '_baseline_style_' + `styleCount`
+                style.name = code + '_baseline_style_' + 'styleCount'
                 # Store style in dictionary
                 styleDictionary[style.name] = style
                 styleCount = styleCount + 1
@@ -489,7 +489,7 @@ class LevelStyleManager:
             if l == 'wallStyle':
                 # Start of new style, strip off first line then extract style
                 style, styleData = self.extractWallStyle(styleData)
-                style.name = code + '_wall_style_' + `styleCount`
+                style.name = code + '_wall_style_' + 'styleCount'
                 # Store style in dictionary
                 styleDictionary[style.name] = style
                 styleCount = styleCount + 1
@@ -615,11 +615,11 @@ class LevelStyleManager:
             typeKey = i + '_styles'
             self.attributeDictionary[typeKey] = {}
         for i in NUM_WALLS:
-            numWallKey = `i` + '_wall_styles'
+            numWallKey = 'i' + '_wall_styles'
             self.attributeDictionary[numWallKey] = {}
         # Also sort height lists according to total height of the building
         for i in BUILDING_HEIGHTS:
-            heightKey = `i` + '_ft_wall_heights'
+            heightKey = 'i' + '_ft_wall_heights'
             self.attributeDictionary[heightKey] = {}
         # Now distribute data for each neighborhood
         for neighborhood in self.NEIGHBORHOODS:
@@ -635,11 +635,11 @@ class LevelStyleManager:
                 typeAttributes[i] = LevelAttribute(typeAttrName)
             # Number of walls
             for i in NUM_WALLS:
-                styleAttrName = neighborhood + '_' + `i` + '_wall_styles'
+                styleAttrName = neighborhood + '_' + 'i' + '_wall_styles'
                 numWallsAttributes[i] = LevelAttribute(styleAttrName)
             # Building height
             for i in BUILDING_HEIGHTS:
-                heightAttrName = neighborhood + '_' + `i` + '_ft_wall_heights'
+                heightAttrName = neighborhood + '_' + 'i' + '_ft_wall_heights'
                 heightAttributes[i] = LevelAttribute(heightAttrName)
             # Sort through the styles and store in separate lists
             for style in styleDict[neighborhood].getList():
@@ -664,12 +664,12 @@ class LevelStyleManager:
                     typeAttributes[i])
             for i in NUM_WALLS:
                 # Styles
-                numWallKey = `i` + '_wall_styles'
+                numWallKey = 'i' + '_wall_styles'
                 self.attributeDictionary[numWallKey][neighborhood] = (
                     numWallsAttributes[i])
             for i in BUILDING_HEIGHTS:
                 # Heights
-                heightKey = `i` + '_ft_wall_heights'
+                heightKey = 'i' + '_ft_wall_heights'
                 self.attributeDictionary[heightKey][neighborhood] = (
                     heightAttributes[i])
 
@@ -704,7 +704,7 @@ class LevelStyleManager:
                 # Construct name for building style.  Tack on height code
                 # to be used later to split styles by heightCode
                 bldgStyle.name = (
-                    code + '_building_style_' + `styleCount` +
+                    code + '_building_style_' + 'styleCount' +
                     ':' + heightCode)
                 # Increment counter
                 styleCount = styleCount + 1
@@ -718,7 +718,7 @@ class LevelStyleManager:
             elif l[:9] == 'wallStyle':
                 # Beginning of next wall style
                 wallStyle, styleData = self.extractWallStyle(styleData)
-                wallStyle.name = bldgStyle.name + '_wall_' + `wallCount`
+                wallStyle.name = bldgStyle.name + '_wall_' + 'wallCount'
                 try:
                     height = heightList[wallCount]
                 except IndexError:
@@ -1327,7 +1327,7 @@ def createHeightCode(heightList):
         return '%s_%s' % (h1, h2)
     hl = map(ROUND_INT, heightList)
     if len(hl) == 1:
-        return `hl[0]`
+        return 'hl[0]'
     return reduce(joinHeights, hl)
 
 def calcHeight(heightList):
