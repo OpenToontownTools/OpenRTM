@@ -63,7 +63,7 @@ BuiltinFunctionType = type(len)
 BuiltinMethodType = type([].append)     # Same as BuiltinFunctionType
 
 ModuleType = type(sys)
-FileType = file
+FileType = bytes
 XRangeType = xrange
 
 try:
