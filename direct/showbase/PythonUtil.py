@@ -517,19 +517,19 @@ def _pdir(obj, str = None, width = None,
             strvalue = strvalue[:max(1, lineWidth - maxWidth)]
         print (format % key)[:maxWidth] + '\t' + strvalue
 
-# Magic numbers: These are the bit masks in func_code.co_flags that
+# Magic numbers: These are the bit masks in __code__.co_flags that
 # reveal whether or not the function has a *arg or **kw argument.
 _POS_LIST = 4
 _KEY_DICT = 8
 
 def _is_variadic(function):
-    return function.func_code.co_flags & _POS_LIST
+    return function.__code__.co_flags & _POS_LIST
 
 def _has_keywordargs(function):
-    return function.func_code.co_flags & _KEY_DICT
+    return function.__code__.co_flags & _KEY_DICT
 
 def _varnames(function):
-    return function.func_code.co_varnames
+    return function.__code__.co_varnames
 
 def _getcode(f):
     """
@@ -579,10 +579,10 @@ class Signature:
         self.type = type(func)
         self.name, self.func = _getcode(func)
     def ordinary_args(self):
-        n = self.func.func_code.co_argcount
+        n = self.func.__code__.co_argcount
         return _varnames(self.func)[0:n]
     def special_args(self):
-        n = self.func.func_code.co_argcount
+        n = self.func.__code__.co_argcount
         x = {}
         #
         if _is_variadic(self.func):

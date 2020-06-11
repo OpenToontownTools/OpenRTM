@@ -26,7 +26,7 @@ while 1:
     script_name = os.path.join(script_dir, os.readlink(script_name))
 script_dir = os.path.join(os.getcwd(), script_dir)
 script_dir = os.path.normpath(script_dir)
- 
+
 # Add the '../../..' directory to the path.
 package_dir = os.path.dirname(script_dir)
 package_dir = os.path.dirname(package_dir)
@@ -201,7 +201,7 @@ def _print_results(result, expected, description):
 		ok = re.search('^[0-9]*callback2$', str(result)) is not None
 	    elif expected == actioncallback:
 		ok = re.search('^[0-9]*actioncallback$',str(result)) is not None
-        
+
     if not ok or _verbose > 0:
 	print '====', description
 	if not ok or _verbose > 1:
@@ -346,7 +346,7 @@ def _destructor(widget, isWidget):
 # Structure of allTestData:
 # (
 #   (
-#     'ButtonBox', 
+#     'ButtonBox',
 #     (
 #       (
 #         Pmw.ButtonBox,
@@ -372,7 +372,7 @@ def _destructor(widget, isWidget):
 #     )
 #   ),
 #   (
-#     'ButtonBox', 
+#     'ButtonBox',
 #     (
 #       (
 #         Pmw.ButtonBox,
@@ -512,7 +512,7 @@ def _methodTest(w, testData):
 	    result = _getErrorValue()
     if hasattr(func, 'im_func'):
 	name = w.__class__.__name__ + ' method ' + \
-	    func.im_func.func_code.co_name
+	    func.im_func.__code__.co_name
     else:
 	name = 'function ' + func.__name__
     name = name + ' ' + str(origArgs)

@@ -94,7 +94,7 @@ def isfunction(object):
     Function objects provide these attributes:
         __doc__         documentation string
         __name__        name with which this function was defined
-        func_code       code object containing compiled function bytecode
+        __code__       code object containing compiled function bytecode
         func_defaults   tuple of any default values for arguments
         func_doc        (same as __doc__)
         func_globals    global namespace in which this function was defined
@@ -318,7 +318,7 @@ def getfile(object):
     if ismethod(object):
         object = object.im_func
     if isfunction(object):
-        object = object.func_code
+        object = object.__code__
     if istraceback(object):
         object = object.tb_frame
     if isframe(object):
@@ -423,7 +423,7 @@ def findsource(object):
     if ismethod(object):
         object = object.im_func
     if isfunction(object):
-        object = object.func_code
+        object = object.__code__
     if istraceback(object):
         object = object.tb_frame
     if isframe(object):
@@ -675,7 +675,7 @@ def getargspec(func):
         func = func.im_func
     if not isfunction(func):
         raise TypeError('arg is not a Python function')
-    args, varargs, varkw = getargs(func.func_code)
+    args, varargs, varkw = getargs(func.__code__)
     return args, varargs, varkw, func.func_defaults
 
 def getargvalues(frame):
