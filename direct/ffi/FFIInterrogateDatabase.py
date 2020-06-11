@@ -51,7 +51,7 @@ def outputGlobalFileImports(file, methodList, CModuleName):
     file.write('# CMODULE [' + CModuleName + ']\n')
 
     # Import Python's builtin types
-    file.write('from types import IntType, LongType, FloatType, NoneType, StringType\n')
+    file.write('from types import IntType, FloatType, NoneType, StringType\n')
     file.write('from direct.ffi import FFIExternalObject\n')
 
 
@@ -86,12 +86,12 @@ def outputGlobalFileImports(file, methodList, CModuleName):
                     if (argType.__class__ == FFITypes.ClassTypeDescriptor):
                         moduleList.append(argTypeName)
 
-    
+
     for moduleName in moduleList:
         if moduleName:
             file.write('import ' + moduleName + '\n')
             file.write('import ' + moduleName + '1\n')
-    
+
     file.write('\n')
 
 
@@ -99,14 +99,14 @@ def outputImportFileImports(file, typeList, CModuleName):
     """
     This is the file that we will import to get all the panda modules
     """
-    
+
     # Print the standard header
     file.write(FFIConstants.generatedHeader)
     file.write('# CMODULE [' + CModuleName + ']\n')
     file.write('# Import the interrogate module\n')
     file.write('import ' + FFIConstants.InterrogateModuleName + '\n')
     file.write('\n')
-    
+
     file.write('# Import the C module\n')
     file.write('import ' + CModuleName + '\n')
 
@@ -120,7 +120,7 @@ def outputImportFileImports(file, typeList, CModuleName):
         elif (type.__class__ == FFITypes.EnumTypeDescriptor):
             if (not type.isNested):
                 enumTypeList.append(type)
-            
+
     # Sort the types based on inheritance, most generic first
     classTypeList.sort(FFIOverload.inheritanceLevelSort)
 
@@ -140,13 +140,13 @@ def outputImportFileImports(file, typeList, CModuleName):
     file.write('# Import classes\n')
     for moduleName in moduleList:
         if moduleName:
-            file.write('import ' + moduleName + '\n')    
+            file.write('import ' + moduleName + '\n')
     file.write('\n')
 
     file.write('# Import classes2\n')
     for moduleName in moduleList:
         if moduleName:
-            file.write('import ' + moduleName + '1\n')    
+            file.write('import ' + moduleName + '1\n')
     file.write('\n')
 
 
@@ -158,7 +158,7 @@ def outputImportFileImports(file, typeList, CModuleName):
     #for moduleName in moduleList:
     #    file.write(moduleName + '.generateClass_' + moduleName + '()\n')
     file.write('\n')
-        
+
     file.write('# Copy the classes into our own namespace\n')
     for moduleName in moduleList:
         file.write(moduleName + ' = ' + moduleName + '.' + moduleName + '\n')
@@ -181,15 +181,15 @@ def getTypeName(typeIndex, scoped=0):
     nameComponents = []
     name = ''
 
-    
+
     if scoped:
         typeName = interrogate_type_scoped_name(typeIndex)
-    else:        
+    else:
         typeName = interrogate_type_name(typeIndex)
 
     if typeIndex == 0:
         FFIConstants.notify.debug('typeIndex 0: ' + typeName)
-        
+
     if interrogate_type_is_wrapped(typeIndex):
         typeName = getTypeName(interrogate_type_wrapped_type(typeIndex))
     if interrogate_type_is_const(typeIndex):
@@ -233,26 +233,26 @@ class FFIInterrogateDatabase:
     def __init__(self, etcPath = []):
         for dir in etcPath:
             interrogate_add_search_directory(dir)
-        
+
         self.typeIndexMap = {}
         self.environment = FFIEnvironment.FFIEnvironment()
 
     def isDefinedType(self, typeIndex):
         return self.typeIndexMap.has_key(typeIndex)
-    
+
     def constructDescriptor(self, typeIndex):
         if interrogate_type_is_atomic(typeIndex):
             return self.constructPrimitiveTypeDescriptor(typeIndex)
 
         elif interrogate_type_is_enum(typeIndex):
             return self.constructEnumTypeDescriptor(typeIndex)
-        
+
         elif interrogate_type_is_wrapped(typeIndex):
             if interrogate_type_is_pointer(typeIndex):
                 return self.constructPointerTypeDescriptor(typeIndex)
             elif interrogate_type_is_const(typeIndex):
                 return self.constructConstTypeDescriptor(typeIndex)
-        
+
         elif (interrogate_type_is_class(typeIndex) or
               interrogate_type_is_struct(typeIndex) or
               interrogate_type_is_union(typeIndex)):
@@ -260,10 +260,10 @@ class FFIInterrogateDatabase:
 
         elif (not interrogate_type_is_fully_defined(typeIndex)):
             return  self.constructClassTypeDescriptor(typeIndex)
-        
+
         else:
             raise 'A type in the interrogate database was not recognized: '+ `typeIndex`
-    
+
     def constructPrimitiveTypeDescriptor(self, typeIndex):
         if self.isDefinedType(typeIndex):
             return self.typeIndexMap[typeIndex]
@@ -278,7 +278,7 @@ class FFIInterrogateDatabase:
             descriptor.typeIndex = typeIndex
             self.typeIndexMap[typeIndex] = descriptor
             return descriptor
-    
+
     def constructEnumTypeDescriptor(self, typeIndex):
         if self.isDefinedType(typeIndex):
             return self.typeIndexMap[typeIndex]
@@ -306,7 +306,7 @@ class FFIInterrogateDatabase:
                 scopedName = FFIRename.classNameFromCppName(
                     interrogate_type_enum_value_scoped_name(typeIndex, i))
                 descriptor.values[name] = value
-            
+
             descriptor.typeIndex = typeIndex
             self.typeIndexMap[typeIndex] = descriptor
             return descriptor
@@ -330,7 +330,7 @@ class FFIInterrogateDatabase:
         descriptor.typeDescriptor = wrappedTypeDescriptor
         self.typeIndexMap[typeIndex] = descriptor
         return descriptor
-    
+
     def constructConstTypeDescriptor(self, typeIndex):
         if self.isDefinedType(typeIndex):
             return self.typeIndexMap[typeIndex]
@@ -371,7 +371,7 @@ class FFIInterrogateDatabase:
             descriptor = self.constructDescriptor(nestedTypeIndex)
             nestedTypes.append(descriptor)
         return nestedTypes
-    
+
     def constructClassTypeDescriptor(self, typeIndex):
         if self.isDefinedType(typeIndex):
             return self.typeIndexMap[typeIndex]
@@ -383,7 +383,7 @@ class FFIInterrogateDatabase:
             descriptor = FFITypes.PyObjectTypeDescriptor()
             self.typeIndexMap[typeIndex] = descriptor
             return descriptor
-            
+
         descriptor = FFITypes.ClassTypeDescriptor()
         self.typeIndexMap[typeIndex] = descriptor
         #descriptor.environment = self.environment
@@ -391,7 +391,7 @@ class FFIInterrogateDatabase:
 
         if (typeName == "TypedObject"):
             FFITypes.TypedObjectDescriptor = descriptor
-        
+
         descriptor.isNested = interrogate_type_is_nested(typeIndex)
         if descriptor.isNested:
             outerTypeIndex = interrogate_type_outer_class(typeIndex)
@@ -437,7 +437,7 @@ class FFIInterrogateDatabase:
 
         # Look at the Python wrappers for this function
         numPythonWrappers = interrogate_function_number_of_python_wrappers(functionIndex)
-        
+
         if numPythonWrappers == 0:
             # If there are no Python wrappers, it is because interrogate could not handle
             # something about the function. Just return an empty list
@@ -467,9 +467,9 @@ class FFIInterrogateDatabase:
             descriptor.userManagesMemory = interrogate_wrapper_caller_manages_return_value(pythonFunctionIndex)
             descriptor.returnValueDestructor = interrogate_wrapper_return_value_destructor(pythonFunctionIndex)
             wrapperDescriptors.append(descriptor)
-            
+
         return wrapperDescriptors
-    
+
     def constructFunctionArgumentTypes(self, functionIndex):
         numArgs = interrogate_wrapper_number_of_parameters(functionIndex)
         arguments = []
@@ -481,7 +481,7 @@ class FFIInterrogateDatabase:
                 name = ('parameter' + `argIndex`)
             descriptor = self.constructDescriptor(
                 interrogate_wrapper_parameter_type(functionIndex, argIndex))
-            
+
             argSpec = FFISpecs.MethodArgumentSpecification()
             if interrogate_wrapper_parameter_is_this(functionIndex, argIndex):
                 argSpec.isThis = 1
@@ -489,7 +489,7 @@ class FFIInterrogateDatabase:
             argSpec.typeDescriptor = descriptor
             arguments.append(argSpec)
         return arguments
-        
+
     def constructMemberFunctionSpecifications(self, typeIndex):
         funcSpecs = []
         numFuncs = interrogate_type_number_of_methods(typeIndex)
@@ -526,7 +526,7 @@ class FFIInterrogateDatabase:
                     funcSpec.index = funcIndex
                     funcSpecs.append(funcSpec)
         return funcSpecs
-    
+
     def constructDowncastFunctionSpecifications(self, typeIndex):
         """
         The strange thing about downcast functions is that they appear in the
@@ -559,11 +559,11 @@ class FFIInterrogateDatabase:
                         # Append the from class name on the method to uniquify it now
                         # that these are global methods
                         funcSpec.name = funcSpec.name + 'From' + fromClass.foreignTypeName
-                        
+
                         # Append this funcSpec to that class's downcast methods
                         # fromClass.downcastMethods.append(funcSpec)
                         self.environment.addDowncastFunction(funcSpec)
-    
+
     def constructConstructorSpecifications(self, typeIndex):
         funcSpecs = []
         numFuncs = interrogate_type_number_of_constructors(typeIndex)
@@ -578,10 +578,10 @@ class FFIInterrogateDatabase:
                 funcSpec.typeDescriptor = typeDesc
                 # Flag this function as being a constructor
                 funcSpec.constructor = 1
-                funcSpec.index = funcIndex            
+                funcSpec.index = funcIndex
                 funcSpecs.append(funcSpec)
         return funcSpecs
-    
+
     def constructDestructorSpecification(self, typeIndex):
         if (not interrogate_type_has_destructor(typeIndex)):
             return None
@@ -597,7 +597,7 @@ class FFIInterrogateDatabase:
             funcSpec.typeDescriptor = typeDesc
             funcSpec.index = funcIndex
             return funcSpec
-    
+
     def addTypes(self, CModuleName):
         for i in range(interrogate_number_of_global_types()):
             typeIndex = interrogate_get_global_type(i)
@@ -618,13 +618,13 @@ class FFIInterrogateDatabase:
             moduleName = 'lib' + interrogate_type_module_name(typeIndex)
             return (moduleName == CModuleName)
 
-    
+
     def constructGlobal(self, globalIndex, CModuleName):
         # We really do not need the descriptor for the value, just
         # the getter and setter
         # typeIndex = interrogate_element_type(globalIndex)
         # descriptor = self.constructDescriptor(typeIndex)
-        
+
         if interrogate_element_has_getter(globalIndex):
             getterIndex = interrogate_element_getter(globalIndex)
             # If this function is not in this Cmodule just return
@@ -663,7 +663,7 @@ class FFIInterrogateDatabase:
             funcSpec.index = globalIndex
             funcSpecs.append(funcSpec)
         return funcSpecs
-        
+
     def addGlobalFunctions(self, CModuleName):
         numGlobals = interrogate_number_of_global_functions()
         for i in range(numGlobals):
@@ -672,7 +672,7 @@ class FFIInterrogateDatabase:
                 newGlob = self.constructGlobalFunction(funcIndex)
                 if newGlob:
                     self.environment.addGlobalFunction(newGlob)
-                    
+
     def addGlobalValues(self, CModuleName):
         numGlobals = interrogate_number_of_globals()
         for i in range(numGlobals):
@@ -727,7 +727,7 @@ class FFIInterrogateDatabase:
             pathname = os.path.join(codeDir, file)
             if not os.path.isdir(pathname):
                 os.unlink(pathname)
-        
+
         # Import all the C++ modules
         for CModuleName in FFIConstants.CodeModuleNameList:
             self.generateCodeLib(codeDir, extensionsDir, CModuleName)
@@ -758,7 +758,7 @@ class FFIInterrogateDatabase:
         # Get the list of files to squeeze.  This is all of the .py
         # files in the output directory except for the __init__.py
         # file.
-        
+
         files = glob.glob(os.path.join(outputDir, '*.py'))
         init = os.path.join(outputDir, '__init__.py')
         try:
@@ -769,7 +769,7 @@ class FFIInterrogateDatabase:
         print "Squeezing %s files." % (len(files))
 
         from direct.showbase import pandaSqueezeTool
-        
+
         pandaSqueezeTool.squeeze(squeezedName, unsqueezedName,
                                  files, outputDir)
 
@@ -777,7 +777,7 @@ class FFIInterrogateDatabase:
             # Remove the now-squeezed source files.
             for file in files:
                 os.remove(file)
-        
+
 
     def generateCodeLib(self, codeDir, extensionsDir, CModuleName):
         # Reset the environment so we are clean from any old modules
@@ -791,7 +791,7 @@ class FFIInterrogateDatabase:
             FFIConstants.notify.error("Error reading interrogate database; can't continue.")
 
         self.updateBindings(CModuleName)
-        
+
         FFIConstants.notify.info('Generating type code...')
         for type in self.environment.types.values():
             # Do not generate code for nested types at the top level
@@ -807,7 +807,7 @@ class FFIInterrogateDatabase:
                                 CModuleName)
         for type in self.environment.downcastFunctions:
             type.generateGlobalDowncastCode(downcastFile)
-            
+
         FFIConstants.notify.info('Generating global code...')
         globalFile = constructGlobalFile(codeDir, CModuleName)
 
@@ -839,7 +839,7 @@ class FFIInterrogateDatabase:
         FFIConstants.notify.info('Generating global values...')
         for type in self.environment.globalValues:
             type.generateGlobalCode(globalFile)
-            
+
         FFIConstants.notify.info('Generating global functions...')
         for type in self.environment.globalFunctions:
             type.generateGlobalCode(globalFile)
@@ -866,5 +866,3 @@ class FFIInterrogateDatabase:
         self.addManifestSymbols()
         FFIConstants.notify.info('Adding environment types...')
         self.addEnvironmentTypes()
-
-

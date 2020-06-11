@@ -213,7 +213,6 @@ def _deepcopy_atomic(x, memo):
     return x
 d[types.NoneType] = _deepcopy_atomic
 d[types.IntType] = _deepcopy_atomic
-d[types.LongType] = _deepcopy_atomic
 d[types.FloatType] = _deepcopy_atomic
 d[types.BooleanType] = _deepcopy_atomic
 try:

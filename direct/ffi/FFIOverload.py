@@ -66,9 +66,6 @@ def getTypeName(classTypeDesc, typeDesc):
             (typeDesc.atomicType == AT_double)):
             return 'FloatType'
 
-        elif ((typeDesc.atomicType == AT_longlong)):
-            return 'LongType'
-
         # Strings are treated as Python strings
         elif ((typeDesc.atomicType == AT_string)):
             return 'StringType'
@@ -432,13 +429,6 @@ class FFIMethodArgumentTree:
                     # Legal types for a float parameter include int and long.
                     if (typeName == 'FloatType'):
                         condition += (' or (isinstance(_args[' + `level` + '], IntType))')
-                        condition += (' or (isinstance(_args[' + `level` + '], LongType))')
-                    # Legal types for a long parameter include int.
-                    elif (typeName == 'LongType'):
-                        condition += (' or (isinstance(_args[' + `level` + '], IntType))')
-                    # Legal types for an int parameter include long.
-                    elif (typeName == 'IntType'):
-                        condition += (' or (isinstance(_args[' + `level` + '], LongType))')
 
                 indent(file, nesting+2, 'if ' + condition + ':\n')
 
@@ -469,4 +459,3 @@ class FFIMethodArgumentTree:
                 return tree.isSinglePath()
             else:
                 return self.tree[key][1]
-

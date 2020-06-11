@@ -749,7 +749,7 @@ class ClassTypeDescriptor(BaseTypeDescriptor):
     def outputBaseImports(self, file):
         indent(file, 0, '# CMODULE [' + self.moduleName + ']\n')
         # Everybody imports types for type checking
-        indent(file, 0, 'from types import IntType, LongType, FloatType, NoneType, StringType\n')
+        indent(file, 0, 'from types import IntType, FloatType, NoneType, StringType\n')
         indent(file, 0, 'from direct.ffi import FFIExternalObject\n')
         indent(file, 0, '\n')
 
@@ -1024,4 +1024,3 @@ class FunctionTypeDescriptor(BaseTypeDescriptor):
         this parameter (if there was one)
         """
         return filter(lambda type: (not type.isThis), self.argumentTypes)
-

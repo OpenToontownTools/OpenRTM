@@ -164,7 +164,7 @@ class ObjectRef:
 
         # make sure we're not storing a reference to the actual object,
         # that could cause a memory leak
-        assert type(objId) in (types.IntType, types.LongType)
+        assert type(objId) is types.IntType
         # prevent cycles (i.e. base.loader.base.loader)
         assert not self.goesThrough(objId=objId)
 
@@ -185,7 +185,7 @@ class ObjectRef:
 
     def goesThroughGen(self, obj=None, objId=None):
         if obj is None:
-            assert type(objId) in (types.IntType, types.LongType)
+            assert type(objId) is types.IntType
         else:
             objId = id(obj)
         o = None
@@ -281,7 +281,7 @@ class ObjectRef:
 
         # TODO: check that this is still the object we originally pointed to
         yield self._getContainerByEval(evalStr, curObj=curObj)
-        
+
     def getEvalStrGen(self, getInstance=False):
         str = ''
         prevIndirection = None
@@ -393,11 +393,11 @@ class FindContainers(Job):
             return len(startObj)
         except:
             return 1
-    
+
     def _isDeadEnd(self, obj, objName=None):
         if type(obj) in (types.BooleanType, types.BuiltinFunctionType,
                          types.BuiltinMethodType, types.ComplexType,
-                         types.FloatType, types.IntType, types.LongType,
+                         types.FloatType, types.IntType,
                          types.NoneType, types.NotImplementedType,
                          types.TypeType, types.CodeType, types.FunctionType,
                          types.StringType, types.UnicodeType,
@@ -441,7 +441,7 @@ class FindContainers(Job):
         objId = id(obj)
         if objId in self._id2discoveredStartRef:
             existingRef = self._id2discoveredStartRef[objId]
-            if type(existingRef) not in (types.IntType, types.LongType):
+            if type(existingRef) is not types.IntType:
                 if (existingRef.getNumIndirections() >=
                     ref.getNumIndirections()):
                     # the ref that we already have is more concise than the new ref
@@ -510,7 +510,7 @@ class FindContainers(Job):
                         continue
                     # do we need to go look up the object in _id2ref? sometimes we do that
                     # to avoid storing multiple redundant refs to a single item
-                    if type(curObjRef) in (types.IntType, types.LongType):
+                    if type(curObjRef) is types.IntType:
                         startId = curObjRef
                         curObjRef = None
                         try:
@@ -668,7 +668,7 @@ class CheckContainers(Job):
     Job to check container sizes and find potential leaks; sub-job of ContainerLeakDetector
     """
     ReprItems = 5
-    
+
     def __init__(self, name, leakDetector, index):
         Job.__init__(self, name)
         self._leakDetector = leakDetector
@@ -682,7 +682,7 @@ class CheckContainers(Job):
 
     def getPriority(self):
         return Job.Priorities.Normal
-    
+
     def run(self):
         try:
             self._leakDetector._index2containerId2len[self._index] = {}
@@ -827,10 +827,10 @@ class FPTObjsOfType(Job):
 
     def _handleLDDestroy(self):
         self.destroy()
-        
+
     def getPriority(self):
         return Job.Priorities.High
-    
+
     def run(self):
         ids = self._leakDetector.getContainerIds()
         try:
@@ -887,10 +887,10 @@ class FPTObjsNamed(Job):
 
     def _handleLDDestroy(self):
         self.destroy()
-        
+
     def getPriority(self):
         return Job.Priorities.High
-    
+
     def run(self):
         ids = self._leakDetector.getContainerIds()
         try:
@@ -938,7 +938,7 @@ class PruneObjectRefs(Job):
 
     def getPriority(self):
         return Job.Priorities.Normal
-    
+
     def run(self):
         try:
             ids = self._leakDetector.getContainerIds()
@@ -1040,7 +1040,7 @@ class ContainerLeakDetector(Job):
     def _getDestroyEvent(self):
         # sent when leak detector is about to be destroyed
         return 'cldDestroy-%s' % self._serialNum
-        
+
     def getLeakEvent(self):
         # sent when a leak is detected
         # passes description string as argument
@@ -1095,12 +1095,12 @@ class ContainerLeakDetector(Job):
         j =  FPTObjsOfType(name, self, ot, doneCallback)
         jobMgr.add(j)
         return j
-        
+
     def getPathsToContainersNamed(self, name, on, doneCallback=None):
         j =  FPTObjsNamed(name, self, on, doneCallback)
         jobMgr.add(j)
         return j
-        
+
     def _scheduleNextLeakCheck(self):
         taskMgr.doMethodLater(self._nextCheckDelay, self._checkForLeaks,
                               self._getCheckTaskName())

@@ -10,7 +10,7 @@ __all__ = ['enumerate', 'unique', 'indent', 'nonRepeatingRandomList',
 'replace', 'reduceAngle', 'fitSrcAngle2Dest', 'fitDestAngle2Src',
 'closestDestAngle2', 'closestDestAngle', 'binaryRepr', 'profileFunc',
 'profiled', 'startProfile', 'printProfile', 'getSetterName',
-'getSetter', 'Functor', 'Stack', 'Queue', 'ParamObj', 
+'getSetter', 'Functor', 'Stack', 'Queue', 'ParamObj',
 'POD', 'bound', 'lerp', 'average', 'addListsByValue',
 'boolEqual', 'lineupPos', 'formatElapsedSeconds', 'solveQuadratic',
 'stackEntryInfo', 'lineInfo', 'callerInfo', 'lineTag',
@@ -58,7 +58,7 @@ from direct.directutil import Verify
 import direct.extensions_native.extension_native_helpers
 from libpandaexpress import ConfigVariableBool
 
-ScalarTypes = (types.FloatType, types.IntType, types.LongType)
+ScalarTypes = (types.FloatType, types.IntType)
 
 import __builtin__
 if not hasattr(__builtin__, 'enumerate'):
@@ -109,7 +109,7 @@ class Functor:
         del self._kargs
         del self.__name__
         del self.__doc__
-    
+
     def _do__call__(self, *args, **kargs):
         _kargs = self._kargs.copy()
         _kargs.update(kargs)
@@ -262,7 +262,7 @@ class StackTrace:
                                                  limit=limit)
         else:
             self.trace = traceback.extract_stack(sys._getframe(1+start))
-            
+
     def compact(self):
         r = ''
         comma = ','
@@ -754,7 +754,7 @@ def listToIndex2item(L):
     return d
 
 assert listToIndex2item(['a','b']) == {0: 'a', 1: 'b',}
-    
+
 def listToItem2index(L):
     """converts list to dict of list item->list index
     This is lossy if there are duplicate list items"""
@@ -990,7 +990,7 @@ def profileFunc(callback, name, terse, log=True):
 def profiled(category=None, terse=False):
     """ decorator for profiling functions
     turn categories on and off via "want-profile-categoryName 1"
-    
+
     e.g.
 
     @profiled('particles')
@@ -1151,7 +1151,7 @@ def _profileWithoutGarbageLeak(cmd, filename):
     # eliminate the garbage leak
     del prof.dispatcher
     return retVal
-    
+
 def startProfile(filename=PyUtilProfileDefaultFilename,
                  lines=PyUtilProfileDefaultLines,
                  sorts=PyUtilProfileDefaultSorts,
@@ -1481,7 +1481,7 @@ class ParamObj:
 
             # set the default value on the object
             setattr(self, param, self.ParamSet.getDefaultValue(param))
-            
+
             setterName = getSetterName(param)
             getterName = getSetterName(param, 'get')
 
@@ -1570,7 +1570,7 @@ class ParamObj:
             del self.__dict__[setterName]
             """
         pass
-    
+
     def setDefaultParams(self):
         # set all the default parameters on ourself
         self.ParamSet().applyTo(self)
@@ -2449,12 +2449,12 @@ def printListEnum(l):
 # libdtoolconfig doesn't seem to have this, grab it off of PandaNode
 dtoolSuperBase = None
 
-def _getDtoolSuperBase(): 
+def _getDtoolSuperBase():
     global dtoolSuperBase
     from pandac.PandaModules import PandaNode
     dtoolSuperBase = PandaNode('').__class__.__bases__[0].__bases__[0].__bases__[0]
     assert repr(dtoolSuperBase) == "<type 'libdtoolconfig.DTOOL_SUPPER_BASE111'>"
-    
+
 safeReprNotify = None
 
 def _getSafeReprNotify():
@@ -3083,7 +3083,7 @@ def report(types = [], prefix = '', xform = None, notifyFunc = None, dConfigPara
     If __dev__ is not defined, or resolves to False, this function
     has no effect and no wrapping/transform occurs.  So in production,
     it's as if the report has been asserted out.
-    
+
     Parameters::
     types : A subset list of ['timeStamp', 'frameCount', 'avLocation']
             This allows you to specify certain useful bits of info.
@@ -3094,7 +3094,7 @@ def report(types = [], prefix = '', xform = None, notifyFunc = None, dConfigPara
                         this function.
             timeStamp:  Adds the current frame time to the output.
             deltaStamp: Adds the current AI synched frame time to
-                        the output 
+                        the output
             frameCount: Adds the current frame count to the output.
                         Usually cleaner than the timeStamp output.
             avLocation: Adds the localAvatar's network location
@@ -3102,16 +3102,16 @@ def report(types = [], prefix = '', xform = None, notifyFunc = None, dConfigPara
             interests:  Prints the current interest state after the
                         report.
             stackTrace: Prints a stack trace after the report.
-            
+
     prefix: Optional string to prepend to output, just before the function.
             Allows for easy grepping and is useful when merging AI/Client
             reports into a single file.
-            
+
     notifyFunc: A notify function such as info, debug, warning, etc.
-                By default the report will be printed to stdout. This 
+                By default the report will be printed to stdout. This
                 will allow you send the report to a designated 'notify'
                 output.
-                
+
     dConfigParam: A list of Config.prc string variables.
                   By default the report will always print.  If you
                   specify this param, it will only print if one of the
@@ -3140,7 +3140,7 @@ def report(types = [], prefix = '', xform = None, notifyFunc = None, dConfigPara
 
         if not doPrint:
             return decorator
-        
+
     except NameError,e:
         return decorator
 
@@ -3157,12 +3157,12 @@ def report(types = [], prefix = '', xform = None, notifyFunc = None, dConfigPara
             if 'args' in types:
                 rArgs += [`x`+', ' for x in args[1:]] + \
                          [ x + ' = ' + '%s, ' % `y` for x,y in kwargs.items()]
-            
+
             if not rArgs:
                 rArgs = '()'
             else:
                 rArgs = '(' + reduce(str.__add__,rArgs)[:-2] + ')'
-                
+
 
             outStr = '%s%s' % (f.func_name, rArgs)
 
@@ -3173,22 +3173,22 @@ def report(types = [], prefix = '', xform = None, notifyFunc = None, dConfigPara
 
             if 'module' in types:
                 outStr = '%s {M:%s}' % (outStr, f.__module__.split('.')[-1])
-                
+
             if 'frameCount' in types:
                 outStr = '%8d : %s' % (globalClock.getFrameCount(), outStr)
-                
+
             if 'timeStamp' in types:
                 outStr = '%8.3f : %s' % (globalClock.getFrameTime(), outStr)
 
             if 'deltaStamp' in types:
                 outStr = '%8.2f : %s' % (globalClock.getRealTime() - \
-                                         globalClockDelta.delta, outStr)                
+                                         globalClockDelta.delta, outStr)
             if 'avLocation' in types:
                 outStr = '%s : %s' % (outStr, str(localAvatar.getLocation()))
 
             if xform:
                 outStr = '%s : %s' % (outStr, xform(args[0]))
-                
+
             if notifyFunc:
                 notifyFunc(outStr)
             else:
@@ -3196,7 +3196,7 @@ def report(types = [], prefix = '', xform = None, notifyFunc = None, dConfigPara
 
             if 'interests' in types:
                 base.cr.printInterestSets()
-                    
+
             if 'stackTrace' in types:
                 print StackTrace()
 
@@ -3207,7 +3207,7 @@ def report(types = [], prefix = '', xform = None, notifyFunc = None, dConfigPara
         wrap.func_doc = f.func_doc
         wrap.__module__ = f.__module__
         return wrap
-    
+
     return decorator
 
 def getBase():
@@ -3244,7 +3244,7 @@ def exceptionLogged(append=True):
         def nullDecorator(f):
             return f
         return nullDecorator
-    
+
     def _decoratorFunc(f, append=append):
         global exceptionLoggedNotify
         if exceptionLoggedNotify is None:
@@ -3364,11 +3364,11 @@ class HotkeyBreaker:
             breakKeys = (breakKeys,)
         for key in breakKeys:
             self.addBreakKey(key)
-        
+
     def addBreakKey(self,breakKey):
         if __dev__:
             self.do.accept(breakKey,self.breakFunc,extraArgs = [breakKey])
-        
+
     def removeBreakKey(self,breakKey):
         if __dev__:
             self.do.ignore(breakKey)
@@ -3455,7 +3455,7 @@ def flywheel(*args, **kArgs):
     """
     >>> for i in flywheel([1,2,3], countList=[10, 5, 1]):
     ...   print i,
-    ... 
+    ...
     1 2 3 1 2 1 2 1 2 1 2 1 1 1 1 1
     """
     for flywheel in makeFlywheelGen(*args, **kArgs):
@@ -3491,9 +3491,9 @@ if __debug__:
     assert obj2count[1] == 1 * 3
     assert obj2count[2] == 2 * 3
     assert obj2count[3] == 3 * 3
-    assert obj2count[4] == 4 * 3                  
+    assert obj2count[4] == 4 * 3
 
-def quickProfile(name="unnamed"):    
+def quickProfile(name="unnamed"):
     import pstats
     def profileDecorator(f):
         if(not config.GetBool("use-profiler",0)):
@@ -3523,7 +3523,7 @@ def quickProfile(name="unnamed"):
                 s.strip_dirs()
                 s.sort_stats("cumulative")
                 base.stats[name].append(s)
-                    
+
         _profiled.__doc__ = f.__doc__
         return _profiled
     return profileDecorator
@@ -3562,11 +3562,11 @@ class MiniLog:
     def __str__(self):
         return '%s\nMiniLog: %s\n%s\n%s\n%s' % \
                ('*'*50, self.name, '-'*50, '\n'.join(self.lines), '*'*50)
-    
+
     def enterFunction(self, funcName, *args, **kw):
         rArgs = [`x`+', ' for x in args] + \
                 [ x + ' = ' + '%s, ' % `y` for x,y in kw.items()]
-            
+
         if not rArgs:
             rArgs = '()'
         else:
@@ -3577,7 +3577,7 @@ class MiniLog:
         self.indent += 1
 
         return line
-    
+
     def exitFunction(self):
         self.indent -= 1
         return self.indent
@@ -3585,7 +3585,7 @@ class MiniLog:
     def appendFunctionCall(self, line):
         self.lines.append(' '*(self.indent*2) + line)
         return line
-    
+
     def appendLine(self, line):
         self.lines.append(' '*(self.indent*2) + '<< ' + line + ' >>')
         return line
@@ -3623,7 +3623,7 @@ class HierarchyException(Exception):
 
     def __repr__(self):
         return 'HierarchyException(%s)' % (self.owner, )
-    
+
 # __dev__ is not defined at import time, call this after it's defined
 def recordFunctorCreationStacks():
     global Functor
@@ -3771,7 +3771,7 @@ def setupPdb():
     globalPdb = pandaPdb()
     globalPdb.reset()
     sys.settrace(globalPdb.trace_dispatch)
-    
+
 def pandaTrace():
     if __dev__:
         if not globalPdb:
@@ -3786,7 +3786,7 @@ packageMap = {
     "otp":"$OTP",
     "pirates":"$PIRATES",
 }
-    
+
 
 #assuming . dereferncing for nice linking to imports
 def pandaBreak(dotpath, linenum, temporary = 0, cond = None):
@@ -3801,7 +3801,7 @@ def pandaBreak(dotpath, linenum, temporary = 0, cond = None):
             filename="%s\\%s"%(filename,d)
         print filename
         globalPdb.set_break(filename+".py", linenum, temporary, cond)
-            
+
 class Default:
     # represents 'use the default value'
     # useful for keyword arguments to virtual methods
@@ -3810,7 +3810,7 @@ class Default:
 superLogFile = None
 def startSuperLog():
     global superLogFile
-    
+
     if(not superLogFile):
         superLogFile = open("c:\\temp\\superLog.txt", "w")
         def trace_dispatch(a,b,c):
@@ -3821,21 +3821,21 @@ def startSuperLog():
                 if(vars.has_key('__builtins__')):
                     del vars['__builtins__']
                 for i in vars:
-                    vars[i] = safeReprTypeOnFail(vars[i]) 
+                    vars[i] = safeReprTypeOnFail(vars[i])
                 superLogFile.write( "%s(%s):%s:%s\n"%(a.f_code.co_filename.split("\\")[-1],a.f_code.co_firstlineno, a.f_code.co_name, vars))
 
                 return trace_dispatch
         sys.settrace(trace_dispatch)
-      
+
 def endSuperLog():
     global superLogFile
     if(superLogFile):
         sys.settrace(None)
         superLogFile.close()
         superLogFile = None
-    
+
 def isInteger(n):
-    return type(n) in (types.IntType, types.LongType)
+    return type(n) is types.IntType
 
 def configIsToday(configName):
     # returns true if config string is a valid representation of today's date

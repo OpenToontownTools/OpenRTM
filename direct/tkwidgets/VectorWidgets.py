@@ -177,7 +177,7 @@ class VectorEntry(Pmw.MegaWidget):
         return self._value[index]
 
     def set(self, value, fCommand = 1):
-        if type(value) in (types.FloatType, types.IntType, types.LongType):
+        if type(value) in (types.FloatType, types.IntType):
             value = [value] * self['dim']
         for i in range(self['dim']):
             self._value[i] = value[i]

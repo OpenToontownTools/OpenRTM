@@ -86,7 +86,7 @@ class ContainerReport(Job):
 
             if type(parentObj) in (types.StringType, types.UnicodeType):
                 continue
-            
+
             if type(parentObj) in (types.ModuleType, types.InstanceType):
                 child = parentObj.__dict__
                 if self._examine(child):
@@ -176,7 +176,7 @@ class ContainerReport(Job):
             self.printingEnd()
 
         yield Job.Done
-        
+
     def _enqueueContainer(self, obj, pathStr=None):
         # call this to add a container that should be examined before any (other) direct
         # children of __builtins__
@@ -198,7 +198,7 @@ class ContainerReport(Job):
         # return False if it's an object that can't contain or lead to other objects
         if type(obj) in (types.BooleanType, types.BuiltinFunctionType,
                          types.BuiltinMethodType, types.ComplexType,
-                         types.FloatType, types.IntType, types.LongType,
+                         types.FloatType, types.IntType,
                          types.NoneType, types.NotImplementedType,
                          types.TypeType, types.CodeType, types.FunctionType):
             return False
