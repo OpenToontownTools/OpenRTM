@@ -241,7 +241,7 @@ ChatCategories = {
     60200 : "GATEWAY Bye",
     60300 : "GATEWAY Happy",
     60400 : "GATEWAY Sad",
-    60500 : "GATEWAY Places",    
+    60500 : "GATEWAY Places",
     }
 
 chatDict = OTPLocalizer.SpeedChatStaticText
@@ -439,8 +439,8 @@ if sys.argv[1:]:
     try:
         opts, pargs = getopt.getopt(sys.argv[1:], '')
         hoods = pargs
-    except Exception, e:
-        print e
+    except Exception as e:
+        print(e)
 # If you do not run from the command line, we just load all of them
 # or you can hack this up for your own purposes.
 else:
@@ -513,7 +513,7 @@ except NameError:
         loadDNAFile(DNASTORE, 'phase_8/dna/storage_DL_sz.dna', CSDefault, 1)
         loadDNAFile(DNASTORE, 'phase_8/dna/storage_DL_town.dna', CSDefault, 1)
     if 'PA' in hoods:
-        loadDNAFile(DNASTORE, 'phase_13/dna/storage_party_sz.dna', CSDefault, 1)        
+        loadDNAFile(DNASTORE, 'phase_13/dna/storage_party_sz.dna', CSDefault, 1)
     __builtin__.dnaLoaded = 1
 
 class RobotToonManager(DirectObject):
@@ -558,7 +558,7 @@ class RobotToonManager(DirectObject):
                          "phase_3.5/models/props/BR_sky",
                          "phase_6/models/props/MM_sky",
                          "phase_8/models/props/DL_sky",
-                         "phase_9/models/cogHQ/cog_sky",                       
+                         "phase_9/models/cogHQ/cog_sky",
                          ]
         self.skies = []
         for f in self.skyFiles:
@@ -625,7 +625,7 @@ class RobotToonManager(DirectObject):
         newDNAProp.setHpr(VBase3(0))
         # Now place new prop in the world
         self.initNodePath(newDNAProp)
-        
+
     def toggleReaderPollTask(self):
         self.fReaderPollTask = 1 - self.fReaderPollTask
         if self.fReaderPollTask:
@@ -683,7 +683,7 @@ class RobotToonManager(DirectObject):
             else:
                 level = self.suitLevel + 1
             a = RobotSuit(description = [level,track],
-                          parent = self.toonParent, 
+                          parent = self.toonParent,
                           startPos = startPos, endPos = endPos)
         else:
             desc = PetDNA.getRandomPetDNA()
@@ -707,16 +707,16 @@ class RobotToonManager(DirectObject):
             if self.doodleGender != None:
                 desc[8] = self.doodleGender
             a = RobotDoodle(description = desc,
-                          parent = self.toonParent, 
+                          parent = self.toonParent,
                           startPos = startPos, endPos = endPos)
-            
+
         a.nametag.manage(self.marginManager)
         self.avatarDict[a.id()] = a
         a.select()
         self.faceCamera()
         a.setStartHpr(a.getHpr())
         messenger.send('SGE_Update Explorer', [a])
-            
+
     def makeToonFromProperties(self, properties,
                                pos, hpr,
                                startPos, startHpr,
@@ -805,7 +805,7 @@ class RobotToonManager(DirectObject):
     def openCrowdFile(self, tcfFilename):
             filename = Filename(tcfFilename)
             f = open(filename.toOsSpecific(), 'rb')
-            rawData = f.readlines()            
+            rawData = f.readlines()
             for line in rawData:
                 (type,props,pos,hpr,startPos,startHpr,
                  endPos,endHpr,state) = self.parseAvatarProperties(line)
@@ -878,7 +878,7 @@ class RobotToonManager(DirectObject):
         tcfFilename = asksaveasfilename(
             defaultextension = '.tcf', initialdir = '.',
             filetypes = (('Toon Crowd', '*.tcf'),('All files', '*')),
-            title = 'Save Toon Crowd File')            
+            title = 'Save Toon Crowd File')
         if tcfFilename:
             filename = Filename(tcfFilename)
             f = open(filename.toOsSpecific(), 'wb')
@@ -1238,7 +1238,7 @@ class RobotToonControlPanel(AppShell):
         self.doodleEyeColorButtonList = []
 
         self.lastPath = None
-        
+
     def sortVariants(self, styleList):
         styleDict = {}
         styleList.sort()
@@ -1340,12 +1340,12 @@ class RobotToonControlPanel(AppShell):
                 firstLetter = TextEncoder.upper(name[0])
                 subMenu = Menu(self.npcMenu, tearoff = 0)
                 self.npcMenu.add_cascade(
-                    label = 'NPC %s' % firstLetter, 
+                    label = 'NPC %s' % firstLetter,
                     menu = subMenu)
             subMenu.add_command(
                 label = TTLocalizer.NPCToonNames.get(id,'Unnamed NPC'),
                 command = lambda id=id: self.rtm.makeRandomToon(id))
-        
+
         dnaFrame.pack(fill = X, expand = 0)
 
         # GENDER
@@ -1391,7 +1391,7 @@ class RobotToonControlPanel(AppShell):
                 help = 'Set species to %s' % s,
                 side = LEFT)
         speciesFrame.pack(expand = 0, fill = X)
-        
+
         headFrame = Frame(self.pageOne)
         Label(headFrame, text = 'Head:',width=6,
               anchor = W, justify = LEFT).pack(side = LEFT, expand = 0)
@@ -1478,7 +1478,7 @@ class RobotToonControlPanel(AppShell):
             help = 'L-Dress',
             side = LEFT)
         torsoFrame.pack(fill = X, expand = 0)
-        
+
         # LEGS
         self.legs = StringVar()
         self.legs.set('ss')
@@ -1558,7 +1558,7 @@ class RobotToonControlPanel(AppShell):
             parent = topsFrame,
             labelpos = W,
             label_text = 'Tops:',
-            label_width = 8, 
+            label_width = 8,
             label_anchor = W, label_justify = LEFT,
             menubutton_width = 25)
         self.topsMenu['command'] = lambda x: self.setTop(x,1)
@@ -1574,7 +1574,7 @@ class RobotToonControlPanel(AppShell):
             entryfield_entry_width = 3)
         self.topsCounter['entryfield_command'] = self.setTopVariant
         self.topsCounter.pack(side = LEFT, fill = X, expand = 0)
-        
+
         topsFrame.pack(fill = X, expand = 0)
 
         # BOTTOM TEXTURE
@@ -1600,7 +1600,7 @@ class RobotToonControlPanel(AppShell):
             entryfield_entry_width = 3)
         self.bottomsCounter['entryfield_command'] = self.setBottomVariant
         self.bottomsCounter.pack(side = LEFT, fill = X, expand = 0)
-        
+
         bottomsFrame.pack(fill = X, expand = 0)
 
         nameFrame = Frame(self.pageOne)
@@ -1655,7 +1655,7 @@ class RobotToonControlPanel(AppShell):
             if (key % 100) == 0:
                 subMenu = Menu(self.chatMenu2, tearoff = 0)
                 self.chatMenu2.add_cascade(
-                    label = 'Series %d' % key, 
+                    label = 'Series %d' % key,
                     menu = subMenu)
             subMenu.add_command(
                 label = customChatDict[key],
@@ -1920,7 +1920,7 @@ class RobotToonControlPanel(AppShell):
         #
         # Doodle Tab
         #
-        
+
         self.pageThree = self.notebook.add('Doodles')
 
         # Doodle head parts
@@ -2044,7 +2044,7 @@ class RobotToonControlPanel(AppShell):
             help = 'Fluffy, Cotton Tail (3)',
             side = LEFT)
         doodleTailFrame.pack(fill = X, expand = 0)
-        
+
         # Doodle body
         self.doodleBody = IntVar()
         self.doodleBody.set(None)
@@ -2106,7 +2106,7 @@ class RobotToonControlPanel(AppShell):
                 self.doodleColorButtonList.append(b)
             cf.pack(fill = X, expand = 0)
         colorFrame.pack(fill = X, expand = 0)
-        
+
         # Doodle part color scale
         self.doodleColorScale = IntVar()
         self.doodleColorScale.set(-1)
@@ -2155,7 +2155,7 @@ class RobotToonControlPanel(AppShell):
             help = 'No Eyelashes (1)',
             side = LEFT)
         doodleGenderFrame.pack(fill = X, expand = 0)
-        
+
         # Doodle anim menu
         doodleAnimFrame = Frame(self.pageThree)
         self.doodleAnimButton = Menubutton(doodleAnimFrame, width = 18,
@@ -2225,7 +2225,7 @@ class RobotToonControlPanel(AppShell):
         self.addPropsButton.pack(fill = X, padx = 20, pady = 10)
         codes = []
         self.styleManager = self.rtm.styleManager
-        
+
         codes = (self.styleManager.getCatalogCodes('prop') +
                  self.styleManager.getCatalogCodes('holiday_prop'))
         codes.sort()
@@ -2319,7 +2319,7 @@ class RobotToonControlPanel(AppShell):
         os.system('maya2egg_bin  -o' + eggFilePath + ' ' + mbFilePath)
         newNode = loader.loadModel(eggFilePath, noCache=True)
         newNode.ls()
-        
+
     def toggleSnow(self):
         if self.snow:
             self.snow.cleanup()
@@ -2332,13 +2332,13 @@ class RobotToonControlPanel(AppShell):
             self.snowRender = render.attachNewNode('snowRender')
             self.snowRender.setDepthWrite(0)
             self.snowRender.setBin('fixed', 1)
-            self.snowFade = None       
+            self.snowFade = None
             self.snow.start(camera, self.snowRender)
 
     def firework(self):
         holidays = [ToontownGlobals.JULY4_FIREWORKS, ToontownGlobals.NEWYEARS_FIREWORKS]
         show = FireworkShows.getShow(holidays[self.holiday.get()], self.fireworkType.get())
-        
+
         mainShow = Sequence()
         currentT = 0
         startT = 0
@@ -2368,7 +2368,7 @@ class RobotToonControlPanel(AppShell):
 
     def addProp(self):
         self.rtm.addProp(self.propType)
-        
+
     def setPropType(self, name):
         self.propType = name
         self.rtm.setCurrent('prop_texture', self.propType)
@@ -2392,7 +2392,7 @@ class RobotToonControlPanel(AppShell):
             return
         width = string.atoi(tokens[0])
         height = string.atoi(tokens[1])
-        
+
         props = WindowProperties(base.win.getProperties())
         props.setSize(width, height)
         base.win.requestProperties(props)
@@ -2476,7 +2476,7 @@ class RobotToonControlPanel(AppShell):
     def setDoodleEyeColor(self, colorIndex):
         self.doodleEyeColor.set(colorIndex)
         self.rtm.doodleEyeColor = colorIndex
-        
+
     def addDoodle(self):
         self.rtm.makeRandomToon()
 
@@ -2504,8 +2504,8 @@ class RobotToonControlPanel(AppShell):
             st.style.topTexColor = topStyle[1]
             st.style.sleeveTex = topStyle[2]
             st.style.sleeveTexColor = topStyle[3]
-            st.generateToonClothes()        
-            
+            st.generateToonClothes()
+
     def setBottom(self, bottomName, fUpdateVariants = 0):
         if fUpdateVariants:
             bottomIndex = int(bottomName[:2])
@@ -2530,8 +2530,8 @@ class RobotToonControlPanel(AppShell):
             st = self.rtm.selectedToon
             st.style.botTex = bottomStyle[0]
             st.style.botTexColor = bottomStyle[1]
-            st.generateToonClothes()        
-            
+            st.generateToonClothes()
+
     def setToonColor(self, colorIndex):
         cm = self.colorMode.get()
         st = self.rtm.selectedToon
@@ -2743,7 +2743,7 @@ class RobotToonControlPanel(AppShell):
     def setToonName(self, event = None):
         if self.rtm.selectedToon:
             self.rtm.selectedToon.nametag.setName(self.toonName.get())
-    
+
     def setRandomToonName(self):
         if self.rtm.selectedToon:
             if self.rtm.selectedToon.style.gender == 'm':
@@ -2754,7 +2754,7 @@ class RobotToonControlPanel(AppShell):
                 girl = 1
             self.rtm.selectedToon.nametag.setName(
                 namegen.randomNameMoreinfo(boy = boy, girl = girl)[-1])
-    
+
     def clearToonName(self):
         if self.rtm.selectedToon:
             self.rtm.selectedToon.nametag.setName('')
@@ -2781,7 +2781,7 @@ class RobotToonControlPanel(AppShell):
                 if numFrames is None:
                     numFrames = 100
                 else:
-                    numFrames = numFrames - 1 
+                    numFrames = numFrames - 1
                 self.poseSlider['max'] = numFrames
 
                 self.rtm.selectedToon.loop(anim)
@@ -2809,7 +2809,7 @@ class RobotToonControlPanel(AppShell):
                 if numFrames is None:
                     numFrames = 100
                 else:
-                    numFrames = numFrames - 1 
+                    numFrames = numFrames - 1
                 self.suitPoseSlider['max'] = numFrames
                 if st.style.type == 's':
                     # Update toon
@@ -2858,7 +2858,7 @@ class RobotToonControlPanel(AppShell):
                 if numFrames is None:
                     numFrames = 100
                 else:
-                    numFrames = numFrames - 1 
+                    numFrames = numFrames - 1
                 self.poseSlider['max'] = numFrames
 
                 self.rtm.selectedToon.loop(anim)
@@ -2908,7 +2908,7 @@ class RobotToonControlPanel(AppShell):
                        helpMessage='Render Animation',
                        statusMessage='Go!',
                        command=self.renderMovie)
-        
+
 
     # STYLE/DNA FILE FUNCTIONS
     def loadSpecifiedDNAFile(self):
@@ -2951,7 +2951,7 @@ class RobotToonControlPanel(AppShell):
             self.balloon().configure(state = 'both')
         else:
             self.balloon().configure(state = 'none')
-            
+
     def onDestroy(self, event):
         """ Called on Robot Toon Manager Panel shutdown """
         del self.rtm
@@ -2994,7 +2994,7 @@ class RobotToonControlPanel(AppShell):
         self.lastPath = os.path.dirname(self.filename)
 
         if self.filename == None or self.filename == "":
-            return        
+            return
 
         lowerFilename = self.filename.lower()
 
@@ -3009,7 +3009,7 @@ class RobotToonControlPanel(AppShell):
         format = filename[-3:]
         filename = filename[:-4]
         base.movie(namePrefix = filename, duration=duration, format=format)
-        
+
     def takeScreenshot(self):
         self.filename = asksaveasfilename(
             initialdir = self.lastPath,
@@ -3060,7 +3060,7 @@ class RobotToonControlPanel(AppShell):
         else:
             filename = self.filename
         base.screenshot(filename, defaultFilename = 0)
-        render2d.show()    
+        render2d.show()
 
     def setParameterGroup(self, values):
         self.bar1.updateProgress(values[0])
