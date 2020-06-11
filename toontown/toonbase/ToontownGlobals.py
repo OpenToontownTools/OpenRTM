@@ -3,7 +3,7 @@ ToonBase module: defines constants that are global across Toontown, and
 may have meaning to several classes.
 """
 
-import TTLocalizer
+from . import TTLocalizer
 from otp.otpbase.OTPGlobals import *
 from direct.showbase.PythonUtil import Enum, invertDict
 from pandac.PandaModules import BitMask32, Vec4
@@ -610,7 +610,7 @@ MinigameNames = {
     "ice" : IceGameId,
     "thief" : CogThiefGameId,
     "2d" : TwoDGameId,
-    "photo" : PhotoGameId,    
+    "photo" : PhotoGameId,
     "travel" : TravelGameId,
     }
 
@@ -644,7 +644,7 @@ MinigamePlayerMatrix = {
 
 # we are releasing one minigame a week for the new minigames
 MinigameReleaseDates = {
-    IceGameId : (2008, 8, 05),
+    IceGameId : (2008, 8, 5),
     PhotoGameId : (2008,8,13),
     TwoDGameId : (2008,8,20),
     CogThiefGameId : (2008,8,27),
@@ -1425,7 +1425,7 @@ BossbotBossMaxDamage = 500
 BossbotMaxSpeedDamage = 90
 BossbotSpeedRecoverRate = 20 # in speed damage recovered per MINUTE
 # num tables, diners per table, level of diners, table unflatten time, hungry duration, eating duration
-BossbotBossDifficultySettings = [    
+BossbotBossDifficultySettings = [
     (8, 4, 11, 3,   30, 25),
     (9, 5, 12, 6,   28, 26),
     (10, 6, 11, 7,  26, 27),

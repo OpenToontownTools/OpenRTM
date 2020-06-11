@@ -317,7 +317,7 @@ class ToonHead(Actor.Actor):
 
     def getHeight(self):
         return self.__height
-    
+
     def getRandomForwardLookAtPoint(self):
         x = self.randGen.choice((-0.8, -0.5, 0, 0.5, 0.8))
         z = self.randGen.choice((-0.5, 0, 0.5, 0.8))
@@ -736,7 +736,7 @@ class ToonHead(Actor.Actor):
             lp = self.__eyes.find('**/joint_pupilL*')
             rp = self.__eyes.find('**/joint_pupilR*')
             if lp.isEmpty() or rp.isEmpty():
-                print "Unable to locate pupils."
+                print("Unable to locate pupils.")
             else:
                 leye = self.__eyes.attachNewNode('leye')
                 reye = self.__eyes.attachNewNode('reye')
@@ -1026,8 +1026,8 @@ class ToonHead(Actor.Actor):
                 searchRoot.find("**/eyes-short").removeNode()
             else:
                 searchRoot.find("**/eyes-short").hide()
- 
-        # Now every animal except dog has 2 types of pupils except the dog 
+
+        # Now every animal except dog has 2 types of pupils except the dog
         if animalType != 'dog':
             if copy:
                 searchRoot.find("**/joint_pupilL_short").removeNode()
@@ -1090,8 +1090,8 @@ class ToonHead(Actor.Actor):
                 searchRoot.find("**/eyes-long").removeNode()
             else:
                 searchRoot.find("**/eyes-long").hide()
-         
-        # Now every animal except dog has 2 types of pupils except the dog 
+
+        # Now every animal except dog has 2 types of pupils except the dog
         if animalType != 'dog':
             if copy:
                 searchRoot.find("**/joint_pupilL_long").removeNode()
@@ -1577,7 +1577,7 @@ class ToonHead(Actor.Actor):
 ##                item.setColor(1,1,1,0)
 ##                item.setDepthWrite(1)
 ##                item.setDepthTest(1)
-        
+
         if (self.hasLOD()):
             # Save the various muzzle LODs.
             for lodName in self.getLODNames():
@@ -1594,13 +1594,13 @@ class ToonHead(Actor.Actor):
                         filePrefix = DogMuzzleDict[style.head]
                         muzzles = loader.loadModel("phase_3" + filePrefix + lodName)
                         muzzles.reparentTo(self.find('**/' + lodName + '/**/joint_toHead'))
-                
+
                 surpriseMuzzle = self.find('**/' + lodName + '/**/muzzle*surprise')
                 angryMuzzle = self.find('**/' + lodName + '/**/muzzle*angry')
                 sadMuzzle = self.find('**/' + lodName + '/**/muzzle*sad')
                 smileMuzzle = self.find('**/' + lodName + '/**/muzzle*smile')
                 laughMuzzle = self.find('**/' + lodName + '/**/muzzle*laugh')
-                
+
                 self.__muzzles.append(muzzle)
                 hideAddNonEmptyItemToList(surpriseMuzzle, self.__surpriseMuzzles)
                 hideAddNonEmptyItemToList(angryMuzzle, self.__angryMuzzles)
@@ -1632,7 +1632,7 @@ class ToonHead(Actor.Actor):
             sadMuzzle = self.find('**/muzzle*sad')
             smileMuzzle = self.find('**/muzzle*smile')
             laughMuzzle = self.find('**/muzzle*laugh')
-            
+
             self.__muzzles.append(muzzle)
 ##            # For AlphaLerp
 ##            if not muzzle.isEmpty():
@@ -1757,13 +1757,13 @@ class ToonHead(Actor.Actor):
             self.__surpriseMuzzles[muzzleNum].show()
             self.__muzzles[muzzleNum].hide()
 
-    def hideSurpriseMuzzle(self):           
+    def hideSurpriseMuzzle(self):
         if self.isIgnoreCheesyEffect():
             return
         for muzzleNum in range(len(self.__surpriseMuzzles)):
             self.__surpriseMuzzles[muzzleNum].hide()
             self.__muzzles[muzzleNum].show()
-            
+
     def isIgnoreCheesyEffect(self):
         if hasattr(self, 'savedCheesyEffect'):
             # Do nothing if the Invisible, NoColor or BigWhite cheesy effect is ON
