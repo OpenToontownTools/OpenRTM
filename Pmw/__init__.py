@@ -26,7 +26,7 @@ def _hasLoader(dir):
 # First get a list of all subdirectories containing versions of Pmw.
 _dir = __path__[0]
 _listdir = os.listdir(_dir)
-_instdirs = filter(_hasLoader, _listdir)
+_instdirs = list(filter(_hasLoader, _listdir))
 _instdirs.sort()
 _instdirs.reverse()
 
