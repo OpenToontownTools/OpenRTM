@@ -9,7 +9,7 @@ except NameError:
 
 from direct.showbase.DirectObject import DirectObject
 from direct.showbase import ShowBase
-from RobotToon import *
+from .RobotToon import *
 from direct.gui.DirectGui import *
 from direct.gui import DirectGuiGlobals
 from pandac.PandaModules import *

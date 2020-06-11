@@ -1,23 +1,23 @@
-import Toon
+from . import Toon
 from toontown.suit import Suit
 from toontown.pets import Pet
 from otp.avatar import Avatar
-import NPCToons
-import ToonDNA
+from . import NPCToons
+from . import ToonDNA
 from toontown.suit import SuitDNA
 from toontown.toonbase import ToontownGlobals
 import math
 import types
-import __builtin__
+import builtins
 from pandac.PandaModules import *
 from direct.interval.IntervalGlobal import *
 from random import *
 from direct.distributed.PyDatagram import PyDatagram
 
 try:
-    __builtin__.launcher
+    builtins.launcher
 except AttributeError:
-    __builtin__.launcher = None
+    builtins.launcher = None
 
 class RobotAvatarBase:
     # Base class for robot toons and robot suits
@@ -168,7 +168,7 @@ class RobotToon(Toon.Toon, RobotAvatarBase):
         RobotAvatarBase.__init__(self, parent, startPos, startHpr,
                                  endPos, endHpr, state)
         self.showHiRes()
-        
+
     def updateDNA(self, description):
         # Create dna
         if isinstance(description, ToonDNA.ToonDNA):
@@ -277,4 +277,3 @@ class RobotDoodle(Pet.Pet, RobotAvatarBase):
         # doodle dna is an array of the form: [head, ears, nose, tail, body, color, partColor, eyes, gender]
         if (isinstance(description, types.ListType) or isinstance(description, types.TupleType)):
             self.setDNA(description)
-
