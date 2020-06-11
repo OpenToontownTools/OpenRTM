@@ -467,7 +467,7 @@ for hoodId in hoods:
         NEIGHBORHOOD_CODES[hoodName] = hoodId
         NEIGHBORHOODS.append(hoodName)
     else:
-        print 'Error: no hood defined for: ', hoodId
+        print('Error: no hood defined for: ', hoodId)
 
 # Load DNA
 dnaDirectory = Filename.expandFrom(base.config.GetString("dna-directory", "$TTMODELS/src/dna"))
@@ -476,7 +476,7 @@ try:
     if dnaLoaded:
         pass
 except NameError:
-    print "Loading LevelEditor for hoods: ", hoods
+    print("Loading LevelEditor for hoods: ", hoods)
     # DNAStorage instance for storing level DNA info
     # We need to use the __builtin__.foo syntax, not the
     # __builtins__["foo"] syntax, since this file runs at the top
@@ -615,7 +615,7 @@ class RobotToonManager(DirectObject):
         self.suitPointToplevel = self.NPToplevel.attachNewNode('suitPoints')
 
     def addProp(self, propType):
-        print "addProp %s " % propType
+        print("addProp %s " % propType)
         # Record new prop type
         self.setCurrent('prop_texture', propType)
         # And create new prop
@@ -934,7 +934,7 @@ class RobotToonManager(DirectObject):
     def toggleDirectMode(self):
         self.fDirectMode = 1 - self.fDirectMode
         if self.fDirectMode:
-            print 'SWITCH TO DIRECT MODE'
+            print('SWITCH TO DIRECT MODE')
             # Start up direct
             taskMgr.removeTasksMatching('updateSmartCamera*')
             camera.wrtReparentTo(render)
@@ -943,7 +943,7 @@ class RobotToonManager(DirectObject):
             direct.selectedNPReadout.setText('DIRECT MODE')
             direct.selectedNPReadout.reparentTo(aspect2d)
         else:
-            print 'SWITCH TO TOONTOWN MODE'
+            print('SWITCH TO TOONTOWN MODE')
             # Return to toontown mode
             if direct:
                 direct.deselectAll()
@@ -2914,8 +2914,8 @@ class RobotToonControlPanel(AppShell):
     def loadSpecifiedDNAFile(self):
         path = dnaDirectory.toOsSpecific()
         if not os.path.isdir(path):
-            print 'Robot Toon Manager Warning: Invalid default DNA directory!'
-            print 'Using current directory'
+            print('Robot Toon Manager Warning: Invalid default DNA directory!')
+            print('Using current directory')
             path = '.'
         dnaFilename = askopenfilename(
             defaultextension = '.dna',
@@ -2925,7 +2925,7 @@ class RobotToonControlPanel(AppShell):
             parent = self.component('hull'))
         if dnaFilename:
             self.loadDNAFromFile(dnaFilename)
-        print "Finished Load: ", dnaFilename
+        print("Finished Load: ", dnaFilename)
 
     def loadDNAFromFile(self, filename):
         # Reset level, destroying existing scene/DNA hierarcy
@@ -3037,7 +3037,7 @@ class RobotToonControlPanel(AppShell):
                         relief = None)
         ivalList = []
         for i in range(10,0,-1):
-            ivalList.append(Func(setText, l, `i`))
+            ivalList.append(Func(setText, l, 'i'))
             ivalList.append(Wait(1.0))
         ivalList.append(Func(l.destroy))
         ivalList.append(Func(self._takeScreenshot))
@@ -3069,13 +3069,13 @@ class RobotToonControlPanel(AppShell):
         self.bar4.updateProgress(values[3])
 
     def setObstacleType(self):
-        print 'CHOOSING OBSTACLE DGG.TYPE:', self.obstacleType.get()
+        print('CHOOSING OBSTACLE DGG.TYPE:', self.obstacleType.get())
 
     def toggleFun(self):
         if self.getVariable('Obstacle', 'Make Fun?').get():
-            print 'THIS IS GOING TO BE FUN!'
+            print('THIS IS GOING TO BE FUN!')
         else:
-            print 'NOT SO FUN'
+            print('NOT SO FUN')
 
     def popupFactoryDialog(self):
         data = askstring('Input Factory Data', 'Factory Data:',
@@ -3085,12 +3085,12 @@ class RobotToonControlPanel(AppShell):
 
     def toggleGridSnap(self):
         if self._fGridSnap.get():
-            print 'Turning on grid!'
+            print('Turning on grid!')
         else:
-            print 'Turning off grid!'
+            print('Turning off grid!')
 
     def setStomperSize(self, size):
-        print 'New Stomper Size:', size
+        print('New Stomper Size:', size)
 
 
 base.rtm = RobotToonManager()
