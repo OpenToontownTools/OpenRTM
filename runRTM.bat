@@ -1,5 +1,5 @@
 @echo off
-set PATH=lib
+set PATH=%PATH%;lib
 set PYTHONPATH=.;lib-tk
 set TTMODELS=.
 set DMODELS=.
