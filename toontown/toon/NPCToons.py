@@ -3,7 +3,7 @@ from pandac.PandaModules import *
 from toontown.toonbase import ToontownGlobals
 import random
 from toontown.hood import ZoneUtil
-import ToonDNA
+from . import ToonDNA
 from toontown.toonbase import TTLocalizer
 from toontown.toonbase import ToontownBattleGlobals
 
@@ -101,11 +101,11 @@ def createNPC(air, npcId, desc, zoneId, posIndex=0, questCallback=None):
     elif (type == NPC_PETCLERK):
         npc = DistributedNPCPetclerkAI.DistributedNPCPetclerkAI(air, npcId)
     elif (type == NPC_KARTCLERK):
-        npc = DistributedNPCKartClerkAI.DistributedNPCKartClerkAI(air, npcId) 
+        npc = DistributedNPCKartClerkAI.DistributedNPCKartClerkAI(air, npcId)
     elif (type == NPC_PARTYPERSON):
-        npc = DistributedNPCPartyPersonAI.DistributedNPCPartyPersonAI(air, npcId) 
+        npc = DistributedNPCPartyPersonAI.DistributedNPCPartyPersonAI(air, npcId)
     else:
-        print 'createNPC() error!!!'
+        print('createNPC() error!!!')
     npc.setName(name)
     dna = ToonDNA.ToonDNA()
     if dnaType == "r":
@@ -204,7 +204,7 @@ NPCToonDict = {
     1000 : (-1, lnames[1000], "r", "m", 1, NPC_HQ),
     # Flippy DNA matches marketing materials
     20001 : (-1, lnames[20001], ('dss', 'ms', 'm', 'm', 17,0,17,17,3,3,3,3,7,2), "m", 1, NPC_BLOCKER),
-    
+
     # Toontown Central
     # This Flippy DNA matches the tutorial Flippy
     # He is in Toon Hall
@@ -353,7 +353,7 @@ NPCToonDict = {
     1124 : (1624, lnames[1124], "r", "m", 0, NPC_REGULAR),
     1125 : (1628, lnames[1125], "r", "f", 0, NPC_REGULAR),
     1126 : (1129, lnames[1126], "r", "m", 0, NPC_FISHERMAN),
-    
+
     1201 : (1710, lnames[1201], "r", "f", 0, NPC_REGULAR),
     1202 : (1713, lnames[1202], "r", "m", 0, NPC_REGULAR),
     1203 : (1725, lnames[1203], "r", "m", 0, NPC_REGULAR),
@@ -548,7 +548,7 @@ NPCToonDict = {
     3327 : (3824, lnames[3327], "r", "m", 0, NPC_REGULAR),
     3328 : (3807, lnames[3328], "r", "f", 0, NPC_REGULAR),
     3329 : (3817, lnames[3329], "r", "m", 0, NPC_REGULAR),
-    
+
     # Minnie's Melody Land
     4001 : (4502, lnames[4001], "r", "f", 0, NPC_REGULAR),
     4002 : (4504, lnames[4002], "r", "m", 0, NPC_HQ),
@@ -786,7 +786,7 @@ NPCToonDict = {
     #          'Green', 'Light Blue', 'Aqua', 'Blue',
     #          'Periwinkle', 'Royal Blue', 'Slate Blue', 'Purple',
     #          'Lavender', 'Pink', 'Plum', 'Black']
-    
+
     # Goofy's Speedway
     8001 : (8501, lnames[8001], ("psl", "ms", "m", 'm', 13, 0, 13,  13,  0, 11, 0, 11, 2, 10), "m", 0, NPC_KARTCLERK),
     8002 : (8501, lnames[8002], ("psl", "ld", "s", 'f', 23, 0, 23,  23,  0, 11, 0, 11, 2, 10), "f", 0, NPC_KARTCLERK),
@@ -848,7 +848,7 @@ NPCToonDict = {
     9134 : (9652, lnames[9134], "r", "m", 0, NPC_HQ),
     9135 : (9652, lnames[9135], "r", "m", 0, NPC_HQ),
     9136 : (9153, lnames[9136], "r", "m", 0, NPC_FISHERMAN),
-    
+
     9201 : (9752, lnames[9201], ('psl', 'ss', 'm', 'm', 9,0,9,9,17,11,0,11,7,20), 'm', 0, NPC_REGULAR),
     9202 : (9703, lnames[9202], ('dss', 'ss', 's', 'm', 21,0,21,21,8,3,8,3,1,17), 'm', 0, NPC_REGULAR),
     9203 : (9741, lnames[9203], ('pls', 'ls', 's', 'm', 5,0,5,5,37,27,26,27,7,4), 'm', 0, NPC_REGULAR),
@@ -886,7 +886,7 @@ NPCToonDict = {
     9234 : (9756, lnames[9234], "r", "m", 0, NPC_HQ),
     9235 : (9756, lnames[9235], "r", "m", 0, NPC_HQ),
     9236 : (9756, lnames[9236], "r", "m", 0, NPC_HQ),
-    9237 : (9255, lnames[9237], "r", "m", 0, NPC_FISHERMAN),   
+    9237 : (9255, lnames[9237], "r", "m", 0, NPC_FISHERMAN),
 
 
     # Tutorial IDs start at 20000, and are not part of this table.
@@ -943,87 +943,87 @@ npcFriends = {
     # A dictionary of tuples, indexed by rescued toon npcId
     # Each tuple consists of (type, level, hp, rarity) except for the
     # restock sos which consists of (type, track, 0, rarity)
-    
+
     # Healers
     # Flippy
     2001 : (ToontownBattleGlobals.HEAL_TRACK, 5, ToontownGlobals.MaxHpLimit,5),
-    # Daffy Don 
-    2132 : (ToontownBattleGlobals.HEAL_TRACK, 5, 70, 4), 
-    # Madam Chuckle 
-    2121 : (ToontownBattleGlobals.HEAL_TRACK, 5, 45, 3), 
-        
+    # Daffy Don
+    2132 : (ToontownBattleGlobals.HEAL_TRACK, 5, 70, 4),
+    # Madam Chuckle
+    2121 : (ToontownBattleGlobals.HEAL_TRACK, 5, 45, 3),
+
     # Trappers
     # Clerk Clara
-    2011 : (ToontownBattleGlobals.TRAP_TRACK, 4, 180, 5), 
-    # Clerk Penny 
-    3007 : (ToontownBattleGlobals.TRAP_TRACK, 4, 70, 4), 
+    2011 : (ToontownBattleGlobals.TRAP_TRACK, 4, 180, 5),
+    # Clerk Penny
+    3007 : (ToontownBattleGlobals.TRAP_TRACK, 4, 70, 4),
     # Clerk Will
-    1001 : (ToontownBattleGlobals.TRAP_TRACK, 4, 50, 3), 
+    1001 : (ToontownBattleGlobals.TRAP_TRACK, 4, 50, 3),
 
     # Lurers
     # Lil Oldman
-    3112 : (ToontownBattleGlobals.LURE_TRACK, 5, 0, 5), 
-    # Stinky Ned 
-    1323 : (ToontownBattleGlobals.LURE_TRACK, 5, 0, 3), 
-    # Nancy Gas 
-    2308 : (ToontownBattleGlobals.LURE_TRACK, 5, 0, 3), 
+    3112 : (ToontownBattleGlobals.LURE_TRACK, 5, 0, 5),
+    # Stinky Ned
+    1323 : (ToontownBattleGlobals.LURE_TRACK, 5, 0, 3),
+    # Nancy Gas
+    2308 : (ToontownBattleGlobals.LURE_TRACK, 5, 0, 3),
 
     # Musicians
-    # Moe Zart 
-    4119 : (ToontownBattleGlobals.SOUND_TRACK, 5, 80, 5), 
-    # Sid Sonata 
-    4219 : (ToontownBattleGlobals.SOUND_TRACK, 5, 50, 4), 
-    # Barbara Seville 
-    4115 : (ToontownBattleGlobals.SOUND_TRACK, 5, 40, 3), 
+    # Moe Zart
+    4119 : (ToontownBattleGlobals.SOUND_TRACK, 5, 80, 5),
+    # Sid Sonata
+    4219 : (ToontownBattleGlobals.SOUND_TRACK, 5, 50, 4),
+    # Barbara Seville
+    4115 : (ToontownBattleGlobals.SOUND_TRACK, 5, 40, 3),
 
     # Droppers
     # Barnacle Bessie
-    1116 : (ToontownBattleGlobals.DROP_TRACK, 5, 170, 5), 
+    1116 : (ToontownBattleGlobals.DROP_TRACK, 5, 170, 5),
     # Franz Neckvein
-    2311 : (ToontownBattleGlobals.DROP_TRACK, 5, 100, 4), 
-    # Clumsy Ned 
-    4140 : (ToontownBattleGlobals.DROP_TRACK, 5, 60, 3), 
+    2311 : (ToontownBattleGlobals.DROP_TRACK, 5, 100, 4),
+    # Clumsy Ned
+    4140 : (ToontownBattleGlobals.DROP_TRACK, 5, 60, 3),
 
     # Cogs miss
     # Mr. Freeze
-    3137 : (ToontownBattleGlobals.NPC_COGS_MISS, 0, 0, 4), 
+    3137 : (ToontownBattleGlobals.NPC_COGS_MISS, 0, 0, 4),
     # Flim Flam
-    4327 : (ToontownBattleGlobals.NPC_COGS_MISS, 0, 0, 4), 
-    # Julius Wheezer 
-    4230 : (ToontownBattleGlobals.NPC_COGS_MISS, 0, 0, 4), 
+    4327 : (ToontownBattleGlobals.NPC_COGS_MISS, 0, 0, 4),
+    # Julius Wheezer
+    4230 : (ToontownBattleGlobals.NPC_COGS_MISS, 0, 0, 4),
 
     # Toons hit
     # Soggy Nell
-    3135 : (ToontownBattleGlobals.NPC_TOONS_HIT, 0, 0, 4), 
-    # Sticky Lou 
-    2208 : (ToontownBattleGlobals.NPC_TOONS_HIT, 0, 0, 4), 
-    # Soggy Bottom 
-    5124 : (ToontownBattleGlobals.NPC_TOONS_HIT, 0, 0, 4), 
+    3135 : (ToontownBattleGlobals.NPC_TOONS_HIT, 0, 0, 4),
+    # Sticky Lou
+    2208 : (ToontownBattleGlobals.NPC_TOONS_HIT, 0, 0, 4),
+    # Soggy Bottom
+    5124 : (ToontownBattleGlobals.NPC_TOONS_HIT, 0, 0, 4),
 
     # Restockers
-    # Professor Pete 
-    2003 : (ToontownBattleGlobals.NPC_RESTOCK_GAGS, -1, 0, 5), 
+    # Professor Pete
+    2003 : (ToontownBattleGlobals.NPC_RESTOCK_GAGS, -1, 0, 5),
     # Professor Guffaw
-    2126 : (ToontownBattleGlobals.NPC_RESTOCK_GAGS, 
+    2126 : (ToontownBattleGlobals.NPC_RESTOCK_GAGS,
             ToontownBattleGlobals.HEAL_TRACK, 0, 3),
     # Clerk Ray
-    4007 : (ToontownBattleGlobals.NPC_RESTOCK_GAGS, 
+    4007 : (ToontownBattleGlobals.NPC_RESTOCK_GAGS,
             ToontownBattleGlobals.TRAP_TRACK, 0, 3),
-    # Doctor Drift 
-    1315 : (ToontownBattleGlobals.NPC_RESTOCK_GAGS, 
+    # Doctor Drift
+    1315 : (ToontownBattleGlobals.NPC_RESTOCK_GAGS,
             ToontownBattleGlobals.LURE_TRACK, 0, 3),
     # Sophie Squirt
-    5207 : (ToontownBattleGlobals.NPC_RESTOCK_GAGS, 
+    5207 : (ToontownBattleGlobals.NPC_RESTOCK_GAGS,
             ToontownBattleGlobals.SQUIRT_TRACK, 0, 3),
-    # Baker Bridget 
-    3129 : (ToontownBattleGlobals.NPC_RESTOCK_GAGS, 
+    # Baker Bridget
+    3129 : (ToontownBattleGlobals.NPC_RESTOCK_GAGS,
             ToontownBattleGlobals.THROW_TRACK, 0, 3),
     # Melody Wavers
     4125 : (ToontownBattleGlobals.NPC_RESTOCK_GAGS,
             ToontownBattleGlobals.SOUND_TRACK, 0, 3),
     # Shelly Seaweed
     1329 : (ToontownBattleGlobals.NPC_RESTOCK_GAGS,
-            ToontownBattleGlobals.DROP_TRACK, 0, 3), 
+            ToontownBattleGlobals.DROP_TRACK, 0, 3),
     }
 
 def getNPCTrack(npcId):

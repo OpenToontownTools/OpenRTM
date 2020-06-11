@@ -16,9 +16,9 @@ from otp.otpbase import OTPLocalizer
 from toontown.toonbase import TTLocalizer
 import random
 from toontown.effects import Wake
-import TTEmote
+from . import TTEmote
 from otp.avatar import Emote
-import Motion
+from . import Motion
 from toontown.hood import ZoneUtil
 from toontown.battle import SuitBattleGlobals
 from otp.otpbase import OTPGlobals

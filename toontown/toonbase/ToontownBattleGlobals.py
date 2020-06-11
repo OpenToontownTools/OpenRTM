@@ -1,6 +1,6 @@
-from ToontownGlobals import *
+from .ToontownGlobals import *
 import math
-import TTLocalizer
+from . import TTLocalizer
 
 ### ToontownBattle globals: central repository for all battle globals
 
@@ -193,7 +193,7 @@ AvProps = ( ('feather', 'bullhorn', 'lipstick', 'bamboocane', 'pixiedust',
           ('flower', 'waterglass', 'waterballoon', 'bottle', 'firehose',
            'stormcloud', 'stormcloud'),
           ('flowerpot', 'sandbag', 'anvil', 'weight', 'safe', 'piano', 'piano')
-          ) 
+          )
 
 AvPropsNew = ( ('inventory_feather', 'inventory_megaphone', 'inventory_lipstick', 'inventory_bamboo_cane', 'inventory_pixiedust',
            'inventory_juggling_cubes',  'inventory_ladder'),
@@ -207,7 +207,7 @@ AvPropsNew = ( ('inventory_feather', 'inventory_megaphone', 'inventory_lipstick'
           ('inventory_squirt_flower', 'inventory_glass_of_water', 'inventory_water_gun', 'inventory_seltzer_bottle',
            'inventory_firehose', 'inventory_storm_cloud',  'inventory_geyser'),
           ('inventory_flower_pot', 'inventory_sandbag', 'inventory_anvil', 'inventory_weight', 'inventory_safe_box', 'inventory_piano', 'inventory_ship')
-          ) 
+          )
 
 
 # prettier on-screen versions of the prop names
@@ -334,8 +334,8 @@ AvPropTargetCat = ( ( ATK_SINGLE_TARGET,
                       ATK_SINGLE_TARGET,
                       ATK_SINGLE_TARGET,
                       ATK_SINGLE_TARGET,
-                      ATK_GROUP_TARGET ),                    
-                    ) 
+                      ATK_GROUP_TARGET ),
+                    )
 
 AvPropTarget = ( 0, 3, 0, 2, 3, 3, 3)
 
@@ -386,10 +386,10 @@ def getDamageBonus(normal):
 #        return 1
 #    else:
 #        return 0
-        
+
 def isGroup(track, level):
     return AvPropTargetCat[AvPropTarget[track]][level]
-    
+
 def getCreditMultiplier(floorIndex):
     """
     Returns the skill credit multiplier appropriate for a particular
@@ -398,7 +398,7 @@ def getCreditMultiplier(floorIndex):
     """
     # Currently, this is 1 for the first floor (floor 0), 1.5 for the
     # second floor (floor 1), etc.
-    return 1 + floorIndex * 0.5         
+    return 1 + floorIndex * 0.5
 
 def getFactoryCreditMultiplier(factoryId):
     """
@@ -413,7 +413,7 @@ def getFactoryMeritMultiplier(factoryId):
     Returns the skill merit multiplier for a particular factory.
     factoryId is the factory-interior zone defined in ToontownGlobals.py.
     """
-    # Many people complained about how many runs you must make now that 
+    # Many people complained about how many runs you must make now that
     # we lowered the cog levels so I have upped this by a factor of two.
     return 4.
 
@@ -427,7 +427,7 @@ def getMintCreditMultiplier(mintId):
         CashbotMintIntB : 2.5,
         CashbotMintIntC : 3.,
         }.get(mintId, 1.)
-         
+
 def getStageCreditMultiplier(floor):
     """
     Returns the skill credit multiplier for a particular mint.
@@ -470,7 +470,7 @@ def getMoreXpHolidayMultiplier():
     User must first check to see if there is an invasion.
     """
     return 2.0
-    
+
 def encodeUber(trackList):
     bitField = 0
     for trackIndex in range(len(trackList)):
@@ -490,7 +490,7 @@ def decodeUber(flagMask):
     while (workPower >= 0):
         if workNumber >= pow(2,workPower):
             workNumber -= pow(2,workPower)
-            trackList.insert(0, 1) 
+            trackList.insert(0, 1)
         else:
             trackList.insert(0, 0)
         #print("Number %s List %s" % (workNumber, trackList))
@@ -506,14 +506,14 @@ def decodeUber(flagMask):
         else:
             foundOne = 1
     return trackList
-    
+
 def getUberFlag(flagMask, index):
     decode = decodeUber(flagMask)
     if index >= len(decode):
         return 0
     else:
         return decode[index]
-        
+
 def getUberFlagSafe(flagMask, index):
     if (flagMask == "unknown") or (flagMask < 0):
         return -1
