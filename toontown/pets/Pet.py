@@ -8,7 +8,7 @@ from otp.avatar import Avatar
 from direct.actor import Actor
 from direct.task import Task
 from toontown.pets import PetDNA
-from PetDNA import HeadParts, EarParts, NoseParts, TailParts, BodyTypes, BodyTextures, AllPetColors, getColors, ColorScales, PetEyeColors, EarTextures, TailTextures, getFootTexture, getEarTexture, GiraffeTail, LeopardTail, PetGenders
+from .PetDNA import HeadParts, EarParts, NoseParts, TailParts, BodyTypes, BodyTextures, AllPetColors, getColors, ColorScales, PetEyeColors, EarTextures, TailTextures, getFootTexture, getEarTexture, GiraffeTail, LeopardTail, PetGenders
 from toontown.toonbase import  TTLocalizer
 from toontown.toonbase import ToontownGlobals
 from direct.showbase import PythonUtil
@@ -45,7 +45,7 @@ Component2IconDict = {
 
 class Pet(Avatar.Avatar):
     """Toontown pet"""
-    
+
     notify = DirectNotifyGlobal.directNotify.newCategory("Pet")
 
     SerialNum = 0
@@ -93,10 +93,10 @@ class Pet(Avatar.Avatar):
         self.soundTeleportIn = None
         self.soundTeleportOut = None
         self.teleportHole = None
-        
+
     def isPet(self):
         return True
-    
+
     def stopAnimations(self):
         if self.track:
             self.track.pause()
@@ -126,10 +126,10 @@ class Pet(Avatar.Avatar):
         self.leftBrow = None
         self.color = None
         Avatar.Avatar.delete(self)
-        
+
     def getDNA(self):
         return self.style
-    
+
     def setDNA(self, dna):
         # dna format [head, ears, nose, tail, body, color, eyes, gender]
         if self.style:
@@ -137,12 +137,12 @@ class Pet(Avatar.Avatar):
         else:
             # make sure the dna is valid
             assert(len(dna) == PetDNA.NumFields)
-            
+
             # store the dna
             self.style = dna
             self.generatePet()
             self.generateMoods()
-            
+
             # this no longer works in the Avatar init!
             # I moved it here for lack of a better place
             # make the drop shadow
@@ -198,13 +198,13 @@ class Pet(Avatar.Avatar):
         # remember this for blinks
         self.color = color
 
-        # set the body and foot texture 
+        # set the body and foot texture
         bodyType = self.style[4]
         assert(bodyType < len(BodyTypes))
         body = self.find("**/body")
         tex = loader.loadTexture(BodyTextures[BodyTypes[bodyType]])
         tex.setMinfilter(Texture.FTLinear)
-        tex.setMagfilter(Texture.FTLinear)    
+        tex.setMagfilter(Texture.FTLinear)
         body.setTexture(tex, 1)
         body.setColor(color)
 
@@ -214,7 +214,7 @@ class Pet(Avatar.Avatar):
         texName = getFootTexture(bodyType)
         tex = loader.loadTexture(texName)
         tex.setMinfilter(Texture.FTLinear)
-        tex.setMagfilter(Texture.FTLinear)    
+        tex.setMagfilter(Texture.FTLinear)
         leftFoot.setTexture(tex, 1)
         rightFoot.setTexture(tex, 1)
         leftFoot.setColor(color)
@@ -231,7 +231,7 @@ class Pet(Avatar.Avatar):
         # scale the color slightly to accent misc. body parts
         colorScale = ColorScales[self.style[6]]
         partColor = self.amplifyColor(color, colorScale)
-        
+
         headIndex = self.style[0]
         # if we have a head decoration
         if headIndex != -1:
@@ -239,7 +239,7 @@ class Pet(Avatar.Avatar):
             head = self.find("**/@@" + HeadParts[headIndex])
             head.setColor(partColor)
             head.unstash()
-            
+
         earsIndex = self.style[1]
         # if we have ears
         if earsIndex != -1:
@@ -250,7 +250,7 @@ class Pet(Avatar.Avatar):
             if texName:
                 tex = loader.loadTexture(texName)
                 tex.setMinfilter(Texture.FTLinear)
-                tex.setMagfilter(Texture.FTLinear)    
+                tex.setMagfilter(Texture.FTLinear)
                 ears.setTexture(tex, 1)
             ears.unstash()
 
@@ -277,7 +277,7 @@ class Pet(Avatar.Avatar):
                     texName = LeopardTail
                 tex = loader.loadTexture(texName)
                 tex.setMinfilter(Texture.FTLinear)
-                tex.setMagfilter(Texture.FTLinear)    
+                tex.setMagfilter(Texture.FTLinear)
                 tail.setTexture(tex, 1)
             tail.unstash()
 
@@ -286,7 +286,7 @@ class Pet(Avatar.Avatar):
         if not self.forGui:
             # In the 3-D world, we can fix the eyes by putting them
             # all in the fixed bin.
-            self.drawInFront("eyeWhites", "body", 1)            
+            self.drawInFront("eyeWhites", "body", 1)
             self.drawInFront("rightPupil", "eyeWhites", 2)
             self.drawInFront("leftPupil", "eyeWhites", 2)
             self.drawInFront("rightHighlight", "rightPupil", 3)
@@ -347,20 +347,20 @@ class Pet(Avatar.Avatar):
                                                       'phase_4/maps/BeanEyeGirlsNew_a.rgb',)
             self.eyesClosedTexture = loader.loadTexture('phase_4/maps/BeanEyeGirlsBlinkNew.jpg',
                                                         'phase_4/maps/BeanEyeGirlsBlinkNew_a.rgb')
-            
+
         self.eyesOpenTexture.setMinfilter(Texture.FTLinear)
-        self.eyesOpenTexture.setMagfilter(Texture.FTLinear)    
+        self.eyesOpenTexture.setMagfilter(Texture.FTLinear)
 
         self.eyesClosedTexture.setMinfilter(Texture.FTLinear)
-        self.eyesClosedTexture.setMagfilter(Texture.FTLinear)    
+        self.eyesClosedTexture.setMagfilter(Texture.FTLinear)
         self.eyesOpen()
-        
+
     def initializeBodyCollisions(self, collIdStr):
         Avatar.Avatar.initializeBodyCollisions(self, collIdStr)
-        
+
         if not self.ghostMode:
             self.collNode.setCollideMask(self.collNode.getIntoCollideMask() | ToontownGlobals.PieBitmask)
-        
+
     def amplifyColor(self, color, scale):
         color = color * scale
         for i in (0,1,2):
@@ -387,7 +387,7 @@ class Pet(Avatar.Avatar):
         if self.moodModel:
             self.moodModel.hide()
         self.moodModel = None
-        
+
     def showMood(self, mood):
         # the model uses caps
         mood = Component2IconDict[mood]
@@ -419,14 +419,14 @@ class Pet(Avatar.Avatar):
 
     def getShadowJoint(self):
         if hasattr(self, "shadowJoint"):
-            return self.shadowJoint        
+            return self.shadowJoint
         shadowJoint = self.find('**/attachShadow')
         if shadowJoint.isEmpty():
             self.shadowJoint = self
         else:
             self.shadowJoint = shadowJoint
         return self.shadowJoint
-    
+
     def getNametagJoints(self):
         """
         Return the CharacterJoint that animates the nametag, in a list.
@@ -476,7 +476,7 @@ class Pet(Avatar.Avatar):
     # animFSM states
 
     # Note there are not states for all anim cycles. Just the ones trackAnim2Speed might trigger
-    
+
     def enterOff(self):
         self.stop()
 
@@ -485,17 +485,17 @@ class Pet(Avatar.Avatar):
 
     def enterBall(self):
         self.setPlayRate(1, 'toBall')
-        self.play('toBall')        
+        self.play('toBall')
         # TODO: ball neutral
-        
+
     def exitBall(self):
         self.setPlayRate(-1, 'toBall')
         self.play('toBall')
 
 
     def enterBackflip(self):
-        self.play('backflip')        
-        
+        self.play('backflip')
+
     def exitBackflip(self):
         self.stop('backflip')
 
@@ -506,7 +506,7 @@ class Pet(Avatar.Avatar):
                           Func(self.loop, 'beg')
                           )
         self.track.start()
-        
+
     def exitBeg(self):
         self.track.pause()
         self.play('fromBeg')
@@ -571,7 +571,7 @@ class Pet(Avatar.Avatar):
             Parallel(self.getTeleportInSoundInterval(),
                      Sequence(Func(self.showHole),
                               ActorInterval(self.teleportHole, 'hole', startFrame = 81,
-                                            endFrame = 71),                              
+                                            endFrame = 71),
                               ActorInterval(self, 'reappear'),
                               ActorInterval(self.teleportHole, 'hole', startFrame = 71,
                                             endFrame = 81),
@@ -605,10 +605,10 @@ class Pet(Avatar.Avatar):
                               Parallel(ActorInterval(self, 'dig'),
                                        Func(self.showHole),
                                        ActorInterval(self.teleportHole, 'hole', startFrame = 81,
-                                                     endFrame = 71)),                              
+                                                     endFrame = 71)),
                                ActorInterval(self, 'disappear'),
                                ActorInterval(self.teleportHole, 'hole', startFrame = 71,
-                                             endFrame = 81),                              
+                                             endFrame = 81),
                                Func(self.cleanupHole)
                                ),
                       Sequence(Wait(1.0),
@@ -621,7 +621,7 @@ class Pet(Avatar.Avatar):
     def enterTeleportOut(self, timestamp):
         self.track = self.getTeleportOutTrack()
         self.track.start(globalClockDelta.localElapsedTime(timestamp))
-        
+
     def exitTeleportOut(self):
         self.track.pause()
 
@@ -760,7 +760,7 @@ class Pet(Avatar.Avatar):
         if not self.forGui:
             self.rightHighlight.show()
             self.leftHighlight.show()
-            
+
     def eyesClose(self):
         self.eyes.setColor(self.color)
         self.eyes.setTexture(self.eyesClosedTexture, 1)
@@ -803,7 +803,7 @@ class Pet(Avatar.Avatar):
             for anim in anims:
                 animIval.append(ActorInterval(self, anim))
         return animIval
-        
+
 # test only
 def gridPets():
     pets = []
