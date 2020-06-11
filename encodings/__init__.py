@@ -115,14 +115,10 @@ def search_function(encoding):
     # Now ask the module for the registry entry
     entry = tuple(getregentry())
     if len(entry) != 4:
-        raise CodecRegistryError,\
-              'module "%s" (%s) failed to register' % \
-              (mod.__name__, mod.__file__)
+        raise CodecRegistryError('module "%s" (%s) failed to register' % mod.__name__, mod.__file__)
     for obj in entry:
         if not callable(obj):
-            raise CodecRegistryError,\
-                  'incompatible codecs in module "%s" (%s)' % \
-                  (mod.__name__, mod.__file__)
+            raise CodecRegistryError('incompatible codecs in module "%s" (%s)' % mod.__name__, mod.__file__)
 
     # Cache the codec registry entry
     _cache[encoding] = entry
