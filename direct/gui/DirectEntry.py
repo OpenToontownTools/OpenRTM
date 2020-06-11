@@ -210,7 +210,7 @@ class DirectEntry(DirectFrame):
         wordSoFar = ''
         # track whether the previous character was part of a word or not
         wasNonWordChar = True
-        for i in xrange(len(name)):
+        for i in range(len(name)):
             character = name[i]
             # test to see if we are between words
             # - Count characters that can't be capitalized as a break between words

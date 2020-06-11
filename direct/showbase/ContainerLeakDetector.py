@@ -291,7 +291,7 @@ class ObjectRef:
         indirections = self._indirections
         for indirection in indirections:
             indirection.acquire()
-        for i in xrange(len(indirections)):
+        for i in range(len(indirections)):
             yield None
             if i > 0:
                 prevIndirection = indirections[i-1]

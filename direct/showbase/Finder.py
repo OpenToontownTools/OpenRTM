@@ -33,7 +33,7 @@ def findClass(className):
 def rebindClass(filename):
     file = open(filename, 'r')
     lines = file.readlines()
-    for i in xrange(len(lines)):
+    for i in range(len(lines)):
         line = lines[i]
         if (line[0:6] == 'class '):
             # Chop off the "class " syntax and strip extra whitespace

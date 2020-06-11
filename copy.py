@@ -113,7 +113,7 @@ _copy_dispatch = d = {}
 def _copy_immutable(x):
     return x
 for t in (types.NoneType, int, long, float, bool, str, tuple,
-          frozenset, type, xrange, types.ClassType,
+          frozenset, type, range, types.ClassType,
           types.BuiltinFunctionType):
     d[t] = _copy_immutable
 for name in ("ComplexType", "UnicodeType", "CodeType"):

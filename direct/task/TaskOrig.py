@@ -1071,7 +1071,7 @@ class TaskManager:
     
 
     def _doProfiledFrames(self, numFrames):
-        for i in xrange(numFrames):
+        for i in range(numFrames):
             result = self.step()
         return result
 

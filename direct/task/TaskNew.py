@@ -565,7 +565,7 @@ class TaskManager:
         self._frameProfileQueue.push((num, session, callback))
 
     def _doProfiledFrames(self, numFrames):
-        for i in xrange(numFrames):
+        for i in range(numFrames):
             result = self.step()
         return result
 

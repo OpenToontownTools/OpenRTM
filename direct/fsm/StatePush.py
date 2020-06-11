@@ -198,7 +198,7 @@ class FunctionCall(ReceivesMultipleStateChanges, PushesStateChanges):
         # the value of arguments that push state
         self._bakedArgs = []
         self._bakedKargs = {}
-        for i in xrange(len(self._args)):
+        for i in range(len(self._args)):
             key = i
             arg = self._args[i]
             if isinstance(arg, PushesStateChanges):

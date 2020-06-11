@@ -39,9 +39,9 @@ class FrameProfiler:
             # make sure the period is evenly divisible into each element of the log schedule
             assert (t % self._period) == 0
         # make sure each element of the schedule is evenly divisible into each subsequent element
-        for i in xrange(len(self._logSchedule)):
+        for i in range(len(self._logSchedule)):
             e = self._logSchedule[i]
-            for j in xrange(i, len(self._logSchedule)):
+            for j in range(i, len(self._logSchedule)):
                 assert (self._logSchedule[j] % e) == 0
         assert isInteger(self._period)
         self._enableFC = FunctionCall(self._setEnabled, taskMgr.getProfileFramesSV())
@@ -149,7 +149,7 @@ class FrameProfiler:
 
         # log profiles when it's time, and aggregate them upwards into the
         # next-longer profile
-        for pi in xrange(len(self._logSchedule)):
+        for pi in range(len(self._logSchedule)):
             period = self._logSchedule[pi]
             if (self._timeElapsed % period) == 0:
                 if period in p2ap:

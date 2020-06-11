@@ -1434,10 +1434,10 @@ class Actor(DirectObject, NodePath):
                     char.node().update()
                     geomNodes = char.findAllMatches("**/+GeomNode")
                     numGeomNodes = geomNodes.getNumPaths()
-                    for nodeNum in xrange(numGeomNodes):
+                    for nodeNum in range(numGeomNodes):
                         thisGeomNode = geomNodes.getPath(nodeNum)
                         numGeoms = thisGeomNode.node().getNumGeoms()
-                        for geomNum in xrange(numGeoms):
+                        for geomNum in range(numGeoms):
                             thisGeom = thisGeomNode.node().getGeom(geomNum)
                             thisGeom.markBoundsStale()
                         thisGeomNode.node().markInternalBoundsStale()
@@ -1450,10 +1450,10 @@ class Actor(DirectObject, NodePath):
                     char.node().update()
                     geomNodes = char.findAllMatches("**/+GeomNode")
                     numGeomNodes = geomNodes.getNumPaths()
-                    for nodeNum in xrange(numGeomNodes):
+                    for nodeNum in range(numGeomNodes):
                         thisGeomNode = geomNodes.getPath(nodeNum)
                         numGeoms = thisGeomNode.node().getNumGeoms()
-                        for geomNum in xrange(numGeoms):
+                        for geomNum in range(numGeoms):
                             thisGeom = thisGeomNode.node().getGeom(geomNum)
                             thisGeom.markBoundsStale()
                         thisGeomNode.node().markInternalBoundsStale()            

@@ -82,7 +82,7 @@ class RandomNumGen:
 
     def shuffle(self, x):
         """randomly shuffles x in-place"""
-        for i in xrange(len(x)-1, 0, -1):
+        for i in range(len(x)-1, 0, -1):
             # pick an element in x[:i+1] with which to exchange x[i]
             j = int(self.__rand(i+1))
             x[i], x[j] = x[j], x[i]

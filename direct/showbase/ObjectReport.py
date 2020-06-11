@@ -183,7 +183,7 @@ class ObjectReport:
                     adjacents = newObjs
                     if len(adjacents) == 0:
                         print 'DEAD END'
-                for i in xrange(resumeIndex, len(adjacents)):
+                for i in range(resumeIndex, len(adjacents)):
                     adj = adjacents[i]
                     stateStack.push((obj, adjacents, i+1))
                     stateStack.push((adj, None, 0))

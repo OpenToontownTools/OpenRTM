@@ -123,7 +123,7 @@ class DistributedObject(DistributedObjectBase):
                         p = DCPacker()
                         p.setUnpackData(field.getDefaultValue())
                         len = p.rawUnpackUint16()/4
-                        for i in xrange(len):
+                        for i in range(len):
                             zone = int(p.rawUnpackUint32())
                             autoInterests.add(zone)
                     autoInterests.update(autoInterests)

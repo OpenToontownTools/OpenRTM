@@ -72,7 +72,7 @@ if not hasattr(__builtin__, 'enumerate'):
         implementation that returns a list of tuples that is completely
         constructed every time enumerate() is called.
         """
-        return zip(xrange(len(L)), L)
+        return zip(range(len(L)), L)
 
     __builtin__.enumerate = enumerate
 else:
@@ -836,7 +836,7 @@ def replace(list, old, new, all=0):
         return 1
     else:
         numReplaced = 0
-        for i in xrange(len(list)):
+        for i in range(len(list)):
             if list[i] == old:
                 numReplaced += 1
                 list[i] = new
@@ -2774,7 +2774,7 @@ def getNumberedTypedString(items, maxLen=5000, numPrefix=''):
     first = True
     s = ''
     snip = '<SNIP>'
-    for i in xrange(len(items)):
+    for i in range(len(items)):
         if not first:
             s += '\n'
         first = False
@@ -2805,7 +2805,7 @@ def getNumberedTypedSortedString(items, maxLen=5000, numPrefix=''):
     first = True
     s = ''
     strs.sort()
-    for i in xrange(len(strs)):
+    for i in range(len(strs)):
         if not first:
             s += '\n'
         first = False
@@ -2829,7 +2829,7 @@ def getNumberedTypedSortedStringWithReferrersGen(items, maxLen=10000, numPrefix=
     for item in items:
         strs.append(fastRepr(item))
     strs.sort()
-    for i in xrange(len(strs)):
+    for i in range(len(strs)):
         item = items[i]
         objStr = strs[i]
         objStr += ', \tREFERRERS=['
@@ -2860,7 +2860,7 @@ def printNumberedTyped(items, maxLen=5000):
         n /= 10
     digits = digits
     format = '%0' + '%s' % digits + 'i:%s \t%s'
-    for i in xrange(len(items)):
+    for i in range(len(items)):
         objStr = fastRepr(items[i])
         if len(objStr) > maxLen:
             snip = '<SNIP>'
@@ -2875,7 +2875,7 @@ def printNumberedTypesGen(items, maxLen=5000):
         n /= 10
     digits = digits
     format = '%0' + '%s' % digits + 'i:%s'
-    for i in xrange(len(items)):
+    for i in range(len(items)):
         print format % (i, itype(items[i]))
         yield None
 
@@ -3435,14 +3435,14 @@ def makeFlywheelGen(objects, countList=None, countFunc=None, scale=None):
             countList.append(countFunc(object))
     if scale is not None:
         # scale the counts if we've got a scale factor
-        for i in xrange(len(countList)):
+        for i in range(len(countList)):
             yield None
             if countList[i] > 0:
                 countList[i] = max(1, int(countList[i] * scale))
     # create a dict for the flywheel to use during its iteration to efficiently select
     # the objects for the sequence
     index2objectAndCount = {}
-    for i in xrange(len(countList)):
+    for i in range(len(countList)):
         yield None
         index2objectAndCount[i] = [objects[i], countList[i]]
     # create the flywheel generator
@@ -3733,7 +3733,7 @@ if __debug__:
     def testAlphabetCounter():
         tempList = []
         ac = AlphabetCounter()
-        for i in xrange(26*3):
+        for i in range(26*3):
             tempList.append(ac.next())
         assert tempList == [ 'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z',
                             'AA','AB','AC','AD','AE','AF','AG','AH','AI','AJ','AK','AL','AM','AN','AO','AP','AQ','AR','AS','AT','AU','AV','AW','AX','AY','AZ',
@@ -3744,7 +3744,7 @@ if __debug__:
         num += 26 # AAZ
         num += 1 # ABA
         num += 2 # ABC
-        for i in xrange(num):
+        for i in range(num):
             x = ac.next()
         assert x == 'ABC'
     testAlphabetCounter()

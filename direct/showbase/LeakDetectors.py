@@ -133,7 +133,7 @@ class CppMemoryUsage(LeakDetector):
 class TaskLeakDetectorBase:
     def _getTaskNamePattern(self, taskName):
         # get a generic string pattern from a task name by removing numeric characters
-        for i in xrange(10):
+        for i in range(10):
             taskName = taskName.replace('%s' % i, '')
         return taskName
     
@@ -189,7 +189,7 @@ class TaskLeakDetector(LeakDetector, TaskLeakDetectorBase):
 class MessageLeakDetectorBase:
     def _getMessageNamePattern(self, msgName):
         # get a generic string pattern from a message name by removing numeric characters
-        for i in xrange(10):
+        for i in range(10):
             msgName = msgName.replace('%s' % i, '')
         return msgName
 

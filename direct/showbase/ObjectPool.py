@@ -134,7 +134,7 @@ class ObjectPool:
             types = makeList(self._count2types[count])
             for typ in types:
                 print '\n\nTYPE: %s' % repr(typ)
-                for i in xrange(min(numEach,len(self._type2objs[typ]))):
+                for i in range(min(numEach,len(self._type2objs[typ]))):
                     obj = self._type2objs[typ][i]
                     print '\nOBJ: %s\n' % safeRepr(obj)
                     referrers = gc.get_referrers(obj)
