@@ -27,13 +27,13 @@ from toontown.battle.SuitBattleGlobals import SuitAttributes
 from toontown.makeatoon import NameGenerator
 from direct.tkwidgets import Valuator
 from direct.tkwidgets import Slider
-import ToonDNA
+from . import ToonDNA
 from direct.task.Task import Task
 from toontown.suit import SuitDNA
 from toontown.suit import Suit
 from otp.otpbase import OTPLocalizer
 from toontown.toonbase import TTLocalizer
-import __builtin__
+import builtins
 from toontown.hood import SkyUtil
 from direct.distributed.PyDatagram import PyDatagram
 from toontown.pets import PetDNA
@@ -41,7 +41,7 @@ import sys, os
 import string
 import Pmw
 
-from direct.leveleditor.LevelStyleManager import *
+from toontown.leveleditor.LevelStyleManager import *
 
 from toontown.effects import Fireworks, FireworkShows, FireworkGlobals
 from toontown.battle import BattleParticles
@@ -478,10 +478,10 @@ try:
 except NameError:
     print("Loading LevelEditor for hoods: ", hoods)
     # DNAStorage instance for storing level DNA info
-    # We need to use the __builtin__.foo syntax, not the
+    # We need to use the builtins.foo syntax, not the
     # __builtins__["foo"] syntax, since this file runs at the top
     # level.
-    __builtin__.DNASTORE = DNASTORE = DNAStorage()
+    builtins.DNASTORE = DNASTORE = DNAStorage()
     # Load the generic storage files
     loadDNAFile(DNASTORE, 'phase_4/dna/storage.dna', CSDefault, 1)
     loadDNAFile(DNASTORE, 'phase_5/dna/storage_town.dna', CSDefault, 1)
@@ -514,7 +514,7 @@ except NameError:
         loadDNAFile(DNASTORE, 'phase_8/dna/storage_DL_town.dna', CSDefault, 1)
     if 'PA' in hoods:
         loadDNAFile(DNASTORE, 'phase_13/dna/storage_party_sz.dna', CSDefault, 1)
-    __builtin__.dnaLoaded = 1
+    builtins.dnaLoaded = 1
 
 class RobotToonManager(DirectObject):
     def __init__(self, toonParent = None):
