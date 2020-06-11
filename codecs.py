@@ -7,15 +7,14 @@ Written by Marc-Andre Lemburg (mal@lemburg.com).
 
 """#"
 
-import __builtin__, sys
+import builtins, sys
 
 ### Registry and builtin stateless codec functions
 
 try:
     from _codecs import *
-except ImportError, why:
-    raise SystemError,\
-          'Failed to load the builtin codecs: %s' % why
+except ImportError as why:
+    raise SystemError('Failed to load the builtin codecs: %s' % why)
 
 __all__ = ["register", "lookup", "open", "EncodedFile", "BOM", "BOM_BE",
            "BOM_LE", "BOM32_BE", "BOM32_LE", "BOM64_BE", "BOM64_LE",
@@ -604,7 +603,7 @@ def open(filename, mode='rb', encoding=None, errors='strict', buffering=1):
        'b' not in mode:
         # Force opening of the file in binary mode
         mode = mode + 'b'
-    file = __builtin__.open(filename, mode, buffering)
+    file = builtins.open(filename, mode, buffering)
     if encoding is None:
         return file
     (e, d, sr, sw) = lookup(encoding)
