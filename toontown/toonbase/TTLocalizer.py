@@ -7,7 +7,7 @@ to use in the game.
 
 # Do not import panda modules because it is not downloaded until Phase 3
 # This file is in phase 2
-from pandac.libpandaexpressModules import *
+from panda3d.core import *
 import string
 import types
 
@@ -15,8 +15,8 @@ try:
     # Client
     # The Launcher will define config in the builtin namespace
     # before importing this file
-    language = getConfigExpress().GetString("language", "english")
-    checkLanguage = getConfigExpress().GetBool("check-language", 0)
+    language = base.config.GetString("language", "english")
+    checkLanguage = base.config.GetBool("check-language", 0)
     # if we are not running in English force the check
     if language != "english":
         checkLanguage = 1
@@ -33,7 +33,7 @@ def getLanguage():
     return language
 
 print ("TTLocalizer: Running in language: %s" % (language))
-_languageModule = "toontown.toonbase.TTLocalizer" + string.capitalize(language)
+_languageModule = "toontown.toonbase.TTLocalizer" + language.capitalize()
 exec("from " + _languageModule + " import *")
 
 if checkLanguage:

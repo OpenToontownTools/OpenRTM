@@ -66,7 +66,7 @@ def getSuitBodyType(name):
     elif (name in suitCTypes):
         return "c"
     else:
-        print "Unknown body type for suit name: ", name
+        print("Unknown body type for suit name: ", name)
 
 def getSuitDept(name):
     """getSuitDept(string):
@@ -82,7 +82,7 @@ def getSuitDept(name):
     elif (index < suitsPerDept*4):
         return suitDepts[3]
     else:
-        print "Unknown dept for suit name: ", name
+        print("Unknown dept for suit name: ", name)
         return None
 
 def getDeptFullname(dept):
@@ -132,10 +132,10 @@ class SuitDNA(AvatarDNA.AvatarDNA):
         dna.newSuit('ym')         # make 'Yes Man' dna
         dna.newSuitRandom(3)      # make a random level 3 suit
         dna.newSuitRandom(3, 'l') # make a random level 3 legal suit
-        
+
     """
     # special methods
-    
+
     def __init__(self, str=None, type=None, dna=None, r=None, b=None, g=None):
         """__init__(self, string=None, string=None, string()=None, float=None,
         float=None, float=None)
@@ -198,14 +198,14 @@ class SuitDNA(AvatarDNA.AvatarDNA):
             notify.error("unknown avatar type: ", self.type)
 
         return None
-    
+
     def __defaultGoon(self):
         """__defaultChar(self)
         Make a default character dna
         """
         self.type = 'g'
         self.name = goonTypes[0]
-        
+
     def __defaultSuit(self):
         """__defaultSuit(self)
         Make a default suit dna
@@ -238,14 +238,14 @@ class SuitDNA(AvatarDNA.AvatarDNA):
         is specified) and random dept (again, unless specified)
         """
         self.type = "s"
-        
+
         if (level==None):
             # pick a random level
             level = random.choice(range(1, len(suitsPerLevel)))
         else:
             # make sure supplied one is valid
             if (level < 0 or level > len(suitsPerLevel)):
-                notify.error("Invalid suit level: %d" % level)                
+                notify.error("Invalid suit level: %d" % level)
 
         if (dept == None):
             # pick a random dept
@@ -253,7 +253,7 @@ class SuitDNA(AvatarDNA.AvatarDNA):
         else:
             # make sure supplied one is valid
             assert dept in suitDepts
-                
+
         # calculate range to choose from based on the level and dept
         self.dept = dept
         index = suitDepts.index(dept)
@@ -264,8 +264,8 @@ class SuitDNA(AvatarDNA.AvatarDNA):
                 offset = offset + suitsPerLevel[i - 1]
         bottom = base + offset
         top = bottom + suitsPerLevel[level - 1]
-        self.name = suitHeadTypes[random.choice(range(bottom,top))] 
-        self.body = getSuitBodyType(self.name)        
+        self.name = suitHeadTypes[random.choice(range(bottom,top))]
+        self.body = getSuitBodyType(self.name)
 
     def newGoon(self, name = None):
         """newGoon(self, type)
@@ -280,7 +280,7 @@ class SuitDNA(AvatarDNA.AvatarDNA):
                 self.name = name
             else:
                 notify.error("unknown goon type: ", name)
-        
+
     def getType(self):
         """getType(self)
         Return which type of actor this dna represents.

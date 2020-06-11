@@ -2,12 +2,12 @@
 """Toon module: contains the Toon class"""
 
 from otp.avatar import Avatar
-import ToonDNA
+from . import ToonDNA
 from direct.task.Task import Task
 from toontown.suit import SuitDNA
 from direct.actor import Actor
 import string
-from ToonHead import *
+from .ToonHead import *
 from pandac.PandaModules import *
 from direct.interval.IntervalGlobal import *
 from direct.directnotify import DirectNotifyGlobal
@@ -48,7 +48,7 @@ sleeveTex.setMinfilter(Texture.FTLinearMipmapLinear)
 sleeveTex.setMagfilter(Texture.FTLinear)
 bottomTex = loader.loadTexture("/i/beta/toons/maya/work/characterClothing/textures/female_skirt2.rgb")
 bottomTex.setMinfilter(Texture.FTLinearMipmapLinear)
-bottomTex.setMagfilter(Texture.FTLinear)        
+bottomTex.setMagfilter(Texture.FTLinear)
 for lodName in t.getLODNames():
     thisPart = t.getPart("torso", lodName)
     top = thisPart.find("**/torso-top")
@@ -179,7 +179,7 @@ Phase3_5AnimList = (
 # minigame
 Phase4AnimList = (
     ("sit", "sit"),
-    ("sit-start", "intoSit"),    
+    ("sit-start", "intoSit"),
     ("swim", "swim"),
     ("tug-o-war", "tug-o-war"),
     ("sad-walk", "losewalk"),
@@ -209,7 +209,7 @@ Phase4AnimList = (
     ("reel-neutral", "reelneutral"),
     ("pole", "pole"),
     ("pole-neutral", "poleneutral"),
-    
+
     ("slip-forward", "slip-forward"),
     ("slip-backward", "slip-backward"),
     # anims for the catching game
@@ -218,7 +218,7 @@ Phase4AnimList = (
     ("catch-eatneutral", "eat_neutral"),
     ("catch-eatnrun", "eatnrun"),
     ("catch-intro-throw", "gameThrow"),
-    
+
     # anims for swing game
     ('swing', 'swing'),
     # pet cycles
@@ -259,7 +259,7 @@ Phase5_5AnimList = (
     ("phoneNeutral", "phoneNeutral"),
     ("phoneBack", "phoneBack"),
     ("bank", "jellybeanJar"),
-    ("callPet", "callPet"),        
+    ("callPet", "callPet"),
     ("feedPet", "feedPet"),
     ("start-dig", "into_dig"),
     ("loop-dig", "loop_dig"),
@@ -341,7 +341,7 @@ def loadModels():
             tex.setMinfilter(Texture.FTLinearMipmapLinear)
             tex.setMagfilter(Texture.FTLinear)
             Preloaded.append(tex)
-                    
+
         # Boys
         for shirt in ToonDNA.Shirts:
             loadTex(shirt)
@@ -392,7 +392,7 @@ def loadBasicAnims():
     Load the default Toon anims
     """
     loadPhaseAnims()
-    
+
 def unloadBasicAnims():
     """
     Unload the default Toon anims
@@ -416,7 +416,7 @@ def unloadMinigameAnims():
     Unload the minigame specific Toon anims
     """
     loadPhaseAnims("phase_4", 0)
-    
+
 def loadBattleAnims():
     """
     Load the battle specific Toon anims1
@@ -428,7 +428,7 @@ def unloadBattleAnims():
     Unload the battle specific Toon anims
     """
     loadPhaseAnims("phase_5", 0)
-    
+
 def loadSellbotHQAnims():
     """
     Load the sellbot hq specific Toon anims
@@ -440,7 +440,7 @@ def unloadSellbotHQAnims():
     Unload the sellbot hq specific Toon anims
     """
     loadPhaseAnims("phase_9", 0)
-    
+
 def loadCashbotHQAnims():
     """
     Load the cashbot hq specific Toon anims
@@ -463,7 +463,7 @@ def unloadBossbotHQAnims():
     """
     Unload the bossbot hq specific Toon anims
     """
-    loadPhaseAnims("phase_12", 0)        
+    loadPhaseAnims("phase_12", 0)
 
 def loadPhaseAnims(phaseStr="phase_3", loadFlag = 1):
     """loadPhaseAnims(string, int):
@@ -488,7 +488,7 @@ def loadPhaseAnims(phaseStr="phase_3", loadFlag = 1):
     elif (phaseStr == "phase_10"):
         animList = Phase10AnimList
     elif (phaseStr == "phase_12"):
-        animList = Phase12AnimList        
+        animList = Phase12AnimList
     else:
         # bad phase string
         self.notify.error("Unknown phase string %s" % phaseStr)
@@ -507,7 +507,7 @@ def loadPhaseAnims(phaseStr="phase_3", loadFlag = 1):
                 if LegsAnimDict[key].has_key(anim[0]):
                     if (base.localAvatar.style.legs == key):
                         base.localAvatar.unloadAnims([anim[0]], "legs", None)
-                
+
     for key in TorsoDict.keys():
         for anim in animList:
             #file = phaseStr + TorsoDict[key] + anim[1]
@@ -516,11 +516,11 @@ def loadPhaseAnims(phaseStr="phase_3", loadFlag = 1):
                 pass
             else:
                 #loader.unloadModel(file)
-                if TorsoAnimDict[key].has_key(anim[0]):                
-                    if (base.localAvatar.style.torso == key):                
+                if TorsoAnimDict[key].has_key(anim[0]):
+                    if (base.localAvatar.style.torso == key):
                         base.localAvatar.unloadAnims([anim[0]], "torso", None)
-                
-    for key in HeadDict.keys():            
+
+    for key in HeadDict.keys():
         # only load anims for dog heads
         if (string.find(key,"d") >= 0):
             for anim in animList:
@@ -530,7 +530,7 @@ def loadPhaseAnims(phaseStr="phase_3", loadFlag = 1):
                     pass
                 else:
                     #loader.unloadModel(file)
-                    if HeadAnimDict[key].has_key(anim[0]):                    
+                    if HeadAnimDict[key].has_key(anim[0]):
                         if (base.localAvatar.style.head == key):
                             base.localAvatar.unloadAnims([anim[0]], "head", None)
 
@@ -558,14 +558,14 @@ def compileGlobalAnimList():
                 file = phaseStr + TorsoDict[key] + anim[1]
                 TorsoAnimDict[key][anim[0]] = file
 
-        for key in HeadDict.keys():            
+        for key in HeadDict.keys():
             # only load anims for dog heads
             if (string.find(key,"d") >= 0):
                 HeadAnimDict.setdefault(key, {})
                 for anim in animList:
                     file = phaseStr + HeadDict[key] + anim[1]
                     HeadAnimDict[key][anim[0]] = file
-                    
+
 def loadDialog():
     """
     Load the dialogue audio samples
@@ -621,7 +621,7 @@ def loadDialog():
     # load the audio files and store into the dialogue array
     for file in rabbitDialogueFiles:
         RabbitDialogueArray.append(base.loadSfx(loadPath + file + ".mp3"))
-        
+
     # load the mouse dialogue
     # for now the mouse reuses the rabbit sounds
     mouseDialogueFiles = ( "AV_mouse_short",
@@ -709,7 +709,7 @@ def unloadDialog():
     MonkeyDialogueArray = []
     BearDialogueArray = []
     PigDialogueArray = []
-    
+
 
 class Toon(Avatar.Avatar, ToonHead):
     """Toon class:"""
@@ -717,7 +717,7 @@ class Toon(Avatar.Avatar, ToonHead):
     notify = DirectNotifyGlobal.directNotify.newCategory("Toon")
 
     afkTimeout = base.config.GetInt('afk-timeout', 600)
-    
+
     def __init__(self):
         try:
             self.Toon_initialized
@@ -770,11 +770,11 @@ class Toon(Avatar.Avatar, ToonHead):
         self.jar = None
 
         self.setTag('pieCode', str(ToontownGlobals.PieCodeToon))
-        
+
         # Define Toon's Font
         # fancy nametag point 1
         self.setFont(ToontownGlobals.getToonFont())
-        
+
         # chat balloon sound
         self.soundChatBubble = base.loadSfx("phase_3/audio/sfx/GUI_balloon_popup.mp3")
 
@@ -852,7 +852,7 @@ class Toon(Avatar.Avatar, ToonHead):
             self.wake.destroy()
             self.wake = None
         self.cleanupPieModel()
-        
+
     def delete(self):
         assert self.notify.debugStateCall(self, "animFsm")
         try:
@@ -929,7 +929,7 @@ class Toon(Avatar.Avatar, ToonHead):
             # make the drop shadow
             self.initializeDropShadow()
             self.initializeNametag3d()
-            
+
 
 
     def parentToonParts(self):
@@ -981,7 +981,7 @@ class Toon(Avatar.Avatar, ToonHead):
 
         # add the LODs
         self.addLOD(1000, levelOneIn, levelOneOut)
-        self.addLOD(500, levelTwoIn, levelTwoOut)        
+        self.addLOD(500, levelTwoIn, levelTwoOut)
         self.addLOD(250, levelThreeIn, levelThreeOut)
 
 
@@ -1029,7 +1029,7 @@ class Toon(Avatar.Avatar, ToonHead):
             if self.rightHand == None:
                 self.rightHand = rightHand
             if self.leftHand == None:
-                self.leftHand = leftHand                
+                self.leftHand = leftHand
         self.headParts = self.findAllMatches('**/__Actor_head')
         self.legsParts = self.findAllMatches('**/__Actor_legs')
         # Hips are under the legs
@@ -1039,10 +1039,10 @@ class Toon(Avatar.Avatar, ToonHead):
 
     def initializeBodyCollisions(self, collIdStr):
         Avatar.Avatar.initializeBodyCollisions(self, collIdStr)
-        
+
         if not self.ghostMode:
             self.collNode.setCollideMask(self.collNode.getIntoCollideMask() | ToontownGlobals.PieBitmask)
-        
+
     def getBookActors(self):
         """
         Return the book actors. If they have not been created,
@@ -1099,12 +1099,12 @@ class Toon(Avatar.Avatar, ToonHead):
         self.setAvatarScale(bodyScale)
         for lod in self.getLODNames():
             self.getPart('head', lod).setScale(headScale)
-            
+
     def getBodyScale(self):
         animalStyle = self.style.getAnimal()
         bodyScale = ToontownGlobals.toonBodyScales[animalStyle]
         return bodyScale
-        
+
 
     def resetHeight(self):
         """
@@ -1129,7 +1129,7 @@ class Toon(Avatar.Avatar, ToonHead):
             elif self.cheesyEffect == ToontownGlobals.CESmallToon:
                 height *= ToontownGlobals.SmallToonScale
             self.setHeight(height)
-        
+
     def generateToonLegs(self, copy = 1):
         """generateToonLegs(self, bool = 0)
         Load the leg models for the toon.
@@ -1150,8 +1150,8 @@ class Toon(Avatar.Avatar, ToonHead):
         # load the anims for this type of leg
         self.loadAnims(LegsAnimDict[legStyle], "legs", "1000")
         self.loadAnims(LegsAnimDict[legStyle], "legs", "500")
-        self.loadAnims(LegsAnimDict[legStyle], "legs", "250")        
-        
+        self.loadAnims(LegsAnimDict[legStyle], "legs", "250")
+
     def swapToonLegs(self, legStyle, copy = 1):
         """swapToonLegs(self, string, bool = 1)
         Switch out the current toon models for the given legStyle.
@@ -1179,7 +1179,7 @@ class Toon(Avatar.Avatar, ToonHead):
         del self.shadowJoint # This is a bit of a hack for Make a Toon.
         self.initializeDropShadow()
         self.initializeNametag3d()
-        
+
     def generateToonTorso(self, copy = 1, genClothes = 1):
         """generateToonTorso(string, bool = 1)
         Load the torso model for the toon.
@@ -1247,15 +1247,15 @@ class Toon(Avatar.Avatar, ToonHead):
             self.loadAnims(HeadAnimDict[self.style.head], "head", "500")
             self.loadAnims(HeadAnimDict[self.style.head], "head", "250")
 
-            
-        
+
+
 
     def swapToonHead(self, headStyle, copy = 1):
         """swapToonHead(self, string)
         Switch the current head model for the specified one.
         See ToonDNA for head style list
         """
-        self.stopLookAroundNow()        
+        self.stopLookAroundNow()
         # First, make sure our eyes are open.
         self.eyelids.request('open')
         # unparent all parts
@@ -1313,7 +1313,7 @@ class Toon(Avatar.Avatar, ToonHead):
         # color the front of the feet - may have multiple pieces
         #parts = self.findAllMatches("**/toBall*")
         #parts.setColor(dna.getLegColor())
-        
+
     def swapToonColor(self, dna):
         """
         Update the avatar's dna and adjust body colors accordingly
@@ -1344,7 +1344,7 @@ class Toon(Avatar.Avatar, ToonHead):
                 if (self.style.torso[1] == 's' and
                     bottomPair[1] == ToonDNA.SKIRT):
                     assert self.notify.debug("genToonClothes() - swapping torso from 's' to 'd', tex: %s" % bottomPair[0])
-                    self.swapToonTorso(self.style.torso[0] + 'd', 
+                    self.swapToonTorso(self.style.torso[0] + 'd',
                                                 genClothes = 0)
                     swappedTorso = 1
                 elif (self.style.torso[1] == 'd' and
@@ -1362,7 +1362,7 @@ class Toon(Avatar.Avatar, ToonHead):
                 texName = ToonDNA.Shirts[0]
             shirtTex = loader.loadTexture(texName)
             shirtTex.setMinfilter(Texture.FTLinearMipmapLinear)
-            shirtTex.setMagfilter(Texture.FTLinear)        
+            shirtTex.setMagfilter(Texture.FTLinear)
             try:
                 shirtColor = ToonDNA.ClothesColors[self.style.topTexColor]
             except:
@@ -1392,7 +1392,7 @@ class Toon(Avatar.Avatar, ToonHead):
                     texName = ToonDNA.GirlBottoms[0][0]
             bottomTex = loader.loadTexture(texName)
             bottomTex.setMinfilter(Texture.FTLinearMipmapLinear)
-            bottomTex.setMagfilter(Texture.FTLinear)        
+            bottomTex.setMagfilter(Texture.FTLinear)
             try:
                 bottomColor = ToonDNA.ClothesColors[self.style.botTexColor]
             except:
@@ -1452,7 +1452,7 @@ class Toon(Avatar.Avatar, ToonHead):
         Return the shadow joint
         """
         if hasattr(self, "shadowJoint"):
-            return self.shadowJoint        
+            return self.shadowJoint
         shadowJoint = NodePath("shadowJoint")
         for lodName in self.getLODNames():
             joint = self.getPart('legs', lodName).find('**/joint_shadow')
@@ -1471,7 +1471,7 @@ class Toon(Avatar.Avatar, ToonHead):
             if joint:
                 joints.append(joint)
         return joints
-        
+
     def getRightHands(self):
         """
         Return a list of right hands for each LOD (1000, 500, 250)
@@ -1482,7 +1482,7 @@ class Toon(Avatar.Avatar, ToonHead):
         """
         Return a list of left hands for each LOD (1000, 500, 250)
         """
-        return self.leftHands 
+        return self.leftHands
 
     def getHeadParts(self):
         return self.headParts
@@ -1555,7 +1555,7 @@ class Toon(Avatar.Avatar, ToonHead):
         torso = self.getPart('torso', '1000')
         if torso == None:
             return 0
-        
+
         self.pickTriggerNp.reparentTo(torso)
         size = self.style.getTorsoSize()
         if size == 'short':
@@ -1574,7 +1574,7 @@ class Toon(Avatar.Avatar, ToonHead):
     def hideBooks(self):
         for bookActor in self.getBookActors():
             bookActor.hide()
-    
+
     def getWake(self):
         """
         Returns the wake object associated with this Toon.  Creates it
@@ -1587,7 +1587,7 @@ class Toon(Avatar.Avatar, ToonHead):
     def getJar(self):
         """
         Returns the jar object associated with this toon.  Creates it
-        if it has not yet been created.        
+        if it has not yet been created.
         """
         if not self.jar:
             self.jar = loader.loadModel("phase_5.5/models/estate/jellybeanJar")
@@ -1606,7 +1606,7 @@ class Toon(Avatar.Avatar, ToonHead):
         if self.jar:
             self.jar.removeNode()
             self.jar = None
-            
+
 
     def setSpeed(self, forwardSpeed, rotateSpeed):
         """setSpeed(self, float forwardSpeed, float rotateSpeed)
@@ -1623,7 +1623,7 @@ class Toon(Avatar.Avatar, ToonHead):
         self.rotateSpeed = rotateSpeed
 
         action = None
-        
+
         if self.standWalkRunReverse != None:
             # If we have a list of anims to play for stand, walk, and
             # run, then choose the appropriate one and play it.
@@ -1691,7 +1691,7 @@ class Toon(Avatar.Avatar, ToonHead):
                     self.getWake().createRipple(
                         wakeWaterHeight, rate = 1, startFrame = 4)
                     self.lastWakeTime = currT
-        
+
         return action
 
     def enterOff(self, animMultiplier=1, ts=0, callback=None, extraArgs=[]):
@@ -1824,15 +1824,15 @@ class Toon(Avatar.Avatar, ToonHead):
         if self.playingAnim == 'neutral':
             return self.getDuration('jump', 'legs')
         else:
-            return self.getDuration('running-jump', 'legs') 
-        
+            return self.getDuration('running-jump', 'legs')
+
     def enterJump(self, animMultiplier=1, ts=0, callback=None, extraArgs=[]):
         """
         This jump is the old-style emote jump.  It does't actually get the
         avatar's collision sphere airborne.  It is used for the the mini-
         game victory, for example.
         """
-        # don't jump if the toon is disguised a a suit 
+        # don't jump if the toon is disguised a a suit
         if not self.isDisguised:
             if self.playingAnim == 'neutral':
                 # ...stopped
@@ -1848,7 +1848,7 @@ class Toon(Avatar.Avatar, ToonHead):
     def exitJump(self):
         self.stop()
         self.playingAnim = "neutral"
-        
+
     def enterJumpSquat(self, animMultiplier=1, ts=0, callback=None, extraArgs=[]):
         # don't jump if the toon is disguised a a suit
         if not self.isDisguised:
@@ -1867,9 +1867,9 @@ class Toon(Avatar.Avatar, ToonHead):
     def exitJumpSquat(self):
         self.stop()
         self.playingAnim = "neutral"
-        
+
     def enterJumpAirborne(self, animMultiplier=1, ts=0, callback=None, extraArgs=[]):
-        # don't jump if the toon is disguised a a suit 
+        # don't jump if the toon is disguised a a suit
         if not self.isDisguised:
             if self.playingAnim == 'neutral':
                 # ...stopped
@@ -1886,7 +1886,7 @@ class Toon(Avatar.Avatar, ToonHead):
     def exitJumpAirborne(self):
         self.stop()
         self.playingAnim = "neutral"
-        
+
     def enterJumpLand(self, animMultiplier=1, ts=0, callback=None, extraArgs=[]):
         # don't jump if the toon is disguised as a suit
         if not self.isDisguised:
@@ -1933,7 +1933,7 @@ class Toon(Avatar.Avatar, ToonHead):
         # Bobbing task
         self.startBobSwimTask()
         self.setActiveShadow(0)
-    
+
     def enterCringe(self,animMultiplier=1, ts=0, callback=None, extraArgs=[]):
         #print "cringing"
         self.loop("cringe")
@@ -1942,7 +1942,7 @@ class Toon(Avatar.Avatar, ToonHead):
         #self.setActiveShadow(0)
         #self.dropShadow.hide()
         #self.nametag3d.setPos(0,-2,1)
-        
+
     def exitCringe(self,animMultiplier=1, ts=0, callback=None, extraArgs=[]):
         #self.loop("cringe")
         #print "end cringe"
@@ -1953,7 +1953,7 @@ class Toon(Avatar.Avatar, ToonHead):
         #self.setActiveShadow(0)
         #self.dropShadow.hide()
         #self.nametag3d.setPos(0,-2,1)
-        
+
     def enterDive(self,animMultiplier=1, ts=0, callback=None, extraArgs=[]):
         #print "swimming"
         self.loop("swim")
@@ -1964,7 +1964,7 @@ class Toon(Avatar.Avatar, ToonHead):
         self.setActiveShadow(0)
         self.dropShadow.hide()
         self.nametag3d.setPos(0,-2,1)
-        
+
     def exitDive(self):
         #print "end swim"
         self.stop()
@@ -1977,7 +1977,7 @@ class Toon(Avatar.Avatar, ToonHead):
         self.getGeomNode().setPos(0,0,-2)
         self.nametag3d.setPos(0,-2,1)
         self.pose('swim', 55)
-        
+
     def exitSwimHold(self):
         self.stop()
         self.getGeomNode().setPos(0,0,0)
@@ -1985,7 +1985,7 @@ class Toon(Avatar.Avatar, ToonHead):
         self.dropShadow.show()
         self.nametag3d.setPos(0, 0, self.height + 0.5)
         #self.playingAnim="neutral"
-        
+
     def exitSwim(self):
         self.stop()
         self.playingAnim = "neutral"
@@ -2024,11 +2024,11 @@ class Toon(Avatar.Avatar, ToonHead):
         self.lerpLookAt(Point3(0, 1, -2))
         bookTracks = Parallel()
         for bookActor in self.getBookActors():
-            bookTracks.append(ActorInterval(bookActor, 'book', 
+            bookTracks.append(ActorInterval(bookActor, 'book',
                                             startTime=1.2, endTime=1.5))
         bookTracks.append(ActorInterval(self, 'book', startTime=1.2,
                           endTime=1.5))
-            
+
         if hasattr(self, "uniqueName"):
             trackName = self.uniqueName("openBook")
         else:
@@ -2081,7 +2081,7 @@ class Toon(Avatar.Avatar, ToonHead):
         self.playingAnim = 'closeBook'
         bookTracks = Parallel()
         for bookActor in self.getBookActors():
-            bookTracks.append(ActorInterval(bookActor, 'book', 
+            bookTracks.append(ActorInterval(bookActor, 'book',
                                             startTime=4.96, endTime=6.5))
         bookTracks.append(ActorInterval(self, 'book', startTime=4.96,
                           endTime=6.5))
@@ -2189,7 +2189,7 @@ class Toon(Avatar.Avatar, ToonHead):
             autoFinishTrack = 0
         else:
             autoFinishTrack = 1
-            
+
         self.track = self.getTeleportOutTrack(autoFinishTrack)
 
         # It seems like we do not need these and they are causing leaks
@@ -2311,10 +2311,10 @@ class Toon(Avatar.Avatar, ToonHead):
             if callback:
                 callback(*extraArgs)
             return
-        
+
         if self.isDisguised:
             self.takeOffSuit()
-            
+
         self.playingAnim = "lose"
         Emote.globalEmote.disableAll(self, "enterDied")
 
@@ -2382,7 +2382,7 @@ class Toon(Avatar.Avatar, ToonHead):
                                        endTime=3.4))
         def restoreHole(hole):
             hole.setPos(0, 0, 0)
-            hole.detachNode()    
+            hole.detachNode()
             hole.clearBin()
             hole.clearDepthTest()
             hole.clearDepthWrite()
@@ -2408,7 +2408,7 @@ class Toon(Avatar.Avatar, ToonHead):
 
         # try to fix invisible toons in minigolf zone
         self.show()
-        
+
         self.playingAnim = "teleport"
         Emote.globalEmote.disableAll(self, "enterTeleportIn")
 
@@ -2456,7 +2456,7 @@ class Toon(Avatar.Avatar, ToonHead):
         else:
             self.track = Sequence(
                 ActorInterval(self, 'sit-start'),
-                )            
+                )
         self.track.start(ts)
         self.setActiveShadow(0)
 
@@ -2508,7 +2508,7 @@ class Toon(Avatar.Avatar, ToonHead):
     def __handleAfkExitTeleport(self, requestStatus):
         self.notify.info('closing shard...')
         base.cr.gameFSM.request('closeShard', ['afkTimeout'])
-        
+
 
 
     def exitSleep(self):
@@ -2529,7 +2529,7 @@ class Toon(Avatar.Avatar, ToonHead):
             )
         self.track.loop()
         self.setActiveShadow(1)
-        
+
     def exitPush(self):
         self.playingAnim = 'neutral'
         if (self.track != None):
@@ -2546,7 +2546,7 @@ class Toon(Avatar.Avatar, ToonHead):
 
         self.playingAnim = None
         self.playingRate = None
-        
+
         self.standWalkRunReverse = (
             ("neutral", 1.0),
             ("walk", 1.0),
@@ -2554,8 +2554,8 @@ class Toon(Avatar.Avatar, ToonHead):
             ("walk", -1.0)
             )
         self.setSpeed(self.forwardSpeed, self.rotateSpeed)
-        
-        # Wake the toon up 
+
+        # Wake the toon up
         if (self.isLocal() and emoteIndex != Emote.globalEmote.EmoteSleepIndex):
             if self.sleepFlag:
                 # If we were in sleep mode, switch to happy mode
@@ -2567,7 +2567,7 @@ class Toon(Avatar.Avatar, ToonHead):
         # Play the emote
         duration = 0
         self.emoteTrack, duration = Emote.globalEmote.doEmote(self, emoteIndex, ts)
-        
+
         self.setActiveShadow(1)
 
     def doEmote(self, emoteIndex, animMultiplier=1, ts=0, callback=None, extraArgs=[]):
@@ -2575,7 +2575,7 @@ class Toon(Avatar.Avatar, ToonHead):
         if not self.isLocal():
             if base.cr.avatarFriendsManager.checkIgnored(self.doId):
                 return
-            
+
         # Play the emote
         duration = 0
         if self.isLocal():
@@ -2594,7 +2594,7 @@ class Toon(Avatar.Avatar, ToonHead):
             else:
                 self.loop('sad-neutral')
         return Task.done
-    
+
     def __finishEmote(self, task):
         if self.isLocal():
             if self.hp > 0:
@@ -2602,7 +2602,7 @@ class Toon(Avatar.Avatar, ToonHead):
             else:
                 self.b_setAnimState('Sad')
         return Task.done
-    
+
     def exitEmote(self):
         #self.standWalkRunReverse = None
         #self.motion.exit()
@@ -2633,7 +2633,7 @@ class Toon(Avatar.Avatar, ToonHead):
             )
         self.track.start(ts)
         self.setActiveShadow(1)
-        
+
     def exitSquish(self):
         self.playingAnim = 'neutral'
         if (self.track != None):
@@ -2651,7 +2651,7 @@ class Toon(Avatar.Avatar, ToonHead):
             self.track.setDoneEvent(self.track.getName())
             self.acceptOnce(self.track.getName(), callback, extraArgs)
         self.track.start(ts)
-        
+
     def exitFallDown(self):
         self.playingAnim = 'neutral'
         if (self.track != None):
@@ -2660,13 +2660,13 @@ class Toon(Avatar.Avatar, ToonHead):
             DelayDelete.cleanupDelayDeletes(self.track)
             self.track = None
         Emote.globalEmote.releaseAll(self)
-        
+
     def stunToon(self, ts=0, callback=None, knockdown=0):
         if not self.isStunned:
             if self.stunTrack:
                 self.stunTrack.finish()
                 self.stunTrack = None
-            
+
             def setStunned(stunned):
                 self.isStunned = stunned
                 if self == base.localAvatar:
@@ -2675,7 +2675,7 @@ class Toon(Avatar.Avatar, ToonHead):
             # setup a track that lerps the transparency of the toon
             # up and down to make him appear to flash.  like he's hurt see.
             node = self.getGeomNode()
-            
+
             lerpTime = .5
             down = self.doToonColorScale(VBase4(1, 1, 1, 0.6), lerpTime)
             up = self.doToonColorScale(VBase4(1, 1, 1, 0.9), lerpTime)
@@ -2693,12 +2693,12 @@ class Toon(Avatar.Avatar, ToonHead):
                                           )
             else:
                 self.stunTrack = track
-                             
+
             self.stunTrack.start()
 
     def getPieces(self, *pieces):
         """getPieces(self, tuple pieces)
-        
+
         The arguments to this function are of the form:
         ((partName, (pieceName, pieceName, ..., pieceName)),
          (partName, (pieceName, pieceName, ..., pieceName)),
@@ -2722,7 +2722,7 @@ class Toon(Avatar.Avatar, ToonHead):
                         for i in range (npc.getNumPaths()):
                             results.append(npc[i])
         return results
-          
+
 
     ### Cheesy rendering effects.  This is an experiment in
     ### novelty--can we give cheesy rendering effects as rewards for
@@ -2801,7 +2801,7 @@ class Toon(Avatar.Avatar, ToonHead):
 
         node = self.getGeomNode()
         caps = self.getPieces(('torso', ('torso-bot-cap')))
-        
+
         track = Sequence()
         track.append(Func(node.setTransparency, 1))
         if scale[3] != 1:
@@ -2837,13 +2837,13 @@ class Toon(Avatar.Avatar, ToonHead):
 
         track = Sequence()
         if toPumpkin:
-            track.append(Func(self.stopBlink))            
+            track.append(Func(self.stopBlink))
             track.append(Func(self.closeEyes))
             if(lerpTime > 0.0): # this is to keep the dust cloud from occuring with every generate
                 track.append(Func(dust.start))
                 track.append(Wait(0.5))
             track.append(Func(self.enablePumpkins,True))
-            
+
             for hi in range(self.headParts.getNumPaths()):
                 head = self.headParts[hi]
                 parts = head.getChildren()
@@ -2864,42 +2864,42 @@ class Toon(Avatar.Avatar, ToonHead):
 
             track.append(Func(self.enablePumpkins,False))
             track.append(Func(self.startBlink))
-            
+
         return track
 
     def __doBigAndWhite(self, color, scale, lerpTime):
         # call the two existing functions and combine the tracks
         track = Parallel()
-        track.append(self.__doToonColor(color, lerpTime)) 
+        track.append(self.__doToonColor(color, lerpTime))
         track.append(self.__doToonScale(scale, lerpTime))
         return track
-        
+
     def __doVirtual(self):
         # call the two existing functions and combine the tracks
         track = Parallel()
         track.append(self.__doToonColor(VBase4(0.25, 0.25, 1.0, 1), 0.0))
         self.setPartsAdd(self.getHeadParts())
-        self.setPartsAdd(self.getTorsoParts()) 
-        self.setPartsAdd(self.getHipsParts()) 
+        self.setPartsAdd(self.getTorsoParts())
+        self.setPartsAdd(self.getHipsParts())
         self.setPartsAdd(self.getLegsParts())
         #self.setAttrib(ColorBlendAttrib.make(ColorBlendAttrib.MAdd))
         #self.setDepthWrite(False)
         #self.setBin('fixed', 1)
         return track
-        
+
     def __doUnVirtual(self):
         # call the two existing functions and combine the tracks
         track = Parallel()
         track.append(self.__doToonColor(None, 0.0))
         self.setPartsNormal(self.getHeadParts(), 1)
-        self.setPartsNormal(self.getTorsoParts(), 1) 
-        self.setPartsNormal(self.getHipsParts(), 1) 
+        self.setPartsNormal(self.getTorsoParts(), 1)
+        self.setPartsNormal(self.getHipsParts(), 1)
         self.setPartsNormal(self.getLegsParts(), 1)
         #self.setAttrib(ColorBlendAttrib.make(ColorBlendAttrib.MNone))
         #self.setDepthWrite(True)
         #self.setBin('default', 0)
         return track
-        
+
     def setPartsAdd(self, parts):
         #actorNode = self.find("**/__Actor_modelRoot")
         actorCollection = parts #self.getHeadParts() #actorNode.findAllMatches("*")
@@ -2909,8 +2909,8 @@ class Toon(Avatar.Avatar, ToonHead):
                 thing.setAttrib(ColorBlendAttrib.make(ColorBlendAttrib.MAdd))
                 thing.setDepthWrite(False)
                 self.setBin('fixed', 1)
-                
-    
+
+
     def setPartsNormal(self, parts, alpha = 0):
         #actorNode = self.find("**/__Actor_modelRoot")
         actorCollection = parts
@@ -2921,9 +2921,9 @@ class Toon(Avatar.Avatar, ToonHead):
                 thing.setDepthWrite(True)
                 self.setBin('default', 0)
                 if alpha:
-                    thing.setTransparency(1) 
+                    thing.setTransparency(1)
                     thing.setBin('transparent', 0)
-    
+
     def __doToonGhostColorScale(self, scale, lerpTime, keepDefault = 0):
 
         # This is similar to doToonColorScale, above, except it has
@@ -2945,7 +2945,7 @@ class Toon(Avatar.Avatar, ToonHead):
 
         node = self.getGeomNode()
         caps = self.getPieces(('torso', ('torso-bot-cap')))
-        
+
         track = Sequence()
         track.append(Func(node.setTransparency, 1))
         track.append(ShowInterval(node))
@@ -2960,9 +2960,9 @@ class Toon(Avatar.Avatar, ToonHead):
         elif scale[3] == 0:
             track.append(Func(node.clearTransparency))
             track.append(HideInterval(node))
-            
+
         return track
-        
+
     def restoreDefaultColorScale(self):
         # Restore the currently active color scale (e.g. after
         # temporarily changing it with a resistance chat or ouch
@@ -3013,7 +3013,7 @@ class Toon(Avatar.Avatar, ToonHead):
                 continue
             p1.append(LerpColorScaleInterval(piece, lerpTime, scale, blendType = 'easeInOut'))
         track.append(p1)
-            
+
         if scale[3] == 1:
             track.append(Func(node.clearTransparency))
         elif scale[3] == 0:
@@ -3144,13 +3144,13 @@ class Toon(Avatar.Avatar, ToonHead):
 
         # turn off emotions
         Emote.globalEmote.disableAll(self)
-        
+
         # hide the toon geometry
         toonGeom = self.getGeomNode()
         toonGeom.hide()
 
         # preserve scale on the head
-        worldScale = toonHead.getScale(render)        
+        worldScale = toonHead.getScale(render)
         self.headOrigScale = toonHead.getScale()
         # we need to add an intermediate node to the head to make the offset work with scale
         headPosNode = hidden.attachNewNode("headPos")
@@ -3199,11 +3199,11 @@ class Toon(Avatar.Avatar, ToonHead):
 
         # make sure we start in neutral
         self.suit.loop("neutral")
-        
-        
+
+
         # set the flag
         self.isDisguised = 1
-        
+
         # make our chat and name display the suit font
         self.setFont(ToontownGlobals.getSuitFont())
         if setDisplayName:
@@ -3216,8 +3216,8 @@ class Toon(Avatar.Avatar, ToonHead):
                 "name": self.getName(),
                 "dept": suitName,
                 "level": self.cogLevels[suitDept] + 1})
-            self.nametag.setNameWordwrap(9.0) 
-        
+            self.nametag.setNameWordwrap(9.0)
+
 
 
     def takeOffSuit(self):
@@ -3231,7 +3231,7 @@ class Toon(Avatar.Avatar, ToonHead):
         toonHeadNull = self.find("**/1000/**/joint_head")
         toonHead = self.getHeadParts()[2]
         toonHead.reparentTo(toonHeadNull)
-        
+
         # reset the scale and position on the toon head
         toonHead.setScale(self.headOrigScale)
         toonHead.setPos(0,0,0)
@@ -3239,7 +3239,7 @@ class Toon(Avatar.Avatar, ToonHead):
         # clean up the intermedita node
         headPosNode = self.suitGeom.find("**/headPos")
         headPosNode.removeNode()
-        
+
         # hide the suit body
         self.suitGeom.reparentTo(self.suit)
         self.resetHeight()
@@ -3251,10 +3251,10 @@ class Toon(Avatar.Avatar, ToonHead):
 
         # turn emotes back on
         Emote.globalEmote.releaseAll(self)
-        
+
         # set the flag
         self.isDisguised = 0
-        
+
         # turn our font back to the toon font
         self.setFont(ToontownGlobals.getToonFont())
         self.nametag.setNameWordwrap(-1)
@@ -3277,14 +3277,14 @@ class Toon(Avatar.Avatar, ToonHead):
 
             del(self.oldForward)
             del(self.oldReverse)
-            del(self.oldRotate)        
+            del(self.oldRotate)
 
             # turn jump ability back on
             self.controlManager.enableAvatarJump()
 
             # remove the cog chat phrases
             self.chatMgr.chatInputSpeedChat.removeCogMenu()
-            
+
 
         # clean up these temp var's
         self.suit.delete()
@@ -3302,7 +3302,7 @@ class Toon(Avatar.Avatar, ToonHead):
         # also saved in self.pieModel.
         from toontown.toonbase import ToontownBattleGlobals
         from toontown.battle import BattleProps
-        
+
         if self.pieModel != None and self.__pieModelType != self.pieType:
             # Throw away the old pie; we need to get a new pie type.
             self.pieModel.detachNode()
@@ -3354,7 +3354,7 @@ class Toon(Avatar.Avatar, ToonHead):
         # model that flies.  This is used in the final BossBattle
         # sequence of CogHQ when we all throw pies directly at the
         # boss cog.
-        
+
         from toontown.toonbase import ToontownBattleGlobals
         from toontown.battle import BattleProps
 
@@ -3453,7 +3453,7 @@ class Toon(Avatar.Avatar, ToonHead):
         return Sequence( ActorInterval(self, "feedPet"),
                          Func(self.animFSM.request, "neutral"))
         #return ActorInterval(self, "feedPet")
-    
+
     def getScratchPetIval(self):
         return Sequence( ActorInterval(self, "pet-start"),
                          ActorInterval(self, "pet-loop"),
@@ -3473,13 +3473,13 @@ class Toon(Avatar.Avatar, ToonHead):
         self.loop("rotateL-putt")
 
     def exitGolfRotateLeft(self):
-        self.stop()        
+        self.stop()
 
     def enterGolfRotateRight(self, animMultiplier=1, ts=0, callback=None, extraArgs=[]):
         self.loop("rotateR-putt")
 
     def exitGolfRotateRight(self):
-        self.stop()        
+        self.stop()
 
     def enterGolfPuttSwing(self, animMultiplier=1, ts=0, callback=None, extraArgs=[]):
         self.loop("swing-putt")
@@ -3491,13 +3491,13 @@ class Toon(Avatar.Avatar, ToonHead):
         self.loop("good-putt", restart=0)
 
     def exitGolfGoodPutt(self):
-        self.stop()        
+        self.stop()
 
     def enterGolfBadPutt(self, animMultiplier=1, ts=0, callback=None, extraArgs=[]):
         self.loop("badloop-putt", restart=0)
 
     def exitGolfBadPutt(self):
-        self.stop()        
+        self.stop()
 
     def enterFlattened(self, animMultiplier=1, ts=0, callback=None, extraArgs=[]):
         Emote.globalEmote.disableAll(self)
@@ -3511,7 +3511,7 @@ class Toon(Avatar.Avatar, ToonHead):
             )
         self.track.start(ts)
         self.setActiveShadow(1)
-        
+
     def exitFlattened(self):
         self.playingAnim = 'neutral'
         if (self.track != None):
@@ -3541,8 +3541,7 @@ class Toon(Avatar.Avatar, ToonHead):
         self.stop()
         self.motion.exit()
 
-            
+
 # module calls
 loadModels()
 compileGlobalAnimList()
-

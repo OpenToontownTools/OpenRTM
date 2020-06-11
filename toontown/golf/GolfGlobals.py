@@ -62,7 +62,7 @@ CourseInfo = {
     1: { 'name' : '', #TTLocalizer.GolfCourseNames[1],
          'numHoles' : 6,
          'holeIds' : ( (0,5), (1,5),
-                      2, 3, 4, 5, 6, 7, 8, 9, 10, (11,5), 12, 13, (14,5), 15,  16, 
+                      2, 3, 4, 5, 6, 7, 8, 9, 10, (11,5), 12, 13, (14,5), 15,  16,
                       (17,5), (20,5), (21,5), (22,5), (23,5), (24,5), (25,5), (26,5),
                       (28,5), (30,5), (31,5),(33,5), (34,5),
                       ),
@@ -77,7 +77,7 @@ CourseInfo = {
          # don't delete to quickly test all the holes
          # 'holeIds' : (0,1,2,3,4,5,6,7,8),
          # 'holeIds' : (9,10,11,12,13,14,15,16,17),
-       },    
+       },
 }
 
 # This describes each hole
@@ -91,7 +91,7 @@ CourseInfo = {
 # optionalMovers = which optionalMovers to enable, 1 based
 # add 18 to the holeId and you get the more difficult version of that hole
 HoleInfo = {
-    0: { 'name' : '', 
+    0: { 'name' : '',
          'par' : 3,
          'maxSwing' : 6,
          'terrainModel' : 'phase_6/models/golf/hole18.bam',
@@ -99,27 +99,27 @@ HoleInfo = {
          'blockers' : (),
          'optionalMovers' : ()
          },
-    1: { 'name' : '', 
+    1: { 'name' : '',
          'par' : 3,
          'maxSwing' : 6,
          'terrainModel' : 'phase_6/models/golf/hole1.bam',
          'physicsData' : 'golfGreen1',
          'blockers' : (),
          },
-    2: { 'name' : '', 
+    2: { 'name' : '',
          'par' : 3,
          'maxSwing' : 6,
          'terrainModel' : 'phase_6/models/golf/hole2.bam',
          'physicsData' : 'golfGreen2',
          'blockers' : (),
          },
-    3: { 'name' : '', 
+    3: { 'name' : '',
          'par' : 2,
          'maxSwing' : 6,
          'terrainModel' : 'phase_6/models/golf/hole3.bam',
          'physicsData' : 'golfGreen3',
          'blockers' : (),
-         },    
+         },
     4: { 'name' : '',
          'par' : 3,
          'maxSwing' : 6,
@@ -131,101 +131,101 @@ HoleInfo = {
          'par' : 3,
          'maxSwing' : 6,
          'terrainModel' :  'phase_6/models/golf/hole5.bam',
-         'physicsData' : 'golfGreen2',           
+         'physicsData' : 'golfGreen2',
          'blockers' : (),
          },
     6: { 'name' : '',
          'par' : 3,
          'maxSwing' : 6,
          'terrainModel' :'phase_6/models/golf/hole6.bam',
-         'physicsData' : 'golfGreen6',           
+         'physicsData' : 'golfGreen6',
          'blockers' : (),
          },
-     7: { 'name' : '', 
+     7: { 'name' : '',
          'par' : 3,
          'maxSwing' : 6,
          'terrainModel' : 'phase_6/models/golf/hole7.bam',
-         'physicsData' : 'golfGreen7',           
+         'physicsData' : 'golfGreen7',
          'blockers' : (),
          },
     8: { 'name' : '',
          'par' : 3,
          'maxSwing' : 6,
          'terrainModel' : 'phase_6/models/golf/hole8.bam',
-         'physicsData' : 'golfGreen8',           
+         'physicsData' : 'golfGreen8',
          'blockers' : (),
          },
     9: { 'name' : '',
          'par' : 3,
          'maxSwing' : 6,
          'terrainModel' :  'phase_6/models/golf/hole9.bam',
-         'physicsData' : 'golfGreen9',           
+         'physicsData' : 'golfGreen9',
          'blockers' : (2),
          },
     10: { 'name' : '',
          'par' : 3,
          'maxSwing' : 6,
          'terrainModel' :  'phase_6/models/golf/hole10.bam',
-         'physicsData' : 'golfGreen10',           
+         'physicsData' : 'golfGreen10',
          'blockers' : (),
          },
     11: { 'name' : '',
          'par' : 3,
          'maxSwing' : 6,
          'terrainModel' : 'phase_6/models/golf/hole11.bam',
-         'physicsData' : 'golfGreen11',           
+         'physicsData' : 'golfGreen11',
          'blockers' : (),
          },
     12: { 'name' : '',
          'par' : 3,
          'maxSwing' : 6,
          'terrainModel' : 'phase_6/models/golf/hole12.bam',
-         'physicsData' : 'golfGreen12',           
+         'physicsData' : 'golfGreen12',
          'blockers' : (),
          },
     13: { 'name' : '',
          'par' : 3,
          'maxSwing' : 6,
          'terrainModel' : 'phase_6/models/golf/hole13.bam',
-         'physicsData' : 'golfGreen13',           
+         'physicsData' : 'golfGreen13',
          'blockers' : (),
          },
     14: { 'name' : '', # this has a windmill
          'par' : 3,
          'maxSwing' : 6,
          'terrainModel' : 'phase_6/models/golf/hole14.bam',
-         'physicsData' : 'golfGreen14',           
+         'physicsData' : 'golfGreen14',
          'blockers' : (),
          },
     15: { 'name' : '',
          'par' : 3,
          'maxSwing' : 6,
          'terrainModel' : 'phase_6/models/golf/hole15.bam',
-         'physicsData' : 'golfGreen15',             
+         'physicsData' : 'golfGreen15',
          'blockers' : (),
          },
     16: { 'name' : '',
          'par' : 3,
          'maxSwing' : 6,
          'terrainModel' : 'phase_6/models/golf/hole16.bam',
-         'physicsData' : 'golfGreen16',           
+         'physicsData' : 'golfGreen16',
          'blockers' : (),
          },
     17: { 'name' : '',
          'par' : 3,
          'maxSwing' : 6,
          'terrainModel' : 'phase_6/models/golf/hole17.bam',
-         'physicsData' : 'golfGreen17',               
+         'physicsData' : 'golfGreen17',
          'blockers' : (),
          },
-    18: { 'name' : '', 
+    18: { 'name' : '',
          'par' : 3,
          'maxSwing' : 6,
          'terrainModel' : 'phase_6/models/golf/hole18.bam',
          'physicsData' : 'golfGreen18',
          'blockers' : (1,2),
          'optionalMovers' : (1)
-         },    
+         },
     19: { 'name' : '',
          'par' : 3,
          'maxSwing' : 6,
@@ -339,7 +339,7 @@ HoleInfo = {
          'terrainModel' : 'phase_6/models/golf/hole15.bam',
          'physicsData' : 'golfGreen15',
          'blockers' : (1,2,3),
-         'optionalMovers' : (1,2),          
+         'optionalMovers' : (1,2),
          },
     34: { 'name' : '',
          'par' : 3,
@@ -347,7 +347,7 @@ HoleInfo = {
          'terrainModel' : 'phase_6/models/golf/hole16.bam',
          'physicsData' : 'golfGreen16',
          'blockers' : (1,2,5,6),
-         'optionalMovers' : (1),          
+         'optionalMovers' : (1),
          },
     35: { 'name' : '',
          'par' : 4,
@@ -355,7 +355,7 @@ HoleInfo = {
          'terrainModel' : 'phase_6/models/golf/hole17.bam',
          'physicsData' : 'golfGreen17',
          'blockers' : (3,4,5),
-         },    
+         },
 }
 
 # fixup blockers, optionalMovers, make sure they are tuple
@@ -363,12 +363,12 @@ for holeId in HoleInfo:
    if type(HoleInfo[holeId]['blockers']) == type(0):
       blockerNum = HoleInfo[holeId]['blockers']
       HoleInfo[holeId]['blockers'] = (blockerNum,)
-   if HoleInfo[holeId].has_key('optionalMovers'):
+   if 'optionalMovers' in HoleInfo[holeId]:
       if type(HoleInfo[holeId]['optionalMovers']) == type(0):
          blockerNum = HoleInfo[holeId]['optionalMovers']
-         HoleInfo[holeId]['optionalMovers'] = (blockerNum,)      
-   
-   
+         HoleInfo[holeId]['optionalMovers'] = (blockerNum,)
+
+
 
 # TODO once we have real hole geometry this can be reduced from 5
 DistanceToBeInHole = 0.75 # how many feet from the hole bottom center to be considered inside the hole
@@ -380,12 +380,12 @@ HoleInOneShots = 2
 EagleOrBetterShots= 3
 BirdieOrBetterShots = 4
 ParOrBetterShots = 5
-MultiPlayerCoursesCompleted = 6  
-CourseZeroWins = 7     
-CourseOneWins = 8    
+MultiPlayerCoursesCompleted = 6
+CourseZeroWins = 7
+CourseOneWins = 8
 CourseTwoWins = 9
 
-TwoPlayerWins = 10  
+TwoPlayerWins = 10
 ThreePlayerWins = 11
 FourPlayerWins = 12
 
@@ -402,16 +402,16 @@ TrophyRequirements = {
     CoursesCompleted :   (4, 40, 400),
     CoursesUnderPar :    (1, 10, 100),
     HoleInOneShots :     (1, 10, 100),
-    EagleOrBetterShots : (2, 20, 200),    
+    EagleOrBetterShots : (2, 20, 200),
     BirdieOrBetterShots :(3, 30, 300),
-    ParOrBetterShots :   (4, 40, 400),    
+    ParOrBetterShots :   (4, 40, 400),
     MultiPlayerCoursesCompleted :    (6, 60, 600),
     CourseZeroWins :     (1, 10, 100),
     CourseOneWins :      (1, 10, 100),
     CourseTwoWins :      (1, 10, 100),
     #TwoPlayerWins :    (1, 10, 100),
     #ThreePlayerWins :    (1, 10, 100),
-    #FourPlayerWins :     (1, 10, 100),    
+    #FourPlayerWins :     (1, 10, 100),
 
 }
 
@@ -436,7 +436,7 @@ for key in TrophyRequirements:
    NumTrophies += len(TrophyRequirements[key])
 NumCups = 3
 TrophiesPerCup = NumTrophies / NumCups
-               
+
 def calcTrophyListFromHistory( history):
    """Return a list of booleans, with True meaning he has trophy.
 
@@ -453,7 +453,7 @@ def calcTrophyListFromHistory( history):
                retval.append(False)
        historyIndex += 1
    return retval
-           
+
 
 def calcCupListFromHistory( history):
    """Return a list of booleans, with True meaning he has the cup.
@@ -471,7 +471,7 @@ def calcCupListFromHistory( history):
       if threshold <= numTrophiesWon:
          retval[cupIndex] = True
    return retval
-   
+
 def getCourseName(courseId):
    """Return the name of the course."""
    from toontown.toonbase import TTLocalizer
@@ -482,7 +482,7 @@ def getCourseName(courseId):
    else:
       return ''
 
-   
+
 def getHoleName(holeId):
    """Return the name of the hole."""
    from toontown.toonbase import TTLocalizer
@@ -507,14 +507,14 @@ def packGolfHoleBest(holeBest):
    """Returns a packed version of the holeBest uint8 list."""
    retval = []
    shiftLeft = False
-   for hole in holeBest:      
+   for hole in holeBest:
       hole &= 0xF
       if shiftLeft:
          retval[-1] |= (hole <<4)
          shiftLeft = False
       else:
          retval.append(hole)
-         shiftLeft = True         
+         shiftLeft = True
    return retval
 
 def unpackGolfHoleBest(packedHoleBest):
