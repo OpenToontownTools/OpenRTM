@@ -32,7 +32,7 @@ try:
 except NameError:
     StringTypes = (StringType,)
 
-BufferType = buffer
+BufferType = memoryview
 
 TupleType = tuple
 ListType = list
