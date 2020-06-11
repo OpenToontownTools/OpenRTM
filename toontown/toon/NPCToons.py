@@ -911,7 +911,7 @@ zone2NpcDict = {}
 # Fill out the zone2NpcDict so we can efficiently lookup toons by zoneId
 for id, npcDesc in NPCToonDict.items():
     zoneId = npcDesc[0]
-    if zone2NpcDict.has_key(zoneId):
+    if zoneId in zone2NpcDict:
         zone2NpcDict[zoneId].append(id)
     else:
         zone2NpcDict[zoneId] = [id]
