@@ -445,7 +445,7 @@ if sys.argv[1:]:
 else:
     hoodString = base.config.GetString('level-editor-hoods',
                                        'TT DD BR DG DL MM PA')
-    hoods = string.split(hoodString)
+    hoods = str.split(hoodString)
 
 # The list of neighborhoods to edit
 hoodIds = {'TT' : 'toontown_central',
@@ -461,7 +461,7 @@ hoodIds = {'TT' : 'toontown_central',
 NEIGHBORHOODS = []
 NEIGHBORHOOD_CODES = {}
 for hoodId in hoods:
-    if hoodIds.has_key(hoodId):
+    if hoodId in hoodIds:
         hoodName = hoodIds[hoodId]
         NEIGHBORHOOD_CODES[hoodName] = hoodId
         NEIGHBORHOODS.append(hoodName)
