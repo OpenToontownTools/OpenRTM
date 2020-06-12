@@ -1,5 +1,5 @@
 
-from FireworkGlobals import *
+from .FireworkGlobals import *
 from toontown.toonbase import ToontownGlobals
 from toontown.parties import PartyGlobals
 

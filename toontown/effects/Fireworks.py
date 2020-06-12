@@ -4,7 +4,7 @@ from direct.particles import Particles
 from direct.particles import ForceGroup
 from pandac.PandaModules import *
 import random
-from FireworkGlobals import *
+from .FireworkGlobals import *
 
 colors = {
     WHITE : Vec4(1,1,1,1),

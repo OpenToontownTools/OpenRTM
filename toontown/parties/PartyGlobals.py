@@ -436,7 +436,7 @@ for type in DropObjectTypes:
 #   DOTypeId2Name[some number] == 'apple'
 Name2DOTypeId = {}
 names = Name2DropObjectType.keys()
-names.sort()
+names = sorted(names)
 for i in range(len(names)):
     Name2DOTypeId[names[i]] = i
 # our sorted list of names just happens to be the typeId->name table

@@ -2,6 +2,7 @@ import sys, string, math, types
 from pandac.PandaModules import *
 import direct.gui.DirectGuiGlobals as DGG
 from direct.gui.DirectGui import *
+from libpandadna import *
 
 from .PieMenu import *
 from .ScrollMenu import *
@@ -161,7 +162,7 @@ DNA_NODE = DNANode.getClassType()
 DNA_PROP = DNAProp.getClassType()
 DNA_SIGN = DNASign.getClassType()
 DNA_SIGN_BASELINE = DNASignBaseline.getClassType()
-DNA_SIGN_TEXT = DNASignText.getClassType()
+#DNA_SIGN_TEXT = DNASignText.getClassType()
 DNA_SIGN_GRAPHIC = DNASignGraphic.getClassType()
 DNA_STREET = DNAStreet.getClassType()
 DNA_WALL = DNAWall.getClassType()
@@ -276,9 +277,7 @@ def DNAGetBaselineString(baseline):
     s=""
     for i in range(baseline.getNumChildren()):
         child = baseline.at(i)
-        if DNAClassEqual(child, DNA_SIGN_TEXT):
-            s=s+child.getLetters()
-        elif DNAClassEqual(child, DNA_SIGN_GRAPHIC):
+        if DNAClassEqual(child, DNA_SIGN_GRAPHIC):
             s=s+'['+child.getCode()+']'
     return s
 
@@ -287,7 +286,7 @@ def DNASetBaselineString(baseline, text):
     # replace each text item and then add or remove at the end.
     # This should allow inlined graphics to stay in place.
     # end of todo.
-    DNARemoveAllChildrenOfClass(baseline, DNA_SIGN_TEXT)
+    #DNARemoveAllChildrenOfClass(baseline, DNA_SIGN_TEXT)
 
     # We can't just blindly iterate through the text, because it might
     # be utf-8 encoded, meaning some characters are represented using

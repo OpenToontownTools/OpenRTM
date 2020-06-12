@@ -246,19 +246,18 @@ ChatCategories = {
 
 chatDict = OTPLocalizer.SpeedChatStaticText
 chatKeys = chatDict.keys()
-chatKeys.sort()
+chatKeys = sorted(chatKeys)
 
 customChatDict = OTPLocalizer.CustomSCStrings
 customChatKeys = customChatDict.keys()
-customChatKeys.sort()
+customChatKeys = sorted(customChatKeys)
 
 faceoffTaunts = OTPLocalizer.SuitFaceoffTaunts
 faceoffTauntsKeys = faceoffTaunts.keys()
-faceoffTauntsKeys.sort()
+faceoffTauntKeys = sorted(faceoffTauntsKeys)
 
 attackTaunts = TTLocalizer.SuitAttackTaunts
-attackTauntsKeys = attackTaunts.keys()
-attackTauntsKeys.sort()
+attackTauntsKeys = sorted(attackTaunts.keys())
 
 namegen = NameGenerator.NameGenerator()
 
@@ -527,7 +526,7 @@ class RobotToonManager(DirectObject):
         self.namePlusIds = map(
             lambda id: (TTLocalizer.NPCToonNames.get(id, 'Mystery NPC'), id),
             self.toonIds)
-        self.namePlusIds.sort()
+        self.namePlusIds = sorted(self.namePlusIds)
         self.numToons = len(self.toonIds)
         self.suitTrack = 'Corporate'
         self.suitLevel = 0
@@ -1204,33 +1203,28 @@ class RobotToonControlPanel(AppShell):
         self.npToplevel = None
         self.maleTopsList = ToonDNA.getAllTops('m')
         self.maleTopsDict = self.sortVariants(self.maleTopsList)
-        self.maleTopsKeys = self.maleTopsDict.keys()
-        self.maleTopsKeys.sort()
+        self.maleTopsKeys = sorted(self.maleTopsDict.keys())
         self.maleTopsNames = map(lambda x: ToonTopsDict[x], self.maleTopsKeys)
         self.maleBottomsList = ToonDNA.getAllBottoms('m')
         self.maleBottomsDict = self.sortVariants(self.maleBottomsList)
-        self.maleBottomsKeys = self.maleBottomsDict.keys()
-        self.maleBottomsKeys.sort()
+        self.maleBottomsKeys = sorted(self.maleBottomsDict.keys())
         self.maleBottomsNames = map(
             lambda x: BoyBottomsDict[x], self.maleBottomsKeys)
         self.femaleTopsList = ToonDNA.getAllTops('f')
         self.femaleTopsDict = self.sortVariants(self.femaleTopsList)
-        self.femaleTopsKeys = self.femaleTopsDict.keys()
-        self.femaleTopsKeys.sort()
+        self.femaleTopsKeys = sorted(self.femaleTopsDict.keys())
         self.femaleTopsNames = map(lambda x: ToonTopsDict[x],
                                    self.femaleTopsKeys)
         self.femaleBottomsList = ToonDNA.getAllBottoms('f')
         self.femaleBottomsDict = self.sortVariants(self.femaleBottomsList)
         self.femaleSkirtsList = ToonDNA.getAllBottoms('f','skirts')
         self.femaleSkirtsDict = self.sortVariants(self.femaleSkirtsList)
-        self.femaleSkirtsKeys = self.femaleSkirtsDict.keys()
-        self.femaleSkirtsKeys.sort()
+        self.femaleSkirtsKeys = sorted(self.femaleSkirtsDict.keys())
         self.femaleSkirtsNames = map(
             lambda x: GirlBottomsDict[x], self.femaleSkirtsKeys)
         self.femaleShortsList = ToonDNA.getAllBottoms('f','shorts')
         self.femaleShortsDict = self.sortVariants(self.femaleShortsList)
-        self.femaleShortsKeys = self.femaleShortsDict.keys()
-        self.femaleShortsKeys.sort()
+        self.femaleShortsKeys = sorted(self.femaleShortsDict.keys())
         self.femaleShortsNames = map(
             lambda x: GirlBottomsDict[x], self.femaleShortsKeys)
         self.doodleColorButtonList = []
@@ -1241,8 +1235,7 @@ class RobotToonControlPanel(AppShell):
 
     def sortVariants(self, styleList):
         styleDict = {}
-        styleList.sort()
-        for style in styleList:
+        for style in sorted(styleList):
             idx = style[0]
             variantList = styleDict.get(idx, [])
             variantList.append(style)
@@ -1370,8 +1363,7 @@ class RobotToonControlPanel(AppShell):
         self.speciesDict = { 'c' : 'Cat', 'd' : 'Dog', 'f' : 'Duck',
                              'h' : 'Horse', 'm' : 'Mouse', 'r' : 'Rabbit',
                              'p' : 'Monkey', 'b' : 'Bear', 's' : 'Swine' }
-        speciesList = self.speciesDict.values()
-        speciesList.sort()
+        speciesList = sorted(self.speciesDict.values())
         self.headDict = {}
         for head in ToonDNA.toonHeadTypes:
             headList = self.headDict.get(self.speciesDict[head[0]], [])
@@ -2226,9 +2218,8 @@ class RobotToonControlPanel(AppShell):
         codes = []
         self.styleManager = self.rtm.styleManager
 
-        codes = (self.styleManager.getCatalogCodes('prop') +
+        codes = sorted(self.styleManager.getCatalogCodes('prop') +
                  self.styleManager.getCatalogCodes('holiday_prop'))
-        codes.sort()
 
         self.propSelector = Pmw.ComboBox(
             propsPage,
