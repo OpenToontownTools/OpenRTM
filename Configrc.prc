@@ -15,8 +15,8 @@ multisamples 8
 
 chan-config-sanity-check #f
 multipass-viz none
-win-width 800
-win-height 600
+win-width 1280
+win-height 720
 fullscreen 0
 sync-video #f
 

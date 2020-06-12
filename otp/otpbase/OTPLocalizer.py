@@ -15,8 +15,8 @@ try:
     # Client
     # The Launcher will define config in the builtin namespace
     # before importing this file
-    language = base.config.GetString("language", "english")
-    checkLanguage = base.config.GetBool("check-language", 0)
+    language = ConfigVariableString("language", "english")
+    checkLanguage = ConfigVariableBool("check-language", 0)
 except:
     # AI
     language = simbase.config.GetString("language", "english")
@@ -29,7 +29,7 @@ if language != "english":
     checkLanguage = 1
     _languageModule = "otp.otpbase.OTPLocalizer_" + language
 else:
-    _languageModule = "otp.otpbase.OTPLocalizer" + language.capitalize()
+    _languageModule = "otp.otpbase.OTPLocalizerEnglish"
 
 exec("from " + _languageModule + " import *")
 

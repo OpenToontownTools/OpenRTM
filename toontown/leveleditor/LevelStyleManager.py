@@ -7,7 +7,7 @@ from libpandadna import *
 from .PieMenu import *
 from .ScrollMenu import *
 
-dnaDirectory = Filename.expandFrom(base.config.GetString("dna-directory", "$TTMODELS/src/dna"))
+dnaDirectory = Filename.expandFrom(DConfig.GetString("dna-directory", "$TTMODELS/src/dna"))
 
 
 # Colors used by all color menus
@@ -281,24 +281,6 @@ def DNAGetBaselineString(baseline):
             s=s+'['+child.getCode()+']'
     return s
 
-def DNASetBaselineString(baseline, text):
-    # TODO: Instead of removing all the text and replacing it,
-    # replace each text item and then add or remove at the end.
-    # This should allow inlined graphics to stay in place.
-    # end of todo.
-    #DNARemoveAllChildrenOfClass(baseline, DNA_SIGN_TEXT)
-
-    # We can't just blindly iterate through the text, because it might
-    # be utf-8 encoded, meaning some characters are represented using
-    # multi-byte sequences.  Instead, create a TextNode and use it to
-    # iterate through the characters of the text.
-    t = TextNode('')
-    t.setText(text)
-    for i in range(t.getNumChars()):
-        ch = t.getEncodedChar(i)
-        text=DNASignText("text")
-        text.setLetters(ch)
-        baseline.add(text)
 
 class LevelStyleManager:
     """Class which reads in style files and manages class variables"""
@@ -308,12 +290,6 @@ class LevelStyleManager:
         # The main dictionary holding all attribute objects
         self.attributeDictionary = {}
         # Create the style samples
-        self.createBaselineStyleAttributes()
-        self.createWallStyleAttributes()
-        self.createBuildingStyleAttributes()
-        self.createColorAttributes()
-        self.createDNAAttributes()
-        self.createMiscAttributes()
 
     # BASELINE STYLE FUNCTIONS
     def createBaselineStyleAttributes(self):
@@ -380,8 +356,8 @@ class LevelStyleManager:
                 # Note, endBaselineStyle line is *not* stripped off
                 return style, styleData
             else:
-                pair = map(string.strip, l.split(':'))
-                if style.__dict__.has_key(pair[0]):
+                pair = list(list(map(str.strip, l.split(':'))))
+                if pair[0] in style.__dict__:
                     pair_0 = pair[0]
                     # Convert some numerical values
                     if (pair_0 == 'color'
@@ -409,44 +385,13 @@ class LevelStyleManager:
         """
         Create a baseline style pie menu
         """
-        numItems = len(dictionary)
-        newStyleMenu = hidden.attachNewNode(neighborhood + '_style_menu')
-        radius = 0.7
-        angle = deg2Rad(360.0/numItems)
-        keys = dictionary.keys()
-        keys.sort()
-        styles = map(lambda x, d = dictionary: d[x], keys)
-        sf = 0.1
-        aspectRatio = (base.direct.dr.getWidth()/float(base.direct.dr.getHeight()))
-        for i in range(numItems):
-            # Get the node
-            node = self.createBaselineStyleSample(styles[i])
-            bounds = node.getBounds()
-            center = bounds.getCenter()
-            center = center * sf
-            # Reposition it
-            node.setPos((radius * math.cos(i * angle)) - center[0],
-                        0.0,
-                        ((radius * aspectRatio * math.sin(i * angle)) -
-                         center[2]))
-            # Scale it
-            node.setScale(sf)
-            # Add it to the styleMenu
-            node.reparentTo(newStyleMenu)
-        # Scale the whole shebang down by 0.5
-        newStyleMenu.setScale(0.5)
-        # Create and return a pie menu
-        return PieMenu(newStyleMenu, styles)
+        return
 
     def createBaselineStyleSample(self, baselineStyle):
         """
         Create a style sample using the DNA info in the style
         """
-        baseline = DNASignBaseline()
-        # Set some example text:
-        DNASetBaselineString(baseline, "Example Text")
-        baselineStyle.copyTo(baseline)
-        return baseline.traverse(hidden, DNASTORE, 1)
+        return
 
     # WALL STYLE FUNCTIONS
     def createWallStyleAttributes(self):
@@ -513,8 +458,8 @@ class LevelStyleManager:
                 # Note, endWallStyle line is *not* stripped off
                 return style, styleData
             else:
-                pair = map(string.strip, l.split(':'))
-                if style.__dict__.has_key(pair[0]):
+                pair = list(list(map(str.strip, l.split(':'))))
+                if pair[0] in style.__dict__:
                     # Convert colors and count strings to numerical values
                     if ((string.find(pair[0],'_color') >= 0) or
                         (string.find(pair[0],'_count') >= 0)):
@@ -536,8 +481,7 @@ class LevelStyleManager:
         newStyleMenu = hidden.attachNewNode(neighborhood + '_style_menu')
         radius = 0.7
         angle = deg2Rad(360.0/numItems)
-        keys = dictionary.keys()
-        keys.sort()
+        keys = sorted(dictionary.keys())
         styles = map(lambda x, d = dictionary: d[x], keys)
         sf = 0.03
         aspectRatio = (base.direct.dr.getWidth()/float(base.direct.dr.getHeight()))
@@ -581,6 +525,7 @@ class LevelStyleManager:
         """
         # First create an attribute which holds one dictionary per
         # neighborhood which stores all of the styles for each neighborhood.
+        return
         styleDict = self.attributeDictionary['building_style_all'] = {}
         # Keep track of all building types
         typeDict = {}
@@ -601,7 +546,7 @@ class LevelStyleManager:
             # to be used in creating attribute dicts below
             typeList = typeDict[neighborhood] = []
             for style in attribute.getList():
-                heightType = string.strip(string.split(style.name, ':')[1])
+                heightType = str.strip(str.split(style.name.decode('UTF-8'), ':')[1])
                 if heightType not in typeList:
                     typeList.append(heightType)
                 if heightType not in masterTypeList:
@@ -643,8 +588,8 @@ class LevelStyleManager:
             # Sort through the styles and store in separate lists
             for style in styleDict[neighborhood].getList():
                 # Put in code for number of walls into building styles
-                heightType = string.strip(string.split(style.name, ':')[1])
-                heightList = map(string.atof, string.split(heightType, '_'))
+                heightType = str.strip(str.split(style.name.decode('UTF-8'), ':')[1])
+                heightList = map(string.atof, str.split(heightType, '_'))
                 numWalls = len(heightList)
                 # This one stores styles sorted by type
                 typeAttributes[heightType].add(style)
@@ -698,8 +643,8 @@ class LevelStyleManager:
                 # Start with empty style list
                 bldgStyle = DNAFlatBuildingStyle(styleList = [])
                 # Extract height information found at end of line
-                heightCode = string.strip(string.split(l, ':')[1])
-                heightList = map(string.atof, string.split(heightCode, '_'))
+                heightCode = str.strip(str.split(l.decode('UTF-8'), ':')[1])
+                heightList = map(string.atof, str.split(heightCode, '_'))
                 # Construct name for building style.  Tack on height code
                 # to be used later to split styles by heightCode
                 bldgStyle.name = (
@@ -738,8 +683,7 @@ class LevelStyleManager:
         newStyleMenu = hidden.attachNewNode(neighborhood + '_style_menu')
         radius = 0.7
         angle = deg2Rad(360.0/numItems)
-        keys = dictionary.keys()
-        keys.sort()
+        keys = sorted(dictionary.keys())
         styles = map(lambda x, d = dictionary: d[x], keys)
         sf = 0.02
         aspectRatio = (base.direct.dr.getWidth()/float(base.direct.dr.getHeight()))
@@ -932,9 +876,9 @@ class LevelStyleManager:
             dict[colorType] = DEFAULT_COLORS[:]
         # Add color information to appropriate sub-list
         for line in colorData:
-            pair = map(string.strip, line.split(':'))
+            pair = map(str.strip.decode('UTF-8'), line.split(':'))
             key = pair[0]
-            if dict.has_key(key):
+            if key in dict:
                 dict[key].append(eval(pair[1]))
             else:
                 print('LevelStyleManager.getColorDictionary key not found')
@@ -942,7 +886,7 @@ class LevelStyleManager:
 
     def createColorMenus(self, neighborhood, dictionary):
         menuDict = {}
-        keys = dictionary.keys()
+        keys = sorted(dictionary.keys())
         for key in keys:
             menuDict[key] = (
                 self.createColorMenu(neighborhood + key, dictionary[key]))
@@ -1160,16 +1104,18 @@ class LevelStyleManager:
         Open the specified file and strip out unwanted whitespace and
         empty lines.  Return file as list, one file line per element.
         """
+        import os
         fname = Filename(dnaDirectory.getFullpath() +
                          '/stylefiles/' + filename)
 
+        print(os.path.abspath(fname))
         # We use binary mode to avoid Windows' end-of-line convention
         f = open(fname.toOsSpecific(), 'rb')
         rawData = f.readlines()
         f.close()
         styleData = []
         for line in rawData:
-            l = string.strip(line)
+            l = str.strip(line.decode('UTF-8'))
             if l:
                 styleData.append(l)
         return styleData
@@ -1179,21 +1125,21 @@ class LevelStyleManager:
         """ Return specified attribute for current neighborhood """
         levelAttribute = self.attributeDictionary[attribute]
         # Get attribute for current neighborhood
-        if (type(levelAttribute) == types.DictionaryType):
+        if (type(levelAttribute) == dict):
             levelAttribute = levelAttribute[self.getEditMode()]
         return levelAttribute
 
     # UTILITY FUNCTIONS
     def hasAttribute(self, attribute):
         """ Return specified attribute for current neighborhood """
-        if not self.attributeDictionary.has_key(attribute):
+        if not attribute in self.attributeDictionary:
             return 0
         else:
             levelAttribute = self.attributeDictionary[attribute]
             # Get attribute for current neighborhood
-            if (type(levelAttribute) == types.DictionaryType):
+            if (type(levelAttribute) == dict):
                 editMode = self.getEditMode()
-                return levelAttribute.has_key(editMode)
+                return editMode in levelAttribute
             else:
                 return 1
 
@@ -1247,7 +1193,7 @@ class LevelAttribute:
     def setDict(self, dict):
         self._dict = dict
         # Create a list from the dictionary
-        self._list = dict.values()
+        self._list = list(dict.values())
         # Update count
         self.count = len(self._list)
         # Initialize current to first item

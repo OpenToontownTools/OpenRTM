@@ -41,6 +41,9 @@ import sys, os
 import string
 import Pmw
 
+loadPrcFile("Configrc.prc")
+from libotp import *
+from libtoontown import *
 from toontown.leveleditor.LevelStyleManager import *
 
 from toontown.effects import Fireworks, FireworkShows, FireworkGlobals
@@ -469,7 +472,7 @@ for hoodId in hoods:
         print('Error: no hood defined for: ', hoodId)
 
 # Load DNA
-dnaDirectory = Filename.expandFrom(base.config.GetString("dna-directory", "$TTMODELS/src/dna"))
+dnaDirectory = Filename.expandFrom(DConfig.GetString("dna-directory", "$TTMODELS/src/dna"))
 
 try:
     if dnaLoaded:
@@ -826,16 +829,16 @@ class RobotToonManager(DirectObject):
             torso = line[i];i+=1
             legs = line[i];i+=1
             gender = line[i];i+=1
-            armColor = string.atoi(line[i]);i+=1
-            gloveColor = string.atoi(line[i]);i+=1
-            legColor = string.atoi(line[i]);i+=1
-            headColor = string.atoi(line[i]);i+=1
-            topTexture = string.atoi(line[i]);i+=1
-            topTextureColor = string.atoi(line[i]);i+=1
-            sleeveTexture = string.atoi(line[i]);i+=1
-            sleeveTextureColor = string.atoi(line[i]);i+=1
-            bottomTexture = string.atoi(line[i]);i+=1
-            bottomTextureColor = string.atoi(line[i]);i+=1
+            armColor = int(line[i]);i+=1
+            gloveColor = int(line[i]);i+=1
+            legColor = int(line[i]);i+=1
+            headColor = int(line[i]);i+=1
+            topTexture = int(line[i]);i+=1
+            topTextureColor = int(line[i]);i+=1
+            sleeveTexture = int(line[i]);i+=1
+            sleeveTextureColor = int(line[i]);i+=1
+            bottomTexture = int(line[i]);i+=1
+            bottomTextureColor = int(line[i]);i+=1
             props = [head, torso, legs, gender,
                     armColor, gloveColor, legColor, headColor,
                     topTexture, topTextureColor, sleeveTexture,
@@ -1719,7 +1722,7 @@ class RobotToonControlPanel(AppShell):
             if (suitIndex % 8) == 0:
                 subMenu = Menu(self.toonSuitMenu, tearoff = 0)
                 self.toonSuitMenu.add_cascade(
-                    label = SuitTrackList[suitIndex/8],
+                    label = SuitTrackList[suitIndex//8],
                     menu = subMenu)
             suit = SuitDNAList[suitIndex]
             suitLabel = suit.split(':')[1].strip()
@@ -1817,7 +1820,7 @@ class RobotToonControlPanel(AppShell):
         for suitIndex in range(len(SuitDNAList)):
             if (suitIndex % 8) == 0:
                 subMenu = Menu(self.suitMenu, tearoff = 0)
-                self.suitMenu.add_cascade(label = SuitTrackList[suitIndex/8],
+                self.suitMenu.add_cascade(label = SuitTrackList[suitIndex//8],
                                           menu = subMenu)
             suit = SuitDNAList[suitIndex]
             suitLabel = suit.split(':')[1].strip()
@@ -2381,8 +2384,8 @@ class RobotToonControlPanel(AppShell):
         tokens = text.split('x')
         if len(tokens) != 2:
             return
-        width = string.atoi(tokens[0])
-        height = string.atoi(tokens[1])
+        width = int(tokens[0])
+        height = int(tokens[1])
 
         props = WindowProperties(base.win.getProperties())
         props.setSize(width, height)
@@ -2424,7 +2427,7 @@ class RobotToonControlPanel(AppShell):
 
     def setSuitType(self, suitIndex):
         self.suitTrack.set(['Corporate','Legal',
-                            'Financial','Sales'][suitIndex/8])
+                            'Financial','Sales'][suitIndex//8])
         self.setSuitTrack()
         self.suitLevel.set(suitIndex % 8)
         self.setSuitLevel()
@@ -2479,7 +2482,7 @@ class RobotToonControlPanel(AppShell):
             self.topsCounter.invoke()
 
     def __switchTops(self, text):
-        value = string.atoi(text)
+        value = int(text)
         if (value < 0) or (value >= len(self.topsVariants)):
             return Pmw.ERROR
         else:
@@ -2507,7 +2510,7 @@ class RobotToonControlPanel(AppShell):
     def __switchBottoms(self, text):
         if not Pmw.integervalidator(text):
             return Pmw.ERROR
-        value = string.atoi(text)
+        value = int(text)
         if (value < 0) or (value >= len(self.bottomsVariants)):
             return Pmw.ERROR
         else:
