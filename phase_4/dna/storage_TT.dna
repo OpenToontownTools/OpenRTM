@@ -1,3 +1,4 @@
+// the highest phase in this file should be phase 4
 
 hood_model "phase_3.5/models/modules/TT_A1" [
 	store_node [ "toon_landmark" "toon_landmark_TT_A1" "TT_A1"  ]
@@ -81,3 +82,36 @@ hood_model "phase_4/models/props/goofy_statue" [
 	store_node [ "prop" "prop_goofy_statue" "" ]
         ]
 
+hood_model "phase_4/models/props/tt_m_ara_gen_sillyMeterSign" [
+	store_node [ "prop" "prop_tt_m_ara_gen_sillyMeterSign" "" ]
+        ]
+
+hood_model "phase_4/models/props/tt_m_ara_gen_victorySoonSign" [
+	store_node [ "prop" "prop_tt_m_ara_gen_victorySoonSign" "" ]
+        ]
+        
+hood_model "phase_4/models/props/tt_m_ara_gen_victoryPartySign" [
+	store_node [ "prop" "prop_tt_m_ara_gen_victoryPartySign" "" ]
+        ]
+
+hood_model "phase_4/models/props/tt_m_ara_ttc_sillyMeterSign_groupA" [
+	store_node [ "prop" "prop_tt_m_ara_ttc_sillyMeterSign_groupA" "" ]
+        ]
+hood_model "phase_4/models/props/tt_m_ara_ttc_sillyMeterSign_groupB" [
+	store_node [ "prop" "prop_tt_m_ara_ttc_sillyMeterSign_groupB" "" ]
+        ]
+hood_model "phase_4/models/props/tt_m_ara_gen_stormSellbotSign" [
+	store_node [ "prop" "prop_tt_m_ara_gen_stormSellbotSign" "" ]
+        ]
+
+hood_model "phase_4/models/props/tt_m_ara_gen_jellybeanJamSign" [
+	store_node [ "prop" "prop_tt_m_ara_gen_jellybeanJamSign" "" ]
+        ]
+
+hood_model "phase_4/models/props/tt_m_ara_gen_foreSign" [
+	store_node [ "prop" "prop_tt_m_ara_gen_foreSign" "" ]
+        ]
+
+hood_model "phase_4/models/props/tt_m_ara_gen_tunnelAheadSign" [
+	store_node [ "prop" "prop_tt_m_ara_gen_tunnelAheadSign" "" ]
+        ]

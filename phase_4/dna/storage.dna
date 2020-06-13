@@ -400,8 +400,3 @@ model "phase_4/models/props/plutoSZ" [
 model "phase_4/models/props/piers_tt" [
 	store_node [ "prop" "fishing_spot" "" ]
 	]
-
-
-
-
-

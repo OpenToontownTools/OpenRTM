@@ -84,3 +84,54 @@ hood_model "phase_8/models/modules/hqDL" [
 hood_model "phase_8/models/props/neighborhood_sign_cashBotHQ" [
 	store_node [ "prop" "neighborhood_sign_cashBotHQ" "" ]
 	]
+
+hood_model "phase_8/models/char/tt_r_ara_ddl_hydrant" [
+	store_node [ "anim_prop" "animated_prop_generic_phase_8_models_char__ddl_hydrant" ""]
+	]
+
+hood_model "phase_8/models/char/tt_r_ara_ddl_hydrant" [
+	store_node [ "interactive_prop" "interactive_prop_phase_8_models_char__ddl_hydrant" ""]
+	]
+
+hood_model "phase_8/models/char/tt_r_ara_ddl_mailbox" [
+	store_node [ "anim_prop" "animated_prop_generic_phase_8_models_char__ddl_mailbox" ""]
+	]
+
+hood_model "phase_8/models/char/tt_r_ara_ddl_mailbox" [
+	store_node [ "interactive_prop" "interactive_prop_phase_8_models_char__ddl_mailbox" ""]
+	]
+
+hood_model "phase_8/models/char/tt_r_ara_ddl_trashcan" [
+	store_node [ "anim_prop" "animated_prop_generic_phase_8_models_char__ddl_trashcan" ""]
+	]
+
+hood_model "phase_8/models/char/tt_r_ara_ddl_trashcan" [
+	store_node [ "interactive_prop" "interactive_prop_phase_8_models_char__ddl_trashcan" ""]
+	]
+
+hood_model "phase_8/models/props/tt_m_ara_ddl_sillyMeterSign" [
+	store_node [ "prop" "prop_tt_m_ara_ddl_sillyMeterSign" "" ]
+        ]
+
+hood_model "phase_8/models/props/tt_m_ara_ddl_victorySoonSign" [
+	store_node [ "prop" "prop_tt_m_ara_ddl_victorySoonSign" "" ]
+        ]
+        
+hood_model "phase_8/models/props/tt_m_ara_ddl_victoryPartySign" [
+	store_node [ "prop" "prop_tt_m_ara_ddl_victoryPartySign" "" ]
+        ]
+hood_model "phase_8/models/props/tt_m_ara_ddl_stormSellbotSign" [
+	store_node [ "prop" "prop_tt_m_ara_ddl_stormSellbotSign" "" ]
+        ]
+
+hood_model "phase_8/models/props/tt_m_ara_ddl_jellybeanJamSign" [
+	store_node [ "prop" "prop_tt_m_ara_ddl_jellybeanJamSign" "" ]
+        ]
+
+hood_model "phase_8/models/props/tt_m_ara_ddl_foreSign" [
+	store_node [ "prop" "prop_tt_m_ara_ddl_foreSign" "" ]
+        ]
+
+hood_model "phase_4/models/props/tt_m_ara_gen_tunnelAheadSign" [
+	store_node [ "prop" "prop_tt_m_ara_gen_tunnelAheadSign" "" ]
+        ]

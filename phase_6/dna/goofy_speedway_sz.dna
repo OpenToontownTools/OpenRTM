@@ -334,6 +334,16 @@ group "goofySpeedway" [
      scale [ 14.0091 14.0091 14.0091 ]
     ]
    ]
+   node "crashedBoards" [
+    pos [ 0 0 0.1 ]
+    nhpr [ 0 0 0 ]
+    scale [ 1 1 1 ]
+    prop "prop_gs_crashed_board_01" [
+     code [ "prop_gs_crashed_board" ]
+     pos [ 0.970987 -110.599 -0.0135054]
+     nhpr [ 60 0 0 ]
+    ] 
+   ]
    node "lampPosts" [
     pos [ 0 0 0.1 ]
     nhpr [ 0 0 0 ]

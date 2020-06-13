@@ -46,7 +46,7 @@ hood_model "phase_8/models/modules/DG_D1" [
 	store_node [ "toon_landmark" "toon_landmark_DG_D1" "DG_D1"  ]
 	]
 
-hood_model "phase_8/models/props/daisys_fountain" [
+hood_model "phase_8/models/props/tt_m_ara_dga_fountain" [
 	store_node [ "prop" "prop_daisys_fountain" "" ]
 	]
 
@@ -127,3 +127,67 @@ hood_model "phase_8/models/props/window_flowerbox_wood" [
 hood_model "phase_8/models/modules/hqDG" [
 	store_node [ "toon_landmark" "toon_landmark_hqDG" "" ]
 	]
+
+hood_model "phase_8/models/char/tt_r_ara_dga_hydrant" [
+	store_node [ "anim_prop" "animated_prop_generic_phase_8_models_char__dga_hydrant" ""]
+	]
+
+hood_model "phase_8/models/char/tt_r_ara_dga_hydrant" [
+	store_node [ "interactive_prop" "interactive_prop_phase_8_models_char__dga_hydrant" ""]
+	]
+
+hood_model "phase_8/models/char/tt_r_ara_dga_mailbox" [
+	store_node [ "anim_prop" "animated_prop_generic_phase_8_models_char__dga_mailbox" ""]
+	]
+
+hood_model "phase_8/models/char/tt_r_ara_dga_mailbox" [
+	store_node [ "interactive_prop" "interactive_prop_phase_8_models_char__dga_mailbox" ""]
+	]
+
+hood_model "phase_8/models/char/tt_r_ara_dga_trashcan" [
+	store_node [ "anim_prop" "animated_prop_generic_phase_8_models_char__dga_trashcan" ""]
+	]
+
+hood_model "phase_8/models/char/tt_r_ara_dga_trashcan" [
+	store_node [ "interactive_prop" "interactive_prop_phase_8_models_char__dga_trashcan" ""]
+	]
+
+hood_model "phase_8/models/char/tt_r_ara_dga_trashcan" [
+	store_node [ "anim_prop" "animated_prop_TrashcanZeroAnimatedProp_phase_8_models_char__dga_trashcan" ""]
+	]
+
+hood_model "phase_8/models/char/tt_r_ara_dga_trashcan" [
+	store_node [ "anim_prop" "animated_prop_TrashcanOneAnimatedProp_phase_8_models_char__dga_trashcan" ""]
+	]
+
+hood_model "phase_8/models/char/tt_r_ara_dga_trashcan" [
+	store_node [ "anim_prop" "animated_prop_TrashcanTwoAnimatedProp_phase_8_models_char__dga_trashcan" ""]
+	]
+
+hood_model "phase_4/models/props/tt_m_ara_gen_sillyMeterSign" [
+	store_node [ "prop" "prop_tt_m_ara_gen_sillyMeterSign" "" ]
+        ]
+
+hood_model "phase_4/models/props/tt_m_ara_gen_victorySoonSign" [
+	store_node [ "prop" "prop_tt_m_ara_gen_victorySoonSign" "" ]
+        ]
+        
+hood_model "phase_4/models/props/tt_m_ara_gen_victoryPartySign" [
+	store_node [ "prop" "prop_tt_m_ara_gen_victoryPartySign" "" ]
+        ]
+
+hood_model "phase_4/models/props/tt_m_ara_gen_stormSellbotSign" [
+	store_node [ "prop" "prop_tt_m_ara_gen_stormSellbotSign" "" ]
+        ]
+
+hood_model "phase_4/models/props/tt_m_ara_gen_jellybeanJamSign" [
+	store_node [ "prop" "prop_tt_m_ara_gen_jellybeanJamSign" "" ]
+        ]
+
+hood_model "phase_4/models/props/tt_m_ara_gen_foreSign" [
+	store_node [ "prop" "prop_tt_m_ara_gen_foreSign" "" ]
+        ]
+
+hood_model "phase_4/models/props/tt_m_ara_gen_tunnelAheadSign" [
+	store_node [ "prop" "prop_tt_m_ara_gen_tunnelAheadSign" "" ]
+        ]

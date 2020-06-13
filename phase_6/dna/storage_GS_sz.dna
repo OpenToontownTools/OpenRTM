@@ -42,10 +42,6 @@ place_model "phase_6/models/karting/Parkingspot" [
 	store_node [ "prop" "gs_parkingspot" "" ]
 ]
 
-place_model "phase_6/models/karting/typ_leaderBoardSign2" [
-	store_node [ "prop" "leader_board" "" ]
-	]
-
 place_model "phase_6/models/karting/KartShowBlock" [
 	store_node [ "prop" "gs_showblock" "" ]
 ]

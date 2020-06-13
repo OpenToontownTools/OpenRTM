@@ -41,7 +41,7 @@ place_model "phase_6/models/props/DD_street_water" [
 	store_node [ "prop" "prop_DD_street_water" "" ]
 	]
 
-place_model "phase_6/models/modules/tt_m_ara_DD_hq" [
+place_model "phase_6/models/modules/tt_m_ara_dod_hq" [
 	store_node [ "toon_landmark" "toon_landmark_hqDD" "" ]
 	]
 

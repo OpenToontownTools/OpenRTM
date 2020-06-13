@@ -27,7 +27,7 @@ place_model "phase_6/models/modules/clothshopDD" [
 	store_node [ "toon_landmark" "toon_landmark_DD_clothes_shop" "" ]
         ]
 
-place_model "phase_6/models/modules/tt_m_ara_DD_SZ_hq" [
+place_model "phase_6/models/modules/tt_m_ara_dod_SZ_hq" [
 	store_node [ "toon_landmark" "toon_landmark_hqDD_SZ" "" ]
 	]
 

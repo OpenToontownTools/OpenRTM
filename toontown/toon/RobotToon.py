@@ -175,18 +175,18 @@ class RobotToon(Toon.Toon, RobotAvatarBase):
             dna = description
         else:
             dna = ToonDNA.ToonDNA()
-            if (isinstance(description, types.ListType) or
-                isinstance(description, types.TupleType)):
+            if (isinstance(description, list) or
+                isinstance(description, tuple)):
                 # Assume it is a property list
                 dna.newToonFromProperties(*description)
             elif isinstance(description, Datagram):
                 # Create dna straight from datagram
                 dna.makeFromNetString(description)
-            elif isinstance(description, types.StringType):
+            elif isinstance(description, str):
                 # Assume it is a server string description
                 # Convert to datagram then create dna
                 dna.makeFromNetString(self.convertServerDNAString(description))
-            elif isinstance(description, types.IntType):
+            elif isinstance(description, int):
                 # Assume it is an NPC id
                 npcInfo = NPCToons.NPCToonDict[description]
                 properties = npcInfo[2]

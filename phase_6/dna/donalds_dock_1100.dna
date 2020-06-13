@@ -154,8 +154,8 @@ group "donaldsDock" [
   group "streets" [
    street "street_20x40_DNARoot" [
     code [ "street_20x40" ]
-    pos [ 185 -50 0 ]
-    hpr [ 0 0 0 ]
+    pos [ 185 -50 1.14441e-005 ]
+    nhpr [ -0 0 -0 ]
     texture [ "street_street_DD_tex" ]
     texture [ "street_sidewalk_DD_tex" ]
     texture [ "street_curb_DD_tex" ]
@@ -163,7 +163,7 @@ group "donaldsDock" [
    street "street_20x40_DNARoot" [
     code [ "street_20x40" ]
     pos [ 165 -50 0 ]
-    hpr [ 0 0 0 ]
+    nhpr [ -0 0 -0 ]
     texture [ "street_street_DD_tex" ]
     texture [ "street_sidewalk_DD_tex" ]
     texture [ "street_curb_DD_tex" ]
@@ -171,7 +171,7 @@ group "donaldsDock" [
    street "street_5x40_DNARoot" [
     code [ "street_5x40" ]
     pos [ 160 -50 0 ]
-    hpr [ 0 0 0 ]
+    nhpr [ -0 0 -0 ]
     texture [ "street_street_DD_tex" ]
     texture [ "street_sidewalk_DD_tex" ]
     texture [ "street_curb_DD_tex" ]
@@ -180,7 +180,7 @@ group "donaldsDock" [
   group "buildings" [
    flat_building "tb2:random20_DNARoot" [
     pos [ 210 -50 0 ]
-    hpr [ 180 0 0 ]
+    nhpr [ -180 0 -0 ]
     width [ 25 ]
     wall [
      height [ 20 ]
@@ -199,23 +199,23 @@ group "donaldsDock" [
     prop "prop_2ftdockpiling_DNARoot" [
      code [ "prop_2ftdockpiling" ]
      pos [ 19 -8 0 ]
-     hpr [ 180 0 0 ]
+     nhpr [ -180 0 -0 ]
     ]
     prop "streetlight_DD_left_DNARoot" [
      code [ "streetlight_DD_left" ]
      pos [ 15 -9 0 ]
-     hpr [ -90 0 0 ]
+     nhpr [ -90 0 -0 ]
     ]
     prop "prop_chimney_DNARoot" [
      code [ "prop_chimney" ]
      pos [ 1 3.74 18.66 ]
-     hpr [ 0 0 0 ]
+     nhpr [ -0 0 -0 ]
      color [ 0.87 0.69 0.42 1 ]
     ]
    ]
    flat_building "tb26:random20_DNARoot" [
     pos [ 185 -10 0 ]
-    hpr [ 0 0 0 ]
+    nhpr [ -0 0 -0 ]
     width [ 20 ]
     wall [
      height [ 10 ]
@@ -240,18 +240,18 @@ group "donaldsDock" [
     prop "prop_2ftdockpiling_DNARoot" [
      code [ "prop_2ftdockpiling" ]
      pos [ 5 -9 0 ]
-     hpr [ 90 0 0 ]
+     nhpr [ 90 0 -0 ]
     ]
     prop "prop_palm_tree_topflat_DNARoot" [
      code [ "prop_palm_tree_topflat" ]
      pos [ 10 -8 0 ]
-     hpr [ 90 0 0 ]
+     nhpr [ 90 0 -0 ]
      scale [ 0.8 0.8 0.8 ]
     ]
    ]
    flat_building "tb26:random20_DNARoot" [
     pos [ 160 -10 0 ]
-    hpr [ 0 0 0 ]
+    nhpr [ -0 0 -0 ]
     width [ 25 ]
     wall [
      height [ 20 ]
@@ -270,29 +270,24 @@ group "donaldsDock" [
     prop "prop_2ftdockpiling_DNARoot" [
      code [ "prop_2ftdockpiling" ]
      pos [ 4 -9 0 ]
-     hpr [ 90 0 0 ]
-    ]
-    prop "prop_trashcan_DD_DNARoot" [
-     code [ "prop_trashcan_DD" ]
-     pos [ 19 -8 0 ]
-     hpr [ -90 0 0 ]
+     nhpr [ 90 0 -0 ]
     ]
     prop "prop_shipmasts_DNARoot" [
      code [ "prop_shipmasts" ]
      pos [ 7.5 5.7 20 ]
-     hpr [ -15 0 0 ]
+     nhpr [ -15 0 -0 ]
      scale [ 2 2 2 ]
     ]
     prop "prop_shipmasts_DNARoot" [
      code [ "prop_shipmasts" ]
      pos [ 17 8 0 ]
-     hpr [ 15 0 0 ]
+     nhpr [ 15 0 -0 ]
      scale [ 2 2 2 ]
     ]
    ]
    flat_building "tb2:random20_DNARoot" [
     pos [ 185 -50 0 ]
-    hpr [ 180 0 0 ]
+    nhpr [ -180 0 -0 ]
     width [ 15 ]
     wall [
      height [ 20 ]
@@ -307,19 +302,19 @@ group "donaldsDock" [
     prop "prop_stovepipe_DNARoot" [
      code [ "prop_stovepipe" ]
      pos [ 1.61 1.17 18.38 ]
-     hpr [ 0 0 0 ]
+     nhpr [ -0 0 -0 ]
      color [ 0.71 0.49 0.35 1 ]
     ]
     prop "prop_2ftdockpiling_DNARoot" [
      code [ "prop_2ftdockpiling" ]
      pos [ 20 -8 0 ]
-     hpr [ -180 0 0 ]
+     nhpr [ 180 0 -0 ]
     ]
    ]
    prop "linktunnel_dd_1000_DNARoot" [
     code [ "prop_safe_zone_entrance_tunnel" ]
     pos [ 160 -50 0 ]
-    hpr [ 90 0 0 ]
+    nhpr [ 90 0 -0 ]
     sign [
      code [ "tunnel_sign_red" ]
      pos [ 0 0 -2.19 ]
@@ -423,7 +418,7 @@ group "donaldsDock" [
   ]
   flat_building "tb2:random_DNARoot" [
    pos [ 170 -50 0 ]
-   hpr [ 180 0 0 ]
+   nhpr [ -180 0 -0 ]
    width [ 15 ]
    wall [
     height [ 10 ]
@@ -440,6 +435,18 @@ group "donaldsDock" [
     ]
    ]
   ]
+  interactive_prop "interactive_prop_phase_6_models_char__dod_trashcan_DNARoot" [
+   code [ "interactive_prop_phase_6_models_char__dod_trashcan" ]
+   anim [ "tt_a_ara_dod_trashcan_idle1" ]
+   cell_id [ 0 ]
+   pos [ 178.832 -14.7373 0 ]
+   nhpr [ -0 0 -0 ]
+  ]
+  prop "prop_tt_m_ara_gen_tunnelAheadSign_DNARoot" [
+   code [ "prop_tt_m_ara_gen_tunnelAheadSign" ]
+   pos [ 166.533 -21.7616 -0.5 ]
+   nhpr [ 75 0 0 ]
+  ]
  ]
  visgroup "1102" [
   vis [   "1101"   "1102"   "1103"   "1104"   "1105"   "1120"   "1121"   ]
@@ -455,7 +462,7 @@ group "donaldsDock" [
    street "street_full_corner_DNARoot" [
     code [ "street_full_corner" ]
     pos [ 245 -10 0 ]
-    hpr [ 180 0 0 ]
+    nhpr [ -180 0 -0 ]
     texture [ "street_street_DD_tex" ]
     texture [ "street_sidewalk_DD_tex" ]
     texture [ "street_curb_DD_tex" ]
@@ -464,7 +471,7 @@ group "donaldsDock" [
   group "buildings" [
    flat_building "tb2:random20_DNARoot" [
     pos [ 245 -50 0 ]
-    hpr [ -180 0 0 ]
+    nhpr [ 180 0 -0 ]
     width [ 20 ]
     wall [
      height [ 10 ]
@@ -489,17 +496,17 @@ group "donaldsDock" [
     prop "prop_ship_wheel_DNARoot" [
      code [ "prop_ship_wheel" ]
      pos [ 3.85 -4.15 0 ]
-     hpr [ 45 0 0 ]
+     nhpr [ 45 0 -0 ]
     ]
     prop "prop_2ftdockpiling_DNARoot" [
      code [ "prop_2ftdockpiling" ]
      pos [ 8.82 -8 0 ]
-     hpr [ 180 0 0 ]
+     nhpr [ -180 0 -0 ]
     ]
    ]
    flat_building "tb2:random20_DNARoot" [
     pos [ 245 -35 0 ]
-    hpr [ -90 0 0 ]
+    nhpr [ -90 0 -0 ]
     width [ 15 ]
     wall [
      height [ 10 ]
@@ -528,13 +535,13 @@ group "donaldsDock" [
     prop "prop_stovepipe_DNARoot" [
      code [ "prop_stovepipe" ]
      pos [ 2 1 20 ]
-     hpr [ 0 0 0 ]
+     nhpr [ -0 0 -0 ]
      color [ 0.92 0.63 0.42 1 ]
     ]
    ]
    flat_building "tb2:random20_DNARoot" [
     pos [ 245 -20 0 ]
-    hpr [ -90 0 0 ]
+    nhpr [ -90 0 -0 ]
     width [ 15 ]
     wall [
      height [ 10 ]
@@ -559,18 +566,18 @@ group "donaldsDock" [
     prop "prop_crate_DNARoot" [
      code [ "prop_crate" ]
      pos [ 10 -5 0 ]
-     hpr [ 150 0 0 ]
+     nhpr [ 150 0 -0 ]
     ]
     prop "prop_crate_DNARoot" [
      code [ "DD_barrel" ]
      pos [ 6 -4 0 ]
-     hpr [ 150 0 0 ]
+     nhpr [ 150 0 -0 ]
      scale [ 1.6 1.6 1.6 ]
     ]
     prop "prop_billboard_DNARoot" [
      code [ "prop_billboard" ]
      pos [ 4.68 6.14 18.81 ]
-     hpr [ -30 0 0 ]
+     nhpr [ -30 0 -0 ]
      color [ 0.75 0.75 0.75 1 ]
      sign [
       color [ 0.25 0.25 0.25 1 ]
@@ -578,7 +585,7 @@ group "donaldsDock" [
        code [ "mickey" ]
        color [ 0 0.501961 0.25098 1 ]
        pos [ 0 0 0.23 ]
-       hpr [ 0 0 8 ]
+       nhpr [ -0 0 -8 ]
        scale [ 1.2 1 1.2 ]
        kern [ 0.035536 ]
        wiggle [ 2.73152 ]
@@ -616,7 +623,7 @@ group "donaldsDock" [
        code [ "mickey" ]
        color [ 0 0.501961 0.25098 1 ]
        pos [ 0 0 -0.74 ]
-       hpr [ 0 0 8 ]
+       nhpr [ -0 0 -8 ]
        scale [ 1.2 1 1.2 ]
        wiggle [ 1.8372 ]
        width [ 15.0646 ]
@@ -635,7 +642,7 @@ group "donaldsDock" [
        code [ "mickey" ]
        color [ 0 0.501961 0.752941 1 ]
        pos [ 0 0 -1.52 ]
-       hpr [ 0 0 4 ]
+       nhpr [ -0 0 -4 ]
        scale [ 0.8 1 0.6 ]
        width [ 27.3426 ]
        height [ 27.3426 ]
@@ -683,7 +690,7 @@ group "donaldsDock" [
        code [ "mickey" ]
        color [ 0 0.501961 0.752941 1 ]
        pos [ 0 0 1.47 ]
-       hpr [ 0 0 7 ]
+       nhpr [ -0 0 -7 ]
        scale [ 0.7 1 0.7 ]
        width [ 25.3094 ]
        height [ 25.3094 ]
@@ -746,7 +753,7 @@ group "donaldsDock" [
        code [ "mickey" ]
        color [ 0 0.501961 0.752941 1 ]
        pos [ 0 0 -2.18 ]
-       hpr [ 0 0 3 ]
+       nhpr [ -0 0 -3 ]
        scale [ 0.8 1 0.7 ]
        width [ 25 ]
        height [ 25 ]
@@ -795,7 +802,7 @@ group "donaldsDock" [
    ]
    flat_building "tb2:random20_DNARoot" [
     pos [ 245 -10 0 ]
-    hpr [ -90 0 0 ]
+    nhpr [ -90 0 -0 ]
     width [ 10 ]
     wall [
      height [ 10 ]
@@ -820,7 +827,7 @@ group "donaldsDock" [
     prop "prop_palm_tree_topflat_DNARoot" [
      code [ "prop_palm_tree_topflat" ]
      pos [ 4 -8 0 ]
-     hpr [ -180 0 0 ]
+     nhpr [ 180 0 -0 ]
      scale [ 0.5 0.5 0.5 ]
     ]
    ]
@@ -830,11 +837,11 @@ group "donaldsDock" [
   prop "prop_2ftdockpiling_DNARoot" [
    code [ "prop_2ftdockpiling" ]
    pos [ 214 -19 0 ]
-   hpr [ 0 0 0 ]
+   nhpr [ -0 0 -0 ]
   ]
   flat_building "tb2:random_DNARoot" [
    pos [ 225 -50 0 ]
-   hpr [ -180 0 0 ]
+   nhpr [ 180 0 -0 ]
    width [ 15 ]
    wall [
     height [ 10 ]
@@ -862,7 +869,7 @@ group "donaldsDock" [
    prop "prop_2ftdockpiling_DNARoot" [
     code [ "prop_2ftdockpiling" ]
     pos [ 11.35 -7.72 0 ]
-    hpr [ 180 0 0 ]
+    nhpr [ -180 0 -0 ]
    ]
   ]
  ]
@@ -892,7 +899,7 @@ group "donaldsDock" [
   group "buildings" [
    flat_building "tb2:random20_DNARoot" [
     pos [ 245 30 0 ]
-    hpr [ -90 0 0 ]
+    nhpr [ -90 0 -0 ]
     width [ 15 ]
     wall [
      height [ 10 ]
@@ -917,34 +924,34 @@ group "donaldsDock" [
     prop "prop_chimney_DNARoot" [
      code [ "prop_chimney" ]
      pos [ 0.78 2.95 18.34 ]
-     hpr [ 0 0 0 ]
+     nhpr [ -0 0 -0 ]
      color [ 0.75 0.45 0.45 1 ]
     ]
     prop "prop_crate_DNARoot" [
      code [ "DD_barrel" ]
      pos [ 6 -2 0 ]
-     hpr [ 90 0 0 ]
+     nhpr [ 90 0 -0 ]
      scale [ 1.4 1.4 1.4 ]
     ]
     prop "prop_crate_DNARoot" [
      code [ "prop_crate" ]
      pos [ 10 -5 0 ]
-     hpr [ 120 0 0 ]
+     nhpr [ 120 0 -0 ]
     ]
     prop "prop_2ftdockpiling_DNARoot" [
      code [ "prop_2ftdockpiling" ]
      pos [ 11 -9 0 ]
-     hpr [ -180 0 0 ]
+     nhpr [ 180 0 -0 ]
     ]
     prop "streetlight_DD_right_DNARoot" [
      code [ "streetlight_DD_right" ]
      pos [ 7.47 -8.48 0 ]
-     hpr [ 90 0 0 ]
+     nhpr [ 90 0 -0 ]
     ]
    ]
    flat_building "tb26:random20_DNARoot" [
     pos [ 205 -10 0 ]
-    hpr [ 90 0 0 ]
+    nhpr [ 90 0 -0 ]
     width [ 20.7 ]
     wall [
      height [ 10 ]
@@ -968,31 +975,26 @@ group "donaldsDock" [
     prop "prop_palm_tree_topflat_DNARoot" [
      code [ "prop_palm_tree_topflat" ]
      pos [ -4.96 0.6 0 ]
-     hpr [ -60 0 0 ]
+     nhpr [ -60 0 -0 ]
      scale [ 1.3 1.3 1.3 ]
     ]
     prop "prop_palm_tree_topflat_DNARoot" [
      code [ "prop_palm_tree_topflat" ]
      pos [ 0 -7 0 ]
-     hpr [ 135 0 0 ]
+     nhpr [ 135 0 -0 ]
      scale [ 0.9 0.9 0.9 ]
-    ]
-    prop "prop_mailbox_DD_DNARoot" [
-     code [ "prop_mailbox_DD" ]
-     pos [ 21 -6 0 ]
-     hpr [ 0 0 0 ]
     ]
     prop "prop_2ftdockpiling_DNARoot" [
      code [ "prop_2ftdockpiling" ]
      pos [ 29 -9 0 ]
-     hpr [ 0 0 0 ]
+     nhpr [ -0 0 -0 ]
     ]
    ]
    landmark_building "tb26:toon_landmark_DD_D1_DNARoot" [
     code [ "toon_landmark_DD_D1" ]
     title [ "Salmon Chanted Evening Formal Wear" ]
     pos [ 205 10 0 ]
-    hpr [ 90 0 0 ]
+    nhpr [ 90 0 -0 ]
     door [
      code [ "door_double_wood_ur" ]
      color [ 1 0.59 0.59 1 ]
@@ -1000,7 +1002,7 @@ group "donaldsDock" [
     sign [
      code [ "DD_sign2" ]
      pos [ 0.97 0 -5.63 ]
-     hpr [ 0 0 1 ]
+     nhpr [ -0 0 -1 ]
      scale [ 2 1 1.5 ]
      baseline [
       code [ "humanist" ]
@@ -1126,7 +1128,7 @@ group "donaldsDock" [
     code [ "toon_landmark_DD_A1" ]
     title [ "Used Life Preservers" ]
     pos [ 245 15 0 ]
-    hpr [ -90 0 0 ]
+    nhpr [ -90 0 -0 ]
     door [
      code [ "door_double_wood_ur" ]
      color [ 0.79 0.47 0.47 1 ]
@@ -1134,7 +1136,7 @@ group "donaldsDock" [
     sign [
      code [ "DD_sign1" ]
      pos [ 0 0 -3 ]
-     hpr [ 0 0 6 ]
+     nhpr [ -0 0 -6 ]
      baseline [
       code [ "DD_Portago" ]
       color [ 0.360784 0.360784 0.360784 1 ]
@@ -1219,11 +1221,18 @@ group "donaldsDock" [
   ]
   street "street_40x40_DNARoot" [
    code [ "street_40x40" ]
-   pos [ 245 -10 0 ]
-   hpr [ 90 0 0 ]
+   pos [ 245 -10 1.14441e-005 ]
+   nhpr [ 90 0 -0 ]
    texture [ "street_street_DD_tex" ]
    texture [ "street_sidewalk_DD_tex" ]
    texture [ "street_curb_DD_tex" ]
+  ]
+  interactive_prop "interactive_prop_phase_6_models_char__dod_mailbox_DNARoot" [
+   code [ "interactive_prop_phase_6_models_char__dod_mailbox" ]
+   anim [ "tt_a_ara_dod_mailbox_fightBoost" ]
+   cell_id [ 0 ]
+   pos [ 209.539 7.18622 1.14441e-005 ]
+   nhpr [ 90 0 -0 ]
   ]
  ]
  visgroup "1104" [
@@ -1243,7 +1252,7 @@ group "donaldsDock" [
    street "street_full_corner_DNARoot" [
     code [ "street_full_corner" ]
     pos [ 205 90 0 ]
-    hpr [ 0 0 0 ]
+    nhpr [ -0 0 -0 ]
     texture [ "street_street_DD_tex" ]
     texture [ "street_sidewalk_DD_tex" ]
     texture [ "street_curb_DD_tex" ]
@@ -1252,7 +1261,7 @@ group "donaldsDock" [
   group "buildings" [
    flat_building "tb4:random20_DNARoot" [
     pos [ 205 90 0 ]
-    hpr [ 90 0 0 ]
+    nhpr [ 90 0 -0 ]
     width [ 20 ]
     wall [
      height [ 20 ]
@@ -1267,24 +1276,24 @@ group "donaldsDock" [
     prop "neighborhood_sign_DD_DNARoot" [
      code [ "neighborhood_sign_DD" ]
      pos [ 22.1 -1.25 0 ]
-     hpr [ -180 0 0 ]
+     nhpr [ 180 0 -0 ]
      scale [ 1.5 1.5 1.5 ]
     ]
     prop "prop_roof_access_DNARoot" [
      code [ "prop_roof_access" ]
      pos [ 4.93 4.49 18.86 ]
-     hpr [ 0 0 0 ]
+     nhpr [ -0 0 -0 ]
      color [ 0.44 0.67 0.45 1 ]
     ]
     prop "prop_2ftdockpiling_DNARoot" [
      code [ "prop_2ftdockpiling" ]
      pos [ 9 -9 0 ]
-     hpr [ 0 0 0 ]
+     nhpr [ -0 0 -0 ]
     ]
    ]
    flat_building "tb4:random20_DNARoot" [
     pos [ 205 110 0 ]
-    hpr [ 90 0 0 ]
+    nhpr [ 90 0 -0 ]
     width [ 20 ]
     wall [
      height [ 10 ]
@@ -1309,34 +1318,34 @@ group "donaldsDock" [
     prop "prop_palm_tree_topflat_DNARoot" [
      code [ "prop_palm_tree_topflat" ]
      pos [ -7.28 -4.25 0 ]
-     hpr [ 90 0 0 ]
+     nhpr [ 90 0 -0 ]
      scale [ 0.4 0.4 0.4 ]
      color [ 0.9 0.9 0.9 1 ]
     ]
     prop "prop_nets_DNARoot" [
      code [ "prop_nets" ]
      pos [ 15.82 -3.24 -0.44 ]
-     hpr [ -30 0 0 ]
+     nhpr [ -30 0 -0 ]
     ]
     prop "prop_crate_DNARoot" [
      code [ "prop_crate" ]
      pos [ 17.79 -7.7 0 ]
-     hpr [ -90 0 0 ]
+     nhpr [ -90 0 -0 ]
     ]
     prop "prop_crate_DNARoot" [
      code [ "prop_crate" ]
      pos [ 13.84 -7.4 0 ]
-     hpr [ -90 0 0 ]
+     nhpr [ -90 0 -0 ]
     ]
     prop "prop_2ftdockpiling_DNARoot" [
      code [ "prop_2ftdockpiling" ]
      pos [ 11.02 -8.54 0 ]
-     hpr [ -90 0 0 ]
+     nhpr [ -90 0 -0 ]
     ]
     prop "prop_billboard_DNARoot" [
      code [ "prop_billboard" ]
      pos [ 4.7 1.06 19.3 ]
-     hpr [ 0 0 0 ]
+     nhpr [ -0 0 -0 ]
      color [ 0.75 0.75 0.75 1 ]
      sign [
       color [ 0.25 0.25 0.25 1 ]
@@ -1344,7 +1353,7 @@ group "donaldsDock" [
        code [ "mickey" ]
        color [ 0 0.501961 0.752941 1 ]
        pos [ 0 0 1.51 ]
-       hpr [ 0 0 7 ]
+       nhpr [ -0 0 -7 ]
        scale [ 0.7 1 0.7 ]
        kern [ 0.028793 ]
        wiggle [ 3.74412 ]
@@ -1377,7 +1386,7 @@ group "donaldsDock" [
        code [ "mickey" ]
        color [ 0 0.501961 0.501961 1 ]
        pos [ 0 0 0.24 ]
-       hpr [ 0 0 8 ]
+       nhpr [ -0 0 -8 ]
        scale [ 0.9 1 1.1 ]
        wiggle [ 5.40493 ]
        stumble [ -0.001889 ]
@@ -1431,7 +1440,7 @@ group "donaldsDock" [
        code [ "mickey" ]
        color [ 0 0.501961 0.501961 1 ]
        pos [ 0 0 -0.85 ]
-       hpr [ 0 0 6 ]
+       nhpr [ -0 0 -6 ]
        scale [ 1.1 1 1.1 ]
        wiggle [ 2.99445 ]
        stumble [ 0.067726 ]
@@ -1461,7 +1470,7 @@ group "donaldsDock" [
        code [ "mickey" ]
        color [ 0 0.501961 0.752941 1 ]
        pos [ 0 0 -1.72 ]
-       hpr [ 0 0 3 ]
+       nhpr [ -0 0 -3 ]
        scale [ 0.6 1 0.6 ]
        kern [ 0.019825 ]
        width [ 25.5768 ]
@@ -1510,7 +1519,7 @@ group "donaldsDock" [
        code [ "mickey" ]
        color [ 0 0.501961 0.752941 1 ]
        pos [ 0 0 -2.31 ]
-       hpr [ 0 0 2 ]
+       nhpr [ -0 0 -2 ]
        scale [ 0.6 1 0.6 ]
        kern [ 0.049083 ]
        width [ 28.3632 ]
@@ -1551,7 +1560,7 @@ group "donaldsDock" [
    ]
    flat_building "tb4:random20_DNARoot" [
     pos [ 205 130 0 ]
-    hpr [ 0 0 0 ]
+    nhpr [ -0 0 -0 ]
     width [ 20 ]
     wall [
      height [ 10 ]
@@ -1576,7 +1585,7 @@ group "donaldsDock" [
     prop "neighborhood_sign_TT_DNARoot" [
      code [ "neighborhood_sign_TT" ]
      pos [ 12.82 -1.15 0 ]
-     hpr [ 0 0 0 ]
+     nhpr [ -0 0 -0 ]
      scale [ 1.5 1.5 1.5 ]
     ]
    ]
@@ -1584,7 +1593,7 @@ group "donaldsDock" [
     code [ "toon_landmark_DD_A1" ]
     title [ "Wet Suit Dry Cleaners" ]
     pos [ 225 130 0 ]
-    hpr [ 0 0 0 ]
+    nhpr [ -0 0 -0 ]
     door [
      code [ "door_double_wood_ur" ]
      color [ 1 0.592157 0.592157 1 ]
@@ -1592,7 +1601,7 @@ group "donaldsDock" [
     sign [
      code [ "DD_sign3" ]
      pos [ 0 0 -4.29 ]
-     hpr [ 0 0 3 ]
+     nhpr [ -0 0 -3 ]
      baseline [
       code [ "humanist" ]
       color [ 0.85098 0.423529 0 1 ]
@@ -1673,18 +1682,18 @@ group "donaldsDock" [
     prop "prop_smokestack_DNARoot" [
      code [ "prop_smokestack" ]
      pos [ 19 11 20 ]
-     hpr [ 0 0 0 ]
+     nhpr [ -0 0 -0 ]
      color [ 0.71 0.49 0.35 1 ]
     ]
     prop "prop_2ftdockpiling_DNARoot" [
      code [ "prop_2ftdockpiling" ]
      pos [ 15.93 -8.88 0 ]
-     hpr [ 0 0 0 ]
+     nhpr [ -0 0 -0 ]
     ]
     prop "prop_2ftdockpiling_DNARoot" [
      code [ "prop_2ftdockpiling" ]
      pos [ 11 -31 0 ]
-     hpr [ 90 0 0 ]
+     nhpr [ 90 0 -0 ]
     ]
    ]
   ]
@@ -1716,7 +1725,7 @@ group "donaldsDock" [
    street "street_20x40_DNARoot" [
     code [ "street_20x40" ]
     pos [ 245 90 0 ]
-    hpr [ 0 0 0 ]
+    nhpr [ -0 0 -0 ]
     texture [ "street_street_DD_tex" ]
     texture [ "street_sidewalk_DD_tex" ]
     texture [ "street_curb_DD_tex" ]
@@ -1725,7 +1734,7 @@ group "donaldsDock" [
   group "buildings" [
    flat_building "tb4:random20_DNARoot" [
     pos [ 250 130 0 ]
-    hpr [ 0 0 0 ]
+    nhpr [ -0 0 -0 ]
     width [ 15 ]
     wall [
      height [ 10 ]
@@ -1750,12 +1759,12 @@ group "donaldsDock" [
     prop "streetlight_DD_left_DNARoot" [
      code [ "streetlight_DD_left" ]
      pos [ 12.08 -7.98 0 ]
-     hpr [ -90 0 0 ]
+     nhpr [ -90 0 -0 ]
     ]
    ]
    flat_building "tb22:random20_DNARoot" [
     pos [ 270 90 0 ]
-    hpr [ -180 0 0 ]
+    nhpr [ 180 0 -0 ]
     width [ 25 ]
     wall [
      height [ 10 ]
@@ -1780,14 +1789,16 @@ group "donaldsDock" [
       color [ 0.944882 0.715146 0.659565 1 ]
      ]
     ]
-    prop "prop_trashcan_DD_DNARoot" [
-     code [ "prop_hydrant" ]
-     pos [ 18 -8 0 ]
-     hpr [ 90 0 0 ]
-    ]
    ]
   ]
   group "props" [
+  ]
+  interactive_prop "interactive_prop_phase_5_models_char__ttc_hydrant_DNARoot" [
+   code [ "interactive_prop_phase_5_models_char__ttc_hydrant" ]
+   anim [ "tt_a_ara_ttc_hydrant_fightBoost" ]
+   cell_id [ 0 ]
+   pos [ 18 -8 0 ]
+   nhpr [ 90 0 -0 ]
   ]
  ]
  visgroup "1106" [
@@ -1800,8 +1811,8 @@ group "donaldsDock" [
   group "streets" [
    street "street_full_corner_DNARoot" [
     code [ "street_full_corner" ]
-    pos [ 305 130 0 ]
-    hpr [ -90 0 0 ]
+    pos [ 305 130 2.28882e-005 ]
+    nhpr [ -90 0 -0 ]
     texture [ "street_street_DD_tex" ]
     texture [ "street_sidewalk_DD_tex" ]
     texture [ "street_curb_DD_tex" ]
@@ -1810,7 +1821,7 @@ group "donaldsDock" [
   group "buildings" [
    flat_building "tb4:random20_DNARoot" [
     pos [ 305 130 0 ]
-    hpr [ 0 0 0 ]
+    nhpr [ -0 0 -0 ]
     width [ 20 ]
     wall [
      height [ 20 ]
@@ -1829,30 +1840,30 @@ group "donaldsDock" [
     prop "prop_2ftdockpiling_DNARoot" [
      code [ "prop_2ftdockpiling" ]
      pos [ 9 -9 0 ]
-     hpr [ 0 0 0 ]
+     nhpr [ -0 0 -0 ]
     ]
     prop "prop_shipmasts_DNARoot" [
      code [ "prop_shipmasts" ]
      pos [ -7.71 9.28 15 ]
-     hpr [ 15 0 0 ]
+     nhpr [ 15 0 -0 ]
      scale [ 2 2 2 ]
     ]
     prop "prop_shipmasts_DNARoot" [
      code [ "prop_shipmasts" ]
      pos [ 11.61 14.46 5 ]
-     hpr [ 15 0 0 ]
+     nhpr [ 15 0 -0 ]
      scale [ 2 2 2 ]
     ]
     prop "prop_palm_tree_topflat_DNARoot" [
      code [ "prop_palm_tree_topflat" ]
      pos [ 14 -6.99997 0 ]
-     hpr [ -75 0 0 ]
+     nhpr [ -75 0 -0 ]
      scale [ 0.6 0.6 0.6 ]
     ]
    ]
    flat_building "tb4:random20_DNARoot" [
     pos [ 325 130 0 ]
-    hpr [ 0 0 0 ]
+    nhpr [ -0 0 -0 ]
     width [ 20 ]
     wall [
      height [ 10 ]
@@ -1877,43 +1888,45 @@ group "donaldsDock" [
     prop "streetlight_DD_left_DNARoot" [
      code [ "streetlight_DD_left" ]
      pos [ -1 -9 0 ]
-     hpr [ -90 0 0 ]
+     nhpr [ -90 0 -0 ]
     ]
     prop "prop_2ftdockpiling_DNARoot" [
      code [ "prop_2ftdockpiling" ]
      pos [ 11.24 -8.44 0 ]
-     hpr [ 0 0 0 ]
+     nhpr [ -0 0 -0 ]
     ]
     prop "prop_crate_DNARoot" [
      code [ "prop_crate" ]
      pos [ 16 -7.00003 0 ]
-     hpr [ -30 0 0 ]
+     nhpr [ -30 0 -0 ]
     ]
     prop "prop_palm_tree_topflat_DNARoot" [
      code [ "prop_palm_tree_topflat" ]
      pos [ -16.03 -34.74 0 ]
-     hpr [ -75 0 0 ]
+     nhpr [ -75 0 -0 ]
      scale [ 0.7 0.7 0.7 ]
     ]
     prop "prop_2ftdockpiling_DNARoot" [
      code [ "prop_2ftdockpiling" ]
      pos [ -11 -31 0 ]
-     hpr [ -30 0 0 ]
+     nhpr [ -30 0 -0 ]
     ]
     prop "neighborhood_sign_DD_DNARoot" [
      code [ "neighborhood_sign_DD" ]
      pos [ 9 -1 0 ]
-     hpr [ -180 0 0 ]
+     nhpr [ 180 0 -0 ]
      scale [ 1.5 1.5 1.5 ]
     ]
    ]
   ]
   group "props" [
-   prop "prop_hydrant_DNARoot" [
-    code [ "prop_hydrant" ]
-    pos [ 314.12 93.68 0 ]
-    hpr [ 0 0 0 ]
-   ]
+  ]
+  interactive_prop "interactive_prop_phase_6_models_char__dod_trashcan_DNARoot" [
+   code [ "interactive_prop_phase_6_models_char__dod_trashcan" ]
+   anim [ "tt_a_ara_dod_trashcan_idle1" ]
+   cell_id [ 0 ]
+   pos [ 340.554 98.7093 2.28882e-005 ]
+   nhpr [ -90 0 -0 ]
   ]
  ]
  visgroup "1107" [
@@ -1934,8 +1947,8 @@ group "donaldsDock" [
   group "streets" [
    street "street_40x40_DNARoot" [
     code [ "street_40x40" ]
-    pos [ 305 90 0 ]
-    hpr [ -90 0 0 ]
+    pos [ 305 90 2.28882e-005 ]
+    nhpr [ -90 0 -0 ]
     texture [ "street_street_DD_tex" ]
     texture [ "street_sidewalk_DD_tex" ]
     texture [ "street_curb_DD_tex" ]
@@ -1944,7 +1957,7 @@ group "donaldsDock" [
   group "buildings" [
    flat_building "tb6:random20_DNARoot" [
     pos [ 305 50 0 ]
-    hpr [ 90 0 0 ]
+    nhpr [ 90 0 -0 ]
     width [ 10 ]
     wall [
      height [ 10 ]
@@ -1971,7 +1984,7 @@ group "donaldsDock" [
     code [ "toon_landmark_DD_B2" ]
     title [ "Hook's Clock Repair" ]
     pos [ 305 60 0 ]
-    hpr [ 90 0 0 ]
+    nhpr [ 90 0 -0 ]
     door [
      code [ "door_double_wood_ur" ]
      color [ 1 1 1 1 ]
@@ -2055,20 +2068,15 @@ group "donaldsDock" [
       ]
      ]
     ]
-    prop "prop_mailbox_DD_DNARoot" [
-     code [ "prop_mailbox_DD" ]
-     pos [ -2 -9 0 ]
-     hpr [ 0 0 0 ]
-    ]
     prop "prop_2ftdockpiling_DNARoot" [
      code [ "prop_2ftdockpiling" ]
      pos [ 7 -9 0 ]
-     hpr [ 90 0 0 ]
+     nhpr [ 90 0 -0 ]
     ]
    ]
    flat_building "tb6:random20_DNARoot" [
     pos [ 305 75 0 ]
-    hpr [ 90 0 0 ]
+    nhpr [ 90 0 -0 ]
     width [ 15 ]
     wall [
      height [ 10 ]
@@ -2096,7 +2104,7 @@ group "donaldsDock" [
    ]
    flat_building "tb8:random_DNARoot" [
     pos [ 345 70 0 ]
-    hpr [ -90 0 0 ]
+    nhpr [ -90 0 -0 ]
     width [ 10 ]
     wall [
      height [ 10 ]
@@ -2125,12 +2133,12 @@ group "donaldsDock" [
     prop "prop_2ftdockpiling_DNARoot" [
      code [ "prop_2ftdockpiling" ]
      pos [ 2.99998 -8.00003 0 ]
-     hpr [ 180 0 0 ]
+     nhpr [ -180 0 -0 ]
     ]
    ]
    flat_building "tb8:random_DNARoot" [
     pos [ 345 60 0 ]
-    hpr [ -90 0 0 ]
+    nhpr [ -90 0 -0 ]
     width [ 15 ]
     wall [
      height [ 10 ]
@@ -2156,6 +2164,13 @@ group "donaldsDock" [
   ]
   group "props" [
   ]
+  interactive_prop "interactive_prop_phase_5_models_char__ttc_hydrant_DNARoot" [
+   code [ "interactive_prop_phase_5_models_char__ttc_hydrant" ]
+   anim [ "tt_a_ara_ttc_hydrant_fightCheer" ]
+   cell_id [ 0 ]
+   pos [ 310.264 85.6945 2.28882e-005 ]
+   nhpr [ 75 0 0 ]
+  ]
  ]
  visgroup "1108" [
   vis [   "1106"   "1107"   "1108"   "1109"   "1110"   "1111"   "1123"   "1124"   "1122"   "1129"   "1128"   ]
@@ -2173,15 +2188,15 @@ group "donaldsDock" [
    street "street_10x40_DNARoot" [
     code [ "street_10x40" ]
     pos [ 295 10 0 ]
-    hpr [ 0 0 0 ]
+    nhpr [ -0 0 -0 ]
     texture [ "street_street_DD_tex" ]
     texture [ "street_sidewalk_DD_tex" ]
     texture [ "street_curb_DD_tex" ]
    ]
    street "street_full_corner_DNARoot" [
     code [ "street_full_corner" ]
-    pos [ 345 50 0 ]
-    hpr [ -180 0 0 ]
+    pos [ 345 50 1.14441e-005 ]
+    nhpr [ -180 0 -0 ]
     texture [ "street_street_DD_tex" ]
     texture [ "street_sidewalk_DD_tex" ]
     texture [ "street_curb_DD_tex" ]
@@ -2190,7 +2205,7 @@ group "donaldsDock" [
   group "buildings" [
    flat_building "tb8:random20_DNARoot" [
     pos [ 345 10 0 ]
-    hpr [ -180 0 0 ]
+    nhpr [ 180 0 -0 ]
     width [ 20 ]
     wall [
      height [ 10 ]
@@ -2219,13 +2234,13 @@ group "donaldsDock" [
     prop "neighborhood_sign_TT_DNARoot" [
      code [ "neighborhood_sign_TT" ]
      pos [ 7.36 -1.23 0 ]
-     hpr [ 0 0 0 ]
+     nhpr [ -0 0 -0 ]
      scale [ 1.5 1.5 1.5 ]
     ]
    ]
    flat_building "tb20:random20_DNARoot" [
     pos [ 295 50 0 ]
-    hpr [ 0 0 0 ]
+    nhpr [ -0 0 -0 ]
     width [ 10 ]
     wall [
      height [ 10 ]
@@ -2250,31 +2265,31 @@ group "donaldsDock" [
     prop "prop_2ftdockpiling_DNARoot" [
      code [ "prop_2ftdockpiling" ]
      pos [ 19 -8 0 ]
-     hpr [ -30 0 0 ]
+     nhpr [ -30 0 -0 ]
     ]
     prop "prop_crate_DNARoot" [
      code [ "prop_crate" ]
      pos [ 12 -3 0 ]
-     hpr [ 90 0 0 ]
+     nhpr [ 90 0 -0 ]
      color [ 0.87 0.69 0.42 1 ]
     ]
     prop "prop_crate_DNARoot" [
      code [ "prop_crate" ]
      pos [ 14.02 -2.96 2.12 ]
-     hpr [ 90 0 0 ]
+     nhpr [ 90 0 -0 ]
      color [ 0.75 0.75 0.75 1 ]
     ]
     prop "prop_crate_DNARoot" [
      code [ "prop_crate" ]
      pos [ 15 -3 0 ]
-     hpr [ 120 0 0 ]
+     nhpr [ 120 0 -0 ]
     ]
    ]
    landmark_building "tb8:toon_landmark_DD_A2_DNARoot" [
     code [ "toon_landmark_DD_A2" ]
     title [ "Luff 'N Stuff" ]
     pos [ 330 10 0 ]
-    hpr [ -180 0 0 ]
+    nhpr [ 180 0 -0 ]
     door [
      code [ "door_double_wood_ur" ]
      color [ 0.75 0.75 0.75 1 ]
@@ -2282,7 +2297,7 @@ group "donaldsDock" [
     sign [
      code [ "DD_sign1" ]
      pos [ 0 0 -2.74 ]
-     hpr [ 0 0 -2 ]
+     nhpr [ -0 0 2 ]
      baseline [
       code [ "mickey" ]
       color [ 0.74902 0 0 1 ]
@@ -2336,12 +2351,12 @@ group "donaldsDock" [
     prop "prop_2ftdockpiling_DNARoot" [
      code [ "prop_2ftdockpiling" ]
      pos [ 16.92 -8.18 0 ]
-     hpr [ 180 0 0 ]
+     nhpr [ -180 0 -0 ]
     ]
    ]
    flat_building "tb8:random_DNARoot" [
     pos [ 345 20 0 ]
-    hpr [ -90 0 0 ]
+    nhpr [ -90 0 -0 ]
     width [ 10 ]
     wall [
      height [ 10 ]
@@ -2370,12 +2385,12 @@ group "donaldsDock" [
     prop "prop_2ftdockpiling_DNARoot" [
      code [ "prop_2ftdockpiling" ]
      pos [ 1.99997 -8.99994 0 ]
-     hpr [ 90 0 0 ]
+     nhpr [ 90 0 -0 ]
     ]
    ]
    flat_building "tb8:random_DNARoot" [
     pos [ 345 35 0 ]
-    hpr [ -90 0 0 ]
+    nhpr [ -90 0 -0 ]
     width [ 15 ]
     wall [
      height [ 10 ]
@@ -2404,7 +2419,7 @@ group "donaldsDock" [
    ]
    flat_building "tb8:random_DNARoot" [
     pos [ 345 45 0 ]
-    hpr [ -90 0 0 ]
+    nhpr [ -90 0 -0 ]
     width [ 10 ]
     wall [
      height [ 10 ]
@@ -2433,7 +2448,7 @@ group "donaldsDock" [
     prop "prop_2ftdockpiling_DNARoot" [
      code [ "prop_2ftdockpiling" ]
      pos [ 2.99999 -8 0 ]
-     hpr [ 0 0 0 ]
+     nhpr [ -0 0 -0 ]
     ]
    ]
   ]
@@ -2441,7 +2456,7 @@ group "donaldsDock" [
   ]
   flat_building "tb8:20_DNARoot" [
    pos [ 305 10 0 ]
-   hpr [ 180 0 0 ]
+   nhpr [ -180 0 -0 ]
    width [ 10 ]
    wall [
     height [ 20 ]
@@ -2452,6 +2467,13 @@ group "donaldsDock" [
      color [ 0.88 0.43 0.43 1 ]
     ]
    ]
+  ]
+  interactive_prop "interactive_prop_phase_6_models_char__dod_mailbox_DNARoot" [
+   code [ "interactive_prop_phase_6_models_char__dod_mailbox" ]
+   anim [ "tt_a_ara_dod_mailbox_fightBoost" ]
+   cell_id [ 0 ]
+   pos [ 341.633 36.6473 1.14441e-005 ]
+   nhpr [ -90 0 -0 ]
   ]
  ]
  visgroup "1109" [
@@ -2468,8 +2490,8 @@ group "donaldsDock" [
   group "streets" [
    street "street_full_corner_DNARoot" [
     code [ "street_full_corner" ]
-    pos [ 255 10 0 ]
-    hpr [ 0 0 0 ]
+    pos [ 255 9.99997 7.62939e-006 ]
+    nhpr [ -0 0 -0 ]
     texture [ "street_street_DD_tex" ]
     texture [ "street_sidewalk_DD_tex" ]
     texture [ "street_curb_DD_tex" ]
@@ -2478,7 +2500,7 @@ group "donaldsDock" [
   group "buildings" [
    flat_building "tb20:random20_DNARoot" [
     pos [ 255 50 0 ]
-    hpr [ 0 0 0 ]
+    nhpr [ -0 0 -0 ]
     width [ 10 ]
     wall [
      height [ 20 ]
@@ -2493,7 +2515,7 @@ group "donaldsDock" [
    ]
    flat_building "tb20:random20_DNARoot" [
     pos [ 255 35 0 ]
-    hpr [ 90 0 0 ]
+    nhpr [ 90 0 -0 ]
     width [ 15 ]
     wall [
      height [ 10 ]
@@ -2522,7 +2544,7 @@ group "donaldsDock" [
    ]
    flat_building "tb9:random20_DNARoot" [
     pos [ 255 15 0 ]
-    hpr [ 90 0 0 ]
+    nhpr [ 90 0 -0 ]
     width [ 5 ]
     wall [
      height [ 20 ]
@@ -2537,7 +2559,7 @@ group "donaldsDock" [
    ]
    flat_building "tb20:random20_DNARoot" [
     pos [ 279.4 50 0 ]
-    hpr [ 0 0 0 ]
+    nhpr [ -0 0 -0 ]
     width [ 15.6 ]
     wall [
      height [ 10 ]
@@ -2561,19 +2583,19 @@ group "donaldsDock" [
     prop "prop_chimney_DNARoot" [
      code [ "prop_chimney" ]
      pos [ 11 4 17 ]
-     hpr [ -15 0 0 ]
+     nhpr [ -15 0 -0 ]
      color [ 0.63 0.47 0.24 1 ]
     ]
     prop "prop_palm_tree_topflat_DNARoot" [
      code [ "prop_palm_tree_topflat" ]
-     pos [ 20 -9 0 ]
-     hpr [ 75 0 0 ]
+     pos [ 20 -9.00002 7.62939e-006 ]
+     nhpr [ 75 0 -0 ]
      scale [ 0.8 0.8 0.8 ]
     ]
    ]
    flat_building "tb9:random20_DNARoot" [
     pos [ 255 20 0 ]
-    hpr [ 90 0 0 ]
+    nhpr [ 90 0 -0 ]
     width [ 15 ]
     wall [
      height [ 10 ]
@@ -2597,37 +2619,37 @@ group "donaldsDock" [
     prop "prop_stovepipe_DNARoot" [
      code [ "prop_stovepipe" ]
      pos [ 11.42 0.78 19.23 ]
-     hpr [ 0 0 0 ]
+     nhpr [ -0 0 -0 ]
      color [ 0.63 0.6 0.4 1 ]
     ]
     prop "DD_barrel_DNARoot" [
      code [ "prop_crate" ]
      pos [ 1.8 -4.66 0 ]
-     hpr [ -60 0 0 ]
+     nhpr [ -60 0 -0 ]
      color [ 0.75 0.75 0.75 1 ]
     ]
     prop "DD_barrel_DNARoot" [
      code [ "DD_barrel" ]
      pos [ -1.48 -2.75 0 ]
-     hpr [ -60 0 0 ]
+     nhpr [ -60 0 -0 ]
      scale [ 1.5 1.5 1.5 ]
     ]
     prop "streetlight_DD_left_DNARoot" [
      code [ "streetlight_DD_left" ]
      pos [ -2.79 -8.62 0 ]
-     hpr [ -90 0 0 ]
+     nhpr [ -90 0 -0 ]
     ]
     prop "prop_2ftdockpiling_DNARoot" [
      code [ "prop_2ftdockpiling" ]
-     pos [ -1.85 -31.49 0 ]
-     hpr [ -90 0 0 ]
+     pos [ -1.84999 -31.4901 1.14441e-005 ]
+     nhpr [ -90 0 -0 ]
     ]
    ]
    landmark_building "tb20:toon_landmark_DD_C1_DNARoot" [
     code [ "toon_landmark_DD_C1" ]
     title [ "From Fore to Aft" ]
     pos [ 260 50 0 ]
-    hpr [ 0 0 0 ]
+    nhpr [ -0 0 -0 ]
     door [
      code [ "door_double_wood_ur" ]
      color [ 1 0.59 0.59 1 ]
@@ -2732,11 +2754,18 @@ group "donaldsDock" [
     prop "prop_2ftdockpiling_DNARoot" [
      code [ "prop_2ftdockpiling" ]
      pos [ 4.13 -9.47 0 ]
-     hpr [ -30 0 0 ]
+     nhpr [ -30 0 -0 ]
     ]
    ]
   ]
   group "props" [
+  ]
+  interactive_prop "interactive_prop_phase_5_models_char__ttc_hydrant_DNARoot" [
+   code [ "interactive_prop_phase_5_models_char__ttc_hydrant" ]
+   anim [ "tt_a_ara_ttc_hydrant_firstMoveArmUp1" ]
+   cell_id [ 0 ]
+   pos [ 258.581 36.8731 7.62939e-006 ]
+   nhpr [ 90 0 -0 ]
   ]
  ]
  visgroup "1110" [
@@ -2757,7 +2786,7 @@ group "donaldsDock" [
     code [ "toon_landmark_DD_B2" ]
     title [ "Every Little Bait" ]
     pos [ 255 0 0 ]
-    hpr [ 90 0 0 ]
+    nhpr [ 90 0 -0 ]
     door [
      code [ "door_double_wood_ur" ]
      color [ 1 1 1 1 ]
@@ -2765,7 +2794,7 @@ group "donaldsDock" [
     sign [
      code [ "DD_sign3" ]
      pos [ 0 0 2.09 ]
-     hpr [ 0 0 7 ]
+     nhpr [ -0 0 -7 ]
      baseline [
       code [ "humanist" ]
       color [ 1 1 0 1 ]
@@ -2831,7 +2860,7 @@ group "donaldsDock" [
    ]
    flat_building "tb8:random20_DNARoot" [
     pos [ 295 10 0 ]
-    hpr [ -90 0 0 ]
+    nhpr [ -90 0 -0 ]
     width [ 15 ]
     wall [
      height [ 10 ]
@@ -2856,14 +2885,14 @@ group "donaldsDock" [
     prop "prop_palm_tree_topflat_DNARoot" [
      code [ "prop_palm_tree_topflat" ]
      pos [ 3 -8 0 ]
-     hpr [ 0 0 0 ]
+     nhpr [ -0 0 -0 ]
      scale [ 0.7 0.7 0.7 ]
      color [ 0.74902 0.74902 0.74902 1 ]
     ]
    ]
    flat_building "tb8:random20_DNARoot" [
     pos [ 295 -5 0 ]
-    hpr [ -90 0 0 ]
+    nhpr [ -90 0 -0 ]
     width [ 10 ]
     wall [
      height [ 10 ]
@@ -2892,7 +2921,7 @@ group "donaldsDock" [
    ]
    flat_building "tb9:random20_DNARoot" [
     pos [ 255 -20 0 ]
-    hpr [ 90 0 0 ]
+    nhpr [ 90 0 -0 ]
     width [ 20 ]
     wall [
      height [ 20 ]
@@ -2907,12 +2936,12 @@ group "donaldsDock" [
     prop "prop_2ftdockpiling_DNARoot" [
      code [ "prop_2ftdockpiling" ]
      pos [ 10 -9 0 ]
-     hpr [ -120 0 0 ]
+     nhpr [ -120 0 -0 ]
     ]
    ]
    flat_building "tb9:random20_DNARoot" [
     pos [ 255 -35 0 ]
-    hpr [ 90 0 0 ]
+    nhpr [ 90 0 -0 ]
     width [ 15 ]
     wall [
      height [ 20 ]
@@ -2931,19 +2960,19 @@ group "donaldsDock" [
     prop "prop_palm_tree_topflat_DNARoot" [
      code [ "prop_palm_tree_topflat" ]
      pos [ 9.24 -7.7 0 ]
-     hpr [ 90 0 0 ]
+     nhpr [ 90 0 -0 ]
      scale [ 0.4 0.4 0.4 ]
     ]
     prop "prop_palm_tree_topflat_DNARoot" [
      code [ "prop_palm_tree_topflat" ]
      pos [ 2 -8 0 ]
-     hpr [ -30 0 0 ]
+     nhpr [ -30 0 -0 ]
      scale [ 0.8 0.8 0.8 ]
     ]
    ]
    flat_building "tb8:random20_DNARoot" [
     pos [ 295 -15 0 ]
-    hpr [ -90 0 0 ]
+    nhpr [ -90 0 -0 ]
     width [ 15 ]
     wall [
      height [ 10 ]
@@ -2972,12 +3001,12 @@ group "donaldsDock" [
     prop "prop_2ftdockpiling_DNARoot" [
      code [ "prop_2ftdockpiling" ]
      pos [ 9 -9 0 ]
-     hpr [ 60 0 0 ]
+     nhpr [ 60 0 -0 ]
     ]
     prop "prop_stovepipe_DNARoot" [
      code [ "prop_stovepipe" ]
      pos [ 1.05 0.82 19.76 ]
-     hpr [ 0 0 0 ]
+     nhpr [ -0 0 -0 ]
      color [ 0.45 0.31 0.17 1 ]
     ]
    ]
@@ -2986,11 +3015,18 @@ group "donaldsDock" [
   ]
   street "street_40x40_DNARoot" [
    code [ "street_40x40" ]
-   pos [ 295 -30 0 ]
-   hpr [ 90 0 0 ]
+   pos [ 295 -30 7.62939e-006 ]
+   nhpr [ 90 0 -0 ]
    texture [ "street_street_DD_tex" ]
    texture [ "street_sidewalk_DD_tex" ]
    texture [ "street_curb_DD_tex" ]
+  ]
+  interactive_prop "interactive_prop_phase_5_models_char__ttc_hydrant_DNARoot" [
+   code [ "interactive_prop_phase_5_models_char__ttc_hydrant" ]
+   anim [ "tt_a_ara_ttc_hydrant_fightIdle" ]
+   cell_id [ 0 ]
+   pos [ 291.475 -20.1 7.62939e-006 ]
+   nhpr [ -90 0 0 ]
   ]
  ]
  visgroup "1111" [
@@ -3018,7 +3054,7 @@ group "donaldsDock" [
    street "street_full_corner_DNARoot" [
     code [ "street_full_corner" ]
     pos [ 295 -160 0 ]
-    hpr [ 90 0 0 ]
+    nhpr [ 90 0 -0 ]
     texture [ "street_street_DD_tex" ]
     texture [ "street_sidewalk_DD_tex" ]
     texture [ "street_curb_DD_tex" ]
@@ -3026,7 +3062,7 @@ group "donaldsDock" [
    street "street_10x40_DNARoot" [
     code [ "street_10x40" ]
     pos [ 305 -120 0 ]
-    hpr [ -180 0 0 ]
+    nhpr [ 180 0 -0 ]
     texture [ "street_street_DD_tex" ]
     texture [ "street_sidewalk_DD_tex" ]
     texture [ "street_curb_DD_tex" ]
@@ -3035,7 +3071,7 @@ group "donaldsDock" [
   group "buildings" [
    flat_building "tb27:random20_DNARoot" [
     pos [ 305 -160 0 ]
-    hpr [ -180 0 0 ]
+    nhpr [ 180 0 -0 ]
     width [ 10 ]
     wall [
      height [ 10 ]
@@ -3059,7 +3095,7 @@ group "donaldsDock" [
    ]
    flat_building "tb27:random20_DNARoot" [
     pos [ 270 -160 0 ]
-    hpr [ -180 0 0 ]
+    nhpr [ 180 0 -0 ]
     width [ 15 ]
     wall [
      height [ 20 ]
@@ -3074,7 +3110,7 @@ group "donaldsDock" [
    ]
    flat_building "tb27:random20_DNARoot" [
     pos [ 255 -160 0 ]
-    hpr [ 90 0 0 ]
+    nhpr [ 90 0 -0 ]
     width [ 15 ]
     wall [
      height [ 10 ]
@@ -3099,34 +3135,34 @@ group "donaldsDock" [
     prop "prop_palm_tree_topflat_DNARoot" [
      code [ "prop_palm_tree_topflat" ]
      pos [ 11 -7 0 ]
-     hpr [ 45 0 0 ]
+     nhpr [ 45 0 -0 ]
      scale [ 0.6 0.6 0.6 ]
     ]
     prop "prop_ship_wheel_DNARoot" [
      code [ "prop_ship_wheel" ]
      pos [ 2.3 -2.43 0 ]
-     hpr [ 45 0 0 ]
+     nhpr [ 45 0 -0 ]
      scale [ 0.6 0.6 0.6 ]
     ]
     prop "prop_2ftdockpiling_DNARoot" [
      code [ "prop_2ftdockpiling" ]
      pos [ 9 -9 0 ]
-     hpr [ -90 0 0 ]
+     nhpr [ -90 0 -0 ]
     ]
     prop "prop_crate_DNARoot" [
      code [ "prop_crate" ]
      pos [ 5 -12 0 ]
-     hpr [ -90 0 0 ]
+     nhpr [ -90 0 -0 ]
     ]
     prop "prop_crate_DNARoot" [
      code [ "prop_crate" ]
      pos [ 7 -14 0 ]
-     hpr [ -60 0 0 ]
+     nhpr [ -60 0 -0 ]
     ]
    ]
    flat_building "tb27:random20_DNARoot" [
     pos [ 255 -145 0 ]
-    hpr [ 90 0 0 ]
+    nhpr [ 90 0 -0 ]
     width [ 15 ]
     wall [
      height [ 10 ]
@@ -3151,15 +3187,10 @@ group "donaldsDock" [
       color [ 0.91 0.63 0.44 1 ]
      ]
     ]
-    prop "prop_hydrant_DNARoot" [
-     code [ "prop_hydrant" ]
-     pos [ 15 -8 0 ]
-     hpr [ 0 0 0 ]
-    ]
    ]
    flat_building "tb12:random20_DNARoot" [
     pos [ 295 -120 0 ]
-    hpr [ 0 0 0 ]
+    nhpr [ -0 0 -0 ]
     width [ 10 ]
     wall [
      height [ 10 ]
@@ -3184,19 +3215,19 @@ group "donaldsDock" [
     prop "prop_2ftdockpiling_DNARoot" [
      code [ "prop_2ftdockpiling" ]
      pos [ -8 -8 0 ]
-     hpr [ 90 0 0 ]
+     nhpr [ 90 0 -0 ]
     ]
     prop "streetlight_DD_left_DNARoot" [
      code [ "streetlight_DD_left" ]
      pos [ -2.61 -8.13 0 ]
-     hpr [ -90 0 0 ]
+     nhpr [ -90 0 -0 ]
     ]
    ]
    landmark_building "tb27:toon_landmark_DD_D1_DNARoot" [
     code [ "toon_landmark_DD_D1" ]
     title [ "Billy Budd's Big Bargain Binnacle Barn" ]
     pos [ 297 -160 0 ]
-    hpr [ -180 0 0 ]
+    nhpr [ 180 0 -0 ]
     door [
      code [ "door_double_wood_ur" ]
      color [ 1 0.59 0.59 1 ]
@@ -3342,17 +3373,17 @@ group "donaldsDock" [
     prop "streetlight_DD_left_DNARoot" [
      code [ "streetlight_DD_left" ]
      pos [ 21 -9 0 ]
-     hpr [ -90 0 0 ]
+     nhpr [ -90 0 -0 ]
     ]
     prop "prop_2ftdockpiling_DNARoot" [
      code [ "prop_2ftdockpiling" ]
      pos [ 10 -9 0 ]
-     hpr [ -180 0 0 ]
+     nhpr [ 180 0 -0 ]
     ]
     prop "prop_palm_tree_topflat_DNARoot" [
      code [ "prop_palm_tree_topflat" ]
      pos [ -6 -7.97 0 ]
-     hpr [ -90 0 0 ]
+     nhpr [ -90 0 -0 ]
      scale [ 0.8 0.8 0.8 ]
     ]
    ]
@@ -3361,7 +3392,7 @@ group "donaldsDock" [
   ]
   flat_building "tb28:20_DNARoot" [
    pos [ 255 -130 0 ]
-   hpr [ 90 0 0 ]
+   nhpr [ 90 0 -0 ]
    width [ 10 ]
    wall [
     height [ 20 ]
@@ -3375,9 +3406,16 @@ group "donaldsDock" [
    prop "prop_stovepipe_DNARoot" [
     code [ "prop_stovepipe" ]
     pos [ 1.06 2.36 19.71 ]
-    hpr [ 0 0 0 ]
+    nhpr [ -0 0 -0 ]
     color [ 0.63 0.47 0.24 1 ]
    ]
+  ]
+  interactive_prop "interactive_prop_phase_5_models_char__ttc_hydrant_DNARoot" [
+   code [ "interactive_prop_phase_5_models_char__ttc_hydrant" ]
+   anim [ "tt_a_ara_ttc_hydrant_fightIdle" ]
+   cell_id [ 0 ]
+   pos [ 260.915 -130.283 0 ]
+   nhpr [ 90 0 0 ]
   ]
  ]
  visgroup "1112" [
@@ -3396,8 +3434,8 @@ group "donaldsDock" [
   group "streets" [
    street "street_full_corner_DNARoot" [
     code [ "street_full_corner" ]
-    pos [ 305 -120 0 ]
-    hpr [ -90 0 0 ]
+    pos [ 305 -120 -6.10352e-005 ]
+    nhpr [ -90 0 -0 ]
     texture [ "street_street_DD_tex" ]
     texture [ "street_sidewalk_DD_tex" ]
     texture [ "street_curb_DD_tex" ]
@@ -3406,7 +3444,7 @@ group "donaldsDock" [
   group "buildings" [
    flat_building "tb12:random20_DNARoot" [
     pos [ 345 -120 0 ]
-    hpr [ -90 0 0 ]
+    nhpr [ -90 0 -0 ]
     width [ 20 ]
     wall [
      height [ 20 ]
@@ -3422,15 +3460,10 @@ group "donaldsDock" [
       color [ 0.73 0.51 0.51 1 ]
      ]
     ]
-    prop "prop_mailbox_DD_DNARoot" [
-     code [ "prop_mailbox_DD" ]
-     pos [ 18 -9 0 ]
-     hpr [ 0 0 0 ]
-    ]
    ]
    flat_building "tb12:random20_DNARoot" [
     pos [ 345 -140 0 ]
-    hpr [ -90 0 0 ]
+    nhpr [ -90 0 -0 ]
     width [ 15 ]
     wall [
      height [ 20 ]
@@ -3449,17 +3482,17 @@ group "donaldsDock" [
     prop "streetlight_DD_left_DNARoot" [
      code [ "streetlight_DD_left" ]
      pos [ 13 -9 0 ]
-     hpr [ -90 0 0 ]
+     nhpr [ -90 0 -0 ]
     ]
     prop "prop_2ftdockpiling_DNARoot" [
      code [ "prop_2ftdockpiling" ]
      pos [ 12 -32 0 ]
-     hpr [ 90 0 0 ]
+     nhpr [ 90 0 -0 ]
     ]
     prop "neighborhood_sign_TT_DNARoot" [
      code [ "neighborhood_sign_TT" ]
      pos [ 2.58 -1.16 0 ]
-     hpr [ 0 0 0 ]
+     nhpr [ -0 0 -0 ]
      scale [ 1.5 1.5 1.5 ]
     ]
    ]
@@ -3467,7 +3500,7 @@ group "donaldsDock" [
     code [ "toon_landmark_DD_A2" ]
     title [ "Dime & Quarterdeck Bank" ]
     pos [ 305 -120 0 ]
-    hpr [ 0 0 0 ]
+    nhpr [ -0 0 -0 ]
     door [
      code [ "door_double_wood_ur" ]
      color [ 0.63 0.48 0.34 1 ]
@@ -3562,26 +3595,21 @@ group "donaldsDock" [
       ]
      ]
     ]
-    prop "prop_trashcan_DD_DNARoot" [
-     code [ "prop_trashcan_DD" ]
-     pos [ 2 -8 0 ]
-     hpr [ 180 0 0 ]
-    ]
     prop "prop_2ftdockpiling_DNARoot" [
      code [ "prop_2ftdockpiling" ]
      pos [ 31 -9 0 ]
-     hpr [ 0 0 0 ]
+     nhpr [ -0 0 -0 ]
     ]
     prop "prop_palm_tree_topflat_DNARoot" [
      code [ "prop_palm_tree_topflat" ]
      pos [ 34.01 -14.21 0 ]
-     hpr [ -90 0 0 ]
+     nhpr [ -90 0 -0 ]
      scale [ 0.7 0.7 0.7 ]
     ]
    ]
    flat_building "tb12:random20_DNARoot" [
     pos [ 330 -120 0 ]
-    hpr [ 0 0 0 ]
+    nhpr [ -0 0 -0 ]
     width [ 15 ]
     wall [
      height [ 10 ]
@@ -3606,12 +3634,19 @@ group "donaldsDock" [
     prop "neighborhood_sign_DD_DNARoot" [
      code [ "neighborhood_sign_DD" ]
      pos [ 6.57 -1.15 0 ]
-     hpr [ -180 0 0 ]
+     nhpr [ 180 0 -0 ]
      scale [ 1.5 1.5 1.5 ]
     ]
    ]
   ]
   group "props" [
+  ]
+  interactive_prop "interactive_prop_phase_6_models_char__dod_trashcan_DNARoot" [
+   code [ "interactive_prop_phase_6_models_char__dod_trashcan" ]
+   anim [ "tt_a_ara_dod_trashcan_idle1" ]
+   cell_id [ 0 ]
+   pos [ 310.753 -124.656 0 ]
+   nhpr [ -0 0 -0 ]
   ]
  ]
  visgroup "1113" [
@@ -3636,8 +3671,8 @@ group "donaldsDock" [
   group "streets" [
    street "street_40x40_DNARoot" [
     code [ "street_40x40" ]
-    pos [ 305 -160 0 ]
-    hpr [ -90 0 0 ]
+    pos [ 305 -160 -6.10352e-005 ]
+    nhpr [ -90 0 -0 ]
     texture [ "street_street_DD_tex" ]
     texture [ "street_sidewalk_DD_tex" ]
     texture [ "street_curb_DD_tex" ]
@@ -3645,7 +3680,7 @@ group "donaldsDock" [
    street "street_10x40_DNARoot" [
     code [ "street_10x40" ]
     pos [ 305 -200 0 ]
-    hpr [ -90 0 0 ]
+    nhpr [ -90 0 -0 ]
     texture [ "street_street_DD_tex" ]
     texture [ "street_sidewalk_DD_tex" ]
     texture [ "street_curb_DD_tex" ]
@@ -3654,7 +3689,7 @@ group "donaldsDock" [
   group "buildings" [
    flat_building "tb13:random20_DNARoot" [
     pos [ 345 -190 0 ]
-    hpr [ -90 0 0 ]
+    nhpr [ -90 0 -0 ]
     width [ 15 ]
     wall [
      height [ 10 ]
@@ -3682,19 +3717,19 @@ group "donaldsDock" [
     ]
     prop "prop_palm_tree_topflat_DNARoot" [
      code [ "prop_palm_tree_topflat" ]
-     pos [ 16 -8 0 ]
-     hpr [ 45 0 0 ]
+     pos [ 16 -8 -6.10352e-005 ]
+     nhpr [ 45 0 -0 ]
      scale [ 0.7 0.7 0.7 ]
     ]
     prop "prop_2ftdockpiling_DNARoot" [
      code [ "prop_2ftdockpiling" ]
      pos [ 0 -31 0 ]
-     hpr [ 90 0 0 ]
+     nhpr [ 90 0 -0 ]
     ]
    ]
    flat_building "tb13:random20_DNARoot" [
     pos [ 345 -205 0 ]
-    hpr [ -90 0 0 ]
+    nhpr [ -90 0 -0 ]
     width [ 5 ]
     wall [
      height [ 10 ]
@@ -3709,7 +3744,7 @@ group "donaldsDock" [
    ]
    flat_building "tb13:random20_DNARoot" [
     pos [ 305 -220 0 ]
-    hpr [ 90 0 0 ]
+    nhpr [ 90 0 -0 ]
     width [ 15.6 ]
     wall [
      height [ 10 ]
@@ -3734,18 +3769,18 @@ group "donaldsDock" [
     prop "prop_palm_tree_topflat_DNARoot" [
      code [ "prop_palm_tree_topflat" ]
      pos [ 9 -8 0 ]
-     hpr [ 90 0 0 ]
+     nhpr [ 90 0 -0 ]
      scale [ 0.8 0.8 0.8 ]
     ]
     prop "streetlight_DD_left_DNARoot" [
      code [ "streetlight_DD_left" ]
      pos [ 3.76 -8.16 0 ]
-     hpr [ -90 0 0 ]
+     nhpr [ -90 0 -0 ]
     ]
    ]
    flat_building "tb13:random20_DNARoot" [
     pos [ 305 -185 0 ]
-    hpr [ 90 0 0 ]
+    nhpr [ 90 0 -0 ]
     width [ 25 ]
     wall [
      height [ 10 ]
@@ -3773,7 +3808,7 @@ group "donaldsDock" [
    ]
    flat_building "tb12:random20_DNARoot" [
     pos [ 345 -155 0 ]
-    hpr [ -90 0 0 ]
+    nhpr [ -90 0 -0 ]
     width [ 20 ]
     wall [
      height [ 10 ]
@@ -3802,25 +3837,25 @@ group "donaldsDock" [
     prop "prop_roof_access_DNARoot" [
      code [ "prop_roof_access" ]
      pos [ 4.43 4.76 18.74 ]
-     hpr [ 0 0 0 ]
+     nhpr [ -0 0 -0 ]
      color [ 0.71 0.49 0.35 1 ]
     ]
     prop "prop_palm_tree_topflat_DNARoot" [
      code [ "prop_palm_tree_topflat" ]
      pos [ 41.2453 -7.75241 0 ]
-     hpr [ 0 0 0 ]
+     nhpr [ -0 0 -0 ]
      scale [ 1.2 1.2 1.2 ]
     ]
     prop "prop_trashcan_DD_DNARoot" [
      code [ "DD_barrel" ]
      pos [ 20 -2 0 ]
-     hpr [ 90 0 0 ]
+     nhpr [ 90 0 -0 ]
      scale [ 1.4 1.4 1.4 ]
     ]
    ]
    flat_building "tb13:random20_DNARoot" [
     pos [ 345 -175 0 ]
-    hpr [ -90 0 0 ]
+    nhpr [ -90 0 -0 ]
     width [ 15 ]
     wall [
      height [ 10 ]
@@ -3849,30 +3884,25 @@ group "donaldsDock" [
     prop "prop_stovepipe_DNARoot" [
      code [ "prop_stovepipe" ]
      pos [ 12.12 1.57 19.61 ]
-     hpr [ 0 0 0 ]
+     nhpr [ -0 0 -0 ]
      color [ 0.91 0.54 0.54 1 ]
     ]
     prop "prop_crate_DNARoot" [
      code [ "prop_crate" ]
      pos [ 3 -5 0 ]
-     hpr [ 45 0 0 ]
+     nhpr [ 45 0 -0 ]
     ]
     prop "prop_2ftdockpiling_DNARoot" [
      code [ "prop_2ftdockpiling" ]
      pos [ 0 -8 0 ]
-     hpr [ 90 0 0 ]
-    ]
-    prop "prop_trashcan_DD_DNARoot" [
-     code [ "prop_trashcan_DD" ]
-     pos [ 19.36 -3.31 0 ]
-     hpr [ -180 0 0 ]
+     nhpr [ 90 0 -0 ]
     ]
    ]
    landmark_building "tb13:toon_landmark_DD_C1_DNARoot" [
     code [ "toon_landmark_DD_C1" ]
     title [ "Squid Pro Quo, Attorneys at Law" ]
     pos [ 305 -205 0 ]
-    hpr [ 90 0 0 ]
+    nhpr [ 90 0 -0 ]
     door [
      code [ "door_double_wood_ur" ]
      color [ 0.97 0.55 0.4 1 ]
@@ -4106,6 +4136,13 @@ group "donaldsDock" [
   ]
   group "props" [
   ]
+  interactive_prop "interactive_prop_phase_6_models_char__dod_mailbox_DNARoot" [
+   code [ "interactive_prop_phase_6_models_char__dod_mailbox" ]
+   anim [ "tt_a_ara_dod_mailbox_fightBoost" ]
+   cell_id [ 0 ]
+   pos [ 308.784 -178.441 -6.10352e-005 ]
+   nhpr [ 90 0 -0 ]
+  ]
  ]
  visgroup "1114" [
   vis [   "1109"   "1110"   "1111"   "1112"   "1113"   "1114"   "1115"   "1116"   "1124"   "1123"   "1125"   "1117"   "1126"   ]
@@ -4127,8 +4164,8 @@ group "donaldsDock" [
   group "streets" [
    street "street_full_corner_DNARoot" [
     code [ "street_full_corner" ]
-    pos [ 345 -250 0 ]
-    hpr [ 90 0 0 ]
+    pos [ 345 -250 7.62939e-006 ]
+    nhpr [ 90 0 -0 ]
     texture [ "street_street_DD_tex" ]
     texture [ "street_sidewalk_DD_tex" ]
     texture [ "street_curb_DD_tex" ]
@@ -4137,7 +4174,7 @@ group "donaldsDock" [
   group "buildings" [
    flat_building "tb14:random20_DNARoot" [
     pos [ 330 -250 0 ]
-    hpr [ 180 0 0 ]
+    nhpr [ -180 0 -0 ]
     width [ 25 ]
     wall [
      height [ 20 ]
@@ -4152,13 +4189,13 @@ group "donaldsDock" [
     prop "prop_chimney_DNARoot" [
      code [ "prop_chimney" ]
      pos [ 16.69 2.93 17.19 ]
-     hpr [ 0 0 0 ]
+     nhpr [ -0 0 -0 ]
      color [ 0.45 0.31 0.17 1 ]
     ]
    ]
    flat_building "tb14:random20_DNARoot" [
     pos [ 305 -250 0 ]
-    hpr [ 90 0 0 ]
+    nhpr [ 90 0 -0 ]
     width [ 15 ]
     wall [
      height [ 20 ]
@@ -4177,18 +4214,18 @@ group "donaldsDock" [
     prop "prop_lifesaver_DNARoot" [
      code [ "prop_lifesaver" ]
      pos [ 3.33 -3.39 -0.23 ]
-     hpr [ 45 0 0 ]
+     nhpr [ 45 0 -0 ]
      scale [ 0.8 0.8 0.8 ]
     ]
     prop "prop_2ftdockpiling_DNARoot" [
      code [ "prop_2ftdockpiling" ]
      pos [ 9 -9 0 ]
-     hpr [ -90 0 0 ]
+     nhpr [ -90 0 -0 ]
     ]
    ]
    flat_building "tb14:random20_DNARoot" [
     pos [ 305 -235 0 ]
-    hpr [ 90 0 0 ]
+    nhpr [ 90 0 -0 ]
     width [ 15 ]
     wall [
      height [ 10 ]
@@ -4218,7 +4255,7 @@ group "donaldsDock" [
     code [ "toon_landmark_DD_B2" ]
     title [ "Trim the Nail Boutique" ]
     pos [ 345.09 -249.99 0 ]
-    hpr [ 180 0 0 ]
+    nhpr [ -180 0 -0 ]
     door [
      code [ "door_double_wood_ur" ]
      color [ 1 1 1 1 ]
@@ -4331,23 +4368,18 @@ group "donaldsDock" [
     prop "DD_barrel_DNARoot" [
      code [ "DD_barrel" ]
      pos [ 19.09 -2.99 0 ]
-     hpr [ -90 0 0 ]
+     nhpr [ -90 0 -0 ]
      scale [ 1.6 1.6 1.6 ]
-    ]
-    prop "prop_mailbox_DD_DNARoot" [
-     code [ "prop_mailbox_DD" ]
-     pos [ 20.4 -8.64 0 ]
-     hpr [ 0 0 0 ]
     ]
     prop "prop_2ftdockpiling_DNARoot" [
      code [ "prop_2ftdockpiling" ]
      pos [ 8.09 -31.99 0 ]
-     hpr [ 180 0 0 ]
+     nhpr [ -180 0 -0 ]
     ]
     prop "prop_crate_DNARoot" [
      code [ "prop_crate" ]
      pos [ 2.44 -37.63 0 ]
-     hpr [ 15 0 0 ]
+     nhpr [ 15 0 -0 ]
      color [ 0.92 0.63 0.42 1 ]
     ]
    ]
@@ -4357,7 +4389,7 @@ group "donaldsDock" [
   prop "prop_billboard_DNARoot" [
    code [ "prop_billboard" ]
    pos [ 305 -230 20 ]
-   hpr [ 120 0 0 ]
+   nhpr [ 120 0 -0 ]
    color [ 0.75 0.75 0.75 1 ]
    sign [
     color [ 0.25 0.25 0.25 1 ]
@@ -4365,7 +4397,7 @@ group "donaldsDock" [
      code [ "mickey" ]
      color [ 0 0.501961 0.752941 1 ]
      pos [ 0 0 1.44 ]
-     hpr [ 0 0 4 ]
+     nhpr [ -0 0 -4 ]
      scale [ 0.7 1 0.7 ]
      width [ 27.008 ]
      height [ 27.008 ]
@@ -4434,7 +4466,7 @@ group "donaldsDock" [
      code [ "mickey" ]
      color [ 0.501961 0 1 1 ]
      pos [ 0 0 0.15 ]
-     hpr [ 0 0 3 ]
+     nhpr [ -0 0 -3 ]
      scale [ 1 1 1.1 ]
      width [ 41.5921 ]
      height [ 41.5921 ]
@@ -4544,6 +4576,13 @@ group "donaldsDock" [
     ]
    ]
   ]
+  interactive_prop "interactive_prop_phase_5_models_char__ttc_hydrant_DNARoot" [
+   code [ "interactive_prop_phase_5_models_char__ttc_hydrant" ]
+   anim [ "tt_a_ara_ttc_hydrant_firstMoveArmUp1" ]
+   cell_id [ 0 ]
+   pos [ 309.769 -235.299 7.62939e-006 ]
+   nhpr [ 90 0 0 ]
+  ]
  ]
  visgroup "1115" [
   vis [   "1113"   "1114"   "1115"   "1116"   "1117"   "1112"   "1111"   "1124"   "1123"   "1125"   "1126"   "1129"   ]
@@ -4564,7 +4603,7 @@ group "donaldsDock" [
    street "street_full_corner_DNARoot" [
     code [ "street_full_corner" ]
     pos [ 400 -210 0 ]
-    hpr [ -180 0 0 ]
+    nhpr [ 180 0 -0 ]
     texture [ "street_street_DD_tex" ]
     texture [ "street_sidewalk_DD_tex" ]
     texture [ "street_curb_DD_tex" ]
@@ -4572,7 +4611,7 @@ group "donaldsDock" [
    street "street_5x40_DNARoot" [
     code [ "street_5x40" ]
     pos [ 360 -210 0 ]
-    hpr [ -180 0 0 ]
+    nhpr [ 180 0 -0 ]
     texture [ "street_street_DD_tex" ]
     texture [ "street_sidewalk_DD_tex" ]
     texture [ "street_curb_DD_tex" ]
@@ -4580,7 +4619,7 @@ group "donaldsDock" [
    street "street_10x40_DNARoot" [
     code [ "street_10x40" ]
     pos [ 355 -210 0 ]
-    hpr [ 180 0 0 ]
+    nhpr [ -180 0 -0 ]
     texture [ "street_street_DD_tex" ]
     texture [ "street_sidewalk_DD_tex" ]
     texture [ "street_curb_DD_tex" ]
@@ -4588,7 +4627,7 @@ group "donaldsDock" [
    street "street_sidewalk_20x20_DNARoot" [
     code [ "street_sidewalk_20x20" ]
     pos [ 370 -250.001 0 ]
-    hpr [ -90 0 0 ]
+    nhpr [ -90 0 -0 ]
     texture [ "street_street_DD_tex" ]
     texture [ "street_sidewalk_DD_tex" ]
     texture [ "street_curb_DD_tex" ]
@@ -4596,7 +4635,7 @@ group "donaldsDock" [
    street "street_sidewalk_20x20_DNARoot" [
     code [ "street_sidewalk_20x20" ]
     pos [ 370 -290 0 ]
-    hpr [ -90 0 0 ]
+    nhpr [ -90 0 -0 ]
     texture [ "street_street_DD_tex" ]
     texture [ "street_sidewalk_DD_tex" ]
     texture [ "street_curb_DD_tex" ]
@@ -4604,7 +4643,7 @@ group "donaldsDock" [
    street "street_sidewalk_20x20_DNARoot" [
     code [ "street_sidewalk_20x20" ]
     pos [ 370 -270 0 ]
-    hpr [ -90 0 0 ]
+    nhpr [ -90 0 -0 ]
     texture [ "street_street_DD_tex" ]
     texture [ "street_sidewalk_DD_tex" ]
     texture [ "street_curb_DD_tex" ]
@@ -4613,7 +4652,7 @@ group "donaldsDock" [
   group "buildings" [
    flat_building "tb14:random20_DNARoot" [
     pos [ 360 -250 0 ]
-    hpr [ 180 0 0 ]
+    nhpr [ -180 0 -0 ]
     width [ 15 ]
     wall [
      height [ 10 ]
@@ -4638,24 +4677,24 @@ group "donaldsDock" [
     prop "prop_palm_tree_topflat_DNARoot" [
      code [ "prop_palm_tree_topflat" ]
      pos [ 10.05 -8.18 0 ]
-     hpr [ -90 0 0 ]
+     nhpr [ -90 0 -0 ]
      scale [ 0.5 0.5 0.5 ]
     ]
     prop "prop_2ftdockpiling_DNARoot" [
      code [ "prop_2ftdockpiling" ]
      pos [ 7 -9 0 ]
-     hpr [ 180 0 0 ]
+     nhpr [ -180 0 -0 ]
     ]
     prop "prop_palm_tree_topflat_DNARoot" [
      code [ "prop_palm_tree_topflat" ]
      pos [ 2.98 -8.18 0 ]
-     hpr [ 30 0 0 ]
+     nhpr [ 30 0 -0 ]
      scale [ 0.8 0.8 0.8 ]
     ]
    ]
    flat_building "tb14:random20_DNARoot" [
     pos [ 400 -230 0 ]
-    hpr [ -90 0 0 ]
+    nhpr [ -90 0 -0 ]
     width [ 20 ]
     wall [
      height [ 20 ]
@@ -4674,29 +4713,29 @@ group "donaldsDock" [
     prop "prop_nets_DNARoot" [
      code [ "prop_nets" ]
      pos [ 15.18 -4.33 0 ]
-     hpr [ -45 0 0 ]
+     nhpr [ -45 0 -0 ]
     ]
     prop "prop_2ftdockpiling_DNARoot" [
      code [ "prop_2ftdockpiling" ]
      pos [ 11 -9 0 ]
-     hpr [ 90 0 0 ]
+     nhpr [ 90 0 -0 ]
     ]
     prop "prop_crate_DNARoot" [
      code [ "prop_crate" ]
      pos [ -3.72 -4.38 0 ]
-     hpr [ 45 0 0 ]
+     nhpr [ 45 0 -0 ]
      color [ 0.75 0.75 0.75 1 ]
     ]
     prop "prop_crate_DNARoot" [
      code [ "DD_barrel" ]
      pos [ -6.64 -2.31 0 ]
-     hpr [ -30 0 0 ]
+     nhpr [ -30 0 -0 ]
      scale [ 1.6 1.6 1.6 ]
     ]
    ]
    flat_building "tb14:random20_DNARoot" [
     pos [ 400 -210 0 ]
-    hpr [ -90 0 0 ]
+    nhpr [ -90 0 -0 ]
     width [ 20 ]
     wall [
      height [ 10 ]
@@ -4725,13 +4764,13 @@ group "donaldsDock" [
     prop "prop_palm_tree_topflat_DNARoot" [
      code [ "prop_palm_tree_topflat" ]
      pos [ 3.5 -7.88 0 ]
-     hpr [ 0 0 0 ]
+     nhpr [ -0 0 -0 ]
      scale [ 0.7 0.7 0.7 ]
     ]
    ]
    flat_building "tb15:random20_DNARoot" [
     pos [ 345 -210 0 ]
-    hpr [ 0 0 0 ]
+    nhpr [ -0 0 -0 ]
     width [ 15 ]
     wall [
      height [ 10 ]
@@ -4755,23 +4794,23 @@ group "donaldsDock" [
     prop "streetlight_DD_left_DNARoot" [
      code [ "streetlight_DD_left" ]
      pos [ 9 -8 0 ]
-     hpr [ -90 0 0 ]
+     nhpr [ -90 0 -0 ]
     ]
     prop "prop_palm_tree_topflat_DNARoot" [
      code [ "prop_palm_tree_topflat" ]
      pos [ 22 -5 0 ]
-     hpr [ 0 0 0 ]
+     nhpr [ -0 0 -0 ]
      scale [ 0.8 0.8 0.8 ]
     ]
     prop "prop_2ftdockpiling_DNARoot" [
      code [ "prop_2ftdockpiling" ]
      pos [ 23 -8 0 ]
-     hpr [ 0 0 0 ]
+     nhpr [ -0 0 -0 ]
     ]
    ]
    flat_building "tb14:random_DNARoot" [
     pos [ 390 -265 0 ]
-    hpr [ -90 0 0 ]
+    nhpr [ -90 0 -0 ]
     width [ 10 ]
     wall [
      height [ 10 ]
@@ -4800,7 +4839,7 @@ group "donaldsDock" [
    ]
    flat_building "tb14:random_DNARoot" [
     pos [ 390 -275 0 ]
-    hpr [ -90 0 0 ]
+    nhpr [ -90 0 -0 ]
     width [ 15 ]
     wall [
      height [ 10 ]
@@ -4829,7 +4868,7 @@ group "donaldsDock" [
    ]
    flat_building "tb14:random_DNARoot" [
     pos [ 370 -275 0 ]
-    hpr [ 90 0 0 ]
+    nhpr [ 90 0 -0 ]
     width [ 10 ]
     wall [
      height [ 10 ]
@@ -4858,7 +4897,7 @@ group "donaldsDock" [
    ]
    flat_building "tb14:random_DNARoot" [
     pos [ 370 -290 0 ]
-    hpr [ 90 0 0 ]
+    nhpr [ 90 0 -0 ]
     width [ 15 ]
     wall [
      height [ 10 ]
@@ -4887,7 +4926,7 @@ group "donaldsDock" [
    ]
    flat_building "tb14:random_DNARoot" [
     pos [ 370 -310 0 ]
-    hpr [ 90 0 0 ]
+    nhpr [ 90 0 -0 ]
     width [ 20 ]
     wall [
      height [ 10 ]
@@ -4916,7 +4955,7 @@ group "donaldsDock" [
    ]
    flat_building "tb14:random_DNARoot" [
     pos [ 355 -310 0 ]
-    hpr [ 0 0 0 ]
+    nhpr [ -0 0 -0 ]
     width [ 15 ]
     wall [
      height [ 10 ]
@@ -4944,7 +4983,7 @@ group "donaldsDock" [
    ]
    flat_building "tb14:random_DNARoot" [
     pos [ 390 -310 0 ]
-    hpr [ 0 0 0 ]
+    nhpr [ -0 0 -0 ]
     width [ 10 ]
     wall [
      height [ 20 ]
@@ -4963,7 +5002,7 @@ group "donaldsDock" [
    ]
    flat_building "tb14:random_DNARoot" [
     pos [ 390 -290 0 ]
-    hpr [ -90 0 0 ]
+    nhpr [ -90 0 -0 ]
     width [ 20 ]
     wall [
      height [ 20 ]
@@ -4982,7 +5021,7 @@ group "donaldsDock" [
    ]
    flat_building "tb14:random_DNARoot" [
     pos [ 370 -265 0 ]
-    hpr [ 90 0 0 ]
+    nhpr [ 90 0 -0 ]
     width [ 15 ]
     wall [
      height [ 10 ]
@@ -5011,7 +5050,7 @@ group "donaldsDock" [
    ]
    flat_building "tb14:random20_DNARoot" [
     pos [ 370 -250 0 ]
-    hpr [ -180 0 0 ]
+    nhpr [ 180 0 -0 ]
     width [ 10 ]
     wall [
      height [ 10 ]
@@ -5037,21 +5076,16 @@ group "donaldsDock" [
       color [ 0.574803 0.38771 0.340374 1 ]
      ]
     ]
-    prop "prop_trashcan_DD_DNARoot" [
-     code [ "prop_trashcan_DD" ]
-     pos [ 15 -6 0 ]
-     hpr [ -180 0 0 ]
-    ]
     prop "prop_roof_access_DNARoot" [
      code [ "prop_roof_access" ]
      pos [ 1.41391 10.5943 19.9998 ]
-     hpr [ -60 0 0 ]
+     nhpr [ -60 0 -0 ]
      color [ 0.36 0.45 0.22 1 ]
     ]
    ]
    flat_building "tb14:random20_DNARoot" [
     pos [ 400 -250 0 ]
-    hpr [ -180 0 0 ]
+    nhpr [ 180 0 -0 ]
     width [ 10 ]
     wall [
      height [ 20 ]
@@ -5066,7 +5100,7 @@ group "donaldsDock" [
    ]
    flat_building "tb14:random_DNARoot" [
     pos [ 390 -250 0 ]
-    hpr [ -90 0 0 ]
+    nhpr [ -90 0 -0 ]
     width [ 15 ]
     wall [
      height [ 20 ]
@@ -5080,10 +5114,12 @@ group "donaldsDock" [
     ]
    ]
   ]
-  prop "prop_hydrant_DNARoot" [
-   code [ "prop_hydrant" ]
-   pos [ 370 -241 0 ]
-   hpr [ 0 0 0 ]
+  interactive_prop "interactive_prop_phase_6_models_char__dod_trashcan_DNARoot" [
+   code [ "interactive_prop_phase_6_models_char__dod_trashcan" ]
+   anim [ "tt_a_ara_dod_trashcan_idle1" ]
+   cell_id [ 0 ]
+   pos [ 365.721 -245.501 -7.62939e-006 ]
+   nhpr [ 180 0 -0 ]
   ]
  ]
  visgroup "1116" [
@@ -5101,8 +5137,8 @@ group "donaldsDock" [
   group "streets" [
    street "street_full_corner_DNARoot" [
     code [ "street_full_corner" ]
-    pos [ 360 -210 0 ]
-    hpr [ 0 0 0 ]
+    pos [ 360 -210 -7.62939e-006 ]
+    nhpr [ -0 0 -0 ]
     texture [ "street_street_DD_tex" ]
     texture [ "street_sidewalk_DD_tex" ]
     texture [ "street_curb_DD_tex" ]
@@ -5111,7 +5147,7 @@ group "donaldsDock" [
   group "buildings" [
    flat_building "tb15:random20_DNARoot" [
     pos [ 360 -210 0 ]
-    hpr [ 90 0 0 ]
+    nhpr [ 90 0 -0 ]
     width [ 5 ]
     wall [
      height [ 10 ]
@@ -5126,7 +5162,7 @@ group "donaldsDock" [
    ]
    flat_building "tb15:random20_DNARoot" [
     pos [ 360 -205 0 ]
-    hpr [ 90 0 0 ]
+    nhpr [ 90 0 -0 ]
     width [ 10 ]
     wall [
      height [ 20 ]
@@ -5141,23 +5177,23 @@ group "donaldsDock" [
     prop "prop_crate_DNARoot" [
      code [ "prop_crate" ]
      pos [ 6.25 -3.48 0 ]
-     hpr [ 180 0 0 ]
+     nhpr [ -180 0 -0 ]
     ]
     prop "prop_crate_DNARoot" [
      code [ "DD_barrel" ]
      pos [ 4 -6 0 ]
-     hpr [ -150 0 0 ]
+     nhpr [ -150 0 -0 ]
      scale [ 1.4 1.4 1.4 ]
     ]
     prop "streetlight_DD_left_DNARoot" [
      code [ "streetlight_DD_left" ]
      pos [ -1 -32 0 ]
-     hpr [ 90 0 0 ]
+     nhpr [ 90 0 -0 ]
     ]
    ]
    flat_building "tb15:random20_DNARoot" [
     pos [ 360 -195 0 ]
-    hpr [ 90 0 0 ]
+    nhpr [ 90 0 -0 ]
     width [ 15 ]
     wall [
      height [ 10 ]
@@ -5186,29 +5222,24 @@ group "donaldsDock" [
     prop "prop_chimney_DNARoot" [
      code [ "prop_chimney" ]
      pos [ 0.87 2.26 20.23 ]
-     hpr [ 0 0 0 ]
+     nhpr [ -0 0 -0 ]
      color [ 0.64 0.24 0.32 1 ]
-    ]
-    prop "prop_trashcan_DD_DNARoot" [
-     code [ "prop_trashcan_DD" ]
-     pos [ 3 -8 0 ]
-     hpr [ 180 0 0 ]
     ]
     prop "prop_2ftdockpiling_DNARoot" [
      code [ "prop_2ftdockpiling" ]
      pos [ -7 -32 0 ]
-     hpr [ -90 0 0 ]
+     nhpr [ -90 0 -0 ]
     ]
     prop "neighborhood_sign_DD_DNARoot" [
      code [ "neighborhood_sign_DD" ]
      pos [ 8.91 -1.17 0 ]
-     hpr [ -180 0 0 ]
+     nhpr [ 180 0 -0 ]
      scale [ 1.5 1.5 1.5 ]
     ]
    ]
    flat_building "tb15:random20_DNARoot" [
     pos [ 360 -180 0 ]
-    hpr [ 90 0 0 ]
+    nhpr [ 90 0 -0 ]
     width [ 10 ]
     wall [
      height [ 10 ]
@@ -5233,7 +5264,7 @@ group "donaldsDock" [
    ]
    flat_building "tb15:random20_DNARoot" [
     pos [ 360 -170 0 ]
-    hpr [ 0 0 0 ]
+    nhpr [ -0 0 -0 ]
     width [ 15 ]
     wall [
      height [ 10 ]
@@ -5262,18 +5293,18 @@ group "donaldsDock" [
     prop "prop_2ftdockpiling_DNARoot" [
      code [ "prop_2ftdockpiling" ]
      pos [ 8.52 -8.67 0 ]
-     hpr [ 0 0 0 ]
+     nhpr [ -0 0 -0 ]
     ]
     prop "neighborhood_sign_TT_DNARoot" [
      code [ "neighborhood_sign_TT" ]
      pos [ 8.43 -1.32 0 ]
-     hpr [ 0 0 0 ]
+     nhpr [ -0 0 -0 ]
      scale [ 1.5 1.5 1.5 ]
     ]
    ]
    flat_building "tb15:random20_DNARoot" [
     pos [ 390 -170 0 ]
-    hpr [ 0 0 0 ]
+    nhpr [ -0 0 -0 ]
     width [ 10 ]
     wall [
      height [ 10 ]
@@ -5302,7 +5333,7 @@ group "donaldsDock" [
     prop "prop_palm_tree_topflat_DNARoot" [
      code [ "prop_palm_tree_topflat" ]
      pos [ 5.39 -7.65 0 ]
-     hpr [ -90 0 0 ]
+     nhpr [ -90 0 -0 ]
      scale [ 0.6 0.6 0.6 ]
     ]
    ]
@@ -5310,7 +5341,7 @@ group "donaldsDock" [
     code [ "toon_landmark_DD_B2" ]
     title [ "Yacht's All, Folks!" ]
     pos [ 375 -170 0 ]
-    hpr [ 0 0 0 ]
+    nhpr [ -0 0 -0 ]
     door [
      code [ "door_double_wood_ur" ]
      color [ 0.79 0.47 0.47 1 ]
@@ -5389,6 +5420,13 @@ group "donaldsDock" [
   ]
   group "props" [
   ]
+  interactive_prop "interactive_prop_phase_6_models_char__dod_trashcan_DNARoot" [
+   code [ "interactive_prop_phase_6_models_char__dod_trashcan" ]
+   anim [ "tt_a_ara_dod_trashcan_idle1" ]
+   cell_id [ 0 ]
+   pos [ 363.307 -192.857 -7.62939e-006 ]
+   nhpr [ 90 0 -0 ]
+  ]
  ]
  visgroup "1117" [
   vis [   "1115"   "1116"   "1117"   "1118"   "1119"   "1114"   "1126"   "1127"   "1125"   "1129"   ]
@@ -5405,7 +5443,7 @@ group "donaldsDock" [
    street "street_20x40_DNARoot" [
     code [ "street_20x40" ]
     pos [ 400 -150 0 ]
-    hpr [ -90 0 0 ]
+    nhpr [ -90 0 -0 ]
     texture [ "street_street_DD_tex" ]
     texture [ "street_sidewalk_DD_tex" ]
     texture [ "street_curb_DD_tex" ]
@@ -5414,7 +5452,7 @@ group "donaldsDock" [
   group "buildings" [
    flat_building "tb17:random20_DNARoot" [
     pos [ 400 -170 0 ]
-    hpr [ 90 0 0 ]
+    nhpr [ 90 0 -0 ]
     width [ 20 ]
     wall [
      height [ 10 ]
@@ -5443,18 +5481,18 @@ group "donaldsDock" [
     prop "prop_crate_DNARoot" [
      code [ "prop_crate" ]
      pos [ 9.19 -4.55 0 ]
-     hpr [ 0 0 0 ]
+     nhpr [ -0 0 -0 ]
      scale [ 1.1 1.1 1.1 ]
     ]
     prop "prop_crate_DNARoot" [
      code [ "prop_crate" ]
      pos [ 6 -5 0 ]
-     hpr [ 45 0 0 ]
+     nhpr [ 45 0 -0 ]
     ]
    ]
    flat_building "tb19:random20_DNARoot" [
     pos [ 390 -110 0 ]
-    hpr [ 0 0 0 ]
+    nhpr [ -0 0 -0 ]
     width [ 10 ]
     wall [
      height [ 10 ]
@@ -5476,27 +5514,22 @@ group "donaldsDock" [
       count [ 2 ]
      ]
     ]
-    prop "prop_mailbox_DD_DNARoot" [
-     code [ "prop_mailbox_DD" ]
-     pos [ 4 -8 0 ]
-     hpr [ 180 0 0 ]
-    ]
     prop "streetlight_DD_right_DNARoot" [
      code [ "streetlight_DD_right" ]
      pos [ 0 -9 0 ]
-     hpr [ 90 0 0 ]
+     nhpr [ 90 0 -0 ]
     ]
     prop "prop_2ftdockpiling_DNARoot" [
      code [ "prop_2ftdockpiling" ]
      pos [ -7.88 -7.71 0 ]
-     hpr [ 0 0 0 ]
+     nhpr [ -0 0 -0 ]
     ]
    ]
    landmark_building "tb16:toon_landmark_DD_A2_DNARoot" [
     code [ "toon_landmark_DD_A2" ]
     title [ "Blackbeard's Beauty Parlor" ]
     pos [ 440 -145 0 ]
-    hpr [ -90 0 0 ]
+    nhpr [ -90 0 -0 ]
     door [
      code [ "door_double_wood_ur" ]
      color [ 0.63 0.48 0.34 1 ]
@@ -5736,11 +5769,18 @@ group "donaldsDock" [
     prop "prop_2ftdockpiling_DNARoot" [
      code [ "prop_2ftdockpiling" ]
      pos [ 17.4985 -8.3916 0 ]
-     hpr [ 0 0 0 ]
+     nhpr [ -0 0 -0 ]
     ]
    ]
   ]
   group "props" [
+  ]
+  interactive_prop "interactive_prop_phase_5_models_char__ttc_hydrant_DNARoot" [
+   code [ "interactive_prop_phase_5_models_char__ttc_hydrant" ]
+   anim [ "tt_a_ara_ttc_hydrant_fightIdle" ]
+   cell_id [ 0 ]
+   pos [ 404.755 -153.65 0 ]
+   nhpr [ 90 0 0 ]
   ]
  ]
  visgroup "1118" [
@@ -5764,7 +5804,7 @@ group "donaldsDock" [
    street "street_10x40_DNARoot" [
     code [ "street_10x40" ]
     pos [ 390 -150 0 ]
-    hpr [ 0 0 0 ]
+    nhpr [ -0 0 -0 ]
     texture [ "street_street_DD_tex" ]
     texture [ "street_sidewalk_DD_tex" ]
     texture [ "street_curb_DD_tex" ]
@@ -5772,7 +5812,7 @@ group "donaldsDock" [
    street "street_full_corner_DNARoot" [
     code [ "street_full_corner" ]
     pos [ 390 -150 0 ]
-    hpr [ 90 0 0 ]
+    nhpr [ 90 0 -0 ]
     texture [ "street_street_DD_tex" ]
     texture [ "street_sidewalk_DD_tex" ]
     texture [ "street_curb_DD_tex" ]
@@ -5781,7 +5821,7 @@ group "donaldsDock" [
   group "buildings" [
    flat_building "tb17:random20_DNARoot" [
     pos [ 400 -150 0 ]
-    hpr [ 180 0 0 ]
+    nhpr [ -180 0 -0 ]
     width [ 15 ]
     wall [
      height [ 10 ]
@@ -5810,7 +5850,7 @@ group "donaldsDock" [
    ]
    flat_building "tb17:random20_DNARoot" [
     pos [ 370 -150 0 ]
-    hpr [ -180 0 0 ]
+    nhpr [ 180 0 -0 ]
     width [ 20 ]
     wall [
      height [ 10 ]
@@ -5835,29 +5875,29 @@ group "donaldsDock" [
     prop "prop_shipmasts_DNARoot" [
      code [ "prop_shipmasts" ]
      pos [ -4.7 3.23 17 ]
-     hpr [ 0 0 0 ]
+     nhpr [ -0 0 -0 ]
     ]
     prop "prop_shipmasts_DNARoot" [
      code [ "prop_shipmasts" ]
      pos [ 4.31 3.36 14 ]
-     hpr [ 0 0 0 ]
+     nhpr [ -0 0 -0 ]
      scale [ 0.8 0.8 0.8 ]
     ]
     prop "prop_2ftdockpiling_DNARoot" [
      code [ "prop_2ftdockpiling" ]
      pos [ 11 -9 0 ]
-     hpr [ -90 0 0 ]
+     nhpr [ -90 0 -0 ]
     ]
     prop "prop_shipmasts_DNARoot" [
      code [ "prop_shipmasts" ]
      pos [ -10.69 5.36 17 ]
-     hpr [ 0 0 0 ]
+     nhpr [ -0 0 -0 ]
      scale [ 0.9 0.9 0.9 ]
     ]
    ]
    flat_building "tb17:random20_DNARoot" [
     pos [ 350 -150 0 ]
-    hpr [ 90 0 0 ]
+    nhpr [ 90 0 -0 ]
     width [ 10 ]
     wall [
      height [ 10 ]
@@ -5886,7 +5926,7 @@ group "donaldsDock" [
    ]
    flat_building "tb17:random20_DNARoot" [
     pos [ 350 -125 0 ]
-    hpr [ 90 0 0 ]
+    nhpr [ 90 0 -0 ]
     width [ 20 ]
     wall [
      height [ 10 ]
@@ -5912,21 +5952,16 @@ group "donaldsDock" [
       color [ 0.91 0.63 0.44 1 ]
      ]
     ]
-    prop "prop_hydrant_DNARoot" [
-     code [ "prop_hydrant" ]
-     pos [ 1.19 -9.03 0 ]
-     hpr [ -90 0 0 ]
-    ]
     prop "prop_palm_tree_topflat_DNARoot" [
      code [ "prop_palm_tree_topflat" ]
      pos [ 16 -8 0 ]
-     hpr [ -60 0 0 ]
+     nhpr [ -60 0 -0 ]
      scale [ 1.3 1.3 1.3 ]
     ]
    ]
    flat_building "tb17:random20_DNARoot" [
     pos [ 385 -150 0 ]
-    hpr [ -180 0 0 ]
+    nhpr [ 180 0 -0 ]
     width [ 15 ]
     wall [
      height [ 10 ]
@@ -5956,7 +5991,7 @@ group "donaldsDock" [
     code [ "toon_landmark_DD_B1" ]
     title [ "Out to See Optics" ]
     pos [ 350 -140 0 ]
-    hpr [ 90 0 0 ]
+    nhpr [ 90 0 -0 ]
     door [
      code [ "door_double_wood_ur" ]
      color [ 0.45 0.53 0.45 1 ]
@@ -6041,16 +6076,23 @@ group "donaldsDock" [
     prop "prop_crate_DNARoot" [
      code [ "prop_crate" ]
      pos [ 0 -5 0 ]
-     hpr [ -45 0 0 ]
+     nhpr [ -45 0 -0 ]
     ]
     prop "prop_crate_DNARoot" [
      code [ "prop_crate" ]
      pos [ 5 -5 0 ]
-     hpr [ -90 0 0 ]
+     nhpr [ -90 0 -0 ]
     ]
    ]
   ]
   group "props" [
+  ]
+  interactive_prop "interactive_prop_phase_5_models_char__ttc_hydrant_DNARoot" [
+   code [ "interactive_prop_phase_5_models_char__ttc_hydrant" ]
+   anim [ "tt_a_ara_ttc_hydrant_fightCheer" ]
+   cell_id [ 0 ]
+   pos [ 354.862 -121.043 2.28882e-005 ]
+   nhpr [ 90 0 0 ]
   ]
  ]
  visgroup "1119" [
@@ -6077,7 +6119,7 @@ group "donaldsDock" [
   group "buildings" [
    flat_building "tb19:random20_DNARoot" [
     pos [ 390 -80 0 ]
-    hpr [ -90 0 0 ]
+    nhpr [ -90 0 -0 ]
     width [ 20 ]
     wall [
      height [ 20 ]
@@ -6092,18 +6134,18 @@ group "donaldsDock" [
     prop "prop_crate_DNARoot" [
      code [ "prop_crate" ]
      pos [ 5.05 -5.35 0 ]
-     hpr [ 180 0 0 ]
+     nhpr [ -180 0 -0 ]
     ]
     prop "prop_crate_DNARoot" [
      code [ "DD_barrel" ]
      pos [ 3 -3 0 ]
-     hpr [ 135 0 0 ]
+     nhpr [ 135 0 -0 ]
      scale [ 1.4 1.4 1.4 ]
     ]
    ]
    flat_building "tb24:random20_DNARoot" [
     pos [ 350 -85 0 ]
-    hpr [ 90 0 0 ]
+    nhpr [ 90 0 -0 ]
     width [ 20 ]
     wall [
      height [ 10 ]
@@ -6128,17 +6170,17 @@ group "donaldsDock" [
     prop "prop_2ftdockpiling_DNARoot" [
      code [ "prop_2ftdockpiling" ]
      pos [ -11 -9 0 ]
-     hpr [ 0 0 0 ]
+     nhpr [ -0 0 -0 ]
     ]
     prop "streetlight_DD_left_DNARoot" [
      code [ "streetlight_DD_left" ]
      pos [ 11 -9 0 ]
-     hpr [ -90 0 0 ]
+     nhpr [ -90 0 -0 ]
     ]
    ]
    flat_building "tb19:random20_DNARoot" [
     pos [ 390 -100 0 ]
-    hpr [ -90 0 0 ]
+    nhpr [ -90 0 -0 ]
     width [ 10 ]
     wall [
      height [ 20 ]
@@ -6152,14 +6194,14 @@ group "donaldsDock" [
     prop "prop_palm_tree_topflat_DNARoot" [
      code [ "prop_palm_tree_topflat" ]
      pos [ -1.183 -8.0014 0 ]
-     hpr [ 90 0 0 ]
+     nhpr [ 90 0 -0 ]
      scale [ 0.7 0.7 0.7 ]
      color [ 0.74902 0.74902 0.74902 1 ]
     ]
    ]
    flat_building "tb24:random20_DNARoot" [
     pos [ 350 -105 0 ]
-    hpr [ 90 0 0 ]
+    nhpr [ 90 0 -0 ]
     width [ 20 ]
     wall [
      height [ 10 ]
@@ -6189,7 +6231,7 @@ group "donaldsDock" [
     code [ "toon_landmark_DD_C1" ]
     title [ "Disembark! Tree Surgeons" ]
     pos [ 390 -60 0 ]
-    hpr [ -90 0 0 ]
+    nhpr [ -90 0 -0 ]
     door [
      code [ "door_double_wood_ur" ]
      color [ 0.86 0.48 0.23 1 ]
@@ -6289,7 +6331,7 @@ group "donaldsDock" [
     prop "prop_2ftdockpiling_DNARoot" [
      code [ "prop_2ftdockpiling" ]
      pos [ 15 -8 0 ]
-     hpr [ -180 0 0 ]
+     nhpr [ 180 0 -0 ]
     ]
    ]
   ]
@@ -6297,11 +6339,18 @@ group "donaldsDock" [
   ]
   street "street_40x40_DNARoot" [
    code [ "street_40x40" ]
-   pos [ 350 -70 0 ]
-   hpr [ -90 0 0 ]
+   pos [ 350 -70 3.8147e-005 ]
+   nhpr [ -90 0 -0 ]
    texture [ "street_street_DD_tex" ]
    texture [ "street_sidewalk_DD_tex" ]
    texture [ "street_curb_DD_tex" ]
+  ]
+  interactive_prop "interactive_prop_phase_6_models_char__dod_mailbox_DNARoot" [
+   code [ "interactive_prop_phase_6_models_char__dod_mailbox" ]
+   anim [ "tt_a_ara_dod_mailbox_fightBoost" ]
+   cell_id [ 0 ]
+   pos [ 353.575 -80.7701 3.8147e-005 ]
+   nhpr [ 75 0 -0 ]
   ]
  ]
  visgroup "1120" [
@@ -6325,15 +6374,15 @@ group "donaldsDock" [
   battle_cell [ 20 20 225 50 -0.5 ]
   street "street_40x40_DNARoot" [
    code [ "street_40x40" ]
-   pos [ 245 30 0 ]
-   hpr [ 90 0 0 ]
+   pos [ 245 30 -3.8147e-006 ]
+   nhpr [ 90 0 -0 ]
    texture [ "street_street_DD_tex" ]
    texture [ "street_sidewalk_DD_tex" ]
    texture [ "street_curb_DD_tex" ]
   ]
   flat_building "tb21:20_DNARoot" [
    pos [ 245 60 0 ]
-   hpr [ -90 0 0 ]
+   nhpr [ -90 0 -0 ]
    width [ 15 ]
    wall [
     height [ 20 ]
@@ -6345,20 +6394,15 @@ group "donaldsDock" [
      count [ 4 ]
     ]
    ]
-   prop "prop_trashcan_DD_DNARoot" [
-    code [ "prop_trashcan_DD" ]
-    pos [ 11 -7 0 ]
-    hpr [ -180 0 0 ]
-   ]
    prop "prop_2ftdockpiling_DNARoot" [
     code [ "prop_2ftdockpiling" ]
     pos [ 1 -9 0 ]
-    hpr [ -180 0 0 ]
+    nhpr [ 180 0 -0 ]
    ]
   ]
   flat_building "tb26:20_DNARoot" [
    pos [ 205 35 0 ]
-   hpr [ 90 0 0 ]
+   nhpr [ 90 0 -0 ]
    width [ 25 ]
    wall [
     height [ 10 ]
@@ -6387,35 +6431,35 @@ group "donaldsDock" [
    prop "streetlight_DD_left_DNARoot" [
     code [ "streetlight_DD_left" ]
     pos [ 3 -9 0 ]
-    hpr [ -90 0 0 ]
+    nhpr [ -90 0 -0 ]
     scale [ 0.9 0.9 0.9 ]
    ]
    prop "prop_crate_DNARoot" [
     code [ "prop_crate" ]
     pos [ 6 -3 0 ]
-    hpr [ -15 0 0 ]
+    nhpr [ -15 0 -0 ]
    ]
    prop "prop_crate_DNARoot" [
     code [ "DD_barrel" ]
     pos [ 9.03 -4.87 0 ]
-    hpr [ 15 0 0 ]
+    nhpr [ 15 0 -0 ]
     scale [ 1.4 1.4 1.4 ]
    ]
    prop "prop_smokestack_DNARoot" [
     code [ "prop_smokestack" ]
     pos [ 17.18 3.26 12.48 ]
-    hpr [ 0 0 0 ]
+    nhpr [ -0 0 -0 ]
     color [ 0.38 0.68 0.46 1 ]
    ]
    prop "prop_2ftdockpiling_DNARoot" [
     code [ "prop_2ftdockpiling" ]
     pos [ 24 -9 0 ]
-    hpr [ 0 0 0 ]
+    nhpr [ -0 0 -0 ]
    ]
    prop "streetlight_DD_left_DNARoot" [
     code [ "prop_palm_tree_topflat" ]
     pos [ 31 -8 0 ]
-    hpr [ -90 0 0 ]
+    nhpr [ -90 0 -0 ]
     scale [ 0.7 0.7 0.7 ]
    ]
   ]
@@ -6423,7 +6467,7 @@ group "donaldsDock" [
    code [ "toon_landmark_DD_B2" ]
    title [ "Poop Deck Gym" ]
    pos [ 245 75 0 ]
-   hpr [ -90 0 0 ]
+   nhpr [ -90 0 -0 ]
    door [
     code [ "door_double_wood_ur" ]
     color [ 1 0.59 0.59 1 ]
@@ -6482,7 +6526,7 @@ group "donaldsDock" [
   ]
   flat_building "tb21:20_DNARoot" [
    pos [ 245 45 0 ]
-   hpr [ -90 0 0 ]
+   nhpr [ -90 0 -0 ]
    width [ 15 ]
    wall [
     height [ 10 ]
@@ -6506,7 +6550,7 @@ group "donaldsDock" [
   ]
   flat_building "tb26:random_DNARoot" [
    pos [ 205 60 0 ]
-   hpr [ 90 0 0 ]
+   nhpr [ 90 0 -0 ]
    width [ 10 ]
    wall [
     height [ 20 ]
@@ -6519,6 +6563,13 @@ group "donaldsDock" [
     ]
    ]
   ]
+  interactive_prop "interactive_prop_phase_6_models_char__dod_trashcan_DNARoot" [
+   code [ "interactive_prop_phase_6_models_char__dod_trashcan" ]
+   anim [ "tt_a_ara_dod_trashcan_idle1" ]
+   cell_id [ 0 ]
+   pos [ 241.041 49.3792 0 ]
+   nhpr [ -90 0 -0 ]
+  ]
  ]
  visgroup "1121" [
   vis [   "1121"   "1120"   "1103"   "1102"   "1101"   "1122"   "1105"   "1104"   "1106"   ]
@@ -6528,14 +6579,14 @@ group "donaldsDock" [
   street "street_20x40_DNARoot" [
    code [ "street_20x40" ]
    pos [ 245 70 0 ]
-   hpr [ 90 0 0 ]
+   nhpr [ 90 0 -0 ]
    texture [ "street_street_DD_tex" ]
    texture [ "street_sidewalk_DD_tex" ]
    texture [ "street_curb_DD_tex" ]
   ]
   flat_building "tb21:20_DNARoot" [
    pos [ 245 90 0 ]
-   hpr [ -90 0 0 ]
+   nhpr [ -90 0 -0 ]
    width [ 15 ]
    wall [
     height [ 10 ]
@@ -6560,13 +6611,13 @@ group "donaldsDock" [
    prop "prop_palm_tree_topflat_DNARoot" [
     code [ "prop_palm_tree_topflat" ]
     pos [ 1.78 -6.5 0 ]
-    hpr [ 0 0 0 ]
+    nhpr [ -0 0 -0 ]
     scale [ 0.7 0.7 0.7 ]
    ]
   ]
   flat_building "tb4:20_DNARoot" [
    pos [ 205 70 0 ]
-   hpr [ 90 0 0 ]
+   nhpr [ 90 0 -0 ]
    width [ 20 ]
    wall [
     height [ 10 ]
@@ -6606,15 +6657,15 @@ group "donaldsDock" [
   battle_cell [ 20 20 289.999 110.001 -0.5 ]
   street "street_40x40_DNARoot" [
    code [ "street_40x40" ]
-   pos [ 265 90 0 ]
-   hpr [ 0 0 0 ]
+   pos [ 265 90 -0.000114441 ]
+   nhpr [ -0 0 -0 ]
    texture [ "street_street_DD_tex" ]
    texture [ "street_sidewalk_DD_tex" ]
    texture [ "street_curb_DD_tex" ]
   ]
   flat_building "tb4:20_DNARoot" [
    pos [ 265 130 0 ]
-   hpr [ 0 0 0 ]
+   nhpr [ -0 0 -0 ]
    width [ 15 ]
    wall [
     height [ 10 ]
@@ -6643,18 +6694,18 @@ group "donaldsDock" [
    prop "prop_palm_tree_topflat_DNARoot" [
     code [ "prop_palm_tree_topflat" ]
     pos [ 7 -7 0 ]
-    hpr [ 30 0 0 ]
+    nhpr [ 30 0 -0 ]
     scale [ 1.4 1.4 1.4 ]
    ]
    prop "prop_2ftdockpiling_DNARoot" [
     code [ "prop_2ftdockpiling" ]
     pos [ 12 -9 0 ]
-    hpr [ -30 0 0 ]
+    nhpr [ -30 0 -0 ]
    ]
   ]
   flat_building "tb22:random_DNARoot" [
    pos [ 305 90 0 ]
-   hpr [ 180 0 0 ]
+   nhpr [ -180 0 -0 ]
    width [ 15.6 ]
    wall [
     height [ 10 ]
@@ -6685,7 +6736,7 @@ group "donaldsDock" [
    code [ "toon_landmark_DD_C1" ]
    title [ "Bait and Switches Electrical Shop" ]
    pos [ 290 90 0 ]
-   hpr [ 180 0 0 ]
+   nhpr [ -180 0 -0 ]
    door [
     code [ "door_double_wood_ur" ]
     color [ 1 0.59 0.59 1 ]
@@ -6693,12 +6744,7 @@ group "donaldsDock" [
    prop "prop_2ftdockpiling_DNARoot" [
     code [ "prop_2ftdockpiling" ]
     pos [ 16 -6 0 ]
-    hpr [ 90 0 0 ]
-   ]
-   prop "prop_trashcan_DD_DNARoot" [
-    code [ "prop_trashcan_DD" ]
-    pos [ -3.8 -4.39 0 ]
-    hpr [ 180 0 0 ]
+    nhpr [ 90 0 -0 ]
    ]
    sign [
     code [ "DD_sign1" ]
@@ -6821,7 +6867,7 @@ group "donaldsDock" [
   ]
   flat_building "tb4:20_DNARoot" [
    pos [ 280 130 0 ]
-   hpr [ 0 0 0 ]
+   nhpr [ -0 0 -0 ]
    width [ 15 ]
    wall [
     height [ 20 ]
@@ -6840,24 +6886,24 @@ group "donaldsDock" [
    prop "prop_crate_DNARoot" [
     code [ "prop_crate" ]
     pos [ 12 -7 0 ]
-    hpr [ -30 0 0 ]
+    nhpr [ -30 0 -0 ]
    ]
    prop "prop_shipmasts_DNARoot" [
     code [ "prop_shipmasts" ]
     pos [ 2 12 12 ]
-    hpr [ -30 0 0 ]
+    nhpr [ -30 0 -0 ]
     scale [ 2 2 2 ]
    ]
    prop "prop_crate_DNARoot" [
     code [ "DD_barrel" ]
     pos [ 8 -7 0 ]
-    hpr [ 30 0 0 ]
+    nhpr [ 30 0 -0 ]
     scale [ 1.5 1.5 1.5 ]
    ]
   ]
   flat_building "tb4:20_DNARoot" [
    pos [ 295 130 0 ]
-   hpr [ 0 0 0 ]
+   nhpr [ -0 0 -0 ]
    width [ 10 ]
    wall [
     height [ 10 ]
@@ -6879,6 +6925,13 @@ group "donaldsDock" [
     ]
    ]
   ]
+  interactive_prop "interactive_prop_phase_6_models_char__dod_trashcan_DNARoot" [
+   code [ "interactive_prop_phase_6_models_char__dod_trashcan" ]
+   anim [ "tt_a_ara_dod_trashcan_idle1" ]
+   cell_id [ 0 ]
+   pos [ 295.645 93.4063 2.28882e-005 ]
+   nhpr [ 180 0 -0 ]
+  ]
  ]
  visgroup "1123" [
   vis [   "1123"   "1110"   "1109"   "1108"   "1107"   "1106"   "1124"   "1111"   "1112"   "1113"   "1114"   "1115"   "1128"   ]
@@ -6887,8 +6940,8 @@ group "donaldsDock" [
   battle_cell [ 20 20 275 -50.0003 -0.5 ]
   street "street_40x40_DNARoot" [
    code [ "street_40x40" ]
-   pos [ 295 -70 0 ]
-   hpr [ 90 0 0 ]
+   pos [ 295 -70 7.62939e-006 ]
+   nhpr [ 90 0 -0 ]
    texture [ "street_street_DD_tex" ]
    texture [ "street_sidewalk_DD_tex" ]
    texture [ "street_curb_DD_tex" ]
@@ -6896,11 +6949,11 @@ group "donaldsDock" [
   prop "streetlight_DD_left_DNARoot" [
    code [ "streetlight_DD_left" ]
    pos [ 286 -68 0 ]
-   hpr [ -180 0 0 ]
+   nhpr [ 180 0 -0 ]
   ]
   flat_building "tb28:20_DNARoot" [
    pos [ 255 -70 0 ]
-   hpr [ 90 0 0 ]
+   nhpr [ 90 0 -0 ]
    width [ 20 ]
    wall [
     height [ 10 ]
@@ -6929,29 +6982,24 @@ group "donaldsDock" [
    prop "prop_crate_DNARoot" [
     code [ "prop_crate" ]
     pos [ 19 -4 0 ]
-    hpr [ -150 0 0 ]
+    nhpr [ -150 0 -0 ]
    ]
    prop "prop_roof_access_DNARoot" [
     code [ "prop_roof_access" ]
     pos [ 6.96 5.66 19.15 ]
-    hpr [ 0 0 0 ]
+    nhpr [ -0 0 -0 ]
     color [ 0.17 0.45 0.23 1 ]
-   ]
-   prop "prop_trashcan_DD_DNARoot" [
-    code [ "prop_trashcan_DD" ]
-    pos [ 6 -5 0 ]
-    hpr [ 180 0 0 ]
    ]
    prop "prop_palm_tree_topflat_DNARoot" [
     code [ "prop_palm_tree_topflat" ]
     pos [ 3 -9 0 ]
-    hpr [ -15 0 0 ]
+    nhpr [ -15 0 -0 ]
     scale [ 0.5 0.5 0.5 ]
    ]
   ]
   flat_building "tb28:20_DNARoot" [
    pos [ 255 -50 0 ]
-   hpr [ 90 0 0 ]
+   nhpr [ 90 0 -0 ]
    width [ 15 ]
    wall [
     height [ 10 ]
@@ -6980,13 +7028,13 @@ group "donaldsDock" [
    prop "prop_crate_DNARoot" [
     code [ "prop_crate" ]
     pos [ 3 -3 0 ]
-    hpr [ 180 0 0 ]
+    nhpr [ -180 0 -0 ]
     scale [ 1.4 1.4 1.4 ]
    ]
   ]
   flat_building "tb8:20_DNARoot" [
    pos [ 295 -30 0 ]
-   hpr [ -90 0 0 ]
+   nhpr [ -90 0 -0 ]
    width [ 15 ]
    wall [
     height [ 20 ]
@@ -7005,25 +7053,20 @@ group "donaldsDock" [
    prop "prop_palm_tree_topflat_DNARoot" [
     code [ "prop_palm_tree_topflat" ]
     pos [ 1 -6 0 ]
-    hpr [ -45 0 0 ]
+    nhpr [ -45 0 -0 ]
     scale [ 1.3 1.3 1.3 ]
    ]
    prop "prop_smokestack_DNARoot" [
     code [ "prop_smokestack" ]
     pos [ 9.18 2.44 18.04 ]
-    hpr [ 0 0 0 ]
+    nhpr [ -0 0 -0 ]
     scale [ 0.6 0.6 0.6 ]
     color [ 0.75 0.45 0.45 1 ]
-   ]
-   prop "prop_hydrant_DNARoot" [
-    code [ "prop_hydrant" ]
-    pos [ 11 -8 0 ]
-    hpr [ -180 0 0 ]
    ]
   ]
   flat_building "tb8:20_DNARoot" [
    pos [ 295 -45 0 ]
-   hpr [ -90 0 0 ]
+   nhpr [ -90 0 -0 ]
    width [ 10 ]
    wall [
     height [ 20 ]
@@ -7038,7 +7081,7 @@ group "donaldsDock" [
   ]
   flat_building "tb8:20_DNARoot" [
    pos [ 295 -55 0 ]
-   hpr [ -90 0 0 ]
+   nhpr [ -90 0 -0 ]
    width [ 15 ]
    wall [
     height [ 20 ]
@@ -7050,6 +7093,13 @@ group "donaldsDock" [
      count [ 3 ]
     ]
    ]
+  ]
+  interactive_prop "interactive_prop_phase_6_models_char__dod_trashcan_DNARoot" [
+   code [ "interactive_prop_phase_6_models_char__dod_trashcan" ]
+   anim [ "tt_a_ara_dod_trashcan_idle1" ]
+   cell_id [ 0 ]
+   pos [ 258.095 -61.8281 7.62939e-006 ]
+   nhpr [ 90 0 -0 ]
   ]
  ]
  visgroup "1124" [
@@ -7065,8 +7115,8 @@ group "donaldsDock" [
   battle_cell [ 20 20 275 -95.0011 -0.5 ]
   street "street_40x40_DNARoot" [
    code [ "street_40x40" ]
-   pos [ 295 -110 0 ]
-   hpr [ 90 0 0 ]
+   pos [ 295 -110 3.8147e-006 ]
+   nhpr [ 90 0 -0 ]
    texture [ "street_street_DD_tex" ]
    texture [ "street_sidewalk_DD_tex" ]
    texture [ "street_curb_DD_tex" ]
@@ -7074,14 +7124,14 @@ group "donaldsDock" [
   street "street_10x40_DNARoot" [
    code [ "street_10x40" ]
    pos [ 295 -120 0 ]
-   hpr [ 90 0 0 ]
+   nhpr [ 90 0 -0 ]
    texture [ "street_street_DD_tex" ]
    texture [ "street_sidewalk_DD_tex" ]
    texture [ "street_curb_DD_tex" ]
   ]
   flat_building "tb12:20_DNARoot" [
    pos [ 295 -70 0 ]
-   hpr [ -90 0 0 ]
+   nhpr [ -90 0 -0 ]
    width [ 15 ]
    wall [
     height [ 20 ]
@@ -7096,24 +7146,24 @@ group "donaldsDock" [
    prop "prop_chimney_DNARoot" [
     code [ "prop_chimney" ]
     pos [ 9 2 18 ]
-    hpr [ 0 0 0 ]
+    nhpr [ -0 0 -0 ]
     color [ 0.17 0.45 0.23 1 ]
    ]
    prop "prop_2ftdockpiling_DNARoot" [
     code [ "prop_2ftdockpiling" ]
     pos [ 7 -9 0 ]
-    hpr [ -180 0 0 ]
+    nhpr [ 180 0 -0 ]
    ]
    prop "prop_crate_DNARoot" [
     code [ "prop_crate" ]
     pos [ 15 -1 0 ]
-    hpr [ 0 0 0 ]
+    nhpr [ -0 0 -0 ]
     color [ 0.87 0.61 0.61 1 ]
    ]
   ]
   flat_building "tb12:20_DNARoot" [
    pos [ 295 -100 0 ]
-   hpr [ -90 0 0 ]
+   nhpr [ -90 0 -0 ]
    width [ 10 ]
    wall [
     height [ 10 ]
@@ -7142,7 +7192,7 @@ group "donaldsDock" [
   ]
   flat_building "tb28:20_DNARoot" [
    pos [ 255 -80 0 ]
-   hpr [ 90 0 0 ]
+   nhpr [ 90 0 -0 ]
    width [ 10 ]
    wall [
     height [ 10 ]
@@ -7171,13 +7221,13 @@ group "donaldsDock" [
    prop "prop_palm_tree_topflat_DNARoot" [
     code [ "prop_palm_tree_topflat" ]
     pos [ 8 -9 0 ]
-    hpr [ 90 0 0 ]
+    nhpr [ 90 0 -0 ]
     scale [ 0.7 0.7 0.7 ]
    ]
   ]
   flat_building "tb28:20_DNARoot" [
    pos [ 255 -120 0 ]
-   hpr [ 90 0 0 ]
+   nhpr [ 90 0 -0 ]
    width [ 15 ]
    wall [
     height [ 20 ]
@@ -7196,19 +7246,19 @@ group "donaldsDock" [
    prop "prop_crate_DNARoot" [
     code [ "prop_crate" ]
     pos [ 8 -2 0 ]
-    hpr [ -30 0 0 ]
+    nhpr [ -30 0 -0 ]
    ]
    prop "prop_crate_DNARoot" [
     code [ "prop_crate" ]
     pos [ 11 -1 0 ]
-    hpr [ 0 0 0 ]
+    nhpr [ -0 0 -0 ]
    ]
   ]
   landmark_building "tb28:toon_landmark_DD_A1_DNARoot" [
    code [ "toon_landmark_DD_A1" ]
    title [ "Piano Tuna" ]
    pos [ 255 -105 0 ]
-   hpr [ 90 0 0 ]
+   nhpr [ 90 0 -0 ]
    door [
     code [ "door_double_wood_ur" ]
     color [ 1 0.59 0.59 1 ]
@@ -7216,7 +7266,7 @@ group "donaldsDock" [
    prop "prop_2ftdockpiling_DNARoot" [
     code [ "prop_2ftdockpiling" ]
     pos [ 16 -9 0 ]
-    hpr [ 0 0 0 ]
+    nhpr [ -0 0 -0 ]
    ]
    sign [
     code [ "DD_sign1" ]
@@ -7318,7 +7368,7 @@ group "donaldsDock" [
   ]
   flat_building "tb12:20_DNARoot" [
    pos [ 295 -85 0 ]
-   hpr [ -90 0 0 ]
+   nhpr [ -90 0 -0 ]
    width [ 15 ]
    wall [
     height [ 10 ]
@@ -7347,18 +7397,13 @@ group "donaldsDock" [
    prop "prop_crate_DNARoot" [
     code [ "prop_crate" ]
     pos [ 3 -3 0 ]
-    hpr [ -30 0 0 ]
+    nhpr [ -30 0 -0 ]
     color [ 0.75 0.75 0.75 1 ]
-   ]
-   prop "prop_mailbox_DD_DNARoot" [
-    code [ "prop_mailbox_DD" ]
-    pos [ 10 -7 0 ]
-    hpr [ 0 0 0 ]
    ]
   ]
   flat_building "tb12:20_DNARoot" [
    pos [ 295 -110 0 ]
-   hpr [ -90 0 0 ]
+   nhpr [ -90 0 -0 ]
    width [ 10 ]
    wall [
     height [ 10 ]
@@ -7381,6 +7426,13 @@ group "donaldsDock" [
     ]
    ]
   ]
+  interactive_prop "interactive_prop_phase_6_models_char__dod_mailbox_DNARoot" [
+   code [ "interactive_prop_phase_6_models_char__dod_mailbox" ]
+   anim [ "tt_a_ara_dod_mailbox_fightBoost" ]
+   cell_id [ 0 ]
+   pos [ 291.923 -95.0332 3.8147e-006 ]
+   nhpr [ -90 0 -0 ]
+  ]
  ]
  visgroup "1125" [
   vis [   "1125"   "1116"   "1115"   "1114"   "1117"   "1126"   "1127"   "1119"   "1118"   "1129"   ]
@@ -7391,15 +7443,15 @@ group "donaldsDock" [
   battle_cell [ 20 20 419.999 -190 -0.5 ]
   street "street_full_corner_DNARoot" [
    code [ "street_full_corner" ]
-   pos [ 440 -170 0 ]
-   hpr [ 180 0 0 ]
+   pos [ 440 -170 -2.28882e-005 ]
+   nhpr [ 180 0 -0 ]
    texture [ "street_street_DD_tex" ]
    texture [ "street_sidewalk_DD_tex" ]
    texture [ "street_curb_DD_tex" ]
   ]
   flat_building "tb16:20_DNARoot" [
    pos [ 415 -210 0 ]
-   hpr [ -180 0 0 ]
+   nhpr [ 180 0 -0 ]
    width [ 15 ]
    wall [
     height [ 10 ]
@@ -7425,15 +7477,10 @@ group "donaldsDock" [
      color [ 0.76 0.57 0.29 1 ]
     ]
    ]
-   prop "prop_mailbox_DD_DNARoot" [
-    code [ "prop_mailbox_DD" ]
-    pos [ 6 -8 0 ]
-    hpr [ 0 0 0 ]
-   ]
   ]
   flat_building "tb16:20_DNARoot" [
    pos [ 440 -210 0 ]
-   hpr [ 180 0 0 ]
+   nhpr [ -180 0 -0 ]
    width [ 10 ]
    wall [
     height [ 10 ]
@@ -7462,7 +7509,7 @@ group "donaldsDock" [
   ]
   flat_building "tb16:20_DNARoot" [
    pos [ 440 -195 0 ]
-   hpr [ -90 0 0 ]
+   nhpr [ -90 0 -0 ]
    width [ 15 ]
    wall [
     height [ 10 ]
@@ -7487,23 +7534,23 @@ group "donaldsDock" [
    prop "prop_chimney_DNARoot" [
     code [ "prop_chimney" ]
     pos [ 1 3 19 ]
-    hpr [ 0 0 0 ]
+    nhpr [ -0 0 -0 ]
     color [ 0.92 0.63 0.42 1 ]
    ]
    prop "prop_lifesaver_DNARoot" [
     code [ "prop_lifesaver" ]
     pos [ 10.77 -4.23 0 ]
-    hpr [ -45 0 0 ]
+    nhpr [ -45 0 -0 ]
    ]
    prop "prop_2ftdockpiling_DNARoot" [
     code [ "prop_2ftdockpiling" ]
     pos [ 6 -9 0 ]
-    hpr [ 0 0 0 ]
+    nhpr [ -0 0 -0 ]
    ]
   ]
   flat_building "tb16:random_DNARoot" [
    pos [ 440 -170 0 ]
-   hpr [ -90 0 0 ]
+   nhpr [ -90 0 -0 ]
    width [ 15 ]
    wall [
     height [ 20 ]
@@ -7519,25 +7566,20 @@ group "donaldsDock" [
      color [ 0.73 0.51 0.51 1 ]
     ]
    ]
-   prop "prop_hydrant_DNARoot" [
-    code [ "prop_hydrant" ]
-    pos [ 14 -8 0 ]
-    hpr [ -90 0 0 ]
-   ]
    prop "streetlight_DD_right_DNARoot" [
     code [ "streetlight_DD_right" ]
     pos [ 4.95 -8.18 0 ]
-    hpr [ 90 0 0 ]
+    nhpr [ 90 0 -0 ]
    ]
    prop "prop_2ftdockpiling_DNARoot" [
     code [ "prop_2ftdockpiling" ]
     pos [ 7 -32 0 ]
-    hpr [ 0 0 0 ]
+    nhpr [ -0 0 -0 ]
    ]
   ]
   flat_building "tb16:20_DNARoot" [
    pos [ 440 -185 0 ]
-   hpr [ -90 0 0 ]
+   nhpr [ -90 0 -0 ]
    width [ 10 ]
    wall [
     height [ 10 ]
@@ -7566,7 +7608,7 @@ group "donaldsDock" [
   ]
   flat_building "tb16:20_DNARoot" [
    pos [ 430 -210 0 ]
-   hpr [ 180 0 0 ]
+   nhpr [ -180 0 -0 ]
    width [ 15 ]
    wall [
     height [ 10 ]
@@ -7594,9 +7636,16 @@ group "donaldsDock" [
    prop "prop_stovepipe_DNARoot" [
     code [ "prop_stovepipe" ]
     pos [ 10 1 20 ]
-    hpr [ 0 0 0 ]
+    nhpr [ -0 0 -0 ]
     color [ 0.71 0.49 0.35 1 ]
    ]
+  ]
+  interactive_prop "interactive_prop_phase_6_models_char__dod_mailbox_DNARoot" [
+   code [ "interactive_prop_phase_6_models_char__dod_mailbox" ]
+   anim [ "tt_a_ara_dod_mailbox_fightBoost" ]
+   cell_id [ 0 ]
+   pos [ 408.502 -205.199 -2.28882e-005 ]
+   nhpr [ 165 0 -0 ]
   ]
  ]
  visgroup "1126" [
@@ -7608,8 +7657,8 @@ group "donaldsDock" [
   battle_cell [ 20 20 419.999 -129.999 -0.5 ]
   street "street_full_corner_DNARoot" [
    code [ "street_full_corner" ]
-   pos [ 400 -110 0 ]
-   hpr [ -90 0 0 ]
+   pos [ 400 -110 1.14441e-005 ]
+   nhpr [ -90 0 -0 ]
    texture [ "street_street_DD_tex" ]
    texture [ "street_sidewalk_DD_tex" ]
    texture [ "street_curb_DD_tex" ]
@@ -7617,11 +7666,11 @@ group "donaldsDock" [
   prop "prop_2ftdockpiling_DNARoot" [
    code [ "prop_2ftdockpiling" ]
    pos [ 408.9 -118.24 0 ]
-   hpr [ 90 0 0 ]
+   nhpr [ 90 0 -0 ]
   ]
   flat_building "tb16:20_DNARoot" [
    pos [ 440 -130 0 ]
-   hpr [ -90 0 0 ]
+   nhpr [ -90 0 -0 ]
    width [ 15 ]
    wall [
     height [ 20 ]
@@ -7636,40 +7685,35 @@ group "donaldsDock" [
    prop "prop_roof_access_DNARoot" [
     code [ "prop_roof_access" ]
     pos [ 1.24 5.62 18.28 ]
-    hpr [ 0 0 0 ]
+    nhpr [ -0 0 -0 ]
     color [ 0.57 0.7 0.35 1 ]
    ]
    prop "prop_palm_tree_topflat_DNARoot" [
     code [ "prop_palm_tree_topflat" ]
     pos [ 8 -8 0 ]
-    hpr [ 45 0 0 ]
+    nhpr [ 45 0 -0 ]
     scale [ 0.7 0.7 0.7 ]
-   ]
-   prop "prop_trashcan_DD_DNARoot" [
-    code [ "prop_trashcan_DD" ]
-    pos [ 3 -8 0 ]
-    hpr [ -180 0 0 ]
    ]
    prop "prop_palm_tree_topflat_DNARoot" [
     code [ "prop_palm_tree_topflat" ]
     pos [ 16 -35 0 ]
-    hpr [ 0 0 0 ]
+    nhpr [ -0 0 -0 ]
     scale [ 0.8 0.8 0.8 ]
    ]
    prop "prop_2ftdockpiling_DNARoot" [
     code [ "prop_2ftdockpiling" ]
     pos [ 12 -32 0 ]
-    hpr [ -180 0 0 ]
+    nhpr [ 180 0 -0 ]
    ]
    prop "streetlight_DD_left_DNARoot" [
     code [ "streetlight_DD_left" ]
     pos [ 11 -38 0 ]
-    hpr [ -180 0 0 ]
+    nhpr [ 180 0 -0 ]
    ]
   ]
   flat_building "tb16:20_DNARoot" [
    pos [ 440 -110 0 ]
-   hpr [ -90 0 0 ]
+   nhpr [ -90 0 -0 ]
    width [ 20 ]
    wall [
     height [ 10 ]
@@ -7698,24 +7742,24 @@ group "donaldsDock" [
    prop "prop_2ftdockpiling_DNARoot" [
     code [ "prop_2ftdockpiling" ]
     pos [ 9 -9 0 ]
-    hpr [ -180 0 0 ]
+    nhpr [ 180 0 -0 ]
    ]
    prop "prop_shipmasts_DNARoot" [
     code [ "prop_shipmasts" ]
     pos [ -30.69 -7.39 12.03 ]
-    hpr [ 45 0 0 ]
+    nhpr [ 45 0 -0 ]
     scale [ 1.9 1.9 1.9 ]
    ]
    prop "prop_shipmasts_DNARoot" [
     code [ "prop_shipmasts" ]
     pos [ -20.12 -31.11 11.87 ]
-    hpr [ 45 0 0 ]
+    nhpr [ 45 0 -0 ]
     scale [ 1.9 1.9 1.9 ]
    ]
   ]
   flat_building "tb16:20_DNARoot" [
    pos [ 415 -110 0 ]
-   hpr [ 0 0 0 ]
+   nhpr [ -0 0 -0 ]
    width [ 10 ]
    wall [
     height [ 20 ]
@@ -7734,13 +7778,13 @@ group "donaldsDock" [
    prop "neighborhood_sign_TT_DNARoot" [
     code [ "neighborhood_sign_TT" ]
     pos [ 7.73 -1.15 0 ]
-    hpr [ 180 0 0 ]
+    nhpr [ -180 0 -0 ]
     scale [ 1.5 1.5 1.5 ]
    ]
   ]
   flat_building "tb19:20_DNARoot" [
    pos [ 400 -110 0 ]
-   hpr [ 0 0 0 ]
+   nhpr [ -0 0 -0 ]
    width [ 15 ]
    wall [
     height [ 20 ]
@@ -7755,7 +7799,7 @@ group "donaldsDock" [
   ]
   flat_building "tb16:20_DNARoot" [
    pos [ 425 -110 0 ]
-   hpr [ 0 0 0 ]
+   nhpr [ -0 0 -0 ]
    width [ 15 ]
    wall [
     height [ 10 ]
@@ -7784,9 +7828,16 @@ group "donaldsDock" [
    prop "neighborhood_sign_DD_DNARoot" [
     code [ "neighborhood_sign_DD" ]
     pos [ 13.79 -16.92 0 ]
-    hpr [ -90 0 0 ]
+    nhpr [ -90 0 -0 ]
     scale [ 1.5 1.5 1.5 ]
    ]
+  ]
+  interactive_prop "interactive_prop_phase_6_models_char__dod_trashcan_DNARoot" [
+   code [ "interactive_prop_phase_6_models_char__dod_trashcan" ]
+   anim [ "tt_a_ara_dod_trashcan_idle1" ]
+   cell_id [ 0 ]
+   pos [ 435.566 -133.185 1.14441e-005 ]
+   nhpr [ -90 0 -0 ]
   ]
  ]
  visgroup "1127" [
@@ -7802,14 +7853,14 @@ group "donaldsDock" [
   street "street_40x40_DNARoot" [
    code [ "street_40x40" ]
    pos [ 350 -30 0 ]
-   hpr [ -90 0 0 ]
+   nhpr [ -90 0 -0 ]
    texture [ "street_street_DD_tex" ]
    texture [ "street_sidewalk_DD_tex" ]
    texture [ "street_curb_DD_tex" ]
   ]
   flat_building "tb24:20_DNARoot" [
    pos [ 350 -44 0 ]
-   hpr [ 90 0 0 ]
+   nhpr [ 90 0 -0 ]
    width [ 15 ]
    wall [
     height [ 20 ]
@@ -7823,13 +7874,13 @@ group "donaldsDock" [
    ]
    prop "prop_2ftdockpiling_DNARoot" [
     code [ "prop_2ftdockpiling" ]
-    pos [ 10 -9 0 ]
-    hpr [ 0 0 0 ]
+    pos [ 10.0002 -9.00015 -1.14441e-005 ]
+    nhpr [ -0 0 -0 ]
    ]
   ]
   flat_building "tb19:20_DNARoot" [
    pos [ 390 -45 0 ]
-   hpr [ -90 0 0 ]
+   nhpr [ -90 0 -0 ]
    width [ 15.6 ]
    wall [
     height [ 20 ]
@@ -7846,7 +7897,7 @@ group "donaldsDock" [
    code [ "toon_landmark_DD_A2" ]
    title [ "Soles Repaired While U Wait" ]
    pos [ 350 -69 0 ]
-   hpr [ 90 0 0 ]
+   nhpr [ 90 0 -0 ]
    door [
     code [ "door_double_wood_ur" ]
     color [ 1 0.59 0.59 1 ]
@@ -7953,7 +8004,7 @@ group "donaldsDock" [
   ]
   flat_building "tb19:20_DNARoot" [
    pos [ 390 -30 0 ]
-   hpr [ -90 0 0 ]
+   nhpr [ -90 0 -0 ]
    width [ 15 ]
    wall [
     height [ 10 ]
@@ -7983,7 +8034,7 @@ group "donaldsDock" [
   prop "linktunnel_tt_2340_DNARoot" [
    code [ "prop_neighborhood_tunnel" ]
    pos [ 370 -30 0 ]
-   hpr [ 0 0 0 ]
+   nhpr [ -0 0 -0 ]
    sign [
     code [ "tunnel_sign_orange" ]
     scale [ 1.5 1 1.5 ]
@@ -7991,7 +8042,7 @@ group "donaldsDock" [
      code [ "mickey" ]
      color [ 0 0.501961 0 1 ]
      pos [ 0 0 -0.5 ]
-     hpr [ 0 0 1 ]
+     nhpr [ -0 0 -1 ]
      scale [ 1.1 1 1.1 ]
      kern [ 0.110098 ]
      wiggle [ 0.79792 ]
@@ -8114,6 +8165,11 @@ group "donaldsDock" [
     ]
    ]
   ]
+  prop "prop_tt_m_ara_gen_tunnelAheadSign_DNARoot" [
+   code [ "prop_tt_m_ara_gen_tunnelAheadSign" ]
+   pos [ 378.616 -35.3918 -0.5 ]
+   nhpr [ -15 0 0 ]
+  ]
  ]
  visgroup "1128" [
   vis [   "1128"   "1129"   "1106"   "1107"   "1108"   "1109"   "1110"   "1105"   "1104"   "1122"   "1121"   ]
@@ -8122,11 +8178,11 @@ group "donaldsDock" [
    building_type [ "hq" ]
    title [ "" ]
    pos [ 365 100 0 ]
-   hpr [ 90 0 0 ]
+   nhpr [ 90 0 -0 ]
   ]
   flat_building "tb8:random20_DNARoot" [
    pos [ 395 130 0 ]
-   hpr [ -90 0 0 ]
+   nhpr [ -90 0 -0 ]
    width [ 15 ]
    wall [
     height [ 10 ]
@@ -8155,13 +8211,13 @@ group "donaldsDock" [
    prop "prop_stovepipe_DNARoot" [
     code [ "prop_stovepipe" ]
     pos [ 1.26 1.85 20.87 ]
-    hpr [ 0 0 0 ]
+    nhpr [ -0 0 -0 ]
     color [ 0.75 0.45 0.45 1 ]
    ]
   ]
   flat_building "tb8:random20_DNARoot" [
    pos [ 395 115 0 ]
-   hpr [ -90 0 0 ]
+   nhpr [ -90 0 -0 ]
    width [ 25 ]
    wall [
     height [ 10 ]
@@ -8190,18 +8246,13 @@ group "donaldsDock" [
    prop "prop_chimney_DNARoot" [
     code [ "prop_chimney" ]
     pos [ 2.2 4.57 19.71 ]
-    hpr [ 0 0 0 ]
+    nhpr [ -0 0 -0 ]
     color [ 0.75 0.45 0.45 1 ]
-   ]
-   prop "prop_trashcan_DD_DNARoot" [
-    code [ "prop_trashcan_DD" ]
-    pos [ 17 -54 0 ]
-    hpr [ 180 0 0 ]
    ]
   ]
   flat_building "tb8:random20_DNARoot" [
    pos [ 395 90 0 ]
-   hpr [ -90 0 0 ]
+   nhpr [ -90 0 -0 ]
    width [ 20 ]
    wall [
     height [ 10 ]
@@ -8221,7 +8272,7 @@ group "donaldsDock" [
   ]
   flat_building "tb8:random20_DNARoot" [
    pos [ 395 70 0 ]
-   hpr [ 180 0 0 ]
+   nhpr [ -180 0 -0 ]
    width [ 20 ]
    wall [
     height [ 20 ]
@@ -8236,12 +8287,12 @@ group "donaldsDock" [
    prop "streetlight_DD_left_DNARoot" [
     code [ "streetlight_DD_left" ]
     pos [ 57 14 0 ]
-    hpr [ 180 0 0 ]
+    nhpr [ -180 0 -0 ]
    ]
   ]
   flat_building "tb8:random_DNARoot" [
    pos [ 375 70 0 ]
-   hpr [ 180 0 0 ]
+   nhpr [ -180 0 -0 ]
    width [ 15 ]
    wall [
     height [ 20 ]
@@ -8256,7 +8307,7 @@ group "donaldsDock" [
   ]
   flat_building "tb8:random_DNARoot" [
    pos [ 360 70 0 ]
-   hpr [ -180 0 0 ]
+   nhpr [ 180 0 -0 ]
    width [ 15 ]
    wall [
     height [ 10 ]
@@ -8285,13 +8336,13 @@ group "donaldsDock" [
    prop "prop_palm_tree_topflat_DNARoot" [
     code [ "prop_palm_tree_topflat" ]
     pos [ 20 -12 0 ]
-    hpr [ -90 0 0 ]
+    nhpr [ -90 0 -0 ]
     scale [ 0.5 0.5 0.5 ]
    ]
   ]
   flat_building "tb4:random20_DNARoot" [
    pos [ 345 130 0 ]
-   hpr [ 0 0 0 ]
+   nhpr [ -0 0 -0 ]
    width [ 15 ]
    wall [
     height [ 10 ]
@@ -8316,13 +8367,13 @@ group "donaldsDock" [
    prop "prop_chimney_DNARoot" [
     code [ "prop_chimney" ]
     pos [ 25.76 2.19 18.06 ]
-    hpr [ 0 0 0 ]
+    nhpr [ -0 0 -0 ]
     color [ 0.63 0.6 0.4 1 ]
    ]
    prop "prop_billboard_DNARoot" [
     code [ "prop_billboard" ]
     pos [ 7 1 19 ]
-    hpr [ 30 0 0 ]
+    nhpr [ 30 0 -0 ]
     color [ 0.75 0.75 0.75 1 ]
     sign [
      color [ 0.25 0.25 0.25 1 ]
@@ -8330,7 +8381,7 @@ group "donaldsDock" [
       code [ "humanist" ]
       color [ 0 0.501961 1 1 ]
       pos [ 0 0 0.07 ]
-      hpr [ 0 0 4 ]
+      nhpr [ -0 0 -4 ]
       width [ 26.3317 ]
       height [ 26.3317 ]
       text [
@@ -8386,7 +8437,7 @@ group "donaldsDock" [
       code [ "humanist" ]
       color [ 0 0.501961 1 1 ]
       pos [ 0 0 -0.96 ]
-      hpr [ 0 0 3 ]
+      nhpr [ -0 0 -3 ]
       width [ 18.0248 ]
       height [ 18.0248 ]
       text [
@@ -8412,7 +8463,7 @@ group "donaldsDock" [
       code [ "humanist" ]
       color [ 0 0.25098 0.501961 1 ]
       pos [ 0 0 -2.14 ]
-      hpr [ 0 0 2 ]
+      nhpr [ -0 0 -2 ]
       width [ 44.1073 ]
       height [ 44.1073 ]
       text [
@@ -8459,7 +8510,7 @@ group "donaldsDock" [
       code [ "humanist" ]
       color [ 0.501961 0 0.25098 1 ]
       pos [ 0 0 1.35 ]
-      hpr [ 0 0 7 ]
+      nhpr [ -0 0 -7 ]
       scale [ 0.9 1 1 ]
       width [ 42.8412 ]
       height [ 42.8412 ]
@@ -8523,7 +8574,7 @@ group "donaldsDock" [
   ]
   flat_building "tb4:random20_DNARoot" [
    pos [ 360 130 0 ]
-   hpr [ 0 0 0 ]
+   nhpr [ -0 0 -0 ]
    width [ 15 ]
    wall [
     height [ 10 ]
@@ -8543,7 +8594,7 @@ group "donaldsDock" [
   ]
   flat_building "tb4:random20_DNARoot" [
    pos [ 375 130 0 ]
-   hpr [ 0 0 0 ]
+   nhpr [ -0 0 -0 ]
    width [ 20 ]
    wall [
     height [ 10 ]
@@ -8577,165 +8628,165 @@ group "donaldsDock" [
    prop "npc_fisherman_origin_0" [
     code [ "DCS" ]
     pos [ 350 -348 0 ]
-    hpr [ -78 0 0 ]
+    nhpr [ -78 0 -0 ]
    ]
    prop "fishing_spot_DNARoot" [
     code [ "fishing_spot" ]
     pos [ 368.148 -339.916 0.419537 ]
-    hpr [ -135 0 0 ]
+    nhpr [ -135 0 -0 ]
    ]
    prop "fishing_spot_DNARoot" [
     code [ "fishing_spot" ]
     pos [ 391.985 -339.985 0.468729 ]
-    hpr [ 150 0 0 ]
+    nhpr [ 150 0 -0 ]
    ]
    prop "fishing_spot_DNARoot" [
     code [ "fishing_spot" ]
     pos [ 389.4 -363.95 0.459548 ]
-    hpr [ 45 0 0 ]
+    nhpr [ 45 0 -0 ]
    ]
    prop "fishing_spot_DNARoot" [
     code [ "fishing_spot" ]
     pos [ 370.452 -363.712 0.486794 ]
-    hpr [ -45 0 0 ]
+    nhpr [ -45 0 -0 ]
    ]
   ]
   group "props" [
    prop "prop_nets_DNARoot" [
     code [ "prop_nets" ]
     pos [ 401.063 -314.464 0 ]
-    hpr [ -30 0 0 ]
+    nhpr [ -30 0 -0 ]
    ]
    prop "prop_palm_tree_topflat_DNARoot" [
     code [ "prop_palm_tree_topflat" ]
     pos [ 406.765 -331.917 0 ]
-    hpr [ -30 0 0 ]
+    nhpr [ -30 0 -0 ]
     scale [ 1.38254 1.38254 1.38254 ]
    ]
    prop "prop_palm_tree_topflat_DNARoot" [
     code [ "prop_palm_tree_topflat" ]
     pos [ 350.207 -360.298 0 ]
-    hpr [ -135 0 0 ]
+    nhpr [ -135 0 -0 ]
     scale [ 1.41198 1.41198 1.41198 ]
    ]
    prop "prop_palm_tree_topflat_DNARoot" [
     code [ "prop_palm_tree_topflat" ]
     pos [ 408.103 -365.459 -7.62939e-006 ]
-    hpr [ 90 0 0 ]
+    nhpr [ 90 0 -0 ]
     scale [ 0.830627 0.830627 0.830627 ]
    ]
    prop "prop_palm_tree_topflat_DNARoot" [
     code [ "prop_palm_tree_topflat" ]
     pos [ 378.834 -383.22 0.000213623 ]
-    hpr [ 150 0 0 ]
+    nhpr [ 150 0 -0 ]
    ]
    prop "prop_palm_tree_topflat_DNARoot" [
     code [ "prop_palm_tree_topflat" ]
     pos [ 353.78 -330.463 0 ]
-    hpr [ 135 0 0 ]
+    nhpr [ 135 0 -0 ]
     scale [ 1.26181 1.26181 1.26181 ]
    ]
    prop "prop_lifesaver_DNARoot" [
     code [ "prop_lifesaver" ]
     pos [ 384.361 -381.776 -0.000629425 ]
-    hpr [ 180 0 0 ]
+    nhpr [ -180 0 -0 ]
    ]
    prop "prop_trashcan_DD_DNARoot" [
     code [ "prop_trashcan_DD" ]
     pos [ 390 -325 0 ]
-    hpr [ 135 0 0 ]
+    nhpr [ 135 0 -0 ]
    ]
    prop "prop_trashcan_DD_DNARoot" [
     code [ "prop_trashcan_DD" ]
     pos [ 370 -325 0 ]
-    hpr [ -135 0 0 ]
+    nhpr [ -135 0 -0 ]
    ]
    prop "prop_2ftdockpiling_DNARoot" [
     code [ "prop_2ftdockpiling" ]
     pos [ 385 -375 0 ]
-    hpr [ -135 0 0 ]
+    nhpr [ -135 0 -0 ]
    ]
    prop "prop_2ftdockpiling_DNARoot" [
     code [ "prop_2ftdockpiling" ]
     pos [ 375 -375 0 ]
-    hpr [ -135 0 0 ]
+    nhpr [ -135 0 -0 ]
    ]
    prop "prop_2ftdockpiling_DNARoot" [
     code [ "prop_2ftdockpiling" ]
     pos [ 385.098 -333.835 0 ]
-    hpr [ -135 0 0 ]
+    nhpr [ -135 0 -0 ]
    ]
    prop "prop_2ftdockpiling_DNARoot" [
     code [ "prop_2ftdockpiling" ]
     pos [ 375.098 -333.835 0 ]
-    hpr [ -135 0 0 ]
+    nhpr [ -135 0 -0 ]
    ]
    prop "prop_palm_tree_topflat_DNARoot" [
     code [ "prop_palm_tree_topflat" ]
     pos [ 349.668 -355.053 6.86646e-005 ]
-    hpr [ 60 0 0 ]
+    nhpr [ 60 0 -0 ]
    ]
    prop "prop_palm_tree_topflat_DNARoot" [
     code [ "prop_palm_tree_topflat" ]
     pos [ 409.108 -363.408 -5.34058e-005 ]
-    hpr [ 0 0 0 ]
+    nhpr [ -0 0 -0 ]
     scale [ 0.502397 0.502397 0.502397 ]
    ]
    prop "prop_palm_tree_topflat_DNARoot" [
     code [ "prop_palm_tree_topflat" ]
     pos [ 390.425 -394.427 0 ]
-    hpr [ -105 0 0 ]
+    nhpr [ -105 0 -0 ]
     scale [ 1.25881 1.25881 1.25881 ]
    ]
    prop "prop_palm_tree_topflat_DNARoot" [
     code [ "prop_palm_tree_topflat" ]
     pos [ 342.033 -421.347 0 ]
-    hpr [ -30 0 0 ]
+    nhpr [ -30 0 -0 ]
     scale [ 1.59849 1.59849 1.59849 ]
    ]
    prop "prop_palm_tree_topflat_DNARoot" [
     code [ "prop_palm_tree_topflat" ]
     pos [ 389.068 -396.973 0 ]
-    hpr [ 30 0 0 ]
+    nhpr [ 30 0 -0 ]
    ]
    prop "prop_palm_tree_topflat_DNARoot" [
     code [ "prop_palm_tree_topflat" ]
     pos [ 414.641 -375 0 ]
-    hpr [ -30 0 0 ]
+    nhpr [ -30 0 -0 ]
    ]
    prop "prop_palm_tree_topflat_DNARoot" [
     code [ "prop_palm_tree_topflat" ]
     pos [ 399.476 -317.431 0 ]
-    hpr [ -75 0 0 ]
+    nhpr [ -75 0 -0 ]
    ]
    prop "prop_palm_tree_topflat_DNARoot" [
     code [ "prop_palm_tree_topflat" ]
     pos [ 354.767 -313.163 0 ]
-    hpr [ -30 0 0 ]
+    nhpr [ -30 0 -0 ]
    ]
    prop "prop_palm_tree_topflat_DNARoot" [
     code [ "prop_palm_tree_topflat" ]
     pos [ 316.078 -359.407 0 ]
-    hpr [ -30 0 0 ]
+    nhpr [ -30 0 -0 ]
     scale [ 1.59697 1.59697 1.59697 ]
    ]
    prop "prop_palm_tree_topflat_DNARoot" [
     code [ "prop_palm_tree_topflat" ]
     pos [ 436.087 -336.531 0 ]
-    hpr [ -30 0 0 ]
+    nhpr [ -30 0 -0 ]
     scale [ 1.40394 1.40394 1.40394 ]
    ]
    prop "prop_palm_tree_topflat_DNARoot" [
     code [ "prop_palm_tree_topflat" ]
     pos [ 397.301 -315.767 0 ]
-    hpr [ 60 0 0 ]
+    nhpr [ 60 0 -0 ]
     scale [ 0.605179 0.605179 0.605179 ]
    ]
   ]
   street "street_DD_pond_DNARoot" [
    code [ "street_DD_pond" ]
    pos [ 380 -355 0 ]
-   hpr [ 0 0 0 ]
+   nhpr [ -0 0 -0 ]
    texture [ "street_street_DD_tex" ]
    texture [ "street_sidewalk_DD_tex" ]
    texture [ "street_curb_DD_tex" ]

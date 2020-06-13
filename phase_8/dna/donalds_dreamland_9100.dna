@@ -301,8 +301,8 @@ group "donaldsDreamland" [
    ]
    prop "prop_DL_post_one_light_DNARoot" [
     code [ "prop_DL_post_one_light" ]
-    pos [ 8 -18 0 ]
-    nhpr [ 90 0 0 ]
+    pos [ 7.99999 -18 0 ]
+    nhpr [ 90 0 -0 ]
    ]
    prop "prop_DL_tree_DNARoot" [
     code [ "prop_tree_DL_brickbox_ur" ]
@@ -554,6 +554,18 @@ group "donaldsDreamland" [
     ]
    ]
   ]
+  interactive_prop "interactive_prop_phase_8_models_char__ddl_hydrant_DNARoot" [
+   code [ "interactive_prop_phase_8_models_char__ddl_hydrant" ]
+   anim [ "tt_a_ara_ddl_hydrant_idle0" ]
+   cell_id [ 0 ]
+   pos [ 19.6144 5.62606 0 ]
+   nhpr [ -180 0 -0 ]
+  ]
+  prop "prop_tt_m_ara_gen_tunnelAheadSign_DNARoot" [
+   code [ "prop_tt_m_ara_gen_tunnelAheadSign" ]
+   pos [ 33.2928 29.0241 -0.500021 ]
+   nhpr [ -15 0 0 ]
+  ]
  ]
  visgroup "9102" [
   vis [   "9102"   "9103"   "9104"   "9105"   "9101"   ]
@@ -576,7 +588,7 @@ group "donaldsDreamland" [
   street "street_tight_corner_mirror_DNARoot" [
    code [ "street_tight_corner_mirror" ]
    pos [ 5 -40 0 ]
-   nhpr [ 0 0 0 ]
+   nhpr [ -0 0 -0 ]
    texture [ "street_street_DL_tex" ]
    texture [ "street_sidewalk_DL_tex" ]
    texture [ "street_curb_DL_tex" ]
@@ -705,11 +717,6 @@ group "donaldsDreamland" [
      color [ 0.31 0.27 0.27 1 ]
     ]
    ]
-   prop "animated_prop_SleepingHydrantAnimatedProp_DNARoot" [
-    code [ "prop_DL_hydrant" ]
-    pos [ 5.3 -8.44 0 ]
-    nhpr [ 0 0 0 ]
-   ]
    prop "prop_DL_weathervane_DNARoot" [
     code [ "prop_DL_weathervane" ]
     pos [ 20.16 1.05 20.14 ]
@@ -724,8 +731,8 @@ group "donaldsDreamland" [
    ]
    prop "prop_DL_clouds_DNARoot" [
     code [ "prop_DL_clouds" ]
-    pos [ 4.59 -21.78 7.38 ]
-    nhpr [ -90 0 0 ]
+    pos [ 4.59 -21.78 0 ]
+    nhpr [ -90 0 -0 ]
     scale [ 3.5 3.5 3.5 ]
    ]
   ]
@@ -751,12 +758,6 @@ group "donaldsDreamland" [
      color [ 0.33 0.3 0.29 1 ]
      count [ 2 ]
     ]
-   ]
-   prop "prop_trashcan_metal_DNARoot" [
-    code [ "prop_trashcan_metal" ]
-    pos [ 7 -8 0 ]
-    nhpr [ -90 0 0 ]
-    color [ 0.5 0.5 0.5 1 ]
    ]
    prop "prop_crate_DNARoot" [
     code [ "prop_crate" ]
@@ -906,6 +907,13 @@ group "donaldsDreamland" [
     ]
    ]
   ]
+  interactive_prop "interactive_prop_phase_8_models_char__ddl_trashcan_DNARoot" [
+   code [ "interactive_prop_phase_8_models_char__ddl_trashcan" ]
+   anim [ "tt_a_ara_ddl_trashcan_idleSleep0" ]
+   cell_id [ 0 ]
+   pos [ 8.59705 -22.5911 1.14441e-005 ]
+   nhpr [ 90 0 -0 ]
+  ]
  ]
  visgroup "9103" [
   vis [   "9103"   "9102"   "9101"   "9104"   "9105"   "9106"   "9107"   "9108"   ]
@@ -924,8 +932,8 @@ group "donaldsDreamland" [
   battle_cell [ 20 20 25 -60 -0.5 ]
   street "street_full_corner_DNARoot" [
    code [ "street_full_corner" ]
-   pos [ 45 -40 0 ]
-   nhpr [ -180 0 0 ]
+   pos [ 45 -40 1.52588e-005 ]
+   nhpr [ 180 0 -0 ]
    texture [ "street_street_DL_tex" ]
    texture [ "street_sidewalk_DL_tex" ]
    texture [ "street_curb_DL_tex" ]
@@ -1022,11 +1030,6 @@ group "donaldsDreamland" [
     pos [ 4.17 8.21 19.56 ]
     nhpr [ 0 0 0 ]
     color [ 0.5 0.5 0.5 1 ]
-   ]
-   prop "prop_DL_mailbox_DNARoot" [
-    code [ "prop_DL_mailbox" ]
-    pos [ 4.54 -8.41 0 ]
-    nhpr [ -90 0 0 ]
    ]
    prop "prop_DL_tree_DNARoot" [
     code [ "prop_tree_DL_brickbox_ur" ]
@@ -1204,6 +1207,13 @@ group "donaldsDreamland" [
     color [ 0.5 0.5 0.5 1 ]
    ]
   ]
+  interactive_prop "interactive_prop_phase_8_models_char__ddl_mailbox_DNARoot" [
+   code [ "interactive_prop_phase_8_models_char__ddl_mailbox" ]
+   anim [ "tt_a_ara_ddl_mailbox_idleSleep0" ]
+   cell_id [ 0 ]
+   pos [ 42.7283 -56.0031 1.52588e-005 ]
+   nhpr [ -90 0 0 ]
+  ]
  ]
  visgroup "9104" [
   vis [   "9104"   "9103"   "9102"   "9101"   "9105"   "9106"   "9107"   "9108"   ]
@@ -1234,22 +1244,22 @@ group "donaldsDreamland" [
    ]
    prop "prop_crate_DNARoot" [
     code [ "prop_crate" ]
-    pos [ 18.27 -3 1.5 ]
-    nhpr [ -75 0 0 ]
+    pos [ 18.27 -3.00001 1.52588e-005 ]
+    nhpr [ -75 0 -0 ]
     scale [ 0.7 0.7 0.7 ]
     color [ 0.596078 0.74902 0.74902 1 ]
    ]
    prop "prop_crate_DNARoot" [
     code [ "prop_crate" ]
-    pos [ 19.33 -3.17 0 ]
-    nhpr [ 0 0 0 ]
+    pos [ 19.33 -3.17001 1.52588e-005 ]
+    nhpr [ -0 0 -0 ]
     scale [ 0.8 0.8 0.8 ]
     color [ 0.647059 0.619608 0.8 1 ]
    ]
    prop "prop_crate_DNARoot" [
     code [ "prop_crate" ]
-    pos [ 17.33 -3.17 0 ]
-    nhpr [ -45 0 0 ]
+    pos [ 17.33 -3.17004 1.52588e-005 ]
+    nhpr [ -45 0 -0 ]
     scale [ 0.7 0.7 0.7 ]
     color [ 0.6 0.75 0.75 1 ]
    ]
@@ -1278,6 +1288,13 @@ group "donaldsDreamland" [
      count [ 2 ]
     ]
    ]
+  ]
+  interactive_prop "interactive_prop_phase_8_models_char__ddl_hydrant_DNARoot" [
+   code [ "interactive_prop_phase_8_models_char__ddl_hydrant" ]
+   anim [ "tt_a_ara_ddl_hydrant_idle0" ]
+   cell_id [ 0 ]
+   pos [ -11.7111 -73.417 0 ]
+   nhpr [ 150 0 -0 ]
   ]
  ]
  visgroup "9105" [
@@ -1320,11 +1337,6 @@ group "donaldsDreamland" [
      color [ 1 1 1 1 ]
      count [ 0 ]
     ]
-   ]
-   prop "animated_prop_SleepingHydrantAnimatedProp_DNARoot" [
-    code [ "prop_DL_hydrant" ]
-    pos [ 7 -8 0 ]
-    nhpr [ 0 0 0 ]
    ]
   ]
   flat_building "tb5:20_10_DNARoot" [
@@ -1406,12 +1418,6 @@ group "donaldsDreamland" [
     pos [ -2.33 -6.25 0 ]
     nhpr [ -90 0 0 ]
     scale [ 0.8 0.8 0.8 ]
-   ]
-   prop "prop_trashcan_metal_DNARoot" [
-    code [ "prop_trashcan_metal" ]
-    pos [ -12.68 -33.64 0 ]
-    nhpr [ 45 0 0 ]
-    color [ 0.75 0.75 0.75 1 ]
    ]
    prop "neighborhood_sign_DL_DNARoot" [
     code [ "neighborhood_sign_DL" ]
@@ -1629,6 +1635,13 @@ group "donaldsDreamland" [
     ]
    ]
   ]
+  interactive_prop "interactive_prop_phase_8_models_char__ddl_trashcan_DNARoot" [
+   code [ "interactive_prop_phase_8_models_char__ddl_trashcan" ]
+   anim [ "tt_a_ara_ddl_trashcan_idleSleep0" ]
+   cell_id [ 0 ]
+   pos [ -17.7265 -41.74 -3.8147e-006 ]
+   nhpr [ -29.9892 0 -0 ]
+  ]
  ]
  visgroup "9106" [
   vis [   "9106"   "9105"   "9104"   "9107"   "9108"   "9109"   "9110"   "9111"   "9103"   "9112"   ]
@@ -1647,8 +1660,8 @@ group "donaldsDreamland" [
   battle_cell [ 20 20 -39 -29 -0.5 ]
   street "street_curved_corner_DNARoot" [
    code [ "street_curved_corner" ]
-   pos [ -55 0 0 ]
-   nhpr [ -90 0 0 ]
+   pos [ -55 -1.90735e-006 -9.91821e-005 ]
+   nhpr [ -90 0 -0 ]
    texture [ "street_street_DL_tex" ]
    texture [ "street_sidewalk_DL_tex" ]
    texture [ "street_curb_DL_tex" ]
@@ -1719,11 +1732,6 @@ group "donaldsDreamland" [
     code [ "prop_tree_DL_brickbox_ul" ]
     pos [ 9 -7 0 ]
     nhpr [ -120 0 0 ]
-   ]
-   prop "prop_trashcan_metal_DNARoot" [
-    code [ "prop_DL_mailbox" ]
-    pos [ -9.38 -36.04 0 ]
-    nhpr [ 45 0 0 ]
    ]
   ]
   flat_building "tb7:20_10_DNARoot" [
@@ -1959,6 +1967,13 @@ group "donaldsDreamland" [
     ]
    ]
   ]
+  interactive_prop "interactive_prop_phase_8_models_char__ddl_mailbox_DNARoot" [
+   code [ "interactive_prop_phase_8_models_char__ddl_mailbox" ]
+   anim [ "tt_a_ara_ddl_mailbox_idleSleep0" ]
+   cell_id [ 0 ]
+   pos [ -52.857 -37.258 -9.91821e-005 ]
+   nhpr [ 135 0 0 ]
+  ]
  ]
  visgroup "9107" [
   vis [   "9107"   "9106"   "9108"   "9109"   "9110"   "9111"   "9112"   "9105"   "9104"   "9103"   "9113"   ]
@@ -2016,11 +2031,6 @@ group "donaldsDreamland" [
     pos [ 14.6 3.09 18.78 ]
     nhpr [ 0 0 0 ]
     color [ 0.5 0.5 0.5 1 ]
-   ]
-   prop "animated_prop_SleepingHydrantAnimatedProp_DNARoot" [
-    code [ "prop_DL_hydrant" ]
-    pos [ 19 -8 0 ]
-    nhpr [ 0 0 0 ]
    ]
   ]
   flat_building "tb13:13_9_8_DNARoot" [
@@ -2123,6 +2133,13 @@ group "donaldsDreamland" [
     nhpr [ 0 0 0 ]
     color [ 0.5 0.5 0.5 1 ]
    ]
+  ]
+  interactive_prop "interactive_prop_phase_8_models_char__ddl_hydrant_DNARoot" [
+   code [ "interactive_prop_phase_8_models_char__ddl_hydrant" ]
+   anim [ "tt_a_ara_ddl_hydrant_idle0" ]
+   cell_id [ 0 ]
+   pos [ -73.4992 -34.5263 0 ]
+   nhpr [ -180 0 -0 ]
   ]
  ]
  visgroup "9108" [
@@ -2787,18 +2804,6 @@ group "donaldsDreamland" [
     ]
    ]
    prop "prop_trashcan_metal_DNARoot" [
-    code [ "prop_trashcan_metal" ]
-    pos [ 14.71 -6.63 0 ]
-    nhpr [ 0 0 0 ]
-    color [ 0.75 0.75 0.75 1 ]
-   ]
-   prop "prop_trashcan_metal_DNARoot" [
-    code [ "prop_crate" ]
-    pos [ 17.71 -3.63 0 ]
-    nhpr [ 0 0 0 ]
-    color [ 0.47 0.49 0.66 1 ]
-   ]
-   prop "prop_trashcan_metal_DNARoot" [
     code [ "prop_crate" ]
     pos [ 14.71 -2.63 0 ]
     nhpr [ 0 0 0 ]
@@ -2862,6 +2867,13 @@ group "donaldsDreamland" [
     nhpr [ 75 0 0 ]
    ]
   ]
+  interactive_prop "interactive_prop_phase_8_models_char__ddl_mailbox_DNARoot" [
+   code [ "interactive_prop_phase_8_models_char__ddl_mailbox" ]
+   anim [ "tt_a_ara_ddl_mailbox_idleSleep0" ]
+   cell_id [ 0 ]
+   pos [ -130.754 -45.1123 0 ]
+   nhpr [ 45 0 0 ]
+  ]
  ]
  visgroup "9110" [
   vis [   "9110"   "9111"   "9112"   "9113"   "9114"   "9115"   "9109"   "9108"   "9107"   "9106"   ]
@@ -2914,11 +2926,6 @@ group "donaldsDreamland" [
     pos [ -0.85 -6.68 0 ]
     nhpr [ 30 0 0 ]
    ]
-   prop "prop_DL_mailbox_DNARoot" [
-    code [ "prop_DL_mailbox" ]
-    pos [ 23.89 -7.68 0 ]
-    nhpr [ -60 0 0 ]
-   ]
   ]
   flat_building "tb16:random_DNARoot" [
    pos [ -172.58 -63.01 0 ]
@@ -2965,6 +2972,13 @@ group "donaldsDreamland" [
     nhpr [ 135 0 0 ]
    ]
   ]
+  interactive_prop "interactive_prop_phase_8_models_char__ddl_trashcan_DNARoot" [
+   code [ "interactive_prop_phase_8_models_char__ddl_trashcan" ]
+   anim [ "tt_a_ara_ddl_trashcan_idleSleep0" ]
+   cell_id [ 0 ]
+   pos [ -136.903 -76.9567 0 ]
+   nhpr [ -150 0 -0 ]
+  ]
  ]
  visgroup "9111" [
   vis [   "9111"   "9110"   "9109"   "9108"   "9107"   "9106"   "9112"   "9113"   "9114"   "9115"   "9116"   "9117"   ]
@@ -2993,8 +3007,8 @@ group "donaldsDreamland" [
   battle_cell [ 20 20 -162.923 -87.9166 -0.5 ]
   street "street_40x40_DNARoot" [
    code [ "street_40x40" ]
-   pos [ -155 -114.64 0 ]
-   nhpr [ 60 0 0 ]
+   pos [ -155 -114.64 -1.14441e-005 ]
+   nhpr [ 60 0 -0 ]
    texture [ "street_street_DL_tex" ]
    texture [ "street_sidewalk_DL_tex" ]
    texture [ "street_curb_DL_tex" ]
@@ -3104,11 +3118,6 @@ group "donaldsDreamland" [
     pos [ 11.11 -18.12 10.62 ]
     nhpr [ 90 0 0 ]
     scale [ 3 3 3 ]
-   ]
-   prop "animated_prop_SleepingHydrantAnimatedProp_DNARoot" [
-    code [ "prop_DL_hydrant" ]
-    pos [ 11.01 -7.99 0 ]
-    nhpr [ 30 0 0 ]
    ]
    prop "prop_chimney_DNARoot" [
     code [ "prop_chimney" ]
@@ -3331,6 +3340,13 @@ group "donaldsDreamland" [
      ]
     ]
    ]
+  ]
+  interactive_prop "interactive_prop_phase_8_models_char__ddl_hydrant_DNARoot" [
+   code [ "interactive_prop_phase_8_models_char__ddl_hydrant" ]
+   anim [ "tt_a_ara_ddl_hydrant_idle0" ]
+   cell_id [ 0 ]
+   pos [ -178.191 -88.0458 0 ]
+   nhpr [ 90 0 -0 ]
   ]
  ]
  visgroup "9112" [
@@ -3915,7 +3931,7 @@ group "donaldsDreamland" [
   street "street_angle_60_DNARoot" [
    code [ "street_angle_60" ]
    pos [ -135 -149.28 0 ]
-   nhpr [ 180 0 0 ]
+   nhpr [ -180 0 -0 ]
    texture [ "street_street_DL_tex" ]
    texture [ "street_sidewalk_DL_tex" ]
    texture [ "street_curb_DL_tex" ]
@@ -4098,12 +4114,13 @@ group "donaldsDreamland" [
     pos [ 17.43 1.8 25.06 ]
     nhpr [ 105 0 0 ]
    ]
-   prop "prop_trashcan_metal_DNARoot" [
-    code [ "prop_trashcan_metal" ]
-    pos [ 6 -7.28 0 ]
-    nhpr [ 0 0 0 ]
-    color [ 0.75 0.75 0.75 1 ]
-   ]
+  ]
+  interactive_prop "interactive_prop_phase_8_models_char__ddl_trashcan_DNARoot" [
+   code [ "interactive_prop_phase_8_models_char__ddl_trashcan" ]
+   anim [ "tt_a_ara_ddl_trashcan_idleSleep0" ]
+   cell_id [ 0 ]
+   pos [ -155.376 -177.717 -7.62939e-006 ]
+   nhpr [ 142.183 0 -0 ]
   ]
  ]
  visgroup "9116" [
@@ -4120,7 +4137,7 @@ group "donaldsDreamland" [
    texture [ "street_curb_DL_tex" ]
   ]
   flat_building "tb22:20_10_DNARoot" [
-   pos [ -115 -189.28 0 ]
+   pos [ -115 -189.32 0 ]
    nhpr [ -180 0 0 ]
    width [ 20 ]
    wall [
@@ -4209,14 +4226,14 @@ group "donaldsDreamland" [
   battle_cell [ 20 20 -97.6172 -165.966 -0.5 ]
   street "street_full_corner_DNARoot" [
    code [ "street_full_corner" ]
-   pos [ -75 -149.28 0 ]
-   nhpr [ 180 0 0 ]
+   pos [ -75 -149.28 -7.62939e-006 ]
+   nhpr [ -180 0 -0 ]
    texture [ "street_street_DL_tex" ]
    texture [ "street_sidewalk_DL_tex" ]
    texture [ "street_curb_DL_tex" ]
   ]
   flat_building "tb22:13_9_8_DNARoot" [
-   pos [ -100.34 -189.32 0 ]
+   pos [ -101.5 -189.28 0 ]
    nhpr [ -180 0 0 ]
    width [ 15 ]
    wall [
@@ -4292,8 +4309,8 @@ group "donaldsDreamland" [
    ]
    prop "prop_DL_clouds_DNARoot" [
     code [ "prop_DL_clouds" ]
-    pos [ -13.68 -23.05 10.37 ]
-    nhpr [ 45 0 0 ]
+    pos [ -13.68 -23.05 -7.62939e-006 ]
+    nhpr [ 45 0 -0 ]
     scale [ 3 3 3 ]
    ]
    prop "prop_DL_flat_pillows_DNARoot" [
@@ -4429,7 +4446,7 @@ group "donaldsDreamland" [
    ]
   ]
   flat_building "tb22:random20_DNARoot" [
-   pos [ -75 -189.28 0 ]
+   pos [ -72 -189.28 0 ]
    nhpr [ -180 0 0 ]
    width [ 20 ]
    wall [
@@ -4482,11 +4499,13 @@ group "donaldsDreamland" [
     nhpr [ 0 0 0 ]
     color [ 0.5 0.5 0.5 1 ]
    ]
-   prop "prop_DL_mailbox_DNARoot" [
-    code [ "prop_DL_mailbox" ]
-    pos [ 4.56 -8.16 0 ]
-    nhpr [ -90 0 0 ]
-   ]
+  ]
+  interactive_prop "interactive_prop_phase_8_models_char__ddl_mailbox_DNARoot" [
+   code [ "interactive_prop_phase_8_models_char__ddl_mailbox" ]
+   anim [ "tt_a_ara_ddl_mailbox_idleSleep0" ]
+   cell_id [ 0 ]
+   pos [ -78.9421 -169.841 -3.8147e-006 ]
+   nhpr [ -90 0 -0 ]
   ]
  ]
  visgroup "9118" [
@@ -4506,8 +4525,8 @@ group "donaldsDreamland" [
   battle_cell [ 20 20 -88.666 -135.985 -0.5 ]
   street "street_curved_corner_DNARoot" [
    code [ "street_curved_corner" ]
-   pos [ -115 -149.28 0 ]
-   nhpr [ 0 0 0 ]
+   pos [ -115 -149.28 -0.000152588 ]
+   nhpr [ -0 0 -0 ]
    texture [ "street_street_DL_tex" ]
    texture [ "street_sidewalk_DL_tex" ]
    texture [ "street_curb_DL_tex" ]
@@ -4793,11 +4812,6 @@ group "donaldsDreamland" [
     pos [ 14.29 -14.78 0 ]
     nhpr [ -180 0 0 ]
    ]
-   prop "animated_prop_SleepingHydrantAnimatedProp_DNARoot" [
-    code [ "prop_DL_hydrant" ]
-    pos [ 32.46 -36.85 -0.02 ]
-    nhpr [ -120 0 0 ]
-   ]
   ]
   flat_building "tb25:20_DNARoot" [
    pos [ -90 -109.28 0 ]
@@ -4826,6 +4840,13 @@ group "donaldsDreamland" [
      color [ 0.29 0.25 0.31 1 ]
     ]
    ]
+  ]
+  interactive_prop "interactive_prop_phase_8_models_char__ddl_hydrant_DNARoot" [
+   code [ "interactive_prop_phase_8_models_char__ddl_hydrant" ]
+   anim [ "tt_a_ara_ddl_hydrant_idle0" ]
+   cell_id [ 0 ]
+   pos [ -109.676 -133.117 0 ]
+   nhpr [ 90 0 -0 ]
   ]
  ]
  visgroup "9119" [
@@ -4912,8 +4933,8 @@ group "donaldsDreamland" [
   battle_cell [ 20 20 -41.2023 -135.472 -0.5 ]
   street "street_curved_corner_DNARoot" [
    code [ "street_curved_corner" ]
-   pos [ -55 -109.28 0 ]
-   nhpr [ -90 0 0 ]
+   pos [ -55 -109.28 -2.28882e-005 ]
+   nhpr [ -90 0 -0 ]
    texture [ "street_street_DL_tex" ]
    texture [ "street_sidewalk_DL_tex" ]
    texture [ "street_curb_DL_tex" ]
@@ -5151,12 +5172,13 @@ group "donaldsDreamland" [
      color [ 0.27 0.22 0.27 1 ]
     ]
    ]
-   prop "prop_DL_tree_DNARoot" [
-    code [ "prop_trashcan_metal" ]
-    pos [ 3 -7 0 ]
-    nhpr [ 0 0 0 ]
-    color [ 0.75 0.75 0.75 1 ]
-   ]
+  ]
+  interactive_prop "interactive_prop_phase_8_models_char__ddl_trashcan_DNARoot" [
+   code [ "interactive_prop_phase_8_models_char__ddl_trashcan" ]
+   anim [ "tt_a_ara_ddl_trashcan_idleSleep0" ]
+   cell_id [ 0 ]
+   pos [ -22.2074 -137.403 -2.28882e-005 ]
+   nhpr [ -90 0 -0 ]
   ]
  ]
  visgroup "9121" [
@@ -5167,8 +5189,8 @@ group "donaldsDreamland" [
   node "streets" [
    street "street_40x40_DNARoot" [
     code [ "street_40x40" ]
-    pos [ -55 -149.28 0 ]
-    nhpr [ -90 0 0 ]
+    pos [ -55 -149.28 -1.14441e-005 ]
+    nhpr [ -90 0 -0 ]
     texture [ "street_street_DL_tex" ]
     texture [ "street_sidewalk_DL_tex" ]
     texture [ "street_curb_DL_tex" ]
@@ -5437,12 +5459,6 @@ group "donaldsDreamland" [
       color [ 0.25 0.25 0.25 1 ]
      ]
     ]
-    prop "prop_trashcan_metal_DNARoot" [
-     code [ "prop_trashcan_metal" ]
-     pos [ -0.269901 -2.619 0 ]
-     nhpr [ 15 0 0 ]
-     color [ 0.65 0.62 0.8 1 ]
-    ]
    ]
    flat_building "tb26:random_DNARoot" [
     pos [ 15 -174.28 0 ]
@@ -5585,6 +5601,13 @@ group "donaldsDreamland" [
      ]
     ]
    ]
+  ]
+  interactive_prop "interactive_prop_phase_8_models_char__ddl_mailbox_DNARoot" [
+   code [ "interactive_prop_phase_8_models_char__ddl_mailbox" ]
+   anim [ "tt_a_ara_ddl_mailbox_idleSleep0" ]
+   cell_id [ 0 ]
+   pos [ -50.3851 -173.687 -1.14441e-005 ]
+   nhpr [ 90 0 -0 ]
   ]
  ]
  visgroup "9122" [
@@ -6132,12 +6155,6 @@ group "donaldsDreamland" [
     nhpr [ 0 0 0 ]
     color [ 0.5 0.5 0.5 1 ]
    ]
-   prop "prop_trashcan_metal_DNARoot" [
-    code [ "prop_trashcan_metal" ]
-    pos [ 4.4 -35.33 0 ]
-    nhpr [ -45 0 0 ]
-    color [ 0.65 0.62 0.8 1 ]
-   ]
   ]
   landmark_building "tb27:toon_landmark_DL_A1_DNARoot" [
    code [ "toon_landmark_DL_A1" ]
@@ -6215,6 +6232,13 @@ group "donaldsDreamland" [
      ]
     ]
    ]
+  ]
+  interactive_prop "interactive_prop_phase_8_models_char__ddl_trashcan_DNARoot" [
+   code [ "interactive_prop_phase_8_models_char__ddl_trashcan" ]
+   anim [ "tt_a_ara_ddl_trashcan_idleSleep0" ]
+   cell_id [ 0 ]
+   pos [ -51.02 -214.393 -7.62939e-006 ]
+   nhpr [ 66.6442 0 -0 ]
   ]
  ]
  visgroup "9124" [
@@ -6705,11 +6729,6 @@ group "donaldsDreamland" [
      color [ 0.25 0.25 0.25 1 ]
     ]
    ]
-   prop "animated_prop_SleepingHydrantAnimatedProp_DNARoot" [
-    code [ "prop_DL_hydrant" ]
-    pos [ 11.5 -8.63 0 ]
-    nhpr [ 15 0 0 ]
-   ]
    prop "prop_DL_tree_DNARoot" [
     code [ "prop_tree_DL_brickbox_ur" ]
     pos [ 3.77 -4.88 0 ]
@@ -6719,7 +6738,7 @@ group "donaldsDreamland" [
   street "street_20x40_DNARoot" [
    code [ "street_20x40" ]
    pos [ -95 -209.28 0 ]
-   nhpr [ 180 0 0 ]
+   nhpr [ -180 0 -0 ]
    texture [ "street_street_DL_tex" ]
    texture [ "street_sidewalk_DL_tex" ]
    texture [ "street_curb_DL_tex" ]
@@ -6757,6 +6776,13 @@ group "donaldsDreamland" [
     nhpr [ 0 0 0 ]
    ]
   ]
+  interactive_prop "interactive_prop_phase_8_models_char__ddl_hydrant_DNARoot" [
+   code [ "interactive_prop_phase_8_models_char__ddl_hydrant" ]
+   anim [ "tt_a_ara_ddl_hydrant_idle0" ]
+   cell_id [ 0 ]
+   pos [ -108.553 -215.199 0 ]
+   nhpr [ 15 0 -0 ]
+  ]
  ]
  visgroup "9126" [
   vis [   "9126"   "9125"   "9124"   "9123"   "9122"   "9121"   "9127"   "9128"   "9129"   "9130"   "9151"   "9152"   ]
@@ -6771,7 +6797,7 @@ group "donaldsDreamland" [
   battle_cell [ 20 20 -134.925 -230.559 -0.5 ]
   street "street_t_intersection_DNARoot" [
    code [ "street_t_intersection" ]
-   pos [ -155 -249.28 0 ]
+   pos [ -155 -249.28 7.62939e-006 ]
    nhpr [ 0 0 0 ]
    texture [ "street_street_DL_tex" ]
    texture [ "street_sidewalk_DL_tex" ]
@@ -6954,11 +6980,6 @@ group "donaldsDreamland" [
      color [ 0.27 0.22 0.27 1 ]
     ]
    ]
-   prop "prop_DL_mailbox_DNARoot" [
-    code [ "prop_DL_mailbox" ]
-    pos [ 6.46 -8.18 -0.01 ]
-    nhpr [ -90 0 0 ]
-   ]
   ]
   flat_building "tb29:20_DNARoot" [
    pos [ -140 -269 0 ]
@@ -7118,6 +7139,13 @@ group "donaldsDreamland" [
      ]
     ]
    ]
+  ]
+  interactive_prop "interactive_prop_phase_8_models_char__ddl_mailbox_DNARoot" [
+   code [ "interactive_prop_phase_8_models_char__ddl_mailbox" ]
+   anim [ "tt_a_ara_ddl_mailbox_idleSleep0" ]
+   cell_id [ 0 ]
+   pos [ -147.11 -213.365 7.62939e-006 ]
+   nhpr [ 15 0 0 ]
   ]
  ]
  visgroup "9127" [
@@ -7354,14 +7382,9 @@ group "donaldsDreamland" [
    ]
    prop "prop_DL_clouds_DNARoot" [
     code [ "prop_DL_clouds" ]
-    pos [ 14.65 -13.91 10.56 ]
-    nhpr [ 90 0 0 ]
+    pos [ 14.65 -13.91 0 ]
+    nhpr [ 90 0 -0 ]
     scale [ 3 3 3 ]
-   ]
-   prop "animated_prop_SleepingHydrantAnimatedProp_DNARoot" [
-    code [ "prop_DL_hydrant" ]
-    pos [ 7.07 -8.22 -0.01 ]
-    nhpr [ 0 0 0 ]
    ]
   ]
   flat_building "tb30:20_10_DNARoot" [
@@ -7390,12 +7413,6 @@ group "donaldsDreamland" [
      code [ "cornice_curved_ur" ]
      color [ 0.27 0.22 0.27 1 ]
     ]
-   ]
-   prop "prop_trashcan_metal_DNARoot" [
-    code [ "prop_trashcan_metal" ]
-    pos [ 14 -6 0 ]
-    nhpr [ -90 0 0 ]
-    color [ 0.75 0.75 0.75 1 ]
    ]
   ]
   flat_building "tb30:12_8_DNARoot" [
@@ -7506,6 +7523,13 @@ group "donaldsDreamland" [
      ]
     ]
    ]
+  ]
+  interactive_prop "interactive_prop_phase_8_models_char__ddl_trashcan_DNARoot" [
+   code [ "interactive_prop_phase_8_models_char__ddl_trashcan" ]
+   anim [ "tt_a_ara_ddl_trashcan_idleSleep0" ]
+   cell_id [ 0 ]
+   pos [ -191.519 -216.102 0 ]
+   nhpr [ 120 0 0 ]
   ]
  ]
  visgroup "9129" [
@@ -7638,8 +7662,8 @@ group "donaldsDreamland" [
   ]
   street "street_t_intersection_DNARoot" [
    code [ "street_t_intersection" ]
-   pos [ -229.64 -160 0 ]
-   nhpr [ -60 0 0 ]
+   pos [ -229.64 -160 1.52588e-005 ]
+   nhpr [ -60 0 -0 ]
    texture [ "street_street_DL_tex" ]
    texture [ "street_sidewalk_DL_tex" ]
    texture [ "street_curb_DL_tex" ]
@@ -7679,6 +7703,13 @@ group "donaldsDreamland" [
      color [ 0.29 0.25 0.31 1 ]
     ]
    ]
+  ]
+  interactive_prop "interactive_prop_phase_8_models_char__ddl_hydrant_DNARoot" [
+   code [ "interactive_prop_phase_8_models_char__ddl_hydrant" ]
+   anim [ "tt_a_ara_ddl_hydrant_idle0" ]
+   cell_id [ 0 ]
+   pos [ -188.421 -162.734 0 ]
+   nhpr [ -105 0 -0 ]
   ]
  ]
  visgroup "9130" [
@@ -7808,6 +7839,13 @@ group "donaldsDreamland" [
      count [ 2 ]
     ]
    ]
+  ]
+  interactive_prop "interactive_prop_phase_8_models_char__ddl_trashcan_DNARoot" [
+   code [ "interactive_prop_phase_8_models_char__ddl_trashcan" ]
+   anim [ "tt_a_ara_ddl_trashcan_idleSleep0" ]
+   cell_id [ 0 ]
+   pos [ -219.267 -196.636 -3.8147e-006 ]
+   nhpr [ -150 0 -0 ]
   ]
  ]
  visgroup "9131" [
@@ -8003,8 +8041,8 @@ group "donaldsDreamland" [
   ]
   street "street_20x40_DNARoot" [
    code [ "street_20x40" ]
-   pos [ -308.922 -182.679 0 ]
-   nhpr [ -60 0 0 ]
+   pos [ -308.922 -182.679 -0.000137329 ]
+   nhpr [ -60 0 -0 ]
    texture [ "street_street_DL_tex" ]
    texture [ "street_sidewalk_DL_tex" ]
    texture [ "street_curb_DL_tex" ]
@@ -8048,6 +8086,13 @@ group "donaldsDreamland" [
     scale [ 2.13059 2.13059 2.13059 ]
    ]
   ]
+  interactive_prop "interactive_prop_phase_8_models_char__ddl_hydrant_DNARoot" [
+   code [ "interactive_prop_phase_8_models_char__ddl_hydrant" ]
+   anim [ "tt_a_ara_ddl_hydrant_idle0" ]
+   cell_id [ 0 ]
+   pos [ -271.138 -179.5 0 ]
+   nhpr [ -60 0 -0 ]
+  ]
  ]
  visgroup "9132" [
   vis [   "9132"   "9131"   "9130"   "9129"   "9133"   "9134"   "9135"   "9136"   "9137"   "9151"   "9152"   ]
@@ -8064,8 +8109,8 @@ group "donaldsDreamland" [
   battle_cell [ 20 20 -256.66 -233.265 -0.5 ]
   street "street_20x40_DNARoot" [
    code [ "street_20x40" ]
-   pos [ -234.28 -231.96 0 ]
-   nhpr [ 120 0 0 ]
+   pos [ -234.28 -231.96 -7.62939e-006 ]
+   nhpr [ 120 0 -0 ]
    texture [ "street_street_DL_tex" ]
    texture [ "street_sidewalk_DL_tex" ]
    texture [ "street_curb_DL_tex" ]
@@ -8159,6 +8204,13 @@ group "donaldsDreamland" [
      color [ 0.25 0.25 0.25 1 ]
     ]
    ]
+  ]
+  interactive_prop "interactive_prop_phase_8_models_char__ddl_trashcan_DNARoot" [
+   code [ "interactive_prop_phase_8_models_char__ddl_trashcan" ]
+   anim [ "tt_a_ara_ddl_trashcan_idleSleep0" ]
+   cell_id [ 0 ]
+   pos [ -238.79 -231.661 -7.62939e-006 ]
+   nhpr [ -60 0 -0 ]
   ]
  ]
  visgroup "9133" [
@@ -8330,12 +8382,6 @@ group "donaldsDreamland" [
     pos [ 14.53 -5.21 0.01 ]
     nhpr [ 60 0 0 ]
     scale [ 0.8 0.8 0.8 ]
-   ]
-   prop "prop_trashcan_metal_DNARoot" [
-    code [ "prop_trashcan_metal" ]
-    pos [ 28.22 -7.82 -0.01 ]
-    nhpr [ 0 0 0 ]
-    color [ 0.75 0.75 0.75 1 ]
    ]
   ]
   flat_building "tb34:20_10_DNARoot" [
@@ -8654,11 +8700,6 @@ group "donaldsDreamland" [
     code [ "wall_md_bricks_ur" ]
     color [ 0.34 0.25 0.25 1 ]
    ]
-   prop "prop_DL_mailbox_DNARoot" [
-    code [ "prop_DL_mailbox" ]
-    pos [ 12.54 -7.89 0 ]
-    nhpr [ -90 0 0 ]
-   ]
   ]
   flat_building "tb36:12_8_DNARoot" [
    pos [ -216.96 -221.96 0 ]
@@ -8683,6 +8724,13 @@ group "donaldsDreamland" [
      color [ 0.36 0.22 0.27 1 ]
     ]
    ]
+  ]
+  interactive_prop "interactive_prop_phase_8_models_char__ddl_mailbox_DNARoot" [
+   code [ "interactive_prop_phase_8_models_char__ddl_mailbox" ]
+   anim [ "tt_a_ara_ddl_mailbox_idleSleep0" ]
+   cell_id [ 0 ]
+   pos [ -204.983 -249.811 0 ]
+   nhpr [ -75 0 0 ]
   ]
  ]
  visgroup "9134" [
@@ -9068,8 +9116,8 @@ group "donaldsDreamland" [
   battle_cell [ 20 20 -188.096 -304.034 -0.5 ]
   street "street_30x40_DNARoot" [
    code [ "street_30x40" ]
-   pos [ -174.28 -283.92 0 ]
-   nhpr [ -180 0 0 ]
+   pos [ -174.28 -283.92 -7.62939e-006 ]
+   nhpr [ 180 0 -0 ]
    texture [ "street_street_DL_tex" ]
    texture [ "street_sidewalk_DL_tex" ]
    texture [ "street_curb_DL_tex" ]
@@ -9338,6 +9386,13 @@ group "donaldsDreamland" [
     ]
    ]
   ]
+  interactive_prop "interactive_prop_phase_8_models_char__ddl_hydrant_DNARoot" [
+   code [ "interactive_prop_phase_8_models_char__ddl_hydrant" ]
+   anim [ "tt_a_ara_ddl_hydrant_idle0" ]
+   cell_id [ 0 ]
+   pos [ -193.993 -319.48 0 ]
+   nhpr [ 165 0 -0 ]
+  ]
  ]
  visgroup "9137" [
   vis [   "9137"   "9136"   "9135"   "9134"   "9133"   "9132"   "9131"   "9138"   "9139"   "9140"   ]
@@ -9350,8 +9405,8 @@ group "donaldsDreamland" [
   battle_cell [ 20 20 -154.039 -304.261 -0.5 ]
   street "street_40x40_DNARoot" [
    code [ "street_40x40" ]
-   pos [ -134.28 -283.92 0 ]
-   nhpr [ 180 0 0 ]
+   pos [ -134.28 -283.92 -8.39233e-005 ]
+   nhpr [ -180 0 -0 ]
    texture [ "street_street_DL_tex" ]
    texture [ "street_sidewalk_DL_tex" ]
    texture [ "street_curb_DL_tex" ]
@@ -9505,11 +9560,6 @@ group "donaldsDreamland" [
      count [ 0 ]
     ]
    ]
-   prop "animated_prop_SleepingHydrantAnimatedProp_DNARoot" [
-    code [ "prop_DL_hydrant" ]
-    pos [ 2.69 -8.56 0 ]
-    nhpr [ 15 0 0 ]
-   ]
   ]
   flat_building "tb40:13_9_8_DNARoot" [
    pos [ -164.28 -333.92 0 ]
@@ -9572,12 +9622,6 @@ group "donaldsDreamland" [
      code [ "cornice_curved_ur" ]
      color [ 0.25 0.25 0.25 1 ]
     ]
-   ]
-   prop "prop_trashcan_metal_DNARoot" [
-    code [ "prop_trashcan_metal" ]
-    pos [ 5.55 -4.84 0 ]
-    nhpr [ 0 0 0 ]
-    color [ 0.75 0.75 0.75 1 ]
    ]
   ]
   flat_building "tb44:20_DNARoot" [
@@ -9697,6 +9741,13 @@ group "donaldsDreamland" [
     nhpr [ 15 0 0 ]
     scale [ 0.8 0.8 0.8 ]
    ]
+  ]
+  interactive_prop "interactive_prop_phase_8_models_char__ddl_trashcan_DNARoot" [
+   code [ "interactive_prop_phase_8_models_char__ddl_trashcan" ]
+   anim [ "tt_a_ara_ddl_trashcan_idleSleep0" ]
+   cell_id [ 0 ]
+   pos [ -138.323 -286.985 -8.39233e-005 ]
+   nhpr [ -15 0 -0 ]
   ]
  ]
  visgroup "9138" [
@@ -10438,8 +10489,8 @@ group "donaldsDreamland" [
   battle_cell [ 20 20 -145.155 -363.819 -0.5 ]
   street "street_40x40_DNARoot" [
    code [ "street_40x40" ]
-   pos [ -134.28 -343.92 0 ]
-   nhpr [ -180 0 0 ]
+   pos [ -134.28 -343.92 3.05176e-005 ]
+   nhpr [ 180 0 -0 ]
    texture [ "street_street_DL_tex" ]
    texture [ "street_sidewalk_DL_tex" ]
    texture [ "street_curb_DL_tex" ]
@@ -10495,11 +10546,6 @@ group "donaldsDreamland" [
     code [ "prop_DL_weathervane" ]
     pos [ 11.18 0.5 19.29 ]
     nhpr [ 60 0 0 ]
-   ]
-   prop "prop_DL_mailbox_DNARoot" [
-    code [ "prop_DL_mailbox" ]
-    pos [ 11.58 -7.97 0 ]
-    nhpr [ -90 0 0 ]
    ]
    prop "prop_DL_tree_DNARoot" [
     code [ "prop_tree_DL_brickbox_ul" ]
@@ -10650,6 +10696,13 @@ group "donaldsDreamland" [
     ]
    ]
   ]
+  interactive_prop "interactive_prop_phase_8_models_char__ddl_mailbox_DNARoot" [
+   code [ "interactive_prop_phase_8_models_char__ddl_mailbox" ]
+   anim [ "tt_a_ara_ddl_mailbox_idleSleep0" ]
+   cell_id [ 0 ]
+   pos [ -147.968 -380.466 3.05176e-005 ]
+   nhpr [ -180 0 0 ]
+  ]
  ]
  visgroup "9142" [
   vis [   "9142"   "9141"   "9140"   "9139"   "9143"   "9144"   "9145"   "9138"   ]
@@ -10714,8 +10767,8 @@ group "donaldsDreamland" [
    ]
    prop "prop_DL_clouds_DNARoot" [
     code [ "prop_DL_clouds" ]
-    pos [ -0.97 -19.08 13.88 ]
-    nhpr [ 105 0 0 ]
+    pos [ -0.970024 -19.08 3.05176e-005 ]
+    nhpr [ 105 0 -0 ]
     scale [ 3 3 3 ]
    ]
    prop "prop_DL_post_three_light_DNARoot" [
@@ -10791,7 +10844,7 @@ group "donaldsDreamland" [
    prop "prop_crate_DNARoot" [
     code [ "prop_crate" ]
     pos [ 2 -6.15 0.01 ]
-    nhpr [ -75 0 0 ]
+    nhpr [ -75 0 -0 ]
     color [ 0.5 0.5 0.5 1 ]
    ]
    prop "prop_crate_DNARoot" [
@@ -10800,12 +10853,6 @@ group "donaldsDreamland" [
     nhpr [ -135 0 0 ]
     scale [ 0.8 0.8 0.8 ]
     color [ 0.5 0.5 0.5 1 ]
-   ]
-   prop "prop_trashcan_metal_DNARoot" [
-    code [ "prop_trashcan_metal" ]
-    pos [ 5.22 -5.1 0 ]
-    nhpr [ -30 0 0 ]
-    color [ 0.75 0.75 0.75 1 ]
    ]
   ]
   flat_building "tb45:12_8_DNARoot" [
@@ -10848,6 +10895,13 @@ group "donaldsDreamland" [
     scale [ 0.9 0.9 0.9 ]
    ]
   ]
+  interactive_prop "interactive_prop_phase_8_models_char__ddl_trashcan_DNARoot" [
+   code [ "interactive_prop_phase_8_models_char__ddl_trashcan" ]
+   anim [ "tt_a_ara_ddl_trashcan_idleSleep0" ]
+   cell_id [ 0 ]
+   pos [ -209.386 -376.609 1.90735e-005 ]
+   nhpr [ 75.6775 0 -0 ]
+  ]
  ]
  visgroup "9143" [
   vis [   "9143"   "9142"   "9141"   "9140"   "9139"   "9138"   "9144"   "9145"   "9146"   "9148"   "9149"   "9150"   ]
@@ -10866,8 +10920,8 @@ group "donaldsDreamland" [
   battle_cell [ 20 20 -194.094 -399.883 -0.5 ]
   street "street_30x40_DNARoot" [
    code [ "street_30x40" ]
-   pos [ -214.28 -383.92 0 ]
-   nhpr [ -90 0 0 ]
+   pos [ -214.28 -383.92 0.000137329 ]
+   nhpr [ -90 0 -0 ]
    texture [ "street_street_DL_tex" ]
    texture [ "street_sidewalk_DL_tex" ]
    texture [ "street_curb_DL_tex" ]
@@ -10889,11 +10943,6 @@ group "donaldsDreamland" [
      color [ 1 1 1 1 ]
      count [ 1 ]
     ]
-   ]
-   prop "animated_prop_SleepingHydrantAnimatedProp_DNARoot" [
-    code [ "prop_DL_hydrant" ]
-    pos [ 0.09 -6.94 0 ]
-    nhpr [ 0 0 0 ]
    ]
   ]
   flat_building "tb47:20_DNARoot" [
@@ -11160,6 +11209,13 @@ group "donaldsDreamland" [
     ]
    ]
   ]
+  interactive_prop "interactive_prop_phase_8_models_char__ddl_hydrant_DNARoot" [
+   code [ "interactive_prop_phase_8_models_char__ddl_hydrant" ]
+   anim [ "tt_a_ara_ddl_hydrant_idle0" ]
+   cell_id [ 0 ]
+   pos [ -180 -385 0 ]
+   nhpr [ -75 0 -0 ]
+  ]
  ]
  visgroup "9144" [
   vis [   "9144"   "9143"   "9142"   "9141"   "9145"   "9146"   "9147"   "9148"   "9149"   "9150"   ]
@@ -11351,8 +11407,8 @@ group "donaldsDreamland" [
   battle_cell [ 20 20 -154.845 -434.005 -0.5 ]
   street "street_40x40_DNARoot" [
    code [ "street_40x40" ]
-   pos [ -134.28 -413.92 0 ]
-   nhpr [ -180 0 0 ]
+   pos [ -134.28 -413.92 1.90735e-006 ]
+   nhpr [ 180 0 -0 ]
    texture [ "street_street_DL_tex" ]
    texture [ "street_sidewalk_DL_tex" ]
    texture [ "street_curb_DL_tex" ]
@@ -11386,11 +11442,6 @@ group "donaldsDreamland" [
     nhpr [ 0 0 0 ]
     scale [ 0.7 0.7 0.7 ]
     color [ 0.5 0.5 0.5 1 ]
-   ]
-   prop "animated_prop_SleepingHydrantAnimatedProp_DNARoot" [
-    code [ "prop_DL_hydrant" ]
-    pos [ 12.18 -8.81 0 ]
-    nhpr [ 0 0 0 ]
    ]
   ]
   flat_building "tb50:20_DNARoot" [
@@ -11770,11 +11821,13 @@ group "donaldsDreamland" [
      count [ 1 ]
     ]
    ]
-   prop "prop_DL_mailbox_DNARoot" [
-    code [ "prop_DL_mailbox" ]
-    pos [ 1.77 -8.01 0 ]
-    nhpr [ -90 0 0 ]
-   ]
+  ]
+  interactive_prop "interactive_prop_phase_8_models_char__ddl_hydrant_DNARoot" [
+   code [ "interactive_prop_phase_8_models_char__ddl_hydrant" ]
+   anim [ "tt_a_ara_ddl_hydrant_idle0" ]
+   cell_id [ 0 ]
+   pos [ -154.003 -419.282 0 ]
+   nhpr [ -0 0 -0 ]
   ]
  ]
  visgroup "9146" [
@@ -11786,8 +11839,8 @@ group "donaldsDreamland" [
   battle_cell [ 20 20 -114.898 -434.935 -0.5 ]
   street "street_courtyard_70_exit_DNARoot" [
    code [ "street_courtyard_70_exit" ]
-   pos [ -99.28 -433.92 0 ]
-   nhpr [ 90 0 0 ]
+   pos [ -99.28 -433.92 2.28882e-005 ]
+   nhpr [ 90 0 -0 ]
    texture [ "street_street_DL_tex" ]
    texture [ "street_sidewalk_DL_tex" ]
    texture [ "street_curb_DL_tex" ]
@@ -11855,6 +11908,13 @@ group "donaldsDreamland" [
     pos [ 8.57 -7.68 0 ]
     nhpr [ 90 0 0 ]
    ]
+  ]
+  interactive_prop "interactive_prop_phase_8_models_char__ddl_mailbox_DNARoot" [
+   code [ "interactive_prop_phase_8_models_char__ddl_mailbox" ]
+   anim [ "tt_a_ara_ddl_mailbox_idleSleep0" ]
+   cell_id [ 0 ]
+   pos [ -131.385 -449.289 2.28882e-005 ]
+   nhpr [ 105 0 0 ]
   ]
  ]
  visgroup "9147" [
@@ -12436,8 +12496,8 @@ group "donaldsDreamland" [
   battle_cell [ 20 20 -100 -485 -0.5 ]
   street "street_40x40_DNARoot" [
    code [ "street_40x40" ]
-   pos [ -79.28 -508.92 0 ]
-   nhpr [ 90 0 0 ]
+   pos [ -79.28 -508.92 1.14441e-005 ]
+   nhpr [ 90 0 -0 ]
    texture [ "street_street_DL_tex" ]
    texture [ "street_sidewalk_DL_tex" ]
    texture [ "street_curb_DL_tex" ]
@@ -12549,8 +12609,8 @@ group "donaldsDreamland" [
    ]
    prop "prop_DL_tree_DNARoot" [
     code [ "prop_tree_DL_brickbox_ur" ]
-    pos [ 9.73 -6.56 0.01 ]
-    nhpr [ 0 0 0 ]
+    pos [ 9.73053 -6.56005 -1.52588e-005 ]
+    nhpr [ -0 0 -0 ]
     scale [ 0.7 0.7 0.7 ]
    ]
   ]
@@ -12581,11 +12641,6 @@ group "donaldsDreamland" [
      code [ "cornice_brick_ur" ]
      color [ 0.31 0.27 0.27 1 ]
     ]
-   ]
-   prop "animated_prop_SleepingHydrantAnimatedProp_DNARoot" [
-    code [ "prop_DL_hydrant" ]
-    pos [ -0.28 -7.92 0 ]
-    nhpr [ 0 0 0 ]
    ]
   ]
   flat_building "tb51:12_8_DNARoot" [
@@ -12656,7 +12711,7 @@ group "donaldsDreamland" [
   prop "linktunnel_mm_4301_DNARoot" [
    code [ "prop_neighborhood_tunnel" ]
    pos [ -99.28 -508.92 0 ]
-   nhpr [ -180 0 0 ]
+   nhpr [ 180 0 -0 ]
    sign [
     code [ "tunnel_sign_magenta" ]
     color [ 0.533333 0.533333 0.533333 1 ]
@@ -12784,6 +12839,18 @@ group "donaldsDreamland" [
     ]
    ]
   ]
+  interactive_prop "interactive_prop_phase_8_models_char__ddl_hydrant_DNARoot" [
+   code [ "interactive_prop_phase_8_models_char__ddl_hydrant" ]
+   anim [ "tt_a_ara_ddl_hydrant_idle0" ]
+   cell_id [ 0 ]
+   pos [ -84.4559 -472.195 0 ]
+   nhpr [ -75 0 -0 ]
+  ]
+  prop "prop_tt_m_ara_gen_tunnelAheadSign_DNARoot" [
+   code [ "prop_tt_m_ara_gen_tunnelAheadSign" ]
+   pos [ -107.392 -504.01 -0.500008 ]
+   nhpr [ 165 0 -0 ]
+  ]
  ]
  visgroup "9151" [
   vis [   "9151"   "9152"   "9130"   "9131"   "9132"   "9133"   "9134"   "9135"   "9136"   "9129"   "9128"   "9127"   "9126"   "9125"   "9124"   ]
@@ -12834,11 +12901,6 @@ group "donaldsDreamland" [
     pos [ 15.23 3.28 18.86 ]
     nhpr [ 0 0 0 ]
     color [ 0.5 0.5 0.5 1 ]
-   ]
-   prop "animated_prop_SleepingHydrantAnimatedProp_DNARoot" [
-    code [ "prop_DL_hydrant" ]
-    pos [ 12.06 -6.96 0 ]
-    nhpr [ 0 0 0 ]
    ]
   ]
   flat_building "tb33:12_8_DNARoot" [
@@ -12914,11 +12976,6 @@ group "donaldsDreamland" [
      count [ 0 ]
     ]
    ]
-   prop "prop_DL_mailbox_DNARoot" [
-    code [ "prop_DL_mailbox" ]
-    pos [ 4.01 -7.92 0 ]
-    nhpr [ -90 0 0 ]
-   ]
   ]
   flat_building "tb33:20_DNARoot" [
    pos [ -285.621 -123.038 0 ]
@@ -12964,11 +13021,6 @@ group "donaldsDreamland" [
     pos [ 14.3862 -2.44232 0 ]
     nhpr [ 165 0 0 ]
     color [ 0.65 0.62 0.8 1 ]
-   ]
-   prop "prop_DL_hydrant_DNARoot" [
-    code [ "prop_DL_hydrant" ]
-    pos [ 5.00516 -113.033 0 ]
-    nhpr [ 180 0 0 ]
    ]
   ]
   flat_building "tb33:random_DNARoot" [
@@ -13053,6 +13105,13 @@ group "donaldsDreamland" [
     ]
    ]
   ]
+  interactive_prop "interactive_prop_phase_8_models_char__ddl_mailbox_DNARoot" [
+   code [ "interactive_prop_phase_8_models_char__ddl_mailbox" ]
+   anim [ "tt_a_ara_ddl_mailbox_idleSleep0" ]
+   cell_id [ 0 ]
+   pos [ -294.945 -132.388 -2.28882e-005 ]
+   nhpr [ 15 0 0 ]
+  ]
  ]
  visgroup "9152" [
   vis [   "9152"   "9151"   "9126"   "9127"   "9128"   "9129"   "9130"   "9131"   "9132"   "9133"   "9134"   "9135"   "9125"   ]
@@ -13071,8 +13130,8 @@ group "donaldsDreamland" [
   ]
   street "street_full_corner_DNARoot" [
    code [ "street_full_corner" ]
-   pos [ -259.64 -108.038 0 ]
-   nhpr [ -60 0 0 ]
+   pos [ -259.64 -108.038 -3.8147e-006 ]
+   nhpr [ -60 0 -0 ]
    texture [ "street_street_DL_tex" ]
    texture [ "street_sidewalk_DL_tex" ]
    texture [ "street_curb_DL_tex" ]
@@ -13384,6 +13443,13 @@ group "donaldsDreamland" [
     scale [ 2.13059 2.13059 2.13059 ]
    ]
   ]
+  interactive_prop "interactive_prop_phase_8_models_char__ddl_hydrant_DNARoot" [
+   code [ "interactive_prop_phase_8_models_char__ddl_hydrant" ]
+   anim [ "tt_a_ara_ddl_hydrant_idle0" ]
+   cell_id [ 0 ]
+   pos [ -211.275 -120.571 0 ]
+   nhpr [ -75 0 -0 ]
+  ]
  ]
  visgroup "9153" [
   vis [   "9153"   "9121"   "9122"   ]
@@ -13487,8 +13553,8 @@ group "donaldsDreamland" [
    ]
    prop "prop_crate_DNARoot" [
     code [ "prop_crate" ]
-    pos [ 120.281 -203.328 0.157107 ]
-    nhpr [ 15 0 0 ]
+    pos [ 120.281 -203.328 -3.8147e-006 ]
+    nhpr [ 15 0 -0 ]
     color [ 0.48 0.93 0.74 1 ]
    ]
    prop "prop_DL_clouds_DNARoot" [

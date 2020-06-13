@@ -962,21 +962,6 @@ group "minniesMelodyLand" [
     nhpr [ -165 0 0 ]
     scale [ 0.7 0.7 0.7 ]
    ]
-   prop "prop_trashcan_MM_DNARoot" [
-    code [ "prop_trashcan_MM" ]
-    pos [ 65.66 -117.52 6.5 ]
-    nhpr [ -45 0 0 ]
-   ]
-   prop "prop_trashcan_MM_DNARoot" [
-    code [ "prop_trashcan_MM" ]
-    pos [ 65.69 77.41 6.5 ]
-    nhpr [ 60 0 0 ]
-   ]
-   prop "prop_mailbox_MM_DNARoot" [
-    code [ "prop_mailbox_MM" ]
-    pos [ -9.79 62.53 6.5 ]
-    nhpr [ -180 0 0 ]
-   ]
    prop "prop_tree_small_ur_DNARoot" [
     code [ "prop_tree_small_ur_MM" ]
     pos [ -75.6574 10.201 6.5 ]
@@ -1004,21 +989,6 @@ group "minniesMelodyLand" [
     code [ "prop_minnie_planter" ]
     pos [ 83.31 21.62 -13.5 ]
     nhpr [ 135 0 0 ]
-   ]
-   prop "prop_trashcan_MM_DNARoot" [
-    code [ "prop_trashcan_MM" ]
-    pos [ 98.78 -76.72 -13.5 ]
-    nhpr [ 60 0 0 ]
-   ]
-   prop "prop_trashcan_MM_DNARoot" [
-    code [ "prop_trashcan_MM" ]
-    pos [ 98.85 38.11 -13.5 ]
-    nhpr [ -30 0 0 ]
-   ]
-   prop "prop_mailbox_MM_DNARoot" [
-    code [ "prop_mailbox_MM" ]
-    pos [ -1.79604 -115.908 6.5 ]
-    nhpr [ 150 0 0 ]
    ]
    prop "prop_chimney_DNARoot" [
     code [ "prop_chimney" ]
@@ -1237,31 +1207,30 @@ group "minniesMelodyLand" [
     ]
    ]
   ]
- 
- flat_building "tb0:random_DNARoot" [
-  pos [ -98.3008 -72.285 6.5 ]
-  nhpr [ 120 0 0 ]
-  width [ 20 ]
-  wall [
-   height [ 10 ]
-   code [ "wall_sm_brick_pink_ur" ]
-   color [ 1 1 1 1 ]
-   windows [
-    code [ "window_sm_curved_ul" ]
-    color [ 0.49 0.79 1 1 ]
-    count [ 2 ]
+  flat_building "tb0:random_DNARoot" [
+   pos [ -98.3008 -72.285 6.5 ]
+   nhpr [ 120 0 0 ]
+   width [ 20 ]
+   wall [
+    height [ 10 ]
+    code [ "wall_sm_brick_pink_ur" ]
+    color [ 1 1 1 1 ]
+    windows [
+     code [ "window_sm_curved_ul" ]
+     color [ 0.49 0.79 1 1 ]
+     count [ 2 ]
+    ]
+   ]
+   wall [
+    height [ 10 ]
+    code [ "wall_sm_brick_pink_ur" ]
+    color [ 1 1 1 1 ]
+    windows [
+     code [ "window_sm_curved_ul" ]
+     color [ 0.49 0.79 1 1 ]
+     count [ 2 ]
+    ]
    ]
   ]
-  wall [
-   height [ 10 ]
-   code [ "wall_sm_brick_pink_ur" ]
-   color [ 1 1 1 1 ]
-   windows [
-    code [ "window_sm_curved_ul" ]
-    color [ 0.49 0.79 1 1 ]
-    count [ 2 ]
-   ]
-  ]
- ]
  ]
 ]

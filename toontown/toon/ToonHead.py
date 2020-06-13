@@ -20,28 +20,28 @@ from direct.fsm.State import State
 from direct.directnotify import DirectNotifyGlobal
 
 # toon head models dictionary
-HeadDict = { "dls": "/models/char/dogMM_Shorts-head-", \
-            "dss":"/models/char/dogMM_Skirt-head-", \
-            "dsl":"/models/char/dogSS_Shorts-head-", \
-            "dll":"/models/char/dogLL_Shorts-head-", \
-            "c":"/models/char/cat-heads-", \
-            "h":"/models/char/horse-heads-", \
-            "m":"/models/char/mouse-heads-", \
-            "r":"/models/char/rabbit-heads-", \
-            "f":"/models/char/duck-heads-", \
-            "p":"/models/char/monkey-heads-", \
-            "b":"/models/char/bear-heads-",\
+HeadDict = {"dls": "/models/char/tt_a_chr_dgm_shorts_head_",
+            "dss": "/models/char/tt_a_chr_dgm_skirt_head_",
+            "dsl": "/models/char/tt_a_chr_dgs_shorts_head_",
+            "dll": "/models/char/tt_a_chr_dgl_shorts_head_",
+            "c":"/models/char/cat-heads-", 
+            "h":"/models/char/horse-heads-", 
+            "m":"/models/char/mouse-heads-", 
+            "r":"/models/char/rabbit-heads-", 
+            "f":"/models/char/duck-heads-", 
+            "p":"/models/char/monkey-heads-", 
+            "b":"/models/char/bear-heads-",
             "s":"/models/char/pig-heads-"
              }
 
-EyelashDict = {"d": "/models/char/dog-lashes", \
-               "c": "/models/char/cat-lashes", \
-               "h": "/models/char/horse-lashes", \
-               "m": "/models/char/mouse-lashes", \
-               "r": "/models/char/rabbit-lashes", \
-               "f": "/models/char/duck-lashes", \
-               "p": "/models/char/monkey-lashes", \
-               "b": "/models/char/bear-lashes",\
+EyelashDict = {"d": "/models/char/dog-lashes", 
+               "c": "/models/char/cat-lashes", 
+               "h": "/models/char/horse-lashes", 
+               "m": "/models/char/mouse-lashes", 
+               "r": "/models/char/rabbit-lashes", 
+               "f": "/models/char/duck-lashes", 
+               "p": "/models/char/monkey-lashes", 
+               "b": "/models/char/bear-lashes",
                "s": "/models/char/pig-lashes"
                }
 
@@ -1593,7 +1593,10 @@ class ToonHead(Actor.Actor):
                     if (lodName == '1000') or (lodName == '500'):
                         filePrefix = DogMuzzleDict[style.head]
                         muzzles = loader.loadModel("phase_3" + filePrefix + lodName)
-                        muzzles.reparentTo(self.find('**/' + lodName + '/**/joint_toHead'))
+                        if not self.find('**/' + lodName + '/**/__Actor_head/def_head').isEmpty():
+                            muzzles.reparentTo(self.find('**/' + lodName + '/**/__Actor_head/def_head'))
+                        else:
+                            muzzles.reparentTo(self.find('**/' + lodName + '/**/joint_toHead'))
 
                 surpriseMuzzle = self.find('**/' + lodName + '/**/muzzle*surprise')
                 angryMuzzle = self.find('**/' + lodName + '/**/muzzle*angry')
@@ -1625,7 +1628,10 @@ class ToonHead(Actor.Actor):
                 muzzle = self.find('**/muzzle*')
                 filePrefix = DogMuzzleDict[style.head]
                 muzzles = loader.loadModel("phase_3" + filePrefix + '1000')
-                muzzles.reparentTo(self.find('**/joint_toHead'))
+                if not self.find('**/def_head').isEmpty():
+                    muzzles.reparentTo(self.find('**/def_head'))
+                else:
+                    muzzles.reparentTo(self.find('**/joint_toHead'))
 
             surpriseMuzzle = self.find('**/muzzle*surprise')
             angryMuzzle = self.find('**/muzzle*angry')

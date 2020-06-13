@@ -104,3 +104,55 @@ hood_model "phase_5/models/props/roof_access" [
 hood_model "phase_6/models/modules/hqMM" [
 	store_node [ "toon_landmark" "toon_landmark_hqMM" "" ]
 	]
+
+hood_model "phase_6/models/char/tt_r_ara_mml_hydrant" [
+	store_node [ "anim_prop" "animated_prop_generic_phase_6_models_char__mml_hydrant" ""]
+	]
+
+hood_model "phase_6/models/char/tt_r_ara_mml_hydrant" [
+	store_node [ "interactive_prop" "interactive_prop_phase_6_models_char__mml_hydrant" ""]
+	]
+
+hood_model "phase_6/models/char/tt_r_ara_mml_mailbox" [
+	store_node [ "anim_prop" "animated_prop_generic_phase_6_models_char__mml_mailbox" ""]
+	]
+
+hood_model "phase_6/models/char/tt_r_ara_mml_mailbox" [
+	store_node [ "interactive_prop" "interactive_prop_phase_6_models_char__mml_mailbox" ""]
+	]
+
+hood_model "phase_6/models/char/tt_r_ara_mml_trashcan" [
+	store_node [ "anim_prop" "animated_prop_generic_phase_6_models_char__mml_trashcan" ""]
+	]
+
+hood_model "phase_6/models/char/tt_r_ara_mml_trashcan" [
+	store_node [ "interactive_prop" "interactive_prop_phase_6_models_char__mml_trashcan" ""]
+	]
+
+hood_model "phase_4/models/props/tt_m_ara_gen_sillyMeterSign" [
+	store_node [ "prop" "prop_tt_m_ara_gen_sillyMeterSign" "" ]
+        ]
+
+hood_model "phase_4/models/props/tt_m_ara_gen_victorySoonSign" [
+	store_node [ "prop" "prop_tt_m_ara_gen_victorySoonSign" "" ]
+        ]
+        
+hood_model "phase_4/models/props/tt_m_ara_gen_victoryPartySign" [
+	store_node [ "prop" "prop_tt_m_ara_gen_victoryPartySign" "" ]
+        ]
+
+hood_model "phase_4/models/props/tt_m_ara_gen_stormSellbotSign" [
+	store_node [ "prop" "prop_tt_m_ara_gen_stormSellbotSign" "" ]
+        ]
+
+hood_model "phase_4/models/props/tt_m_ara_gen_jellybeanJamSign" [
+	store_node [ "prop" "prop_tt_m_ara_gen_jellybeanJamSign" "" ]
+        ]
+
+hood_model "phase_4/models/props/tt_m_ara_gen_foreSign" [
+	store_node [ "prop" "prop_tt_m_ara_gen_foreSign" "" ]
+        ]
+
+hood_model "phase_4/models/props/tt_m_ara_gen_tunnelAheadSign" [
+	store_node [ "prop" "prop_tt_m_ara_gen_tunnelAheadSign" "" ]
+        ]

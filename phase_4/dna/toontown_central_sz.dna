@@ -1,6 +1,11 @@
 group "toontownCentral" [
  visgroup "2000:safe_zone" [
   vis [   "2000:safe_zone"   ]
+  prop "npc_origin_3" [
+   code [ "DCS" ]
+   pos [ -124 -77.5 0.525 ]
+   nhpr [ -15 0 0 ]
+  ]
   group "fishing_pond_1" [
    prop "npc_fisherman_origin_0" [
     code [ "DCS" ]
@@ -636,86 +641,6 @@ group "toontownCentral" [
      ]
     ]
    ]
-   landmark_building "sz13:toon_landmark_TT_toonhall_DNARoot" [
-    code [ "toon_landmark_TT_toonhall" ]
-    title [ "Toon Hall" ]
-    pos [ 116.66 24.29 4 ]
-    nhpr [ -90 0 0 ]
-    door [
-     code [ "door_double_round_ur" ]
-     color [ 0.88 0.45 0.38 1 ]
-    ]
-    sign [
-     pos [ 0 0 -1.13 ]
-     scale [ 1.2 1 1.2 ]
-     baseline [
-      code [ "mickey" ]
-      color [ 1 1 0 1 ]
-      pos [ 0.3 0 -1.4 ]
-      scale [ 2.2 1 2.3 ]
-      kern [ -0.099751 ]
-      width [ 134.553 ]
-      height [ 134.553 ]
-      text [
-       letters [ "T" ]
-      ]
-      text [
-       letters [ "O" ]
-      ]
-      text [
-       letters [ "O" ]
-      ]
-      text [
-       letters [ "N" ]
-      ]
-      text [
-       letters [ " " ]
-      ]
-      text [
-       letters [ " " ]
-      ]
-      text [
-       letters [ "H" ]
-      ]
-      text [
-       letters [ "A" ]
-      ]
-      text [
-       letters [ "L" ]
-      ]
-      text [
-       letters [ "L" ]
-      ]
-     ]
-     baseline [
-      code [ "mickey" ]
-      color [ 1 1 0 1 ]
-      pos [ 0 0 1.08 ]
-      scale [ 1.7 1 1.7 ]
-      kern [ -0.108469 ]
-      width [ 19.1721 ]
-      height [ 19.1721 ]
-      text [
-       letters [ "m" ]
-      ]
-      text [
-       letters [ "i" ]
-      ]
-      text [
-       letters [ "c" ]
-      ]
-      text [
-       letters [ "k" ]
-      ]
-      text [
-       letters [ "e" ]
-      ]
-      text [
-       letters [ "y" ]
-      ]
-     ]
-    ]
-   ]
    landmark_building "sz16:toon_landmark_TT_school_house_DNARoot" [
     code [ "toon_landmark_TT_school_house" ]
     title [ "Toontown School House" ]
@@ -866,11 +791,91 @@ group "toontownCentral" [
      ]
     ]
    ]
+   landmark_building "sz13:toon_landmark_TT_toonhall_DNARoot" [
+    code [ "toon_landmark_TT_toonhall" ]
+    title [ "Toon Hall" ]
+    pos [ 116.66 24.29 4 ]
+    nhpr [ -90 0 -0 ]
+    door [
+     code [ "door_double_round_ur" ]
+     color [ 0.88 0.45 0.38 1 ]
+    ]
+    sign [
+     pos [ 0 0 -1.13 ]
+     scale [ 1.2 1 1.2 ]
+     baseline [
+      code [ "mickey" ]
+      color [ 1 1 0 1 ]
+      pos [ 0.3 0 -1.4 ]
+      scale [ 2.2 1 2.3 ]
+      kern [ -0.099751 ]
+      width [ 134.553 ]
+      height [ 134.553 ]
+      text [
+       letters [ "T" ]
+      ]
+      text [
+       letters [ "O" ]
+      ]
+      text [
+       letters [ "O" ]
+      ]
+      text [
+       letters [ "N" ]
+      ]
+      text [
+       letters [ " " ]
+      ]
+      text [
+       letters [ " " ]
+      ]
+      text [
+       letters [ "H" ]
+      ]
+      text [
+       letters [ "A" ]
+      ]
+      text [
+       letters [ "L" ]
+      ]
+      text [
+       letters [ "L" ]
+      ]
+     ]
+     baseline [
+      code [ "mickey" ]
+      color [ 1 1 0 1 ]
+      pos [ 0 0 1.08 ]
+      scale [ 1.7 1 1.7 ]
+      kern [ -0.108469 ]
+      width [ 19.1721 ]
+      height [ 19.1721 ]
+      text [
+       letters [ "m" ]
+      ]
+      text [
+       letters [ "i" ]
+      ]
+      text [
+       letters [ "c" ]
+      ]
+      text [
+       letters [ "k" ]
+      ]
+      text [
+       letters [ "e" ]
+      ]
+      text [
+       letters [ "y" ]
+      ]
+     ]
+    ]
+   ]
   ]
   prop "toontown_central_DNARoot" [
    code [ "toontown_central" ]
-   pos [ 0 0 0 ]
-   nhpr [ -90 0 0 ]
+   pos [ 9.15527e-005 -1.90735e-006 2.6226e-006 ]
+   nhpr [ -90 0 -0 ]
   ]
   prop "prop_tree_large_ur_DNARoot" [
    code [ "prop_tree_large_ur" ]
@@ -1263,7 +1268,7 @@ group "toontownCentral" [
   prop "prop_post_three_light_DNARoot" [
    code [ "prop_post_three_light" ]
    pos [ 108.962 -28.0532 4 ]
-   nhpr [ 180 0 0 ]
+   nhpr [ -180 0 -0 ]
   ]
   prop "prop_post_three_light_DNARoot" [
    code [ "prop_post_three_light" ]
@@ -1367,10 +1372,10 @@ group "toontownCentral" [
    nhpr [ 31 0 0 ]
    scale [ 1.18418 1.18418 1.18418 ]
   ]
- prop "prop_party_gate_DNARoot" [
-  code [ "prop_party_gate" ]
-  pos [ 77.935 -159.939 2.60141 ]
-  nhpr [ 195 0 0 ]
- ]
+  prop "prop_party_gate_DNARoot" [
+   code [ "prop_party_gate" ]
+   pos [ 77.935 -159.939 2.60141 ]
+   nhpr [ 195 0 0 ]
   ]
+ ]
 ]

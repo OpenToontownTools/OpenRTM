@@ -298,20 +298,21 @@ Phase12AnimList = (
     )
 
 # toon leg models dictionary
-LegDict = { "s":"/models/char/dogSS_Shorts-legs-", \
-            "m":"/models/char/dogMM_Shorts-legs-", \
-            "l":"/models/char/dogLL_Shorts-legs-" }
+LegDict = { 's': '/models/char/tt_a_chr_dgs_shorts_legs_',
+            'm': '/models/char/tt_a_chr_dgm_shorts_legs_',
+            'l': '/models/char/tt_a_chr_dgl_shorts_legs_'}
 
 # toon torso models dictionary
-TorsoDict = { "s":"/models/char/dogSS_Naked-torso-", \
-              "m":"/models/char/dogMM_Naked-torso-", \
-              "l":"/models/char/dogLL_Naked-torso-", \
-              "ss":"/models/char/dogSS_Shorts-torso-", \
-              "ms":"/models/char/dogMM_Shorts-torso-", \
-              "ls":"/models/char/dogLL_Shorts-torso-", \
-              "sd":"/models/char/dogSS_Skirt-torso-", \
-              "md":"/models/char/dogMM_Skirt-torso-", \
-              "ld":"/models/char/dogLL_Skirt-torso-" }
+TorsoDict = {   's': '/models/char/dogSS_Naked-torso-',
+                'm': '/models/char/dogMM_Naked-torso-',
+                'l': '/models/char/dogLL_Naked-torso-',
+                'ss': '/models/char/tt_a_chr_dgs_shorts_torso_',
+                'ms': '/models/char/tt_a_chr_dgm_shorts_torso_',
+                'ls': '/models/char/tt_a_chr_dgl_shorts_torso_',
+                'sd': '/models/char/tt_a_chr_dgs_skirt_torso_',
+                'md': '/models/char/tt_a_chr_dgm_skirt_torso_',
+                'ld': '/models/char/tt_a_chr_dgl_skirt_torso_'
+}
 
 # toon head models dictionary is in ToonHead.py.
 
@@ -940,8 +941,11 @@ class Toon(Avatar.Avatar, ToonHead):
         # attach all the various toon pieces
         if (self.hasLOD()):
             for lodName in self.getLODNames():
-                self.attach("head", "torso", "joint_head", lodName)
-                self.attach("torso", "legs", "joint_hips", lodName)
+                if not self.getPart('torso', lodName).find('**/def_head').isEmpty():
+                    self.attach('head', 'torso', 'def_head', lodName)
+                else:
+                    self.attach('head', 'torso', 'joint_head', lodName)
+                self.attach('torso', 'legs', 'joint_hips', lodName)
         else:
             self.attach("head", "torso", "joint_head")
             self.attach("torso", "legs", "joint_hips")
@@ -1018,9 +1022,13 @@ class Toon(Avatar.Avatar, ToonHead):
         self.leftHand = None
         for lodName in self.getLODNames():
             hand = self.getPart('torso', lodName).find('**/joint_Rhold')
+            if not self.getPart('torso', lodName).find('**/def_joint_right_hold').isEmpty():
+                    hand = self.getPart('torso', lodName).find('**/def_joint_right_hold')
             self.rightHands.append(hand)
             rightHand = rightHand.instanceTo(hand)
             hand = self.getPart('torso', lodName).find('**/joint_Lhold')
+            if not self.getPart('torso', lodName).find('**/def_joint_left_hold').isEmpty():
+                    hand = self.getPart('torso', lodName).find('**/def_joint_left_hold')
             self.leftHands.append(hand)
             leftHand = leftHand.instanceTo(hand)
             # It's important that self.rightHand and self.leftHand
@@ -1151,6 +1159,10 @@ class Toon(Avatar.Avatar, ToonHead):
         self.loadAnims(LegsAnimDict[legStyle], "legs", "1000")
         self.loadAnims(LegsAnimDict[legStyle], "legs", "500")
         self.loadAnims(LegsAnimDict[legStyle], "legs", "250")
+        # Hide the shoes
+        self.findAllMatches('**/boots_short').stash()
+        self.findAllMatches('**/boots_long').stash()
+        self.findAllMatches('**/shoes').stash()
 
     def swapToonLegs(self, legStyle, copy = 1):
         """swapToonLegs(self, string, bool = 1)
@@ -1301,7 +1313,7 @@ class Toon(Avatar.Avatar, ToonHead):
                 piece = torso.find('**/' + pieceName)
                 piece.setColor(armColor)
             # Color the gloves
-            hands = torso.find('hands')
+            hands = torso.find('**/hands')
             hands.setColor(gloveColor)
             # Color the lower body
             legs = self.getPart('legs', lodName)
@@ -3140,7 +3152,7 @@ class Toon(Avatar.Avatar, ToonHead):
 
         # reparent the toon head to the suit
         suitHeadNull = suit.find("**/joint_head")
-        toonHead = self.find("**/1000/**/__Actor_head")
+        toonHead = self.getPart('head', '1000')
 
         # turn off emotions
         Emote.globalEmote.disableAll(self)

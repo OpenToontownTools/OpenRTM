@@ -1207,29 +1207,29 @@ class RobotToonControlPanel(AppShell):
         self.maleTopsList = ToonDNA.getAllTops('m')
         self.maleTopsDict = self.sortVariants(self.maleTopsList)
         self.maleTopsKeys = sorted(self.maleTopsDict.keys())
-        self.maleTopsNames = map(lambda x: ToonTopsDict[x], self.maleTopsKeys)
+        self.maleTopsNames = list(map(lambda x: ToonTopsDict[x], self.maleTopsKeys))
         self.maleBottomsList = ToonDNA.getAllBottoms('m')
         self.maleBottomsDict = self.sortVariants(self.maleBottomsList)
         self.maleBottomsKeys = sorted(self.maleBottomsDict.keys())
-        self.maleBottomsNames = map(
-            lambda x: BoyBottomsDict[x], self.maleBottomsKeys)
+        self.maleBottomsNames = list(map(
+            lambda x: BoyBottomsDict[x], self.maleBottomsKeys))
         self.femaleTopsList = ToonDNA.getAllTops('f')
         self.femaleTopsDict = self.sortVariants(self.femaleTopsList)
         self.femaleTopsKeys = sorted(self.femaleTopsDict.keys())
-        self.femaleTopsNames = map(lambda x: ToonTopsDict[x],
-                                   self.femaleTopsKeys)
+        self.femaleTopsNames = list(map(lambda x: ToonTopsDict[x],
+                                   self.femaleTopsKeys))
         self.femaleBottomsList = ToonDNA.getAllBottoms('f')
         self.femaleBottomsDict = self.sortVariants(self.femaleBottomsList)
         self.femaleSkirtsList = ToonDNA.getAllBottoms('f','skirts')
         self.femaleSkirtsDict = self.sortVariants(self.femaleSkirtsList)
         self.femaleSkirtsKeys = sorted(self.femaleSkirtsDict.keys())
-        self.femaleSkirtsNames = map(
-            lambda x: GirlBottomsDict[x], self.femaleSkirtsKeys)
+        self.femaleSkirtsNames = list(map(
+            lambda x: GirlBottomsDict[x], self.femaleSkirtsKeys))
         self.femaleShortsList = ToonDNA.getAllBottoms('f','shorts')
         self.femaleShortsDict = self.sortVariants(self.femaleShortsList)
         self.femaleShortsKeys = sorted(self.femaleShortsDict.keys())
-        self.femaleShortsNames = map(
-            lambda x: GirlBottomsDict[x], self.femaleShortsKeys)
+        self.femaleShortsNames = list(map(
+            lambda x: GirlBottomsDict[x], self.femaleShortsKeys))
         self.doodleColorButtonList = []
         self.doodleColorScaleButtonList = []
         self.doodleEyeColorButtonList = []

@@ -1141,7 +1141,7 @@ group "theBurrrgh" [
    prop "the_burrrgh" [
     code [ "the_burrrgh" ]
     pos [ -50 -20 0 ]
-    nhpr [ 90 0 0 ]
+    nhpr [ 90 0 -0 ]
    ]
    prop "prop_post_three_light_DNARoot" [
     code [ "prop_post_three_light" ]
@@ -1255,39 +1255,9 @@ group "theBurrrgh" [
     nhpr [ -105 0 0 ]
    ]
    prop "prop_BR_trashcan_DNARoot" [
-    code [ "prop_BR_trashcan" ]
-    pos [ -7.33 -109.61 6.17 ]
-    nhpr [ 60 0 0 ]
-   ]
-   prop "prop_BR_trashcan_DNARoot" [
-    code [ "prop_BR_trashcan" ]
-    pos [ -0.65 62.77 6.17 ]
-    nhpr [ 115 0 0 ]
-   ]
-   prop "prop_BR_trashcan_DNARoot" [
     code [ "prop_post_three_light" ]
     pos [ 38.24 -6.78 6.15 ]
     nhpr [ 60 0 0 ]
-   ]
-   prop "prop_BR_trashcan_DNARoot" [
-    code [ "prop_BR_trashcan" ]
-    pos [ -65.38 116.47 6.15 ]
-    nhpr [ 75 0 0 ]
-   ]
-   prop "prop_BR_trashcan_DNARoot" [
-    code [ "prop_BR_trashcan" ]
-    pos [ -57.69 -151.95 6.15 ]
-    nhpr [ 130 0 0 ]
-   ]
-   prop "BR_mailbox_DNARoot" [
-    code [ "BR_mailbox" ]
-    pos [ 29.59 -116.49 6.17 ]
-    nhpr [ 140 0 0 ]
-   ]
-   prop "BR_mailbox_DNARoot" [
-    code [ "BR_mailbox" ]
-    pos [ 34.78 69.14 6.17 ]
-    nhpr [ -140 0 0 ]
    ]
    prop "prop_chimney_DNARoot" [
     code [ "prop_chimney" ]
@@ -1425,20 +1395,20 @@ group "theBurrrgh" [
     ]
    ]
   ]
- prop "neighborhood_sign_lawBotHQ_DNARoot" [
-  code [ "neighborhood_sign_lawBotHQ" ]
-  pos [ 11.2916 92.378 6.18851 ]
-  nhpr [ 150 0 0 ]
- ]
- prop "neighborhood_sign_lawBotHQ_DNARoot" [
-  code [ "neighborhood_sign_lawBotHQ" ]
-  pos [ -11.2839 104.749 6.17428 ]
-  nhpr [ -30 0 0 ]
- ]
- prop "prop_party_gate_DNARoot" [
-  code [ "prop_party_gate" ]
-  pos [ -142.689 36.0939 6.19787 ]
-  nhpr [ 59.0362 0 0 ]
- ]
+  prop "neighborhood_sign_lawBotHQ_DNARoot" [
+   code [ "neighborhood_sign_lawBotHQ" ]
+   pos [ 11.2916 92.378 6.18851 ]
+   nhpr [ 150 0 0 ]
   ]
+  prop "neighborhood_sign_lawBotHQ_DNARoot" [
+   code [ "neighborhood_sign_lawBotHQ" ]
+   pos [ -11.2839 104.749 6.17428 ]
+   nhpr [ -30 0 0 ]
+  ]
+  prop "prop_party_gate_DNARoot" [
+   code [ "prop_party_gate" ]
+   pos [ -142.689 36.0939 6.19787 ]
+   nhpr [ 59.0362 0 0 ]
+  ]
+ ]
 ]

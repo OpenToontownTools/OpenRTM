@@ -11,6 +11,9 @@ model "phase_3.5/models/modules/toon_interior_L" [
 model "phase_3.5/models/modules/toon_interior_T" [
         store_node [ "prop" "TI_room_T" "" ]
         ]
+model "phase_3.5/models/modules/tt_m_ara_int_toonhall" [
+        store_node [ "prop" "TI_hall" "" ]
+        ]
 
 
 store_texture [ "TI_wallpaper" "wall_paper_a1"

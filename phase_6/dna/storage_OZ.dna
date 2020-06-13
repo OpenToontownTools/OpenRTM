@@ -45,7 +45,7 @@ hood_model "phase_8/models/modules/DG_D1" [
 	store_node [ "toon_landmark" "toon_landmark_DG_D1" "DG_D1"  ]
 	]
 
-hood_model "phase_8/models/props/daisys_fountain" [
+hood_model "phase_8/models/props/tt_m_ara_dga_fountain" [
 	store_node [ "prop" "prop_daisys_fountain" "" ]
 	]
 
