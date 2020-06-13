@@ -1182,7 +1182,7 @@ class RobotToonControlPanel(AppShell):
     # Override class variables
     appname = 'Robot Toon Manager Panel'
     frameWidth  = 900
-    frameHeight = 600
+    frameHeight = 800
     usecommandarea = 1
     usestatusarea  = 0
     contactname = 'Mark Mine'
@@ -1538,23 +1538,43 @@ class RobotToonControlPanel(AppShell):
 
         # COLOR TABLETS
         colorFrame = Frame(self.pageOne)
+        
+        Label(colorFrame, text = 'Toontown Online Colors', width=20, anchor = W, justify = LEFT).pack(expand = 0, fill = X)
         for i in range(2):
             cf = Frame(colorFrame)
             for j in range(14):
                 index = i * 14 + j
                 if index < 27:
-                    color = self.transformRGB(ToonDNA.allColorsList[index])
+                    color = self.transformRGB(ToonDNA.allOnlineColorsList[index])
                     b = Button(cf, width = 1, height = 1, background = color,
-                           text = "%d" % index,
+                           text = f"{index}",
                            command = lambda ci=index: self.setToonColor(ci))
                     b.pack(side = LEFT, fill = X, expand = 0)
                     self.colorButtonList.append(b)
 
-            # Put an RGB picker button on the end of the second row
-            if i == 1:
-                self.toonRgbPicker = Button(cf, text = 'From RGB', command = self.openRGBPanel)
-                self.toonRgbPicker.pack(side = LEFT, fill = X, expand = 0)
             cf.pack(fill = X, expand = 0)
+            
+        # Clash Colors
+        Label(colorFrame, text = 'Clash Colors', width=20, anchor = W, justify = LEFT).pack(expand = 0, fill = X)
+        for i in range(3):
+            cf = Frame(colorFrame)
+            for j in range(20):
+                index = i * 14 + j
+                if index < 39:
+                    color = self.transformRGB(ToonDNA.allClashColorsList[index])
+                    b = Button(cf, width = 1, height = 1, background = color,
+                        # The +27 is for the allColorsList, which is made up of all games colors so I dont have to
+                        # specify which game list is being used.
+                           text = f"{index+27}",
+                           command = lambda ci=index+27: self.setToonColor(ci))
+                    b.pack(side = LEFT, fill = X, expand = 0)
+                    self.colorButtonList.append(b)
+                    
+            cf.pack(fill = X, expand = 0)
+            
+        # Put an RGB picker button below the presets
+        self.toonRgbPicker = Button(colorFrame, text = 'From RGB', command = self.openRGBPanel)
+        self.toonRgbPicker.pack(side = LEFT, fill = X, expand = 0)
         colorFrame.pack(fill = X, expand = 0)
 
         # TOP TEXTURE
