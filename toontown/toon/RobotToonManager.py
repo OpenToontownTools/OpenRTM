@@ -713,7 +713,7 @@ class RobotToonManager(DirectObject):
                           startPos = startPos, endPos = endPos)
 
         a.nametag.manage(self.marginManager)
-        self.avatarDict[a.id()] = a
+        self.avatarDict[a.get_key()] = a
         a.select()
         self.faceCamera()
         a.setStartHpr(a.getHpr())
@@ -728,7 +728,7 @@ class RobotToonManager(DirectObject):
                       endPos = endPos, endHpr = endHpr, state = state)
         t.nametag.manage(self.marginManager)
         t.setPosHpr(pos, hpr)
-        self.avatarDict[t.id()] = t
+        self.avatarDict[t.get_key()] = t
         messenger.send('SGE_Update Explorer', [t])
         return t
     def makeToonFromServerString(self, serverString,
@@ -777,12 +777,12 @@ class RobotToonManager(DirectObject):
             st.setEndHpr(st.getHpr())
             st.updateWalkIval()
     def findSelectedToon(self, nodePath):
-        id = nodePath.id()
+        id = nodePath.get_key()
         np = nodePath.findNetTag('robotAvatar')
         if not np.isEmpty():
-            if np.id() != nodePath.id():
+            if np.get_key() != nodePath.get_key():
                 np.select()
-            self.selectedToon = self.avatarDict.get(np.id())
+            self.selectedToon = self.avatarDict.get(np.get_key())
             if self.panel:
                 self.panel.updateToonInfo()
     def makeSuitFromProperties(self, properties,
@@ -794,7 +794,7 @@ class RobotToonManager(DirectObject):
                       endPos = endPos, endHpr = endHpr, state = state)
         t.nametag.manage(self.marginManager)
         t.setPosHpr(pos, hpr)
-        self.avatarDict[t.id()] = t
+        self.avatarDict[t.get_key()] = t
         messenger.send('SGE_Update Explorer', [t])
         return t
     def openCrowdFilePanel(self):
@@ -819,7 +819,9 @@ class RobotToonManager(DirectObject):
                         props,pos,hpr,startPos,startHpr,endPos,endHpr,state)
             f.close()
     def parseAvatarProperties(self, line):
-        line = string.strip(line)
+        # I think I might want to change this to a .json format, because this is not fun.
+        line = line.decode('UTF-8')
+        line = str.strip(line)
         if line:
             line = line.split('*')
         i = 0
@@ -849,24 +851,24 @@ class RobotToonManager(DirectObject):
             dept = line[i];i+=1
             name = line[i];i+=1
             props = [body, dept, name]
-        x = string.atof(line[i]);i+=1
-        y = string.atof(line[i]);i+=1
-        z = string.atof(line[i]);i+=1
-        h = string.atof(line[i]);i+=1
-        p = string.atof(line[i]);i+=1
-        r = string.atof(line[i]);i+=1
-        x1 = string.atof(line[i]);i+=1
-        y1 = string.atof(line[i]);i+=1
-        z1 = string.atof(line[i]);i+=1
-        h1 = string.atof(line[i]);i+=1
-        p1 = string.atof(line[i]);i+=1
-        r1 = string.atof(line[i]);i+=1
-        x2 = string.atof(line[i]);i+=1
-        y2 = string.atof(line[i]);i+=1
-        z2 = string.atof(line[i]);i+=1
-        h2 = string.atof(line[i]);i+=1
-        p2 = string.atof(line[i]);i+=1
-        r2 = string.atof(line[i]);i+=1
+        x = int(line[i]);i+=1
+        y = int(line[i]);i+=1
+        z = int(line[i]);i+=1
+        h = int(line[i]);i+=1
+        p = int(line[i]);i+=1
+        r = int(line[i]);i+=1
+        x1 = int(line[i]);i+=1
+        y1 = int(line[i]);i+=1
+        z1 = int(line[i]);i+=1
+        h1 = int(line[i]);i+=1
+        p1 = int(line[i]);i+=1
+        r1 = int(line[i]);i+=1
+        x2 = int(line[i]);i+=1
+        y2 = int(line[i]);i+=1
+        z2 = int(line[i]);i+=1
+        h2 = int(line[i]);i+=1
+        p2 = int(line[i]);i+=1
+        r2 = int(line[i]);i+=1
         state = line[i]
         return (type, props,
                 Point3(x,y,z),
@@ -1179,7 +1181,7 @@ class RobotToonManager(DirectObject):
 class RobotToonControlPanel(AppShell):
     # Override class variables
     appname = 'Robot Toon Manager Panel'
-    frameWidth  = 650
+    frameWidth  = 900
     frameHeight = 600
     usecommandarea = 1
     usestatusarea  = 0
@@ -1365,7 +1367,7 @@ class RobotToonControlPanel(AppShell):
         # HEAD
         self.speciesDict = { 'c' : 'Cat', 'd' : 'Dog', 'f' : 'Duck',
                              'h' : 'Horse', 'm' : 'Mouse', 'r' : 'Rabbit',
-                             'p' : 'Monkey', 'b' : 'Bear', 's' : 'Swine' }
+                             'p' : 'Monkey', 'b' : 'Bear', 's' : 'Pig' }
         speciesList = sorted(self.speciesDict.values())
         self.headDict = {}
         for head in ToonDNA.toonHeadTypes:
@@ -1442,33 +1444,37 @@ class RobotToonControlPanel(AppShell):
         torsoFrame = Frame(self.pageOne)
         Label(torsoFrame, text = 'Torso:',width=6,
               anchor = W, justify = LEFT).pack(side=LEFT,expand = 0)
+        Label(torsoFrame, text = 'Shorts:',width=5,
+              anchor = W, justify = LEFT).pack(side=LEFT,expand = 0)
         self.ssButton = self.newCreateRadiobutton(
-            torsoFrame, 'Torso', 'SS',
+            torsoFrame, 'Torso', 'S',
             self.torso, 'ss', self.swapTorso,
             help = 'S-Shorts',
             side = LEFT)
         self.msButton = self.newCreateRadiobutton(
-            torsoFrame, 'Torso', 'MS',
+            torsoFrame, 'Torso', 'M',
             self.torso, 'ms', self.swapTorso,
             help = 'M-Shorts',
             side = LEFT)
         self.lsButton = self.newCreateRadiobutton(
-            torsoFrame, 'Torso', 'LS',
+            torsoFrame, 'Torso', 'L',
             self.torso, 'ls', self.swapTorso,
             help = 'L-Shorts',
             side = LEFT)
+        Label(torsoFrame, text = 'Skirt:',width=5,
+              anchor = W, justify = LEFT).pack(side=LEFT,expand = 0)
         self.sdButton = self.newCreateRadiobutton(
-            torsoFrame, 'Torso', 'SD',
+            torsoFrame, 'Torso', 'S',
             self.torso, 'sd', self.swapTorso,
             help = 'S-Dress',
             side = LEFT)
         self.mdButton = self.newCreateRadiobutton(
-            torsoFrame, 'Torso', 'MD',
+            torsoFrame, 'Torso', 'M',
             self.torso, 'md', self.swapTorso,
             help = 'M-Dress',
             side = LEFT)
         self.ldButton = self.newCreateRadiobutton(
-            torsoFrame, 'Torso', 'LD',
+            torsoFrame, 'Torso', 'L',
             self.torso, 'ld', self.swapTorso,
             help = 'L-Dress',
             side = LEFT)
@@ -2290,6 +2296,12 @@ class RobotToonControlPanel(AppShell):
         self.createButtons()
 
         self.initialiseoptions(RobotToonControlPanel)
+        
+        # Camera tab
+        # A way to make sequenced camera animations for renders
+        cameraPage = self.notebook.add('Camera')
+
+        
         # Enable widget commands
         self.updateToonInfo()
         self.setSuitTrack()
