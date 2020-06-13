@@ -239,14 +239,14 @@ class RobotSuit(Suit.Suit, RobotAvatarBase):
             dna = description
         else:
             dna = SuitDNA.SuitDNA()
-            if isinstance(description, types.StringType):
+            if isinstance(description, str):
                 # Assume it is a suit specification
                 dna.newSuit(description)
-            elif isinstance(description, types.IntType):
+            elif isinstance(description, int):
                 # Assume it specifies suit level
                 dna.newSuitRandom(description)
-            elif (isinstance(description, types.ListType) or
-                isinstance(description, types.TupleType)):
+            elif (isinstance(description, list) or
+                isinstance(description, tuple)):
                 # Assume it is a (level,track) list
                 dna.newSuitRandom(description[0], description[1])
             else:
@@ -275,5 +275,5 @@ class RobotDoodle(Pet.Pet, RobotAvatarBase):
                                  endPos, endHpr, state)
     def updateDNA(self, description):
         # doodle dna is an array of the form: [head, ears, nose, tail, body, color, partColor, eyes, gender]
-        if (isinstance(description, types.ListType) or isinstance(description, types.TupleType)):
+        if (isinstance(description, list) or isinstance(description, tuple)):
             self.setDNA(description)

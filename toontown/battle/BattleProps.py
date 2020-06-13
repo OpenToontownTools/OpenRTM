@@ -376,15 +376,15 @@ class PropPool:
     def getProp(self, name):
         """ getProp(name)
         """
-        assert(self.propStrings.has_key(name))
+        assert(name in self.propStrings)
         return self.__getPropCopy(name)
 
     def __getPropCopy(self, name):
-        assert(self.propStrings.has_key(name))
-        assert(self.propTypes.has_key(name))
+        assert(name in self.propStrings)
+        assert(name in self.propTypes)
         if (self.propTypes[name] == 'actor'):
             # make sure the props is loaded
-            if not self.props.has_key(name):
+            if not name in self.props:
                 prop = Actor.Actor()
                 prop.loadModel(self.propStrings[name][0])
                 animDict = {}
@@ -398,7 +398,7 @@ class PropPool:
             return Actor.Actor(other=self.props[name])
         else:
             # make sure the props is loaded            
-            if not self.props.has_key(name):            
+            if not name in self.props:            
                 prop = loader.loadModel(self.propStrings[name][0])
                 prop.setName(name)
                 self.storeProp(name, prop)
@@ -428,7 +428,7 @@ class PropPool:
         self.notify.debug("propCache = %s" % self.propCache)
         
     def getPropType(self, name):
-        assert(self.propTypes.has_key(name))
+        assert(name in self.propTypes)
         return self.propTypes[name]
 
     def __delProp(self, prop):
