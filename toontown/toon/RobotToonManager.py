@@ -1,5 +1,8 @@
 # Is being run outside of Toontown? Then you need to create a window
 # and a base
+
+from pandac.PandaModules import *
+loadPrcFile("Configrc.prc")
 try:
     base
 except NameError:
@@ -12,7 +15,6 @@ from direct.showbase import ShowBase
 from .RobotToon import *
 from direct.gui.DirectGui import *
 from direct.gui import DirectGuiGlobals
-from pandac.PandaModules import *
 from toontown.leveleditor.PieMenu import *
 from directtools.DirectSelection import SelectionRay
 from direct.showbase.TkGlobal import *
@@ -41,7 +43,6 @@ import sys, os
 import string
 import Pmw
 
-loadPrcFile("Configrc.prc")
 from libotp import *
 from libtoontown import *
 from toontown.leveleditor.LevelStyleManager import *

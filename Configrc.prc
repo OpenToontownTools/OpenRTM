@@ -6,15 +6,11 @@ style-path-prefix /i
 
 #load-display pandadx8
 load-display pandagl
-stencil-bits 8
-framebuffer-alpha 1
-alpha-bits 8
 
 framebuffer-multisample 1
 multisamples 8
 
 chan-config-sanity-check #f
-multipass-viz none
 win-width 1280
 win-height 720
 fullscreen 0
@@ -22,19 +18,8 @@ sync-video #f
 
 # Configrc for running the Robot Toon Manager
 
-# THESE LINES ALLOW YOU TO USE DOWNLOAD MODELS INSTEAD OF TTMODELS
-vfs-mount /c/Program Files/Disney/Disney Online/Toontown/phase_3.mf /tt 0
-vfs-mount /c/Program Files/Disney/Disney Online/Toontown/phase_3.5.mf /tt 0
-vfs-mount /c/Program Files/Disney/Disney Online/Toontown/phase_4.mf /tt 0
-vfs-mount /c/Program Files/Disney/Disney Online/Toontown/phase_5.mf /tt 0
-vfs-mount /c/Program Files/Disney/Disney Online/Toontown/phase_5.5.mf /tt 0
-vfs-mount /c/Program Files/Disney/Disney Online/Toontown/phase_6.mf /tt 0
-vfs-mount /c/Program Files/Disney/Disney Online/Toontown/phase_7.mf /tt 0
-vfs-mount /c/Program Files/Disney/Disney Online/Toontown/phase_8.mf /tt 0
-
 # Use local copy of ttmodels
 model-path     .
-plugin-path .
 dna-directory .
 # Putting this line after ttmodels means models will be read from here first
 # model-path     /tt
@@ -43,18 +28,8 @@ sound-path     .
 dna-preload    phase_4/dna/storage.dna
 default-model-extension .bam
 
-load-file-type toontown
 
 window-title Toontown
-
-merge-lod-bundles 0
-compress-channels #t
-text-encoding utf8
-
-# We must currently set this to avoid messing up some of
-# the suits' faces.
-egg-retesselate-coplanar	#f
-
 
 # Custom ObjectTypes for Toontown.
 # "barrier" means a vertical wall, with bitmask 0x01
@@ -80,9 +55,6 @@ egg-object-type-dcs             <DCS> { 1 }
 # transparent geometry).
 egg-object-type-shadow          <Scalar> bin { shadow } <Scalar> alpha { blend-no-occlude }
 cull-bin shadow 15 unsorted
-
-# We still need this off for now.
-temp-hpr-fix 0
 
 # The ID of the server that we are compatible with
 server-version sv1.0.14
