@@ -14,7 +14,7 @@ from direct.gui.DirectGui import *
 from direct.gui import DirectGuiGlobals
 from pandac.PandaModules import *
 from toontown.leveleditor.PieMenu import *
-from direct.directtools.DirectSelection import SelectionRay
+from directtools.DirectSelection import SelectionRay
 from direct.showbase.TkGlobal import *
 from tkinter import *
 from tkinter.filedialog import askopenfilename, asksaveasfilename
@@ -49,12 +49,12 @@ from toontown.leveleditor.LevelStyleManager import *
 from toontown.effects import Fireworks, FireworkShows, FireworkGlobals
 from toontown.battle import BattleParticles
 
-try:
-    if direct is None:
-        base.startDirect()
-except AttributeError:
-    base.startDirect()
-
+base.startTk(1)
+base.startWx(0)
+from directtools import DirectSession
+base.direct = DirectSession.DirectSession()
+base.direct.enable()
+builtins.direct = base.direct
 ToonTopsDict = {
     0 : '00 - solid',
     1 : '01 - single stripe',
