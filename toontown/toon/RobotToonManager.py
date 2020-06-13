@@ -1549,6 +1549,11 @@ class RobotToonControlPanel(AppShell):
                            command = lambda ci=index: self.setToonColor(ci))
                     b.pack(side = LEFT, fill = X, expand = 0)
                     self.colorButtonList.append(b)
+
+            # Put an RGB picker button on the end of the second row
+            if i == 1:
+                self.toonRgbPicker = Button(cf, text = 'From RGB', command = self.openRGBPanel)
+                self.toonRgbPicker.pack(side = LEFT, fill = X, expand = 0)
             cf.pack(fill = X, expand = 0)
         colorFrame.pack(fill = X, expand = 0)
 
@@ -3097,6 +3102,9 @@ class RobotToonControlPanel(AppShell):
 
     def setStomperSize(self, size):
         print('New Stomper Size:', size)
+        
+    def openRGBPanel(self):
+        print("coming soon yay")
 
 
 base.rtm = RobotToonManager()
