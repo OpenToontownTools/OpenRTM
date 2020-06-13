@@ -3014,7 +3014,7 @@ class RobotToonControlPanel(AppShell):
 
         format = filename[-3:]
         filename = filename[:-4]
-        base.movie(namePrefix = filename, duration=duration, format=format)
+        base.movie(namePrefix = filename, duration=duration, format=format, fps = 60)
 
     def takeScreenshot(self):
         self.filename = asksaveasfilename(
