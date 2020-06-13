@@ -666,7 +666,7 @@ class RobotToonManager(DirectObject):
         endPos = Point3(startPos + Vec3(0,10,0))
         if self.avatarType == 't':
             if toNpcId == None:
-                toNpcId = self.toonIds[randint(0,self.numToons)]
+                toNpcId = list(self.toonIds)[randint(0,self.numToons)]
             a = RobotToon(description = toNpcId, parent = self.toonParent,
                           startPos = startPos, endPos = endPos)
         elif self.avatarType == 's':
