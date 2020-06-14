@@ -40,6 +40,8 @@ class RobotAvatarBase:
         self.accept('playRTMWalkIval', lambda: self.setAnimState('walk'))
         self.accept('playRTMRunIval', lambda: self.setAnimState('run'))
         self.setAnimState(state)
+        self.addActive()
+        
     def convertServerDNAString(self, serverString, type = 't'):
         # Strip out blank space and take last 30 characters
         serverString = serverString.replace(' ', '')
@@ -153,6 +155,7 @@ class RobotAvatarBase:
         self.stop()
         self.ignore('playVictoryIval')
         self.removeNode()
+        self.removeActive()
 
 class RobotToon(Toon.Toon, RobotAvatarBase):
     # Default is flippy
@@ -168,7 +171,6 @@ class RobotToon(Toon.Toon, RobotAvatarBase):
         RobotAvatarBase.__init__(self, parent, startPos, startHpr,
                                  endPos, endHpr, state)
         self.showHiRes()
-        self.addActive()
 
     def updateDNA(self, description):
         # Create dna
