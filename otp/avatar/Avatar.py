@@ -7,7 +7,6 @@ from direct.actor.Actor import Actor
 from toontown.chat.ChatGlobals import *
 from toontown.nametag import NametagGlobals
 from toontown.nametag.NametagGroup import NametagGroup
-from libotp import CFSpeech, CFThought, CFTimeout, CFPageButton, CFNoQuitButton, CFQuitButton
 #import AvatarDNA
 from direct.distributed import ClockDelta
 from otp.avatar.ShadowCaster import ShadowCaster
