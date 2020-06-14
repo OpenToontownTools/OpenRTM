@@ -37,8 +37,8 @@ class DirectManipulationControl(DirectObject):
         #turn this on to enable separate handles for scaling
         self.useSeparateScaleHandles = False
         self.actionEvents = [
-            ['DIRECT-mouse1', self.manipulationStart],
-            ['DIRECT-mouse1Up', self.manipulationStop],
+            ['RTMDIRECT-mouse1', self.manipulationStart],
+            ['RTMDIRECT-mouse1Up', self.manipulationStop],
             ['tab', self.toggleObjectHandlesMode],
 ##             ['.', self.objectHandles.multiplyScalingFactorBy, 2.0],
 ##             ['>', self.objectHandles.multiplyScalingFactorBy, 2.0],

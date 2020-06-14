@@ -947,7 +947,6 @@ class RobotToonManager(DirectObject):
             taskMgr.removeTasksMatching('updateSmartCamera*')
             camera.wrtReparentTo(render)
             base.startTk()
-            base.startDirect()
             direct.selectedNPReadout.setText('DIRECT MODE')
             direct.selectedNPReadout.reparentTo(aspect2d)
         else:
@@ -1083,7 +1082,7 @@ class RobotToonManager(DirectObject):
         self.ignore('f10')
         self.ignore('f11')
         self.ignore('f12')
-        self.ignore('DIRECT_selectedNodePath')
+        self.ignore('RTMDIRECT_selectedNodePath')
         self.s1.removeNode()
         self.s2.removeNode()
         self.pieMenu.destroy()
