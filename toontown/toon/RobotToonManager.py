@@ -965,6 +965,10 @@ class RobotToonManager(DirectObject):
         Should be called once during startup to initialize a few
         defaults for the Nametags.
         """
+        base.mouseWatcherNode.setEnterPattern('mouse-enter-%r')
+        base.mouseWatcherNode.setLeavePattern('mouse-leave-%r')
+        base.mouseWatcherNode.setButtonDownPattern('button-down-%r')
+        base.mouseWatcherNode.setButtonUpPattern('button-up-%r')
         NametagGlobals.setCardModel('phase_3/models/props/panel.bam')
         NametagGlobals.setArrowModel('phase_3/models/props/arrow.bam')
         NametagGlobals.setChatBalloon3dModel('phase_3/models/props/chatbox.bam')
