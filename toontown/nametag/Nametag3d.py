@@ -122,7 +122,6 @@ class Nametag3d(Nametag, Clickable3d):
             self.distance = distance
             self.contents.setScale(math.sqrt(distance) * self.SCALING_FACTOR * 1.2)
         self.updateClickRegion()
-        task.delayTime = 1/15
         return task.again
 
     def drawChatBalloon(self, model, modelWidth, modelHeight):

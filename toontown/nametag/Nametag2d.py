@@ -133,7 +133,6 @@ class Nametag2d(Nametag, Clickable2d, MarginVisible):
                 self.region.setActive(False)
 
     def tick(self, task):
-        task.delayTime = 1/15
         if (self.avatar is None) or self.avatar.isEmpty():
             return Task.again
 
@@ -281,7 +280,7 @@ class Nametag2d(Nametag, Clickable2d, MarginVisible):
 
             self.contents.node().removeAllChildren()
 
-            if (self.cell in base.leftCells) or (self.cell in base.rightCells):
+            if (self.cell in base.rtm.leftCells) or (self.cell in base.rtm.rightCells):
                 text = self.getChatText().replace('\x01WLDisplay\x01', '').replace('\x02', '')
                 textWidth = self.chatTextNode.calcWidth(text)
                 if (textWidth / self.CHAT_TEXT_WORD_WRAP) > self.CHAT_TEXT_MAX_ROWS:
@@ -307,15 +306,15 @@ class Nametag2d(Nametag, Clickable2d, MarginVisible):
         else:
             return
 
-        if self.cell in base.bottomCells:
+        if self.cell in base.rtm.bottomCells:
             # Move the origin to the bottom center of the node path:
             origin = self.contents.getRelativePoint(
                 nodePath, ((left+right) / 2.0, 0, bottom))
-        elif self.cell in base.leftCells:
+        elif self.cell in base.rtm.leftCells:
             # Move the origin to the left center of the node path:
             origin = self.contents.getRelativePoint(
                 nodePath, (left, 0, (bottom+top) / 2.0))
-        elif self.cell in base.rightCells:
+        elif self.cell in base.rtm.rightCells:
             # Move the origin to the right center of the node path:
             origin = self.contents.getRelativePoint(
                 nodePath, (right, 0, (bottom+top) / 2.0))
