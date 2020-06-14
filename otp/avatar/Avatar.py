@@ -956,34 +956,32 @@ class Avatar(Actor, ShadowCaster):
         """
         Adds the avatar to the list of currently-active avatars.
         """
-        if (base.wantNametags):
-            assert self.notify.debug('Adding avatar %s' % self.getName())
+        assert self.notify.debug('Adding avatar %s' % self.getName())
 
-            # Just in case it was already there through some screw-up.
-            try:
-                Avatar.ActiveAvatars.remove(self)
-            except ValueError:
-                pass
+        # Just in case it was already there through some screw-up.
+        try:
+            Avatar.ActiveAvatars.remove(self)
+        except ValueError:
+            pass
 
-            Avatar.ActiveAvatars.append(self)
-            self.nametag.manage(base.marginManager)
+        Avatar.ActiveAvatars.append(self)
+        self.nametag.manage(base.rtm.marginManager)
 
-            # Generate a useful event when someone clicks on our nametag.
-            self.accept(self.nametag.getUniqueId(), self.clickedNametag)
+        # Generate a useful event when someone clicks on our nametag.
+        self.accept(self.nametag.getUniqueId(), self.clickedNametag)
 
     def removeActive(self):
         """
         Removes the avatar from the list of currently-active avatars.
         """
-        if (base.wantNametags):
-            assert self.notify.debug('Removing avatar %s' % self.getName())
-            try:
-                Avatar.ActiveAvatars.remove(self)
-            except ValueError:
-                assert self.notify.warning("%s was not present..." % self.getName())
+        assert self.notify.debug('Removing avatar %s' % self.getName())
+        try:
+            Avatar.ActiveAvatars.remove(self)
+        except ValueError:
+            assert self.notify.warning("%s was not present..." % self.getName())
 
-            self.nametag.unmanage(base.marginManager)
-            self.ignore(self.nametag.getUniqueId())
+        self.nametag.unmanage(base.rtm.marginManager)
+        self.ignore(self.nametag.getUniqueId())
 
     if __debug__:
         def debugPrint(self, message):

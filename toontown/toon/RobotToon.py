@@ -168,6 +168,7 @@ class RobotToon(Toon.Toon, RobotAvatarBase):
         RobotAvatarBase.__init__(self, parent, startPos, startHpr,
                                  endPos, endHpr, state)
         self.showHiRes()
+        self.addActive()
 
     def updateDNA(self, description):
         # Create dna

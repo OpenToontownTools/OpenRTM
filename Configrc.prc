@@ -19,7 +19,8 @@ sync-video #f
 # Configrc for running the Robot Toon Manager
 
 # Use local copy of ttmodels
-model-path     .
+#model-path /e/Clash/resources/
+model-path .
 dna-directory .
 # Putting this line after ttmodels means models will be read from here first
 # model-path     /tt
