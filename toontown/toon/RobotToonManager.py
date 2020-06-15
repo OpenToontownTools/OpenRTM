@@ -2,11 +2,9 @@
 # and a base
 
 from pandac.PandaModules import *
-loadPrcFile("Configrc.prc")
 try:
     base
 except NameError:
-    from direct.directbase import DirectStart
     # Let the world know there is no localAvatar
     base.localAvatar = None
 
@@ -53,12 +51,6 @@ from toontown.leveleditor.LevelStyleManager import *
 from toontown.effects import Fireworks, FireworkShows, FireworkGlobals
 from toontown.battle import BattleParticles
 
-base.startTk(1)
-base.startWx(0)
-from directtools import DirectSession
-base.direct = DirectSession.DirectSession()
-base.direct.enable()
-builtins.direct = base.direct
 ToonTopsDict = {
     0 : '00 - solid',
     1 : '01 - single stripe',
@@ -947,7 +939,6 @@ class RobotToonManager(DirectObject):
             taskMgr.removeTasksMatching('updateSmartCamera*')
             camera.wrtReparentTo(render)
             base.startTk()
-            base.startDirect()
             direct.selectedNPReadout.setText('DIRECT MODE')
             direct.selectedNPReadout.reparentTo(aspect2d)
         else:
@@ -3107,10 +3098,6 @@ class RobotToonControlPanel(AppShell):
         print("coming soon yay")
 
 
-base.rtm = RobotToonManager()
-base.rtm.popupControls()
-camera.setPosHpr(0,-60,5,0,0,0)
-run()
 
 
 """
