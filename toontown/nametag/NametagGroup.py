@@ -192,6 +192,7 @@ class NametagGroup:
 
     def getSpeechFont(self):
         return self.chatFont
+        
     def setShadow(self, shadow):
         self.shadow = shadow
         for nametag in self.nametags:
@@ -228,6 +229,14 @@ class NametagGroup:
 
     def getNametagColor(self):
         return self.nametagColor
+        
+    def setArrowColor(self, arrowColor):
+        self.arrowColor = arrowColor
+        for nametag in self.nametags:
+            nametag.setArrowColor(self.arrowColor)
+            
+    def getArrowColor(self):
+        return self.arrowColor
 
     def setChatColor(self, chatColor):
         self.chatColor = chatColor

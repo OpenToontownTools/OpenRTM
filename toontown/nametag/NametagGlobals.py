@@ -136,7 +136,14 @@ def getModelWidthHeight(model):
     return (width, height)
 
 
+NametagColors = {}
+ChatColors = {}
+ArrowColors = {}
+
+
+
 # Foreground, background:
+'''
 NametagColors = {
     CCNormal: (
         (VBase4(0.0, 0.0, 1.0, 1.0), VBase4(0.8, 0.8, 0.8, 0.5)),  # Normal
@@ -251,3 +258,4 @@ ChatColors = {
         (VBase4(0.0, 0.0, 0.0, 1.0), VBase4(1.0, 1.0, 1.0, 1.0))   # Disabled
     )
 }
+'''

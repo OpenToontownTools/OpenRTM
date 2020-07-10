@@ -250,8 +250,8 @@ class Nametag2d(Nametag, Clickable2d, MarginVisible):
 #        self.arrow.setColor(0.8, 0.4, 0.0, 1.0)
         #self.arrow.setColor(0.8, 0.4, 0.0, .5)
 #=======
-        self.arrow.setColor(self.nametagColor[0][0])
-        self.arrow.setColorScale(1, 1, 1, 0.5)
+        self.arrow.setColor(self.arrowColor)
+       #self.arrow.setColorScale(1, 1, 1, 0.5)
 #>>>>>>> parent of 233c84c... Toons now stand on trolley
 
     def marginVisibilityChanged(self):

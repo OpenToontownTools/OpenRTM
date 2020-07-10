@@ -1,0 +1,153 @@
+{
+	"1000": {
+		"comment": "Donald's Dock",
+		"clouds": [
+			{
+				"position": [ 0.575, -0.04 ],
+				"scale": [ 0.55,  0.4 ]
+			},
+			{
+				"position": [ 0.45, -0.25 ],
+				"scale": [ 0.35, 0.25 ]
+			}
+		],
+		"label": [ 0.594, -0.075 ]
+	},
+	
+	"2000": {
+		"comment": "TTC Doesn't need cloud positions since it's always unlocked.",
+		"clouds": [
+		],
+		"label": [ 0.0, -0.1 ]
+	},
+	
+	"3000": {
+		"comment": "The Brrrgh",
+		"clouds": [
+			{
+				"position": [ 0.375, 0.4 ],
+				"scale": [ 0.45, 0.45 ]
+			},
+			{
+				"position": [ 0.5625, 0.2 ],
+				"scale": [ 0.5, 0.4 ]
+			}
+		],
+		"label": [ 0.475, 0.25 ]
+	},
+	
+	"4000": {
+		"comment": "Minnie's Melodyland",
+		"clouds": [
+			{
+				"position": [ -0.02, 0.23 ],
+				"scale": [ 0.7, 0.45 ]
+			}
+		],
+		"label": [ 0.1, 0.15 ]
+	},
+	
+	"5000": {
+		"comment": "Daisy Gardens",
+		"clouds": [
+			{
+				"position": [ -0.3, -0.4 ],
+				"scale": [ 0.55, 0.4 ]
+			}
+		],
+		"label": [ -0.3, -0.375 ]
+	},
+	
+	"6000": {
+		"comment": "Outdoor Zone",
+		"clouds": [
+			{
+				"position": [ 0.25, -0.425 ],
+				"scale": [ 0.6, 0.4 ]
+			},
+			{
+				"position": [ 0.125, -0.36 ],
+				"scale": [ 0.5332, 0.32 ]
+			}
+		],
+		"label": [ 0.2, -0.45 ]
+	},
+	
+	"7000": {
+		"comment": "Funny Farms",
+		"clouds": [
+			{
+				"position": [ -0.5625, -0.07 ],
+				"scale": [ 0.7, 0.45 ]
+			},
+			{
+				"position": [ -0.45, 0.2125 ],
+				"scale": [ 0.7, 0.45 ]
+			}
+		],
+		"label": [ -0.55, 0.0 ]
+	},
+	
+	"8000": {
+		"comment": "Goofy Stadium",
+		"clouds": [
+			{
+				"position": [ -0.125, 0.5 ],
+				"scale": [ 0.7998, 0.39 ]
+			}
+		],
+		"label": [ -0.088, 0.47 ]
+	},
+	
+	"9000": {
+		"comment": "Dreamland",
+		"clouds": [
+			{
+				"position": [ 0.0, 0.0 ],
+				"scale": [ 0.0, 0.0 ]
+			}
+		],
+		
+		"label": [ -0.088, 0.47 ]
+	},
+	"10000": {
+		"comment": "Bossbot HQ",
+		"clouds": [
+			{
+				"position": [ 0.66, -0.4 ],
+				"scale": [ 0.5, 0.4 ]
+			}
+		],
+		"label": [ 0.7, -0.5 ]
+	},
+	"11000": {
+		"comment": "Sellbot HQ",
+		"clouds": [
+			{
+				"position": [ -0.68, -0.444 ],
+				"scale": [ -0.45, 0.35 ]
+			}
+		],
+		"label": [ 0.7, 0.5 ]
+	},
+	"12000": {
+		"comment": "Cashbot HQ",
+		"clouds": [
+			{
+				"position": [ -0.6, -0.45 ],
+				"scale": [ 0.5, 0.35 ]
+			}
+		],
+		"label": [ 0.7, 0.5 ]
+	},
+	"13000": {
+		"comment": "Lawbot HQ",
+		"clouds": [
+			{
+				"position": [ 0.4, -0.35 ],
+				"scale": [ 0.5, 0.35 ]
+			}
+		],
+		"label": [ 0.45, -0.45 ]
+	}
+}

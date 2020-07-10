@@ -956,6 +956,45 @@ class RobotToonManager(DirectObject):
         Should be called once during startup to initialize a few
         defaults for the Nametags.
         """
+        
+        # Load the nametag colors from the JSON
+        import json
+            
+        # im fucking stupid but idc
+        nametagTypeStrings = ['CCNormal', 'CCNoChat', 'CCNonPlayer', 'CCSuit', 'CCToonBuilding', 'CCSuitBuilding', 'CCHouseBuilding', 'CCSpeedChat', 'CCFreeChat']
+
+        nametagData = json.loads(open("phase_3/ui/styles_nametag_colors.json", 'r').read())
+        # this fucking sucks
+        for type in range(8):
+            fg = nametagData[nametagTypeStrings[type]]['nametag']['foreground']
+            bg = nametagData[nametagTypeStrings[type]]['nametag']['background']
+            NametagGlobals.NametagColors[type] = (
+                (VBase4(fg['normal'][0], fg['normal'][1], fg['normal'][2], fg['normal'][3]),
+                    VBase4(bg['normal'][0], bg['normal'][1], bg['normal'][2], bg['normal'][3])),
+                (VBase4(fg['press'][0], fg['press'][1], fg['press'][2], fg['press'][3]),
+                    VBase4(bg['press'][0], bg['press'][1], bg['press'][2], bg['press'][3])),
+                (VBase4(fg['hover'][0], fg['hover'][1], fg['hover'][2], fg['hover'][3]),
+                    VBase4(bg['hover'][0], bg['hover'][1], bg['hover'][2], bg['hover'][3])),
+                (VBase4(fg['disabled'][0], fg['disabled'][1], fg['disabled'][2], fg['disabled'][3]),
+                    VBase4(bg['disabled'][0], bg['disabled'][1], bg['disabled'][2], bg['disabled'][3]))
+            )
+            
+            fg = nametagData[nametagTypeStrings[type]]['bubble']['foreground']
+            bg = nametagData[nametagTypeStrings[type]]['bubble']['background']
+            NametagGlobals.ChatColors[type] = (
+                (VBase4(fg['normal'][0], fg['normal'][1], fg['normal'][2], fg['normal'][3]),
+                    VBase4(bg['normal'][0], bg['normal'][1], bg['normal'][2], bg['normal'][3])),
+                (VBase4(fg['press'][0], fg['press'][1], fg['press'][2], fg['press'][3]),
+                    VBase4(bg['press'][0], bg['press'][1], bg['press'][2], bg['press'][3])),
+                (VBase4(fg['hover'][0], fg['hover'][1], fg['hover'][2], fg['hover'][3]),
+                    VBase4(bg['hover'][0], bg['hover'][1], bg['hover'][2], bg['hover'][3])),
+                (VBase4(fg['disabled'][0], fg['disabled'][1], fg['disabled'][2], fg['disabled'][3]),
+                    VBase4(bg['disabled'][0], bg['disabled'][1], bg['disabled'][2], bg['disabled'][3]))
+            )
+            arr = nametagData[nametagTypeStrings[type]]['arrow']
+            NametagGlobals.ArrowColors[type] = (VBase4(arr[0], arr[1], arr[2], arr[3]))
+            
+        
         base.mouseWatcherNode.setEnterPattern('mouse-enter-%r')
         base.mouseWatcherNode.setLeavePattern('mouse-leave-%r')
         base.mouseWatcherNode.setButtonDownPattern('button-down-%r')
