@@ -63,7 +63,7 @@ SellBot (Sales): 's'
 from direct.actor import Actor
 from otp.avatar import Avatar
 from . import SuitDNA
-from toontown.nametag.NametagGlobals import CCSuit
+from libotp import *
 from toontown.toonbase import ToontownGlobals
 from pandac.PandaModules import *
 from toontown.battle import SuitBattleGlobals
@@ -572,7 +572,7 @@ class Suit(Avatar.Avatar):
 
         Avatar.Avatar.__init__(self)
         self.setFont(ToontownGlobals.getSuitFont())
-        self.setPlayerType(CCSuit)
+        self.setPlayerType(NametagGroup.CCSuit)
 
         # Suits are now pickable
         self.setPickable(1)

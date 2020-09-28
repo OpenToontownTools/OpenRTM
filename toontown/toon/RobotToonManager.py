@@ -41,10 +41,7 @@ import sys, os
 import string
 import Pmw
 
-from toontown.chat.ChatGlobals import CFSpeech
-from toontown.margins import MarginGlobals
-from toontown.margins.MarginManager import MarginManager
-from toontown.nametag import NametagGlobals
+from libotp import *
 from libtoontown import *
 from toontown.leveleditor.LevelStyleManager import *
 
@@ -956,65 +953,38 @@ class RobotToonManager(DirectObject):
         Should be called once during startup to initialize a few
         defaults for the Nametags.
         """
-        
-        # Load the nametag colors from the JSON
-        import json
-            
-        # im fucking stupid but idc
-        nametagTypeStrings = ['CCNormal', 'CCNoChat', 'CCNonPlayer', 'CCSuit', 'CCToonBuilding', 'CCSuitBuilding', 'CCHouseBuilding', 'CCSpeedChat', 'CCFreeChat']
 
-        nametagData = json.loads(open("phase_3/ui/styles_nametag_colors.json", 'r').read())
-        # this fucking sucks
-        for type in range(8):
-            fg = nametagData[nametagTypeStrings[type]]['nametag']['foreground']
-            bg = nametagData[nametagTypeStrings[type]]['nametag']['background']
-            NametagGlobals.NametagColors[type] = (
-                (VBase4(fg['normal'][0], fg['normal'][1], fg['normal'][2], fg['normal'][3]),
-                    VBase4(bg['normal'][0], bg['normal'][1], bg['normal'][2], bg['normal'][3])),
-                (VBase4(fg['press'][0], fg['press'][1], fg['press'][2], fg['press'][3]),
-                    VBase4(bg['press'][0], bg['press'][1], bg['press'][2], bg['press'][3])),
-                (VBase4(fg['hover'][0], fg['hover'][1], fg['hover'][2], fg['hover'][3]),
-                    VBase4(bg['hover'][0], bg['hover'][1], bg['hover'][2], bg['hover'][3])),
-                (VBase4(fg['disabled'][0], fg['disabled'][1], fg['disabled'][2], fg['disabled'][3]),
-                    VBase4(bg['disabled'][0], bg['disabled'][1], bg['disabled'][2], bg['disabled'][3]))
-            )
-            
-            fg = nametagData[nametagTypeStrings[type]]['bubble']['foreground']
-            bg = nametagData[nametagTypeStrings[type]]['bubble']['background']
-            NametagGlobals.ChatColors[type] = (
-                (VBase4(fg['normal'][0], fg['normal'][1], fg['normal'][2], fg['normal'][3]),
-                    VBase4(bg['normal'][0], bg['normal'][1], bg['normal'][2], bg['normal'][3])),
-                (VBase4(fg['press'][0], fg['press'][1], fg['press'][2], fg['press'][3]),
-                    VBase4(bg['press'][0], bg['press'][1], bg['press'][2], bg['press'][3])),
-                (VBase4(fg['hover'][0], fg['hover'][1], fg['hover'][2], fg['hover'][3]),
-                    VBase4(bg['hover'][0], bg['hover'][1], bg['hover'][2], bg['hover'][3])),
-                (VBase4(fg['disabled'][0], fg['disabled'][1], fg['disabled'][2], fg['disabled'][3]),
-                    VBase4(bg['disabled'][0], bg['disabled'][1], bg['disabled'][2], bg['disabled'][3]))
-            )
-            arr = nametagData[nametagTypeStrings[type]]['arrow']
-            NametagGlobals.ArrowColors[type] = (VBase4(arr[0], arr[1], arr[2], arr[3]))
-            
-        
-        base.mouseWatcherNode.setEnterPattern('mouse-enter-%r')
-        base.mouseWatcherNode.setLeavePattern('mouse-leave-%r')
-        base.mouseWatcherNode.setButtonDownPattern('button-down-%r')
-        base.mouseWatcherNode.setButtonUpPattern('button-up-%r')
-        NametagGlobals.setCardModel('phase_3/models/props/panel.bam')
-        NametagGlobals.setArrowModel('phase_3/models/props/arrow.bam')
-        NametagGlobals.setChatBalloon3dModel('phase_3/models/props/chatbox.bam')
-        NametagGlobals.setChatBalloon2dModel('phase_3/models/props/chatbox_noarrow.bam')
-        NametagGlobals.setThoughtBalloonModel('phase_3/models/props/chatbox_thought_cutout.bam')
-        
-        chatButtonGui = loader.loadModel('phase_3/models/gui/chat_button_gui.bam')
+        arrow = loader.loadModel('phase_3/models/props/arrow')
+        card = loader.loadModel('phase_3/models/props/panel')
+        speech3d = ChatBalloon(loader.loadModel('phase_3/models/props/chatbox').node())
+        thought3d = ChatBalloon(loader.loadModel('phase_3/models/props/chatbox_thought_cutout').node())
+        speech2d = ChatBalloon(loader.loadModel('phase_3/models/props/chatbox_noarrow').node())
+        chatButtonGui = loader.loadModel(
+            "phase_3/models/gui/chat_button_gui")
+        NametagGlobals.setCamera(base.cam)
+        NametagGlobals.setArrowModel(arrow)
+        NametagGlobals.setNametagCard(card, VBase4(-0.5, 0.5, -0.5, 0.5))
+        NametagGlobals.setMouseWatcher(base.mouseWatcherNode)
+        NametagGlobals.setSpeechBalloon3d(speech3d)
+        NametagGlobals.setThoughtBalloon3d(thought3d)
+        NametagGlobals.setSpeechBalloon2d(speech2d)
+        NametagGlobals.setThoughtBalloon2d(thought3d)
         NametagGlobals.setPageButton(
-            chatButtonGui.find('**/Horiz_Arrow_UP'), chatButtonGui.find('**/Horiz_Arrow_DN'),
-            chatButtonGui.find('**/Horiz_Arrow_Rllvr'), chatButtonGui.find('**/Horiz_Arrow_UP'))
+            PGButton.SReady, chatButtonGui.find("**/Horiz_Arrow_UP"))
+        NametagGlobals.setPageButton(
+            PGButton.SDepressed, chatButtonGui.find("**/Horiz_Arrow_DN"))
+        NametagGlobals.setPageButton(
+            PGButton.SRollover, chatButtonGui.find("**/Horiz_Arrow_Rllvr"))
         NametagGlobals.setQuitButton(
-            chatButtonGui.find('**/CloseBtn_UP'), chatButtonGui.find('**/CloseBtn_DN'),
-            chatButtonGui.find('**/CloseBtn_Rllvr'), chatButtonGui.find('**/CloseBtn_UP'))
-        chatButtonGui.removeNode()
+            PGButton.SReady, chatButtonGui.find("**/CloseBtn_UP"))
+        NametagGlobals.setQuitButton(
+            PGButton.SDepressed, chatButtonGui.find("**/CloseBtn_DN"))
+        NametagGlobals.setQuitButton(
+            PGButton.SRollover, chatButtonGui.find("**/CloseBtn_Rllvr"))
 
         # We don't need these instances any more.
+        arrow.removeNode()
+        card.removeNode()
         chatButtonGui.removeNode()
         rolloverSound = DirectGuiGlobals.getDefaultRolloverSound()
         if rolloverSound:
@@ -1025,7 +995,7 @@ class RobotToonManager(DirectObject):
 
         # For now, we'll leave the Toon at the same point as the
         # camera.  When we have a real toon later, we'll change it.
-        NametagGlobals.setMe(base.cam)
+        NametagGlobals.setToon(base.cam)
 
         # We need a node to be the parent of all of the 2-d onscreen
         # messages along the margins.  This should be in front of many
@@ -1038,21 +1008,31 @@ class RobotToonManager(DirectObject):
         # And define a bunch of cells along the margins.
         mm = self.marginManager
         self.leftCells = [
-            self.marginManager.addCell(0.1, -0.6, base.a2dTopLeft),
-            self.marginManager.addCell(0.1, -1.0, base.a2dTopLeft),
-            self.marginManager.addCell(0.1, -1.4, base.a2dTopLeft)
-        ]
+            mm.addGridCell(0, 1, base.a2dLeft, base.a2dRight,
+                           base.a2dBottom, base.a2dTop),
+            mm.addGridCell(0, 2, base.a2dLeft, base.a2dRight,
+                           base.a2dBottom, base.a2dTop),
+            mm.addGridCell(0, 3, base.a2dLeft, base.a2dRight,
+                           base.a2dBottom, base.a2dTop)
+            ]
         self.bottomCells = [
-            self.marginManager.addCell(0.4, 0.1, base.a2dBottomCenter),
-            self.marginManager.addCell(-0.4, 0.1, base.a2dBottomCenter),
-            self.marginManager.addCell(-1.0, 0.1, base.a2dBottomCenter),
-            self.marginManager.addCell(1.0, 0.1, base.a2dBottomCenter)
-        ]
+            mm.addGridCell(0.5, 0, base.a2dLeft, base.a2dRight,
+                           base.a2dBottom, base.a2dTop),
+            mm.addGridCell(1.5, 0, base.a2dLeft, base.a2dRight,
+                           base.a2dBottom, base.a2dTop),
+            mm.addGridCell(2.5, 0, base.a2dLeft, base.a2dRight,
+                           base.a2dBottom, base.a2dTop),
+            mm.addGridCell(3.5, 0, base.a2dLeft, base.a2dRight,
+                           base.a2dBottom, base.a2dTop),
+            mm.addGridCell(4.5, 0, base.a2dLeft, base.a2dRight,
+                           base.a2dBottom, base.a2dTop)
+            ]
         self.rightCells = [
-            self.marginManager.addCell(-0.1, -0.6, base.a2dTopRight),
-            self.marginManager.addCell(-0.1, -1.0, base.a2dTopRight),
-            self.marginManager.addCell(-0.1, -1.4, base.a2dTopRight)
-        ]
+            mm.addGridCell(5, 2, base.a2dLeft, base.a2dRight,
+                           base.a2dBottom, base.a2dTop),
+            mm.addGridCell(5, 1, base.a2dLeft, base.a2dRight,
+                           base.a2dBottom, base.a2dTop)
+            ]
 
     def faceCamera(self):
         toon = self.selectedToon
@@ -2783,7 +2763,7 @@ class RobotToonControlPanel(AppShell):
 
     def setToonName(self, event = None):
         if self.rtm.selectedToon:
-            self.rtm.selectedToon.setDisplayName(self.toonName.get())
+            self.rtm.selectedToon.nametag.setName(self.toonName.get())
 
     def setRandomToonName(self):
         if self.rtm.selectedToon:
@@ -2793,16 +2773,16 @@ class RobotToonControlPanel(AppShell):
             else:
                 boy = 0
                 girl = 1
-            self.rtm.selectedToon.setDisplayName(
+            self.rtm.selectedToon.nametag.setName(
                 namegen.randomNameMoreinfo(boy = boy, girl = girl)[-1])
 
     def clearToonName(self):
         if self.rtm.selectedToon:
-            self.rtm.selectedToon.setDisplayName('')
+            self.rtm.selectedToon.nametag.setName('')
 
     def setToonChat(self, text):
         if self.rtm.selectedToon:
-            self.rtm.selectedToon.setChatAbsolute(text, CFSpeech)
+            self.rtm.selectedToon.nametag.setChat(text, CFSpeech)
 
     def openToonChat(self):
         text = askstring('Open Chat String', 'Phrase:',
@@ -2811,7 +2791,7 @@ class RobotToonControlPanel(AppShell):
 
     def clearToonChat(self):
         if self.rtm.selectedToon:
-            self.rtm.selectedToon.clearChat()
+            self.rtm.selectedToon.nametag.clearChat()
 
     def setToonAnim(self, anim):
         self.anim.set(anim)
