@@ -160,6 +160,53 @@ Shirts = [
     # 2009 Valentines Day Shirts
     "phase_4/maps/tt_t_chr_avt_shirt_valentine1.jpg", # 69 Valentines Shirt 1
     "phase_4/maps/tt_t_chr_avt_shirt_valentine2.jpg", # 70 Valentines Shirt 2    
+    
+    # Award Clothes
+    "phase_4/maps/tt_t_chr_avt_shirt_desat4.jpg",    # 71
+    "phase_4/maps/tt_t_chr_avt_shirt_fishing1.jpg",   # 72
+    "phase_4/maps/tt_t_chr_avt_shirt_fishing2.jpg",  # 73
+    "phase_4/maps/tt_t_chr_avt_shirt_gardening1.jpg",   # 74
+    "phase_4/maps/tt_t_chr_avt_shirt_gardening2.jpg",   # 75
+    "phase_4/maps/tt_t_chr_avt_shirt_party1.jpg",   # 76
+    "phase_4/maps/tt_t_chr_avt_shirt_party2.jpg",   # 77
+    "phase_4/maps/tt_t_chr_avt_shirt_racing1.jpg",  # 78
+    "phase_4/maps/tt_t_chr_avt_shirt_racing2.jpg",  # 79 
+    "phase_4/maps/tt_t_chr_avt_shirt_summer1.jpg",   # 80
+    "phase_4/maps/tt_t_chr_avt_shirt_summer2.jpg",   # 81
+    
+    "phase_4/maps/tt_t_chr_avt_shirt_golf1.jpg",    # 82
+    "phase_4/maps/tt_t_chr_avt_shirt_golf2.jpg",    # 83
+    "phase_4/maps/tt_t_chr_avt_shirt_halloween1.jpg",   # 84
+    "phase_4/maps/tt_t_chr_avt_shirt_halloween2.jpg",   # 85
+    "phase_4/maps/tt_t_chr_avt_shirt_marathon1.jpg",    # 86
+    "phase_4/maps/tt_t_chr_avt_shirt_saveBuilding1.jpg",    # 87
+    "phase_4/maps/tt_t_chr_avt_shirt_saveBuilding2.jpg",    # 88 
+    "phase_4/maps/tt_t_chr_avt_shirt_toonTask1.jpg",    # 89
+    "phase_4/maps/tt_t_chr_avt_shirt_toonTask2.jpg",    # 90
+    "phase_4/maps/tt_t_chr_avt_shirt_trolley1.jpg",     # 91
+    "phase_4/maps/tt_t_chr_avt_shirt_trolley2.jpg",     # 92
+    "phase_4/maps/tt_t_chr_avt_shirt_winter1.jpg",      # 93
+    "phase_4/maps/tt_t_chr_avt_shirt_halloween3.jpg",   # 94
+    "phase_4/maps/tt_t_chr_avt_shirt_halloween4.jpg",   # 95
+    # 2010 Valentines Day Shirts
+    "phase_4/maps/tt_t_chr_avt_shirt_valentine3.jpg", # 96 Valentines Shirt 3
+    
+    # Scientist Shirts
+    "phase_4/maps/tt_t_chr_shirt_scientistC.jpg",   # 97
+    "phase_4/maps/tt_t_chr_shirt_scientistA.jpg",   # 98
+    "phase_4/maps/tt_t_chr_shirt_scientistB.jpg",   # 99
+    
+    # Silly Story Shirts
+    "phase_4/maps/tt_t_chr_avt_shirt_mailbox.jpg",  # 100 Mailbox Shirt
+    "phase_4/maps/tt_t_chr_avt_shirt_trashcan.jpg", # 101 Trash Can Shirt
+    "phase_4/maps/tt_t_chr_avt_shirt_loonyLabs.jpg",# 102 Loony Labs Shirt
+    "phase_4/maps/tt_t_chr_avt_shirt_hydrant.jpg",  # 103 Hydrant Shirt
+    "phase_4/maps/tt_t_chr_avt_shirt_whistle.jpg",  # 104 Sillymeter Whistle Shirt
+    "phase_4/maps/tt_t_chr_avt_shirt_cogbuster.jpg",  # 105 Silly Cogbuster Shirt
+    
+    "phase_4/maps/tt_t_chr_avt_shirt_mostCogsDefeated01.jpg",  # 106 Most Cogs Defeated Shirt
+    "phase_4/maps/tt_t_chr_avt_shirt_victoryParty01.jpg",  # 107 Victory Party Shirt 1
+    "phase_4/maps/tt_t_chr_avt_shirt_victoryParty02.jpg",  # 108 Victory Party Shirt 2
     ]
 
 # These are deemed safe for MakeAToon
@@ -266,6 +313,52 @@ Sleeves = [
     # 2009 Valentines Day Sleeves
     "phase_4/maps/tt_t_chr_avt_shirtSleeve_valentine1.jpg",   # 58 Valentines Sleeves 1
     "phase_4/maps/tt_t_chr_avt_shirtSleeve_valentine2.jpg",   # 59 Valentines Sleeves 2
+    
+    # Special Award Clothing
+    "phase_4/maps/tt_t_chr_avt_shirtSleeve_desat4.jpg",   # 60
+    "phase_4/maps/tt_t_chr_avt_shirtSleeve_fishing1.jpg",   # 61
+    "phase_4/maps/tt_t_chr_avt_shirtSleeve_fishing2.jpg",   # 62
+    "phase_4/maps/tt_t_chr_avt_shirtSleeve_gardening1.jpg",   # 63
+    "phase_4/maps/tt_t_chr_avt_shirtSleeve_gardening2.jpg",   # 64
+    "phase_4/maps/tt_t_chr_avt_shirtSleeve_party1.jpg",   # 65
+    "phase_4/maps/tt_t_chr_avt_shirtSleeve_party2.jpg",   # 66
+    "phase_4/maps/tt_t_chr_avt_shirtSleeve_racing1.jpg",   # 67
+    "phase_4/maps/tt_t_chr_avt_shirtSleeve_racing2.jpg",   # 68
+    "phase_4/maps/tt_t_chr_avt_shirtSleeve_summer1.jpg",   # 69
+    "phase_4/maps/tt_t_chr_avt_shirtSleeve_summer2.jpg",   # 70
+    
+    "phase_4/maps/tt_t_chr_avt_shirtSleeve_golf1.jpg",    # 71
+    "phase_4/maps/tt_t_chr_avt_shirtSleeve_golf2.jpg",    # 72
+    "phase_4/maps/tt_t_chr_avt_shirtSleeve_halloween1.jpg",    # 73
+    "phase_4/maps/tt_t_chr_avt_shirtSleeve_halloween2.jpg",    # 74
+    "phase_4/maps/tt_t_chr_avt_shirtSleeve_marathon1.jpg",    # 75
+    "phase_4/maps/tt_t_chr_avt_shirtSleeve_saveBuilding1.jpg",    # 76
+    "phase_4/maps/tt_t_chr_avt_shirtSleeve_saveBuilding2.jpg",    # 77
+    "phase_4/maps/tt_t_chr_avt_shirtSleeve_toonTask1.jpg",    # 78
+    "phase_4/maps/tt_t_chr_avt_shirtSleeve_toonTask2.jpg",    # 79
+    "phase_4/maps/tt_t_chr_avt_shirtSleeve_trolley1.jpg",    # 80
+    "phase_4/maps/tt_t_chr_avt_shirtSleeve_trolley2.jpg",    # 81
+    "phase_4/maps/tt_t_chr_avt_shirtSleeve_winter1.jpg",    # 82
+    "phase_4/maps/tt_t_chr_avt_shirtSleeve_halloween3.jpg",   # 83
+    "phase_4/maps/tt_t_chr_avt_shirtSleeve_halloween4.jpg",   # 84
+    
+    # 2010 Valentines Day Sleeves
+    "phase_4/maps/tt_t_chr_avt_shirtSleeve_valentine3.jpg",   # 85 Valentines Sleeves 1
+    
+    # Scientist Sleeves
+    "phase_4/maps/tt_t_chr_shirtSleeve_scientist.jpg",   # 86 Toon sceintist
+    
+    # Silly Story Shirt Sleeves
+    "phase_4/maps/tt_t_chr_avt_shirtSleeve_mailbox.jpg",    # 87 Mailbox Sleeves
+    "phase_4/maps/tt_t_chr_avt_shirtSleeve_trashcan.jpg",   # 88 Trash Can Sleeves
+    "phase_4/maps/tt_t_chr_avt_shirtSleeve_loonyLabs.jpg",  # 89 Loony Labs Sleeves
+    "phase_4/maps/tt_t_chr_avt_shirtSleeve_hydrant.jpg",    # 90 Hydrant Sleeves
+    "phase_4/maps/tt_t_chr_avt_shirtSleeve_whistle.jpg",    # 91 Sillymeter Whistle Sleeves
+    "phase_4/maps/tt_t_chr_avt_shirtSleeve_cogbuster.jpg",    # 92 Silly Cogbuster Sleeves
+    
+    "phase_4/maps/tt_t_chr_avt_shirtSleeve_mostCogsDefeated01.jpg",# 93 Most Cogs Defeated Sleeves
+    "phase_4/maps/tt_t_chr_avt_shirtSleeve_victoryParty01.jpg",    # 94 Victory Party Sleeves 1
+    "phase_4/maps/tt_t_chr_avt_shirtSleeve_victoryParty02.jpg",    # 95 Victory Party Sleeves 2
     ]
 
 # len = 9 
@@ -312,6 +405,27 @@ BoyShorts = [
     # 2009 Valentines Day Shorts
     "phase_4/maps/tt_t_chr_avt_shorts_valentine1.jpg",  # 23 Valentines Shorts 1
     "phase_4/maps/tt_t_chr_avt_shorts_valentine2.jpg",  # 24 Valentines Shorts 2
+
+    # Special award Clothes
+    "phase_4/maps/tt_t_chr_avt_shorts_fishing1.jpg",   # 25
+    "phase_4/maps/tt_t_chr_avt_shorts_gardening1.jpg",   # 26
+    "phase_4/maps/tt_t_chr_avt_shorts_party1.jpg",   # 27
+    "phase_4/maps/tt_t_chr_avt_shorts_racing1.jpg",   # 28
+    "phase_4/maps/tt_t_chr_avt_shorts_summer1.jpg",   # 29
+    
+    "phase_4/maps/tt_t_chr_avt_shorts_golf1.jpg",   # 30
+    "phase_4/maps/tt_t_chr_avt_shorts_halloween1.jpg",   # 31
+    "phase_4/maps/tt_t_chr_avt_shorts_halloween2.jpg",   # 32
+    "phase_4/maps/tt_t_chr_avt_shorts_saveBuilding1.jpg",   # 33
+    "phase_4/maps/tt_t_chr_avt_shorts_trolley1.jpg",   # 34
+    "phase_4/maps/tt_t_chr_avt_shorts_halloween4.jpg",   # 35
+    "phase_4/maps/tt_t_chr_avt_shorts_halloween3.jpg",   # 36
+    
+    "phase_4/maps/tt_t_chr_shorts_scientistA.jpg",   # 37
+    "phase_4/maps/tt_t_chr_shorts_scientistB.jpg",   # 38
+    "phase_4/maps/tt_t_chr_shorts_scientistC.jpg",   # 39
+    
+    "phase_4/maps/tt_t_chr_avt_shorts_cogbuster.jpg",  # 40 Silly Cogbuster Shorts
     ]
 
 SHORTS = 0
@@ -368,6 +482,27 @@ GirlBottoms = [
     # 2009 Valentines Day Skirts
     ("phase_4/maps/tt_t_chr_avt_skirt_valentine1.jpg", SKIRT),  # 27 Valentines Skirt 1
     ("phase_4/maps/tt_t_chr_avt_skirt_valentine2.jpg", SKIRT),  # 28 Valentines Skirt 2
+
+    # Special award clothing
+    ("phase_4/maps/tt_t_chr_avt_skirt_fishing1.jpg", SKIRT),   # 29
+    ("phase_4/maps/tt_t_chr_avt_skirt_gardening1.jpg", SKIRT),   # 30
+    ("phase_4/maps/tt_t_chr_avt_skirt_party1.jpg", SKIRT),   # 31
+    ("phase_4/maps/tt_t_chr_avt_skirt_racing1.jpg", SKIRT),   # 32
+    ("phase_4/maps/tt_t_chr_avt_skirt_summer1.jpg", SKIRT),   # 33
+    
+    ("phase_4/maps/tt_t_chr_avt_skirt_golf1.jpg", SKIRT),   # 34
+    ("phase_4/maps/tt_t_chr_avt_skirt_halloween1.jpg", SKIRT),   # 35
+    ("phase_4/maps/tt_t_chr_avt_skirt_halloween2.jpg", SKIRT),   # 36
+    ("phase_4/maps/tt_t_chr_avt_skirt_saveBuilding1.jpg", SKIRT),   # 37
+    ("phase_4/maps/tt_t_chr_avt_skirt_trolley1.jpg", SKIRT),   # 38
+    ("phase_4/maps/tt_t_chr_avt_skirt_halloween3.jpg", SKIRT),   # 39
+    ("phase_4/maps/tt_t_chr_avt_skirt_halloween4.jpg", SKIRT),   # 40
+    
+    ("phase_4/maps/tt_t_chr_shorts_scientistA.jpg", SHORTS),   # 41
+    ("phase_4/maps/tt_t_chr_shorts_scientistB.jpg", SHORTS),   # 42
+    ("phase_4/maps/tt_t_chr_shorts_scientistC.jpg", SHORTS),   # 43
+    
+    ("phase_4/maps/tt_t_chr_avt_shorts_cogbuster.jpg", SHORTS),   # 44 Silly Cogbuster Shorts 
     ]
 
 # len = 28
@@ -465,8 +600,6 @@ ShirtStyles = {
     'bss15' : [ 19, 13, [(0, 0), (1, 1), (2, 2), (3, 3), (4, 4), (5, 5), (6, 6),
                     (7, 7), (8, 8), (9, 9), (10, 10), (11, 11), (12, 12),
                     (27, 27) ]],
-
-
     # -------------------------------------------------------------------------
     # Girl styles
     # -------------------------------------------------------------------------
@@ -615,7 +748,8 @@ ShirtStyles = {
     'vd_ss5' : [ 69, 58, [(27, 27), ]],
     # 2009 Valentines day, blue with green and red hearts
     'vd_ss6' : [ 70, 59, [(27, 27), ]],
-
+    # 2010 Valentines day, red with white wings
+    'vd_ss7' : [ 96, 85, [(27, 27), ]],
     # St Pat's Day, four leaf clover shirt
     'sd_ss1' : [ 47, 36, [(27, 27), ]],
     # St Pat's Day, pot o gold shirt
@@ -651,10 +785,53 @@ ShirtStyles = {
     'pj_ss1' : [66, 55, [(27, 27),]], # Blue Banana Pajama shirt
     'pj_ss2' : [67, 56, [(27, 27),]], # Red Horn Pajama shirt
     'pj_ss3' : [68, 57, [(27, 27),]], # Purple Glasses Pajama shirt
-
+    
+    # Special Award Clothes    
+    'sa_ss1' : [ 71, 60, [(27, 27),]],
+    'sa_ss2' : [ 72, 61, [(27, 27),]],
+    'sa_ss3' : [ 73, 62, [(27, 27),]],
+    'sa_ss4' : [ 74, 63, [(27, 27),]],
+    'sa_ss5' : [ 75, 64, [(27, 27),]],
+    'sa_ss6' : [ 76, 65, [(27, 27),]],
+    'sa_ss7' : [ 77, 66, [(27, 27),]],
+    'sa_ss8' : [ 78, 67, [(27, 27),]],
+    'sa_ss9' : [ 79, 68, [(27, 27),]],
+    'sa_ss10' : [ 80, 69, [(27, 27),]],
+    'sa_ss11' : [ 81, 70, [(27, 27),]],
+    'sa_ss12' : [ 82, 71, [(27, 27),]],
+    'sa_ss13' : [ 83, 72, [(27, 27),]],
+    'sa_ss14' : [ 84, 73, [(27, 27),]],
+    'sa_ss15' : [ 85, 74, [(27, 27),]],
+    'sa_ss16' : [ 86, 75, [(27, 27),]],
+    'sa_ss17' : [ 87, 76, [(27, 27),]],
+    'sa_ss18' : [ 88, 77, [(27, 27),]],
+    'sa_ss19' : [ 89, 78, [(27, 27),]],
+    'sa_ss20' : [ 90, 79, [(27, 27),]],
+    'sa_ss21' : [ 91, 80, [(27, 27),]],
+    'sa_ss22' : [ 92, 81, [(27, 27),]],
+    'sa_ss23' : [ 93, 82, [(27, 27),]],
+    'sa_ss24' : [ 94, 83, [(27, 27),]],
+    'sa_ss25' : [ 95, 84, [(27, 27),]],
+    'sa_ss26' : [ 106, 93, [(27, 27), ]], # Most Cogs Defeated Shirt
+    
+    # Scientists
+    'sc_1' : [ 97, 86, [(27, 27),]],
+    'sc_2' : [ 98, 86, [(27, 27),]],
+    'sc_3' : [ 99, 86, [(27, 27),]],
+    
+    # Silly Story Shirts
+    'sil_1' : [ 100, 87, [(27, 27),]],   # Silly Mailbox Shirt
+    'sil_2' : [ 101, 88, [(27, 27),]],   # Silly Trashcan Shirt
+    'sil_3' : [ 102, 89, [(27, 27),]],   # Loony Labs Shirt
+    'sil_4' : [ 103, 90, [(27, 27),]],   # Silly Hydrant Shirt
+    'sil_5' : [ 104, 91, [(27, 27),]],   # Sillymeter Whistle Shirt
+    'sil_6' : [ 105, 92, [(27, 27),]],   # Silly Cogbuster Shirt
+    'sil_7' : [ 107, 94, [(27, 27),]],   # Victory Party Shirt 1
+    'sil_8' : [ 108, 95, [(27, 27),]],   # Victory Party Shirt 2
     # name : [ shirtIdx, sleeveIdx, [(ShirtColorIdx, sleeveColorIdx), ... ]]
     }
 
+# If you add to this, please add to TTLocalizer.BottomStylesDescriptions
 BottomStyles = {
     # name : [ bottomIdx, [bottomColorIdx, ...]]
     # -------------------------------------------------------------------------
@@ -806,6 +983,46 @@ BottomStyles = {
     'wh_gsk2' : [ 24, [27, ]], # Winter Holiday Skirt Style 2
     'wh_gsk3' : [ 25, [27, ]], # Winter Holiday Skirt Style 3
     'wh_gsk4' : [ 26, [27, ]], # Winter Holiday Skirt Style 4
+    
+    # Special award clothes
+    'sa_bs1' : [25, [27, ]],
+    'sa_bs2' : [26, [27, ]],
+    'sa_bs3' : [27, [27, ]],
+    'sa_bs4' : [28, [27, ]],
+    'sa_bs5' : [29, [27, ]],
+    'sa_bs6' : [30, [27, ]],
+    'sa_bs7' : [31, [27, ]],
+    'sa_bs8' : [32, [27, ]],
+    'sa_bs9' : [33, [27, ]],
+    'sa_bs10' : [34, [27, ]],    
+    'sa_bs11' : [35, [27, ]],
+    'sa_bs12' : [36, [27, ]],
+    
+    # Special award clothes
+    'sa_gs1' : [29, [27, ]],
+    'sa_gs2' : [30, [27, ]],
+    'sa_gs3' : [31, [27, ]],
+    'sa_gs4' : [32, [27, ]],
+    'sa_gs5' : [33, [27, ]],
+    'sa_gs6' : [34, [27, ]],
+    'sa_gs7' : [35, [27, ]],
+    'sa_gs8' : [36, [27, ]],
+    'sa_gs9' : [37, [27, ]],
+    'sa_gs10' : [38, [27, ]],
+    'sa_gs11' : [39, [27, ]],
+    'sa_gs12' : [40, [27, ]],
+    
+    # Scientists
+    'sc_bs1' : [37, [27, ]],
+    'sc_bs2' : [38, [27, ]],
+    'sc_bs3' : [39, [27, ]],
+    
+    'sc_gs1' : [41, [27, ]],
+    'sc_gs2' : [42, [27, ]],
+    'sc_gs3' : [43, [27, ]],
+    
+    'sil_bs1' : [ 40, [27, ]], # Silly Cogbuster Shorts
+    'sil_gs1' : [44, [27, ]], # Silly Cogbuster Shorts
     }
 
 # Define MakeAToon to be Tailor 1
@@ -1019,14 +1236,16 @@ def getAllBottoms(gender, output = 'both'):
             if ((style[0] == 'g') or (style[:3] == 'c_g') or
                 (style[:4] == 'vd_g') or (style[:4] == 'sd_g') or
                 (style[:4] == 'j4_g') or (style[:4] == 'pj_g') or
-                (style[:4] == 'wh_g')):
+                (style[:4] == 'wh_g') or (style[:4] == 'sa_g') or
+                (style[:4] == 'sc_g') or (style[:5] == 'sil_g')) :
 
                 continue
         else:
             if ((style[0] == 'b') or (style[:3] == 'c_b') or
                 (style[:4] == 'vd_b') or (style[:4] == 'sd_b') or
                 (style[:4] == 'j4_b') or (style[:4] == 'pj_b') or
-                (style[:4] == 'wh_b')):
+                (style[:4] == 'wh_b') or (style[:4] == 'sa_b') or
+                (style[:4] == 'sc_b') or (style[:5] == 'sil_b')):
                 continue
         
         bottomIdx = BottomStyles[style][0]

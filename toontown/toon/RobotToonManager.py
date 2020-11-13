@@ -2,15 +2,10 @@
 # and a base
 
 from pandac.PandaModules import *
-try:
-    base
-except NameError:
-    # Let the world know there is no localAvatar
-    base.localAvatar = None
-
 from direct.showbase.DirectObject import DirectObject
 from direct.showbase import ShowBase
 from .RobotToon import *
+from toontown.battle.BattleProps import *
 from direct.gui.DirectGui import *
 from direct.gui import DirectGuiGlobals
 from toontown.leveleditor.PieMenu import *
@@ -19,7 +14,7 @@ from direct.showbase.TkGlobal import *
 from tkinter import *
 from tkinter.filedialog import askopenfilename, asksaveasfilename
 from tkinter.simpledialog import askstring, askfloat
-from tkinter.messagebox import showwarning
+from tkinter.messagebox import showwarning, showinfo
 from direct.tkwidgets.AppShell import *
 from direct.tkwidgets.SceneGraphExplorer import *
 from direct.interval.IntervalGlobal import *
@@ -48,6 +43,8 @@ from toontown.leveleditor.LevelStyleManager import *
 from toontown.effects import Fireworks, FireworkShows, FireworkGlobals
 from toontown.battle import BattleParticles
 
+# Note: While adding names to the ToonTopsDict make sure there is a space after the number.
+# For eg: 'xx - ' and not 'xx-'. The code will crash if there is no space.
 ToonTopsDict = {
     0 : '00 - solid',
     1 : '01 - single stripe',
@@ -124,7 +121,50 @@ ToonTopsDict = {
     # 2009 Valentines Day Shirts
     69 : '69 - Valentines Shirt 1',
     70 : '70 - Valentines Shirt 2',
+
+    # Special award shirts
+    71 : '71 - Striped Shirt',
+    72 : '72 - Fishing Shirt 1',
+    73 : '73 - Fishing Shirt 2',
+    74 : '74 - Gardening Shirt 1',
+    75 : '75 - Gardening Shirt 2',
+    76 : '76 - Party Shirt 1',
+    77 : '77 - Party Shirt 2',
+    78 : '78 - Racing Shirt 1',
+    79 : '79 - Racing Shirt 2',
+    80 : '80 - Summer Shirt 1',
+    81 : '81 - Summer Shirt 2',    
+    82 : '82 - Golf Shirt 1',
+    83 : '83 - Golf Shirt 2',
+    84 : '84 - Halloween Costume Shirt 1',
+    85 : '85 - Halloween Costume Shirt 2',
+    86 : '86 - Marathon Shirt 1',
+    87 : '87 - Save Building Shirt 1',
+    88 : '88 - Save Building Shirt 2',
+    89 : '89 - Toontask Shirt 1',
+    90 : '90 - Toontask Shirt 2',
+    91 : '91 - Trolley Shirt 1',
+    92 : '92 - Trolley Shirt 2',
+    93 : '93 - Winter Shirt 1',
+    94 : '94 - Halloween Costume Shirt 3',
+    95 : '95 - Halloween Costume Shirt 4',
+    96 : '96 - Valentines angel wings',
+    97 : '97 - Scientist top 1',
+    98 : '98 - Scientist top 2',
+    99 : '99 - Scientist top 3',
+    100 : '100 - Silly Mailbox Shirt',
+    101 : '101 - Silly Trashcan Shirt',
+    102 : '102 - Loony Labs Shirt',
+    103 : '103 - Silly Hydrant Shirt',
+    104 : '104 - Sillymeter Whistle Shirt',
+    105 : '105 - Silly Cog-Crusher Shirt',
+    106 : '106 - Most Cogs Defeated Shirt',
+    107 : '107 - Victory Party Shirt 1',
+    108 : '108 - Victory Party Shirt 2',
     }
+
+# Note: While adding names to the ToonTopsDict make sure there is a space after the number.
+# For eg: 'xx - ' and not 'xx-'. The code will crash if there is no space.
 
 BoyBottomsDict = {
     0 : '00 - plain w/ pockets',
@@ -158,7 +198,23 @@ BoyBottomsDict = {
     # 2009 Valentines Day Shorts
     23 : "23 - Valentines Shorts 1",
     24 : "24 - Valentines Shorts 2",
-
+    # Special award clothing
+    25 : "25 - Fishing",
+    26 : "26 - Gardening",
+    27 : "27 - Party",
+    28 : "28 - Racing",
+    29 : "29 - Summer",
+    30 : '30 - Golf Shorts 1',
+    31 : '31 - Halloween Costume Shorts 1',
+    32 : '32 - Halloween Costume Shorts 2',
+    33 : '33 - Save Building Shorts 1',
+    34 : '34 - Trolley Shorts 1',
+    35 : '35 - Halloween Costume Shorts 3',
+    36 : '36 - Halloween Costume Shorts 4',
+    37 : '37 - Scientist bottom 1',
+    38 : '38 - Scientist bottom 2',
+    39 : '39 - Scientist bottom 3',
+    40 : '40 - Cog-Crusher Shorts',
     }
 
 
@@ -198,6 +254,24 @@ GirlBottomsDict = {
     # 2009 Valentines Day Skirts
     27 : '27 - Valentines Skirt 1',
     28 : '28 - Valentines Skirt 2',
+
+    # Special award clothing
+    29 : "29 - Fishing",
+    30 : "30 - Gardening",
+    31 : "31 - Party",
+    32 : "32 - Racing",
+    33 : "33 - Summer",
+    34 : '34 - Golf Skirt 1',
+    35 : '35 - Halloween Costume Skirt 1',
+    36 : '36 - Halloween Costume Skirt 2',
+    37 : '37 - Save Building Skirt 1',
+    38 : '38 - Trolley Skirt 1',
+    39 : '39 - Halloween Costume Skirt 3',
+    40 : '40 - Halloween Costume Skirt 4',
+    41 : '41 - Scientist bottom 1',
+    42 : '42 - Scientist bottom 2',
+    43 : '43 - Scientist bottom 3',
+    44 : '44 - Cog-Crusher Shorts',
     }
 
 ChatCategories = {
@@ -425,6 +499,18 @@ DoodleAnimList = [
     'walkHappy',
     ]
 
+rtmHelp = "\n- Once the program has loaded hit the ADD RANDOM TOON Button. \
+\n- MIDDLE CLICK near the toon to place a COA(center of action) marker. \
+\n- Hold the ALT KEY DOWN and use your three mouse buttons to NAVIGATE. \
+\n	-LEFT click for ROTATE \
+\n	-RIGHT click for ZOOM \
+\n	-MIDDLE click to PAN \
+\n- Use the ANIMATION PANEL that pops up when you add a toon to manipulate the animations. \
+\n- For quickly changing through animations simply RIGHT CLICK anywhere on the screen. \
+\n- If the Animation panel is closed you can hit the ANIMS button(in the bottom row) to open it again. \
+\n- If you have multiple characters on screen, first select the character with the mouse and then open thier Aimation Panel \
+\n- Use the RADIO BUTTONS to change TOON DNA." 
+
 # NEIGHBORHOOD DATA
 # If you run this from the command line you can pass in the hood codes
 # you want to load. For example:
@@ -575,18 +661,29 @@ class RobotToonManager(DirectObject):
         self.accept('f10', self.makeRandomToon)
         self.accept('f11', self.toggleRender2d)
         self.accept('DIRECT_selectedNodePath', self.findSelectedToon)
+        self.accept('DIRECT-mouse3', self.nextAnim)
         if base.__class__ != ShowBase.ShowBase:
             # If not a plain showbase object, add these key bindings
             self.accept('f9', base.screenshot)
             self.accept('f12', self.toggleDirectMode)
-        self.pieMenu = TextPieMenu(['start pos', 'end pos',
-                                    'walk', 'sad-walk', 'run',
-                                    'victory', 'neutral'],
-                                   radius = 0.35,
-                                   action = self.pieMenuCommand)
+##        self.pieMenu = TextPieMenu(['start pos', 'end pos',
+##                                    'walk', 'sad-walk', 'run',
+##                                    'victory', 'neutral'],
+##                                   radius = 0.35,
+##                                   action = self.pieMenuCommand)
+
+        self.animDisplay = TextNode('Animation Name')
+        self.animDisplay.setText('Animation: None')            
+        self.animDisplay.setTextColor(0.5, 0.5, 1.0, 1.0)            
+        self.animDisplay.setShadow(0.1, 0.1)
+        self.animDisplayNP = aspect2d.attachNewNode(self.animDisplay)        
+        self.animDisplayNP.setScale(0.05)  
+        self.animDisplayNP.setPos(-1.0,0.0,0.85)
 
         # [gjeon] to find out currently moving camera in maya mode
         self.mouseMayaCamera = True
+        base.direct.cameraControl.useMayaCamControls = True        
+        base.direct.cameraControl.lockRoll = True
         self.styleManager = LevelStyleManager(NEIGHBORHOODS, NEIGHBORHOOD_CODES)
         
         # And only the appropriate handles are showing
@@ -597,6 +694,7 @@ class RobotToonManager(DirectObject):
         self.setLastAngle(0.0)
 
         base.enableParticles()
+        self.animPanel = None
 
     def createToplevel(self, dnaNode, nodePath = None):
         # When you create a new level, data is added to this node
@@ -716,6 +814,8 @@ class RobotToonManager(DirectObject):
         a.nametag.manage(self.marginManager)
         self.avatarDict[a.get_key()] = a
         a.select()
+        if self.avatarType == 't':        
+            self.setToonAnimState('neutral')
         self.faceCamera()
         a.setStartHpr(a.getHpr())
         messenger.send('SGE_Update Explorer', [a])
@@ -726,10 +826,12 @@ class RobotToonManager(DirectObject):
                                endPos, endHpr, state):
         t = RobotToon(description = properties, parent = self.toonParent,
                       startPos = startPos, startHpr = startHpr,
-                      endPos = endPos, endHpr = endHpr, state = state)
+                      endPos = endPos, endHpr = endHpr)
         t.nametag.manage(self.marginManager)
         t.setPosHpr(pos, hpr)
         self.avatarDict[t.get_key()] = t
+        t.select()
+        self.setToonAnimState(state)
         messenger.send('SGE_Update Explorer', [t])
         return t
     def makeToonFromServerString(self, serverString,
@@ -915,6 +1017,8 @@ class RobotToonManager(DirectObject):
                         (type,styleStr,pose,startPose,endPose,state))
             f.close()
     def pieMenuCommand(self, cmd):
+        if base.config.GetBool('want-new-anims', 1):
+            return
         if self.selectedToon:
             if cmd == 'start pos':
                 self._setStartPos()
@@ -1104,7 +1208,7 @@ class RobotToonManager(DirectObject):
         self.ignore('DIRECT_selectedNodePath')
         self.s1.removeNode()
         self.s2.removeNode()
-        self.pieMenu.destroy()
+        #self.pieMenu.destroy()
         self.clearToons()
 
     def getAttribute(self, attribute):
@@ -1174,6 +1278,57 @@ class RobotToonManager(DirectObject):
 
     def getLastAngle(self):
         return self.lastAngle
+
+    def setToonAnimState(self,anim):    
+        self.selectedToon.setAnimState(anim)    
+        self.animDisplay.setText("Animation: "+str(anim))   
+        
+        if not self.animPanel:        
+            self.showAnimPanel()            
+            
+        self.animPanel.actorControlList[0].selectAnimNamed(anim)            
+        self.animPanel.actorControlList[0].updateDisplay()            
+        self.animPanel.actorControlList[0].animMenu.selectitem(anim)            
+        self.animPanel.playActorControls()
+        self.animPanel.loopVar.set(1)                       
+        
+    def showAnimPanel(self):
+        # show animation panel for currently selected actors
+        from direct.tkpanels import AnimPanel        
+        if self.selectedToon:
+            self.animPanel = AnimPanel.AnimPanel(
+                self.selectedToon,session = self)                      
+            self.animPanel.setDestroyCallBack(self.animPanelClosed)
+                                
+        if self.selectedToon and self.selectedToon.state:        
+            self.setToonAnimState(self.selectedToon.state)            
+                        
+    def animPanelClosed(self):    
+        self.animPanel = None        
+                
+    def getState(self):        
+        if not self.animPanel:        
+            self.showAnimPanel()
+        if self.selectedToon:
+            self.selectedToon.state = self.animPanel.actorControlList[0]['active'] 
+            return self.selectedToon.state
+                
+    def nextAnim(self, modifiers = 0):
+        if not self.animPanel:        
+            self.showAnimPanel()
+        if self.selectedToon and modifiers==0:        
+            currState = self.getState()       
+            try:
+                i = self.animPanel.actorControlList[0]['animList'].index(currState)        
+            except:      
+                i = -1            
+                    
+            newIndex = i+1
+            if (newIndex) < len(ToonAnimList):        
+                self.setToonAnimState(self.animPanel.actorControlList[0]['animList'][newIndex])                
+            else:            
+                self.setToonAnimState(self.animPanel.actorControlList[0]['animList'][0])                
+        
 
 """ Robot Toon Manager Control Panel module """
 class RobotToonControlPanel(AppShell):
@@ -1293,6 +1448,11 @@ class RobotToonControlPanel(AppShell):
 			    label = 'Import Maya File',
 			    command = self.importMaya)
 
+        menuBar.addmenuitem('File', 'command',
+                            'Show Anim Panel',
+                            label = 'Show Anim Panel',
+                            command = self.rtm.showAnimPanel)
+
         # Paned widget for dividing two halves
         mainFrame = Frame(interior)
         self.framePane = Pmw.PanedWidget(mainFrame, orient = DGG.HORIZONTAL)
@@ -1343,6 +1503,29 @@ class RobotToonControlPanel(AppShell):
                 command = lambda id=id: self.rtm.makeRandomToon(id))
 
         dnaFrame.pack(fill = X, expand = 0)
+        
+        # LOD
+        self.lod = StringVar()
+        self.lod.set('1000')
+        lodFrame = Frame(self.pageOne)
+        Label(lodFrame,text='LOD:',width=6,
+              anchor = W, justify = LEFT).pack(side = LEFT, expand = 0)
+        self.newCreateRadiobutton(
+            lodFrame, 'LOD', 'high',
+            self.lod, '1000', self.selectLOD,
+            help = 'high LOD',
+            side = LEFT)
+        self.newCreateRadiobutton(
+            lodFrame, 'LOD', 'medium',
+            self.lod, '500', self.selectLOD,
+            help = 'medium LOD',
+            side = LEFT)
+        self.newCreateRadiobutton(
+            lodFrame, 'LOD', 'low',
+            self.lod, '250', self.selectLOD,
+            help = 'low LOD',
+            side = LEFT)
+        lodFrame.pack(fill = X, expand = 0)
 
         # GENDER
         self.gender = StringVar()
@@ -1435,6 +1618,49 @@ class RobotToonControlPanel(AppShell):
             help = 'Set eyes to sad blink',
             side = LEFT)
         eyesFrame.pack(expand = 0, fill = X)
+
+        # Muzzles
+        muzzleFrame = Frame(self.pageOne)
+        Label(muzzleFrame, text = 'Muzzles: ', width=6, anchor = W, \
+                            justify = LEFT).pack(side=LEFT, expand = 0)
+        self.muzzle = StringVar()
+        self.muzzle.set('normal')
+        self.normalMuzzleButton = self.newCreateRadiobutton(
+            muzzleFrame, 'Muzzle', 'normal', self.muzzle, 
+            'normal', self.setMuzzle,
+            help = 'Set muzzle to normal',
+            side = LEFT)
+            
+        self.angryMuzzleButton = self.newCreateRadiobutton(
+            muzzleFrame, 'Muzzle', 'angry',
+            self.muzzle, 'angry', self.setMuzzle,
+            help = 'Set muzzle to angry',
+            side = LEFT)
+            
+        self.sadMuzzleButton = self.newCreateRadiobutton(
+            muzzleFrame, 'Muzzle', 'sad',
+            self.muzzle, 'sad', self.setMuzzle,
+            help = 'Set muzzle to sad',
+            side = LEFT)
+            
+        self.smileMuzzleButton = self.newCreateRadiobutton(
+            muzzleFrame, 'Muzzle', 'smile',
+            self.muzzle, 'smile', self.setMuzzle,
+            help = 'Set muzzle to smile',
+            side = LEFT)
+            
+        self.laughMuzzleButton = self.newCreateRadiobutton(
+            muzzleFrame, 'Muzzle', 'laugh',
+            self.muzzle, 'laugh', self.setMuzzle,
+            help = 'Set muzzle to laugh',
+            side = LEFT)
+            
+        self.surpriseMuzzleButton = self.newCreateRadiobutton(
+            muzzleFrame, 'Muzzle', 'surprise',
+            self.muzzle, 'surprise', self.setMuzzle,
+            help = 'Set muzzle to surprise',
+            side = LEFT)
+        muzzleFrame.pack(expand = 0, fill = X)
 
         # TORSO
         self.torso = StringVar()
@@ -1696,26 +1922,33 @@ class RobotToonControlPanel(AppShell):
         self.clearChat.pack(side = LEFT, fill = X, expand = 1)
         chatFrame.pack(fill = X, expand = 0)
 
-        animFrame = Frame(self.pageOne)
-        self.animButton = Menubutton(animFrame, width = 18,
-                                     text = 'Anims',
-                                     relief = RAISED,
-                                     borderwidth = 2)
-        self.anim = StringVar()
-        self.anim.set('')
-        self.animMenu = Menu(self.animButton)
-        self.animButton['menu'] = self.animMenu
-        self.animButton.pack(side = LEFT, expand = 0, fill = X)
-        animIndex = 0
-        for anim in ToonAnimList:
-            if (animIndex % 10) == 0:
-                subMenu = Menu(self.animMenu, tearoff = 0)
-                self.animMenu.add_cascade(label = ToonAnimList[animIndex],
-                                          menu = subMenu)
-            subMenu.add_command(
-                label = anim,
-                command = lambda a = anim: self.setToonAnim(a))
-            animIndex += 1
+        animFrame = Frame(self.pageOne)        
+                
+        if not base.config.GetBool('want-new-anims', 1):
+            self.animButton = Menubutton(animFrame, width = 18,
+                                         text = 'Anims',
+                                         relief = RAISED,
+                                         borderwidth = 2)
+            self.anim = StringVar()
+            self.anim.set('')
+            self.animMenu = Menu(self.animButton)
+            self.animButton['menu'] = self.animMenu
+            self.animButton.pack(side = LEFT, expand = 0, fill = X)
+            animIndex = 0
+            for anim in ToonAnimList:
+                if (animIndex % 10) == 0:
+                    subMenu = Menu(self.animMenu, tearoff = 0)
+                    self.animMenu.add_cascade(label = ToonAnimList[animIndex],
+                                              menu = subMenu)
+                subMenu.add_command(
+                    label = anim,
+                    command = lambda a = anim: self.setToonAnim(a))
+                animIndex += 1                
+        else:        
+            self.buttonAdd('Anims',
+                       helpMessage='Bring Up Anim Panel',
+                       statusMessage='Control Animations!',
+                       command=self.rtm.showAnimPanel)
         self.neutralButton = Button(
             animFrame, text = 'Neutral', width = 18,
             command = lambda s=self: s.setToonAnim('neutral'))
@@ -1760,13 +1993,31 @@ class RobotToonControlPanel(AppShell):
                 command = lambda i = suitIndex: self.putOnSuitSuit(i))
         takeOffSuitButton = Button(frame, text = 'Take off Cog Suit',
                                    command = self.takeOffSuitSuit)
-        takeOffSuitButton.pack(fill = X, expand = 0)
+        takeOffSuitButton.pack(side = LEFT, fill = X, expand = 0)
+        
+        self.handPropChoiceButton = Menubutton(frame, width = 18,
+                                         text = 'Choose prop',
+                                         relief = RAISED,
+                                         borderwidth = 2)
+        self.handPropChoiceButton.pack(side = LEFT, expand = 0, fill = X)
+        # Associate menu with button and vice versa
+        self.props = Menu(self.handPropChoiceButton)
+        self.handPropChoiceButton['menu'] = self.props
+        for prop in globalPropPool.propTypes.keys():
+            self.props.add_command(label = prop, command = lambda selectProp = prop: self.useProp(selectProp))
         frame.pack(fill = X, expand = 0)
 
-        self.addToonButton = Button(self.pageOne,
+        frame = Frame(self.pageOne)
+        self.addToonButton = Button(frame,
                                     text = 'Add Random Toon',
                                     command = self.rtm.makeRandomToon)
-        self.addToonButton.pack(expand = 1, fill = X)
+        self.addToonButton.pack(side = LEFT, expand = 1, fill = X)
+
+        self.createTestToonButton = Button(frame,
+                                    text = 'Create Anim Test Toon',
+                                    command = self.createTestToon)
+        self.createTestToonButton.pack(side = LEFT, expand = 1, fill = X)
+        frame.pack(fill = X, expand = 0)
 
         #
         # SUIT TAB
@@ -2395,6 +2646,30 @@ class RobotToonControlPanel(AppShell):
 
         mainShow.start()
 
+    def createTestToon(self):
+        """
+        Create a toon with the following properties:
+        Gender: male
+
+        Species: dog
+        Head: sl
+        Eyes: normal
+        Muzzles: normal
+        Torso: MS
+        Legs: m
+        Color: All
+        skintone BRIGHT GREEN
+        Tops: 00 - solid ,   color 0
+        Bottoms: 00 - plain w/ pockets ,  color 0
+        """
+        dna = ToonDNA.ToonDNA()
+        dna.newToonFromProperties("dsl" ,"ms" ,"m" ,"m" ,15 ,0 ,15 ,15 ,0 ,0 ,0 ,0 ,0 ,0 ,)
+        self.rtm.makeToonFromProperties(dna.asTuple(), pos = Point3(0), hpr = Point3(180,0,0),
+                                 startPos = Point3(0), startHpr = Point3(0),
+                                 endPos = Point3(0,1,0), endHpr = Point3(0),
+                                 state = 'neutral')
+        self.updateToonInfo()
+
     def addProp(self):
         self.rtm.addProp(self.propType)
 
@@ -2467,6 +2742,21 @@ class RobotToonControlPanel(AppShell):
         self.suitLevel.set(suitIndex % 8)
         self.setSuitLevel()
 
+    def useProp(self, prop):
+        if not self.rtm.selectedToon:
+            return
+        if hasattr(self, "propHandle") and self.propHandle:
+            self.propHandle.detachNode()
+            del self.propHandle
+        hands = self.rtm.selectedToon.getRightHands()
+        self.propHandle = globalPropPool.getProp(prop)
+        handHigh = hands[0].attachNewNode('highLODHand')
+        handMed = hands[1].attachNewNode('medLODHand')
+        self.propHandle.reparentTo(handHigh)
+        
+        handHigh.instanceTo(handMed)        
+        return prop
+
     def addSuit(self):
         self.rtm.makeRandomToon()
 
@@ -2511,7 +2801,7 @@ class RobotToonControlPanel(AppShell):
 
     def setTop(self, topName, fUpdateVariants = 0):
         if fUpdateVariants:
-            topIndex = int(topName[:2])
+            topIndex = int(topName.split()[0])
             self.topsVariants = self.topsDict[topIndex]
             self.topsCounter.setentry(0)
             self.topsCounter.invoke()
@@ -2537,7 +2827,7 @@ class RobotToonControlPanel(AppShell):
 
     def setBottom(self, bottomName, fUpdateVariants = 0):
         if fUpdateVariants:
-            bottomIndex = int(bottomName[:2])
+            bottomIndex = int(bottomName.split()[0])
             self.bottomsVariants = self.bottomsDict[bottomIndex]
             self.bottomsCounter.setentry(0)
             self.bottomsCounter.invoke()
@@ -2602,6 +2892,14 @@ class RobotToonControlPanel(AppShell):
             idx = self.bottomsVariants.index(bottomStyle)
             self.bottomsIndex.set(idx)
             self.fDoIt = 1
+
+    def selectLOD(self):
+        """
+        swap the lod
+        """
+        st = self.rtm.selectedToon
+        if st:
+            st.useLOD(self.lod.get())
 
     def swapGender(self):
         st = self.rtm.selectedToon
@@ -2702,6 +3000,8 @@ class RobotToonControlPanel(AppShell):
             prefix = 'f' # fowl
         elif self.species.get() == 'Monkey':
             prefix = 'p' # primate
+        elif self.species.get() == 'Pig':
+            prefix = 's' # swine
         else:
             prefix = self.species.get()[0].lower()
         self.setHeadType(prefix + self.head.get())
@@ -2711,6 +3011,28 @@ class RobotToonControlPanel(AppShell):
         if st:
             st.style.head = headType
             st.swapToonHead(st.style.head)
+
+    def setMuzzle(self):
+        if self.rtm.selectedToon:
+            self.rtm.selectedToon.hideNormalMuzzle()
+            self.rtm.selectedToon.hideAngryMuzzle()
+            self.rtm.selectedToon.hideSadMuzzle()
+            self.rtm.selectedToon.hideLaughMuzzle()
+            self.rtm.selectedToon.hideSurpriseMuzzle()
+            self.rtm.selectedToon.hideSmileMuzzle()
+            muzzle = self.muzzle.get()
+            if muzzle == 'normal':
+                self.rtm.selectedToon.showNormalMuzzle()
+            elif muzzle == 'angry':
+                self.rtm.selectedToon.showAngryMuzzle()
+            elif muzzle  == 'sad':
+                self.rtm.selectedToon.showSadMuzzle()
+            elif muzzle == 'smile':
+                self.rtm.selectedToon.showSmileMuzzle()
+            elif muzzle == 'laugh':
+                self.rtm.selectedToon.showLaughMuzzle()
+            elif muzzle == 'surprise':
+                self.rtm.selectedToon.showSurpriseMuzzle()
 
     def setEyes(self):
         if self.rtm.selectedToon:
@@ -2813,7 +3135,10 @@ class RobotToonControlPanel(AppShell):
                     numFrames = numFrames - 1
                 self.poseSlider['max'] = numFrames
 
-                self.rtm.selectedToon.loop(anim)
+                #self.rtm.selectedToon.loop(anim)
+                
+                # This will maintain the animation as the body parts change   
+                self.rtm.setToonAnimState(anim)
 
     def poseToon(self, frame):
         st = self.rtm.selectedToon
@@ -2933,10 +3258,18 @@ class RobotToonControlPanel(AppShell):
                        helpMessage='Take Screenshot',
                        statusMessage='Say Cheese!',
                        command=self.takeScreenshot)
+        self.buttonAdd('Log',
+                       helpMessage='Log Toon DNA',
+                       statusMessage='Write Log',
+                       command=self.appendRtmState)
         self.buttonAdd('Render',
                        helpMessage='Render Animation',
                        statusMessage='Go!',
                        command=self.renderMovie)
+        self.buttonAdd('Help',
+                       helpMessage='RTM Help',
+                       statusMessage='Click for help',
+                       command=self.showHelp)
 
 
     # STYLE/DNA FILE FUNCTIONS
@@ -3090,6 +3423,46 @@ class RobotToonControlPanel(AppShell):
             filename = self.filename
         base.screenshot(filename, defaultFilename = 0)
         render2d.show()
+
+    def appendRtmState(self):
+        comments = askstring("Comments", "Type your comments", parent = self.component('hull'))        
+
+        self.filename = asksaveasfilename(
+            initialdir = self.lastPath,
+            title = 'Enter name of file...',
+            parent = self.component('hull'))            
+                        
+        self.lastPath = os.path.dirname(self.filename)        
+        strList = []   
+        strList.append("\nCOMMENTS: ")  
+        strList.append(comments)         
+        strList.append("\nSPECIES: ")  
+        strList.append(self.species.get())   
+        strList.append("\nGENDER: ")       
+        strList.append(self.gender.get()) 
+        strList.append("\nHEAD: ")       
+        strList.append(self.head.get()) 
+        strList.append("\nTORSO: ")          
+        strList.append(self.torso.get())    
+        strList.append("\nLEGS: ")     
+        strList.append(self.legs.get())  
+        strList.append("\nANIM: ")     
+        strList.append(str(self.rtm.getState()))
+
+        rtmState = "".join(strList)        
+
+        if os.path.isfile(self.filename):
+            rtmFile = open(self.filename, "r+")    
+            rtmFile.seek(0,2)    
+            rtmFile.writelines(rtmState)   
+        else:
+            rtmFile = open(self.filename, "w")
+            rtmFile.writelines(rtmState)        
+                
+        rtmFile.close()           
+                
+    def showHelp(self):
+        showinfo(title='RTM HELP', message = rtmHelp, parent = self.component('hull'))
 
     def setParameterGroup(self, values):
         self.bar1.updateProgress(values[0])
