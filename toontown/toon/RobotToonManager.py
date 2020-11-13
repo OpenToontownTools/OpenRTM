@@ -14,7 +14,7 @@ from .RobotToon import *
 from direct.gui.DirectGui import *
 from direct.gui import DirectGuiGlobals
 from toontown.leveleditor.PieMenu import *
-from directtools.DirectSelection import SelectionRay
+from direct.directtools.DirectSelection import SelectionRay
 from direct.showbase.TkGlobal import *
 from tkinter import *
 from tkinter.filedialog import askopenfilename, asksaveasfilename
@@ -430,6 +430,9 @@ DoodleAnimList = [
 # you want to load. For example:
 #    ppython LevelEditor.py DD TT BR
 #
+
+
+# TODO: rework all of this to function like how the level editor functions
 if sys.argv[1:]:
     try:
         opts, pargs = getopt.getopt(sys.argv[1:], '')
@@ -448,7 +451,7 @@ hoodIds = {'TT' : 'toontown_central',
            'DD' : 'donalds_dock',
            'MM' : 'minnies_melody_land',
            'BR' : 'the_burrrgh',
-           'DG' : 'daisys_garden',
+           'DG' : 'daisy_gardens',
            'DL' : 'donalds_dreamland',
            'PA' : 'party_zone',
            }
@@ -583,8 +586,13 @@ class RobotToonManager(DirectObject):
                                    action = self.pieMenuCommand)
 
         # [gjeon] to find out currently moving camera in maya mode
-        self.mouseMayaCamera = False
+        self.mouseMayaCamera = True
         self.styleManager = LevelStyleManager(NEIGHBORHOODS, NEIGHBORHOOD_CODES)
+        
+        # And only the appropriate handles are showing
+        base.direct.widget.disableHandles(['x-ring', 'x-disc',
+                                           'y-ring', 'y-disc',
+                                           'z-disc', 'z-post'])
 
         self.setLastAngle(0.0)
 
@@ -2215,7 +2223,7 @@ class RobotToonControlPanel(AppShell):
         self.notebookFrame.pack(fill = BOTH, expand = 1)
 
         self.fMaya = IntVar()
-        self.fMaya.set(0)
+        self.fMaya.set(1)
         self.mayaButton = Checkbutton(self.rightFrame,
                                       text = 'Maya Cam',
                                       width = 6,

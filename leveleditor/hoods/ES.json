@@ -1,0 +1,15 @@
+{
+	"name_longhand": "estate",
+	"storage_files": [
+		"phase_5.5/dna/storage_estate.dna",
+		"phase_5.5/dna/storage_house_interior.dna"
+	],
+	"holiday_storage_files": {
+	    "halloween": [
+			"phase_5.5/dna/halloween_props_storage_estate.dna"
+		],
+	    "winter": [
+			"phase_5.5/dna/winter_storage_estate.dna"
+		]
+	}
+}

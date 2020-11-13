@@ -1,0 +1,16 @@
+{
+	"name_longhand": "daisy_gardens",
+	"storage_files": [
+		"phase_8/dna/storage_DG.dna", 
+		"phase_8/dna/storage_DG_sz.dna", 
+		"phase_8/dna/storage_DG_town.dna"
+	],
+	"holiday_storage_files": {
+	    "halloween": [
+			"phase_8/dna/halloween_props_storage_DG.dna"
+		],
+	    "winter": [
+			"phase_8/dna/winter_storage_DG.dna"
+		]
+	}
+}
