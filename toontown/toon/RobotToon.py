@@ -41,7 +41,7 @@ class RobotAvatarBase:
         self.accept('playRTMRunIval', lambda: self.setAnimState('run'))
         self.setAnimState(state)
         self.addActive()
-        
+
     def convertServerDNAString(self, serverString, type = 't'):
         # Strip out blank space and take last 30 characters
         serverString = serverString.replace(' ', '')

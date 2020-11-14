@@ -92,7 +92,7 @@ AddPartyErrorCode = PythonUtil.Enum(
         "AllOk",
         "ValidationError",
         "DatabaseError",
-        "TooManyHostedParties",    
+        "TooManyHostedParties",
     ),
 )
 
@@ -304,7 +304,7 @@ FireworksTransitionToDisabledDelay = 3.0
 
 ### Party Tug of War
 TugOfWarStartDelay = 8.0 # in seconds. wait this long to allow more players to
-                         # join after we have gotten the minimum number of 
+                         # join after we have gotten the minimum number of
                          # players
 TugOfWarReadyDuration = 1.5 # time between "ready" and "go" when starting a game
 TugOfWarGoDuration = 0.75 # time between "go" and when you can start pulling
@@ -355,7 +355,7 @@ TugOfWarTargetRateList = [
     (6.0, 10),
     (7.0, 11),
     (8.0, 12),
-] 
+]
 TugOfWarKeyPressTimeToLive = 1.0 # key presses are considered valid towards the
                                  # rate for this long
 TugOfWarKeyPressUpdateRate = 0.1 # delay between updates of the player's rate
@@ -375,9 +375,9 @@ TugOfWarLossReward = 8
 TugOfWarTieReward = 5
 TugOfWarTieThreshold = 0.75 # if the teams moved this much or less from their
                             # start position, consider it a tie
-        
+
 ### Party Trampoline
-TrampolineDuration = 60.0 # kick you off the trampoline after this long 
+TrampolineDuration = 60.0 # kick you off the trampoline after this long
 TrampolineSignOffset = Point3(-6.0, -6.0, 0.0)
 TrampolineLeverOffset = Point3(-5.0, -9.0, 0.0)
 TrampolineNumJellyBeans = 12
@@ -470,7 +470,7 @@ NumFruits = [
 # Dance Activity
 #===============================================================================
 
-# TODO make DistributedDanceFloorBase to support 8, 16 and 24 move Dance floors 
+# TODO make DistributedDanceFloorBase to support 8, 16 and 24 move Dance floors
 
 # rule first 3 letters must be unique
 # Dance Patterns to Animations
@@ -478,25 +478,25 @@ DancePatternToAnims = {
 #    "ddd" : "down",
     "dduu" : "slip-backward",
 #    "drul" : "sad-walk",
-#    "ldr" : "push",    
+#    "ldr" : "push",
     "ldddud" : "happy-dance",
-#    "ldu" : "sprinkle-dust",    
+#    "ldu" : "sprinkle-dust",
     "lll" : "left",
-#    "llrr" : "firehose",    
-#    "lrlr" : "wave",    
+#    "llrr" : "firehose",
+#    "lrlr" : "wave",
 #    "ludr" : "conked",
-#    "lurd" : "walk",    
+#    "lurd" : "walk",
 #    "rdl" : "shrug",
-    "rdu" : "struggle",    
-#    "rlrl" : "confused",    
+    "rdu" : "struggle",
+#    "rlrl" : "confused",
     "rrr" : "right",
-    "rulu" : "running-jump",    
+    "rulu" : "running-jump",
 #    "uddd" : "reel-neutral",
-    "udlr" : "good-putt",    
+    "udlr" : "good-putt",
 #    "udud" : "angry",
     "udllrr" : "victory",
     "ulu" : "jump",
-    "uudd" : "slip-forward",    
+    "uudd" : "slip-forward",
 #    "uuu" : "up",
     }
 
@@ -652,15 +652,15 @@ def getRandomMusicInfo(phase=13):
         # Get random phase
         keys = PhaseToMusicData.keys()
         phase = keys[randint(0, len(keys) - 1)]
-    
+
     # From that phase, get random filename
     values = PhaseToMusicData[phase].keys()
     filename = values[randint(0, len(values) - 1)]
-    
+
     return (phase, filename)
 
 def getMusicRepeatTimes(length, minLength=MUSIC_MIN_LENGTH_SECONDS):
-    times = round(float(minLength) / length) 
+    times = round(float(minLength) / length)
     if minLength <= 0 or times < 1.0:
         times = 1.0
     return times
@@ -693,16 +693,16 @@ CannonMaxTotalReward = 100 # from 1 shot, whats the maximum beans they'll ever g
 
 PartyCannonCollisions = {
     "clouds" : ["cloudSphere-0"],
-    
+
     "bounce" : [
         "wall_collision",
         "discoBall_collision",
         "platform_left_collision",
         "platform_right_collision",
         ],
-        
+
     "trampoline_bounce" : "TrampolineCollision",
-    
+
     "ground" : [
         "floor_collision",
         "danceFloor_collision",
@@ -710,7 +710,7 @@ PartyCannonCollisions = {
         "hill_collision",
         "fence_floor",
         ],
-        
+
     "fence" : [
         "dockTube1_collision",
         "dockTube2_collision",

@@ -45,7 +45,7 @@ Names = ["Pow",
          "Pop",
          "Widow\nMaker",
          ]
-         
+
 # Firework colors
 WHITE = 0
 RED = 1
@@ -84,7 +84,7 @@ preShowPauseDuration = 2.0 # duration of pause between sky
 postShowPauseDuration = 4.0 # duration of pause between when show
                             # ends and when sky returns to normal
                             # daylight color
-preNormalMusicPauseDuration = 0.5 # wait this long (in seconds) 
+preNormalMusicPauseDuration = 0.5 # wait this long (in seconds)
                                   # after sky has returned to
                                   # normal to play the default
-                                  # music 
+                                  # music

@@ -1,6 +1,6 @@
 """
         ZoneUtil
-        
+
         Get various information from a zone ID.
 """
 
@@ -57,14 +57,14 @@ def getLoaderName(zoneId):
         # zone or toon they correspond to.
         if suffix >= 500:
             suffix -= 500
-        
+
         if isCogHQZone(zoneId):
             loaderName="cogHQLoader"
         elif suffix < 100:
             loaderName="safeZoneLoader"
         else:
             loaderName="townLoader"
-            
+
     assert(zoneUtilNotify.debug("getLoaderName(zoneId="
             +str(zoneId)+") returning "+loaderName))
     assert(loaderName)
@@ -101,7 +101,7 @@ def getToonWhereName(zoneId):
 def isPlayground(zoneId):
     whereName = getWhereName(zoneId, False)
     if whereName == "cogHQExterior":
-        return True        
+        return True
     else:
         return (zoneId%1000 == 0 and zoneId < DynamicZonesBegin)
 
@@ -185,7 +185,7 @@ def getBranchZone(zoneId):
         if not isCogHQZone(zoneId):
             if (zoneId % 1000) >= 500:
                 # ...this is an interior zone id.
-                branchId -= 500        
+                branchId -= 500
     assert(zoneUtilNotify.debug("getBranchZone(zoneId="
             +str(zoneId)+") returning "+str(branchId)))
     return branchId
@@ -268,7 +268,7 @@ def getTrueZoneId(zoneId, currentZoneId):
         offset = currentZoneId - (currentZoneId % 2000)
         if hoodId == ToontownCentral:
             return (zoneId - ToontownCentral) + offset
-        elif hoodId == GoofySpeedway: 
+        elif hoodId == GoofySpeedway:
             return (zoneId - GoofySpeedway) + offset + 1000
     return zoneId
 

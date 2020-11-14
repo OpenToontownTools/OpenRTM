@@ -17,7 +17,7 @@ shows = {
             ( 0.1, ROCKET, RED, RED, 5, 80, 22, 30 ),
             ( 0.1, ROCKET, BLUE, BLUE, 5, 80, -22, 30 ),
             ( 0.1, ROCKET, WHITE, WHITE, 5, 80, 0, 30 ),
-            
+
             ( 2, CIRCLELARGE, RED, RED, 20, 120, -2, 120 ),
             ( 0.1, CIRCLE, RED, RED, 12, 120, -30, 150 ),
             ( 0.1, CIRCLE, RED, RED, 12, 120, 26, 150 ),
@@ -26,23 +26,23 @@ shows = {
             ( 0.2, ROCKET, WHITE, YELLOW, 3, 80, 0, 0 ),
             ( 0.2, ROCKET, WHITE, YELLOW, 3, 80, 20, 0 ),
             ( 0.2, ROCKET, WHITE, YELLOW, 3, 80, 40, 0 ),
-            
+
             ( 2, CIRCLE, BLUE, BLUE, 6, 80, -40, 70 ),
             ( 0.2, CIRCLE, RED, RED, 7, 80, -20, 70 ),
             ( 0.2, CIRCLELARGE, WHITE, WHITE, 8, 80, 0, 70 ),
             ( 0.2, CIRCLE, RED, RED, 7, 80, 20, 70 ),
             ( 0.2, CIRCLE, BLUE, BLUE, 6, 80, 40, 70 ),
-            
+
             ( 1, CIRCLE, WHITE, WHITE, 14, 80, 0, 80 ),
             ( 0.1, CIRCLE, WHITE, WHITE, 7, 80, -10, 90 ),
             ( 0.1, CIRCLE, WHITE, WHITE, 7, 80, 10, 90 ),
-            
+
             ( 1, ROCKET, WHITE, YELLOW, 3, -40, 0, 0 ),
             ( 0.2, ROCKET, WHITE, YELLOW, 3, -20, 0, 0 ),
             ( 0.2, ROCKET, WHITE, YELLOW, 3, 0, 0, 0 ),
             ( 0.2, ROCKET, WHITE, YELLOW, 3, 20, 0, 0 ),
             ( 0.2, ROCKET, WHITE, YELLOW, 3, 40, 0, 0 ),
-            
+
             ( 2, CIRCLE, BLUE, BLUE, 6, -40, 0, 60 ),
             ( 0.2, CIRCLE, RED, RED, 7, -20, 0, 60 ),
             ( 0.2, CIRCLE, WHITE, WHITE, 8, 0, 0, 60 ),
@@ -51,13 +51,13 @@ shows = {
             ( 1.5, CIRCLE, WHITE, WHITE, 10, 0, 0, 80 ),
             ( 0.1, CIRCLE, WHITE, WHITE, 5, -10, 0, 90 ),
             ( 0.1, CIRCLE, WHITE, WHITE, 5, 10, 0, 90 ),
-            
+
             ( 2, ROCKET, WHITE, YELLOW, 3, -40, 0, 0 ),
             ( 0.5, ROCKET, WHITE, YELLOW, 3, -20, 0, 0 ),
             ( 0.5, ROCKET, WHITE, YELLOW, 3, 0, 0, 0 ),
             ( 0.5, ROCKET, WHITE, YELLOW, 3, 20, 0, 0 ),
             ( 0.5, ROCKET, WHITE, YELLOW, 3, 40, 0, 0 ),
-            
+
             ( 1.5, CIRCLE, BLUE, RED, 10, -30, -30, 80 ),
             ( 0.1, RING, WHITE, WHITE, 10, -30, -30, 80 ),
             ( 0.5, CIRCLE, BLUE, RED, 10, 30, -30, 80 ),
@@ -66,10 +66,10 @@ shows = {
             ( 0.1, RING, WHITE, WHITE, 10, -30, 30, 80 ),
             ( 0.5, CIRCLE, BLUE, RED, 10, 30, 30, 80 ),
             ( 0.1, RING, WHITE, WHITE, 10, 30, 30, 80 ),
-            
+
             ( 2, CIRCLELARGE, RED, WHITE, 16, 0, 0, 100 ),
             ( 2, CIRCLELARGE, BLUE, WHITE, 16, 0, 0, 100 ),
-            
+
             ( 2, CIRCLE, RED, RED, 8, -10, 0, 90 ),
             ( 0.3, CIRCLE, BLUE, BLUE, 10, 0, 20, 60 ),
             ( 0.3, CIRCLE, RED, RED, 5, 10, 10, 80 ),
@@ -78,11 +78,11 @@ shows = {
             ( 0.4, CIRCLE, RED, WHITE, 8, -10, 0, 90 ),
             ( 0.5, CIRCLE, BLUE, WHITE, 10, 0, -20, 80 ),
             ( 0.4, CIRCLE, WHITE, WHITE, 5, 10, 0, 90 ),
-            
+
             ( 1, CIRCLE, WHITE, WHITE, 15, 0, 0, 100 ),
-            
+
             ( 1.5, ROCKET, WHITE, YELLOW, 5, 0, 0, 0 ),
-            
+
             ( 2, RING, RED, RED, 8, 0, 0, 100 ),
             ( 0.1, RING, BLUE, BLUE, 8, 0, 0, 100 ),
             ( 1.5, ROCKET, RED, RED, 5, 82, -47, 20 ),
@@ -93,34 +93,34 @@ shows = {
             ( 0.1, ROCKET, BLUE, BLUE, 5, 93, 45, 26 ),
             ( 0.1, ROCKET, BLUE, BLUE, 5, 37, -47, 20 ),
             ( 0.1, ROCKET, BLUE, BLUE, 5, 60, 45, 26 ),
-            
+
             ( 2, ROCKET, WHITE, YELLOW, 3, -20, 0, 0 ),
             ( 0.1, ROCKET, WHITE, YELLOW, 3, 0, 0, 0 ),
             ( 0.1, ROCKET, WHITE, YELLOW, 3, 20, 0, 0 ),
             ( 0.1, ROCKET, WHITE, YELLOW, 3, 40, 0, 0 ),
-            
+
             ( 2, CIRCLE, BLUE, BLUE, 6, -40, 0, 60 ),
             ( 0.1, CIRCLE, BLUE, BLUE, 6, 40, 0, 60 ),
             ( 0.1, CIRCLE, RED, RED, 7, -20, 0, 60 ),
             ( 0.1, CIRCLE, RED, RED, 7, 20, 0, 60 ),
             ( 0.1, CIRCLE, WHITE, WHITE, 8, 0, 0, 60 ),
-            
+
             ( 1, CIRCLELARGE, BLUE, WHITE, 16, 0, 0, 100 ),
             ( 0.1, ROCKET, WHITE, YELLOW, 3, 120, 21, 30 ),
             ( 0.1, ROCKET, WHITE, YELLOW, 3, 120, -21, 30 ),
-            
+
             ( 1, CIRCLELARGE, BLUE, WHITE, 16, 0, 0, 100 ),
             ( 0.1, ROCKET, WHITE, YELLOW, 3, 120, 21, 30 ),
             ( 0.1, ROCKET, WHITE, YELLOW, 3, 120, -21, 30 ),
-            
+
             ( 1, CIRCLE, WHITE, WHITE, 12, 0, 0, 80 ),
             ( 0.1, CIRCLE, WHITE, WHITE, 6, -10, 0, 90 ),
             ( 0.1, CIRCLE, WHITE, WHITE, 6, 10, 0, 90 ),
-            
+
             ( 1, RING, RED, WHITE, 10, 0, 0, 80 ),
             ( 0.1, RING, BLUE, WHITE, 5, -10, 0, 90 ),
             ( 0.1, RING, BLUE, WHITE, 5, 10, 0, 90 ),
-            
+
             ( 1, CIRCLE, BLUE, RED, 10, -20, -20, 80 ),
             ( 0.1, RING, WHITE, WHITE, 10, -20, -20, 80 ),
             ( 0.5, CIRCLE, BLUE, RED, 10, 20, -20, 80 ),
@@ -129,7 +129,7 @@ shows = {
             ( 0.1, RING, WHITE, WHITE, 10, -20, 20, 80 ),
             ( 0.5, CIRCLE, BLUE, RED, 10, 20, 20, 80 ),
             ( 0.1, RING, WHITE, WHITE, 10, 20, 20, 80 ),
-            
+
             ( 2, CIRCLE, WHITE, RED, 8, -10, 0, 90 ),
             ( 0.1, ROCKET, WHITE, YELLOW, 6, 120, 21, 30 ),
             ( 0.1, ROCKET, WHITE, YELLOW, 6, 120, -21, 30 ),
@@ -142,20 +142,20 @@ shows = {
             ( 0.2, CIRCLE, WHITE, RED, 5, 10, 0, 90 ),
             ( 0.1, ROCKET, WHITE, YELLOW, 6, 120, 21, 30 ),
             ( 0.1, ROCKET, WHITE, YELLOW, 6, 120, -21, 30 ),
-            
+
             ( 1, CIRCLELARGE, RED, RED, 12, 0, 0, 80 ),
-            
+
             ( 1, CIRCLELARGE, WHITE, WHITE, 14, 0, 0, 90 ),
             ( 0.2, CIRCLELARGE, BLUE, BLUE, 16, 0, 0, 100 )
         ),
-        
+
         # Daisy Garden
         (
             ( 1, ROCKET, WHITE, YELLOW, 3, 1, 92, 0 ),
             ( 0.8, ROCKET, WHITE, YELLOW, 3, 1, 92, 0 ),
             ( 0.6, ROCKET, WHITE, YELLOW, 3, 1, 92, 0 ),
             ( 0.4, ROCKET, WHITE, YELLOW, 3, 1, 92, 0 ),
-            
+
             ( 2, CIRCLE, WHITE, YELLOW, 5, 0, 80, 80 ),
             ( 1, CIRCLE, PURPLE, PURPLE, 4, -15, 70, 90 ),
             ( 0.5, CIRCLE, GREEN, GREEN, 6, 15, 100, 85 ),
@@ -166,19 +166,19 @@ shows = {
             ( 1, CIRCLE, WHITE, WHITE, 8, -20, 120, 85 ),
             ( 0.4, CIRCLE, PINK, YELLOW, 8, 30, 85, 90 ),
             ( 0.7, CIRCLE, YELLOW, PINK, 8, 10, 90, 100 ),
-            
+
             ( 2, ROCKET, WHITE, YELLOW, 3, 10, 90, 0 ),
             ( 2, CIRCLE, YELLOW, YELLOW, 8, 10, 90, 70 ),
             ( 0.2, RING, YELLOW, YELLOW, 8, 10, 90, 70 ),
             ( 0.8, CIRCLE, YELLOW, YELLOW, 8, 10, 90, 80 ),
             ( 0.2, RING, YELLOW, YELLOW, 8, 10, 90, 80 ),
-            
+
             ( 1, ROCKET, WHITE, YELLOW, 3, 10, 90, 0 ),
             ( 2, CIRCLE, GREEN, GREEN, 8, 10, 90, 70 ),
             ( 0.2, RING, GREEN, GREEN, 8, 10, 90, 70 ),
             ( 0.8, CIRCLE, GREEN, GREEN, 8, 10, 90, 80 ),
             ( 0.2, RING, GREEN, GREEN, 8, 10, 90, 80 ),
-            
+
             ( 1, ROCKET, WHITE, YELLOW, 3, 10, 90, 0 ),
             ( 2, CIRCLE, PINK, PINK, 8, 10, 90, 75 ),
             ( 0.2, RING, PINK, PINK, 8, 10, 90, 75 ),
@@ -187,24 +187,24 @@ shows = {
             ( 1, ROCKET, WHITE, YELLOW, 3, 20, 70, 0 ),
             ( 2, CIRCLE, WHITE, WHITE, 10, 20, 70, 60 ),
             ( 0.1, ROCKET, WHITE, YELLOW, 3, 20, 110, 0 ),
-            ( 2, CIRCLE, WHITE, WHITE, 10, 20, 110, 60 ),    
+            ( 2, CIRCLE, WHITE, WHITE, 10, 20, 110, 60 ),
             ( 0.1, ROCKET, WHITE, YELLOW, 3, -20, 70, 0 ),
             ( 2, CIRCLE, WHITE, WHITE, 10, -20, 70, 60 ),
             ( 0.1, ROCKET, WHITE, YELLOW, 3, -20, 110, 0 ),
             ( 2, CIRCLE, WHITE, WHITE, 10, -20, 110, 60 ),
-            
+
             ( 1.5, CIRCLE, PURPLE, PINK, 8, -30, 110, 60 ),
             ( 0.5, CIRCLE, PURPLE, PINK, 9, -15, 110, 60 ),
             ( 0.5, CIRCLE, PURPLE, PINK, 10, 0, 110, 60 ),
             ( 0.5, CIRCLE, PURPLE, PINK, 9, 15, 110, 60 ),
             ( 0.5, CIRCLE, PURPLE, PINK, 8, 30, 110, 60 ),
-            
+
             ( 1.5, CIRCLE, GREEN, CYAN, 8, 30, 110, 70 ),
             ( 0.5, CIRCLE, GREEN, CYAN, 9, 15, 110, 70 ),
             ( 0.5, CIRCLE, GREEN, CYAN, 10, 0, 110, 70 ),
             ( 0.5, CIRCLE, GREEN, CYAN, 9, -15, 110, 70 ),
             ( 0.5, CIRCLE, GREEN, CYAN, 8, -30, 110, 70 ),
-            
+
             ( 2, CIRCLE, WHITE, YELLOW, 6, 0, 80, 80 ),
             ( 0.5, CIRCLE, PURPLE, PURPLE, 8, -15, 70, 90 ),
             ( 0.5, CIRCLE, GREEN, GREEN, 6, 15, 100, 85 ),
@@ -222,7 +222,7 @@ shows = {
             ( 0.2, RING, YELLOW, YELLOW, 12, 0, 90, 80 ),
             ( 0.8, CIRCLELARGE, WHITE, WHITE, 12, 0, 90, 80 ),
             ( 0.2, RING, YELLOW, YELLOW, 12, 0, 90, 80 ),
-            
+
             ( 1.5, RING, YELLOW, YELLOW, 6, 20, 110, 70 ),
             ( 0.4, RING, YELLOW, YELLOW, 6, 0, 90, 65 ),
             ( 0.4, RING, YELLOW, YELLOW, 8, -10, 100, 80 ),
@@ -231,15 +231,15 @@ shows = {
             ( 0.4, RING, YELLOW, YELLOW, 12, -20, 90, 70 ),
             ( 0.2, ROCKET, WHITE, YELLOW, 3, 1, 92, 0 ),
             ( 0.4, CIRCLELARGE, WHITE, WHITE, 12, 0, 90, 80 ),
-            
+
             ( 0.7, RING, YELLOW, YELLOW, 6, 0, 90, 65 ),
             ( 0.2, RING, YELLOW, YELLOW, 8, -10, 100, 80 ),
             ( 0.2, RING, YELLOW, YELLOW, 8, 10, 110, 60 ),
             ( 0.2, RING, YELLOW, YELLOW, 12, -20, 90, 70 ),
-            
+
             ( 1, CIRCLESPRITE, WHITE, FLOWER, 24, 1, 92, 80 ),
         ),
-            
+
         # Dreamland
         (
             ( 1, ROCKET, WHITE, YELLOW, 3, 63, 88, 10 ),
@@ -250,7 +250,7 @@ shows = {
             ( 0, ROCKET, WHITE, YELLOW, 3, -22, -88, 10 ),
             ( 0.5, ROCKET, WHITE, YELLOW, 3, -83, 88, 10 ),
             ( 0, ROCKET, WHITE, YELLOW, 3, -83, -88, 10 ),
-            
+
             ( 2, ROCKET, WHITE, YELLOW, 5, 30, 0, -20 ),
             ( 2, CIRCLE, PURPLE, PINK, 8, 30, 0, 80 ),
             ( 0.2, CIRCLE, PURPLE, PINK, 8, 10, 0, 80 ),
@@ -258,7 +258,7 @@ shows = {
             ( 0.5, CIRCLE, PURPLE, PINK, 8, 30, 20, 80 ),
             ( 0.2, CIRCLE, PURPLE, PINK, 8, 30, -20, 80 ),
             ( 1, CIRCLELARGE, WHITE, WHITE, 10, 30, 0, 100 ),
-            
+
             ( 2, ROCKET, WHITE, YELLOW, 5, 0, 0, -20 ),
             ( 2, CIRCLE, YELLOW, PINK, 8, 0, 0, 80 ),
             ( 0.2, CIRCLE, YELLOW, PINK, 8, -20, 0, 80 ),
@@ -266,7 +266,7 @@ shows = {
             ( 0.5, CIRCLE, YELLOW, PINK, 8, 0, 20, 80 ),
             ( 0.2, CIRCLE, YELLOW, PINK, 8, 0, -20, 80 ),
             ( 1, CIRCLELARGE, WHITE, WHITE, 10, 0, 0, 100 ),
-            
+
             ( 1.5, ROCKET, WHITE, YELLOW, 5, -30, 0, -20 ),
             ( 2, CIRCLE, PEACH, PINK, 8, -30, 0, 80 ),
             ( 0.2, CIRCLE, PEACH, PINK, 8, .5, 0, 80 ),
@@ -274,15 +274,15 @@ shows = {
             ( 0.5, CIRCLE, PEACH, PINK, 8, -30, 20, 80 ),
             ( 0.2, CIRCLE, PEACH, PINK, 8, -30, -20, 80 ),
             ( 1, CIRCLELARGE, WHITE, WHITE, 10, -30, 0, 100 ),
-            
+
             ( 2, CIRCLE, PEACH, PEACH, 3, 0, 0, 80 ),
             ( 0.5, RING, YELLOW, WHITE, 3, 0, 0, 80 ),
             ( 0.1, RING, YELLOW, WHITE, 3, 0, 0, 80 ),
-            
+
             ( 1, CIRCLE, PEACH, PEACH, 9, 0, 0, 100 ),
             ( 0.5, RING, YELLOW, WHITE, 9, 0, 0, 100 ),
             ( 0.1, RING, YELLOW, WHITE, 9, 0, 0, 100 ),
-            
+
             ( 1, ROCKET, YELLOW, YELLOW, 5, 80, 88, 30 ),
             ( 0.1, ROCKET, YELLOW, YELLOW, 5, 80, -88, 30 ),
             ( 0.1, ROCKET, PURPLE, PURPLE, 5, 80, -66, 30 ),
@@ -292,7 +292,7 @@ shows = {
             ( 0.1, ROCKET, PEACH, PEACH, 5, 80, 22, 30 ),
             ( 0.1, ROCKET, PEACH, PEACH, 5, 80, -22, 30 ),
             ( 0.1, ROCKET, WHITE, WHITE, 5, 80, 0, 30 ),
-            
+
             ( 2, ROCKET, YELLOW, YELLOW, 5, -80, 88, 30 ),
             ( 0.1, ROCKET, YELLOW, YELLOW, 5, -80, -88, 30 ),
             ( 0.1, ROCKET, PURPLE, PURPLE, 5, -80, -66, 30 ),
@@ -302,40 +302,40 @@ shows = {
             ( 0.1, ROCKET, PEACH, PEACH, 5, -80, 22, 30 ),
             ( 0.1, ROCKET, PEACH, PEACH, 5, -80, -22, 30 ),
             ( 0.1, ROCKET, WHITE, WHITE, 5, -80, 0, 30 ),
-            
+
             ( 2, CIRCLE, PURPLE, PURPLE, 6, -40, 0, 100 ),
             ( 0.5, RING, YELLOW, YELLOW, 8, -40, 0, 100 ),
-            
+
             ( 1, CIRCLE, BLUE, BLUE, 6, 0, 0, 100 ),
             ( 0.5, RING, YELLOW, YELLOW, 8, 0, 0, 100 ),
             ( 0.2, RING, YELLOW, YELLOW, 10, 0, 0, 100 ),
-            
+
             ( 1, CIRCLE, PURPLE, PURPLE, 8, 40, 0, 100 ),
             ( 0.5, RING, YELLOW, YELLOW, 10, 40, 0, 100 ),
             ( 0.2, RING, YELLOW, YELLOW, 12, 40, 0, 100 ),
             ( 0.2, RING, YELLOW, YELLOW, 14, 40, 0, 100 ),
-            
+
             ( 1, CIRCLELARGE, PURPLE, PURPLE, 8, 0, 0, 100 ),
             ( 0.5, RING, YELLOW, YELLOW, 8, 0, 0, 100 ),
             ( 0.2, RING, YELLOW, YELLOW, 8, 0, 0, 100 ),
             ( 0.2, RING, YELLOW, YELLOW, 10, 0, 0, 100 ),
             ( 0.2, RING, YELLOW, YELLOW, 12, 0, 0, 100 ),
-            
+
             ( 0.1, ROCKET, WHITE, YELLOW, 4, 30, 30, -20 ),
             ( 0.2, ROCKET, WHITE, YELLOW, 4, 30, -30, -20 ),
             ( 0.2, ROCKET, WHITE, YELLOW, 6, -30, 30, -20 ),
             ( 0.2, ROCKET, WHITE, YELLOW, 8, -30, -30, -20 ),
-            
+
             ( 2, CIRCLELARGE, WHITE, WHITE, 16, 20, -2, 120 ),
             ( 0.2, CIRCLE, WHITE, WHITE, 12, 20, -30, 150 ),
             ( 0.2, CIRCLE, WHITE, WHITE, 12, 20, 26, 150 ),
-            
+
             ( 1, CIRCLE, WHITE, WHITE, 6, 0, 0, 100 ),
             ( 0.5, RING, YELLOW, YELLOW, 6, 0, 0, 100 ),
             ( 0.2, RING, PURPLE, PURPLE, 8, 0, 0, 100 ),
             ( 0.2, RING, PEACH, PEACH, 10, 0, 0, 100 ),
             ( 0.2, RING, PINK, PINK, 12, 0, 0, 100 ),
-            
+
             ( 0.5, CIRCLELARGE, WHITE, WHITE, 8, 0, 0, 100 ),
             ( 1, CIRCLELARGE, WHITE, WHITE, 8, 0, 0, 100 ),
             ( 0.2, CIRCLESMALL, WHITE, WHITE, 4, 10, 30, 80 ),
@@ -343,11 +343,11 @@ shows = {
             ( 0.5, CIRCLESMALL, WHITE, WHITE, 4, -30, 0, 100 ),
             ( 0.4, CIRCLESMALL, WHITE, WHITE, 4, 15, -10, 95 ),
             ( 0.3, CIRCLESMALL, WHITE, WHITE, 4, 0, 0, 100 ),
-            
+
             ( 1, ROCKET, WHITE, YELLOW, 5, 0, 0, -20 ),
             ( 2, CIRCLELARGE, WHITE, WHITE, 8, 0, 0, 100 ),
             ( 0.5, CIRCLELARGE, WHITE, WHITE, 8, 0, 0, 105 ),
-            
+
             ( 0.4, ROCKET, WHITE, YELLOW, 5, 0, 0, -20 ),
             ( 0.4, ROCKET, WHITE, YELLOW, 5, 0, 0, -20 ),
             ( 2, CIRCLELARGE, WHITE, WHITE, 8, 0, 0, 100 ),
@@ -360,7 +360,7 @@ shows = {
             ( 1, CIRCLELARGE, WHITE, WHITE, 20, 0, 0, 100 ),
             ( 0.5, CIRCLE, RED, WHITE, 20, 20, 20, 105 ),
             ( 0.2, CIRCLE, BLUE, WHITE, 20, -30, 40, 110 ),
-            
+
             ( 0.5, ROCKET, WHITE, YELLOW, 5, 30, 0, -20 ),
             ( 2, CIRCLE, PURPLE, PINK, 8, 30, 0, 80 ),
             ( 0.2, CIRCLE, YELLOW, PINK, 8, 10, 0, 80 ),
@@ -368,13 +368,13 @@ shows = {
             ( 0.5, CIRCLE, PURPLE, PURPLE, 8, 30, 20, 80 ),
             ( 0.2, CIRCLE, BLUE, PURPLE, 8, 30, -20, 80 ),
             ( 0.5, CIRCLELARGE, WHITE, WHITE, 10, 30, 0, 100 ),
-            
+
             ( 0.1, POP, WHITE, WHITE, 20, 0, 0, 90 ),
             ( 0.2, POP, WHITE, WHITE, 20, 0, 0, 90 ),
             ( 0.1, POP, WHITE, WHITE, 20, 0, 0, 90 ),
             ( 0.2, POP, WHITE, WHITE, 20, 0, 0, 90 ),
         ),
-        
+
         # Minnies Melodyland
         (
             ( 3, ROCKET, WHITE, YELLOW, 5, 114, -70, -10 ),
@@ -382,35 +382,35 @@ shows = {
             ( 0.5, ROCKET, WHITE, YELLOW, 5, 114, -20, -10 ),
             ( 0.5, ROCKET, WHITE, YELLOW, 5, 118, 0, -10 ),
             ( 0.5, ROCKET, WHITE, YELLOW, 5, 114, 29, -10 ),
-            
+
             ( 2, ROCKET, WHITE, YELLOW, 4, 145, -35, 60 ),
             ( 0.1, ROCKET, WHITE, YELLOW, 4, 145, -30, 60 ),
             ( 0.1, ROCKET, WHITE, YELLOW, 4, 145, -20, 60 ),
             ( 0.1, ROCKET, WHITE, YELLOW, 4, 145, -10, 60 ),
             ( 0.1, ROCKET, WHITE, YELLOW, 4, 145, -5, 60 ),
-            
+
             ( 1.5, CIRCLE, PINK, PINK, 14, 145, -100, 100 ),
             ( 0.5, CIRCLE, YELLOW, YELLOW, 14, 145, -60, 120 ),
             ( 0.5, CIRCLE, PINK, PINK, 14, 145, -20, 140 ),
             ( 0.5, CIRCLE, YELLOW, YELLOW, 14, 145, 20, 120 ),
             ( 0.5, CIRCLE, PINK, PINK, 14, 145, 60, 100 ),
-            
+
             ( 2, ROCKET, WHITE, YELLOW, 5, 114, -70, -10 ),
             ( 0.5, ROCKET, WHITE, YELLOW, 5, 118, -39, -10 ),
             ( 0.5, ROCKET, WHITE, YELLOW, 5, 114, -20, -10 ),
             ( 0.5, ROCKET, WHITE, YELLOW, 5, 118, 0, -10 ),
             ( 0.5, ROCKET, WHITE, YELLOW, 5, 114, 29, -10 ),
-            
+
             ( 2, ROCKET, WHITE, YELLOW, 4, 145, -5, 60 ),
             ( 0.1, ROCKET, WHITE, YELLOW, 4, 145, -10, 60 ),
             ( 0.1, ROCKET, WHITE, YELLOW, 4, 145, -20, 60 ),
             ( 0.1, ROCKET, WHITE, YELLOW, 4, 145, -30, 60 ),
             ( 0.1, ROCKET, WHITE, YELLOW, 4, 145, -35, 60 ),
-            
+
             ( 2, CIRCLELARGE, PINK, PINK, 14, 145, -20, 120 ),
             ( 0.1, CIRCLE, PINK, PINK, 14, 145, -38, 140 ),
             ( 0.1, CIRCLE, PINK, PINK, 14, 145, -2, 140 ),
-            
+
             ( 1, CIRCLE, PURPLE, PINK, 10, 120, -60, 80 ),
             ( 0.1, RING, WHITE, WHITE, 10, 120, -60, 80 ),
             ( 0.5, CIRCLE, PINK, PURPLE, 10, .5, -60, 80 ),
@@ -419,11 +419,11 @@ shows = {
             ( 0.1, RING, WHITE, WHITE, 10, 120, 20, 80 ),
             ( 0.5, CIRCLE, YELLOW, PURPLE, 10, .5, 20, 80 ),
             ( 0.1, RING, WHITE, WHITE, 10, .5, 20, 80 ),
-            
+
             ( 0.5, CIRCLE, WHITE, WHITE, 14, 145, -20, 140 ),
             ( 0.1, POP, WHITE, WHITE, 20, 0, 0, 90 ),
             ( 0.2, POP, WHITE, WHITE, 20, 0, 0, 90 ),
-            
+
             ( 0.5, CIRCLE, PURPLE, PURPLE, 6, 140, -80, 80 ),
             ( 0.5, CIRCLE, YELLOW, YELLOW, 6, 140, 40, 80 ),
             ( 0.5, CIRCLE, PURPLE, PURPLE, 10, 140, -60, 100 ),
@@ -431,34 +431,34 @@ shows = {
             ( 0.5, CIRCLE, PURPLE, PURPLE, 14, 140, -40, 120 ),
             ( 0.5, CIRCLE, YELLOW, YELLOW, 14, 140, 0, 120 ),
             ( 0.5, ROCKET, WHITE, YELLOW, 4, 145, -20, 60 ),
-            
+
             ( 2, CIRCLELARGE, WHITE, WHITE, 20, 140, -20, 140 ),
             ( 2, ROCKET, WHITE, YELLOW, 5, 118, 29, -10 ),
             ( 0, ROCKET, WHITE, YELLOW, 5, 118, -70, -10 ),
             ( 2, CIRCLELARGE, WHITE, WHITE, 20, 140, -20, 140 ),
-            
+
             ( 1.5, RING, PURPLE, PURPLE, 8, 140, -20, 120 ),
             ( 0.8, RING, PINK, PINK, 10, 140, -20, 120 ),
             ( 0.1, RING, PINK, PINK, 10, 140, -20, 120 ),
             ( 0.8, RING, YELLOW, YELLOW, 12, 140, -20, 120 ),
             ( 0.1, RING, YELLOW, YELLOW, 12, 140, -20, 120 ),
-            
+
             ( 2, ROCKET, WHITE, YELLOW, 4, 145, -5, 60 ),
             ( 0.1, ROCKET, WHITE, YELLOW, 4, 145, -10, 60 ),
             ( 0.1, ROCKET, WHITE, YELLOW, 4, 145, -20, 60 ),
             ( 0.1, ROCKET, WHITE, YELLOW, 4, 145, -30, 60 ),
             ( 0.1, ROCKET, WHITE, YELLOW, 4, 145, -35, 60 ),
-            
+
             ( 2, CIRCLELARGE, PINK, PINK, 14, 145, -20, 120 ),
             ( 0.1, CIRCLE, PINK, PINK, 14, 145, -38, 140 ),
             ( 0.1, CIRCLE, PINK, PINK, 14, 145, -2, 140 ),
-            
+
             ( 2, ROCKET, WHITE, YELLOW, 5, 114, -70, -10 ),
             ( 0.5, ROCKET, WHITE, YELLOW, 5, 118, -39, -10 ),
             ( 0.5, ROCKET, WHITE, YELLOW, 5, 114, -20, -10 ),
             ( 0.5, ROCKET, WHITE, YELLOW, 5, 118, 0, -10 ),
             ( 0.5, ROCKET, WHITE, YELLOW, 5, 114, 29, -10 ),
-        
+
             ( 0.5, CIRCLE, PURPLE, PURPLE, 6, 140, -80, 80 ),
             ( 0, ROCKET, WHITE, YELLOW, 5, 114, -70, -10 ),
             ( 0.1, CIRCLE, YELLOW, YELLOW, 6, 140, 40, 80 ),
@@ -488,7 +488,7 @@ shows = {
             ( 0.1, RING, YELLOW, YELLOW, 12, 140, -20, 120 ),
             ( 0.4, ROCKET, WHITE, YELLOW, 5, 114, 29, -10 ),
             ( 1, CIRCLELARGE, WHITE, WHITE, 25, 140, -20, 140 ),
-            
+
             ( 0.3, CIRCLE, WHITE, WHITE, 20, 140, -40, 120 ),
             ( 0.2, CIRCLE, PINK, WHITE, 22, 130, 40, 140 ),
             ( 0.4, CIRCLE, PURPLE, WHITE, 12, .5, -30, 110 ),
@@ -502,14 +502,14 @@ shows = {
             ( 1, CIRCLELARGE, WHITE, WHITE, 20, 140, -20, 140 ),
             ( 0.6, CIRCLESPRITE, WHITE, MUSICNOTE, 30, 140, -20, 140 ),
         ),
-        
+
         # The Burrrgh
         (
             ( 1, ROCKET, WHITE, BLUE, 3, -117, -39, 0 ),
             ( 0.5, ROCKET, WHITE, BLUE, 4, -117, -39, 0 ),
             ( 0.5, ROCKET, WHITE, BLUE, 4, -117, -39, 0 ),
             ( 0.5, ROCKET, WHITE, BLUE, 5, -117, -39, 0 ),
-            
+
             ( 2, CIRCLE, WHITE, WHITE, 16, -117, -39, 100 ),
             ( 0.3, CIRCLE, WHITE, BLUE, 20, -140, -40, 70 ),
             ( 0.2, CIRCLE, BLUE, WHITE, 22, -130, 40, 70 ),
@@ -519,25 +519,25 @@ shows = {
             ( 0.8, CIRCLE, WHITE, WHITE, 16, -140, -20, 80 ),
             ( 0.5, CIRCLE, BLUE, WHITE, 22, -.5, 10, 90 ),
             ( 0.2, CIRCLE, CYAN, BLUE, 20, -140, -20, 80 ),
-            
+
             ( 0, ROCKET, WHITE, BLUE, 4, -117, -39, 0 ),
             ( 0.5, ROCKET, WHITE, BLUE, 4, -117, -39, 0 ),
             ( 0.5, ROCKET, WHITE, BLUE, 4, -117, -39, 0 ),
             ( 0.5, ROCKET, WHITE, BLUE, 4, -117, -39, 0 ),
-            
+
             ( 1.7, CIRCLE, WHITE, WHITE, 16, -117, -39, 100 ),
-            
+
             ( 1, CIRCLE, WHITE, WHITE, 12, -147, -39, 100 ),
             ( 0.8, CIRCLE, WHITE, WHITE, 12, -87, -39, 100 ),
             ( 0.2, CIRCLE, WHITE, WHITE, 12, -107, -59, 100 ),
             ( 0.4, CIRCLE, WHITE, WHITE, 12, -127, -59, 100 ),
             ( 0.3, CIRCLE, WHITE, WHITE, 12, -107, -19, 100 ),
             ( 0.5, CIRCLE, WHITE, WHITE, 12, -127, -19, 100 ),
-            
+
             ( 1.80, ROCKET, BLUE, WHITE, 4, -117, -39, 0 ),
             ( 2, CIRCLE, BLUE, WHITE, 10, -117, -39, 80 ),
             ( 0.8, CIRCLE, BLUE, WHITE, 12, -117, -39, 100 ),
-            
+
             ( 0.5, CIRCLE, BLUE, WHITE, 10, -117, -39, 90 ),
             ( 0.1, RING, WHITE, WHITE, 14, -117, -39, 90 ),
             ( 0.6, CIRCLE, BLUE, WHITE, 10, -97, -59, 80 ),
@@ -546,27 +546,27 @@ shows = {
             ( 0.1, RING, WHITE, WHITE, 14, -147, -9, 100 ),
             ( 0.7, CIRCLE, BLUE, WHITE, 10, -87, -39, 80 ),
             ( 0.1, RING, WHITE, WHITE, 14, -87, -39, 80 ),
-            
+
             ( 2.5, ROCKET, BLUE, WHITE, 3, -137, -39, 0 ),
             ( 0.1, ROCKET, BLUE, WHITE, 4, -127, -39, 0 ),
             ( 0.1, ROCKET, BLUE, WHITE, 5, -117, -39, 0 ),
             ( 0.1, ROCKET, BLUE, WHITE, 4, -107, -39, 0 ),
             ( 0.1, ROCKET, BLUE, WHITE, 3, -97, -39, 0 ),
-            
+
             ( 1.5, RING, WHITE, BLUE, 14, -117, -39, 90 ),
             ( 0.1, RING, WHITE, WHITE, 14, -117, -39, 90 ),
             ( 0.1, RING, BLUE, WHITE, 14, -117, -39, 90 ),
-            
+
             ( 1.5, ROCKET, BLUE, WHITE, 3, -117, -19, 0 ),
             ( 0.1, ROCKET, BLUE, WHITE, 4, -117, -29, 0 ),
             ( 0.1, ROCKET, BLUE, WHITE, 5, -117, -39, 0 ),
             ( 0.1, ROCKET, BLUE, WHITE, 4, -117, -49, 0 ),
             ( 0.1, ROCKET, BLUE, WHITE, 3, -117, -59, 0 ),
-            
+
             ( 1.5, RING, WHITE, WHITE, 14, -117, -39, 90 ),
             ( 0.1, RING, BLUE, WHITE, 14, -117, -39, 90 ),
             ( 0.1, RING, WHITE, BLUE, 14, -117, -39, 90 ),
-            
+
             ( 1.5, CIRCLE, WHITE, WHITE, 20, -100, -40, 80 ),
             ( 0.1, CIRCLE, WHITE, WHITE, 20, -140, -40, 80 ),
             ( 0.1, CIRCLE, WHITE, BLUE, 10, -110, -40, 100 ),
@@ -581,17 +581,17 @@ shows = {
             ( 0.5, CIRCLE, CYAN, BLUE, 22, -130, 10, 120 ),
             ( 0.2, CIRCLE, BLUE, WHITE, 20, -110, -20, 90 ),
             ( 1, CIRCLELARGE, WHITE, WHITE, 20, -120, -40, 140 ),
-            
+
             ( 1, ROCKET, BLUE, WHITE, 5, -117, -59, 0 ),
             ( 0.1, ROCKET, BLUE, WHITE, 5, -117, -19, 0 ),
-            
+
             ( 2, RING, WHITE, BLUE, 14, -117, -59, 80 ),
             ( 0.1, RING, WHITE, BLUE, 14, -117, -19, 80 ),
             ( 0.1, RING, WHITE, WHITE, 14, -117, -59, 80 ),
             ( 0.1, RING, BLUE, WHITE, 14, -117, -19, 80 ),
             ( 0.1, RING, WHITE, WHITE, 14, -117, -59, 80 ),
             ( 0.1, RING, BLUE, WHITE, 14, -117, -19, 80 ),
-            
+
             ( 2, ROCKET, BLUE, WHITE, 4, -105, -20, 0 ),
             ( 0.2, CIRCLE, BLUE, WHITE, 22, -130, 0, 140 ),
             ( 0.8, ROCKET, BLUE, WHITE, 4, -135, -20, 0 ),
@@ -622,16 +622,16 @@ shows = {
             ( 1, CIRCLE, WHITE, WHITE, 20, -120, -40, 100 ),
             ( 0.8, CIRCLE, WHITE, WHITE, 20, -120, -40, 110 ),
             ( 0.8, CIRCLE, WHITE, WHITE, 20, -120, -40, 100 ),
-            
+
             ( 1, CIRCLESPRITE, WHITE, SNOWFLAKE, 30, -117, -39, 110 ),
         ),
-        
+
         # Donalds Dock
         (
              ( 1, ROCKET, WHITE, YELLOW, 3, -23, 3, 0 ),
              ( 0.5, ROCKET, WHITE, YELLOW, 3, -23, 3, 0 ),
              ( 0.5, ROCKET, WHITE, YELLOW, 3, -23, 3, 0 ),
-             
+
              ( 1, ROCKET, WHITE, YELLOW, 3, -60, 0, 0 ),
              ( 0.2, ROCKET, WHITE, YELLOW, 3, -40, 0, 0 ),
              ( 0.2, ROCKET, WHITE, YELLOW, 3, -20, 0, 0 ),
@@ -645,7 +645,7 @@ shows = {
              ( 1.5, CIRCLE, WHITE, WHITE, 10, 0, 0, 80 ),
              ( 0.1, CIRCLE, WHITE, WHITE, 5, -10, 0, 90 ),
              ( 0.1, CIRCLE, WHITE, WHITE, 5, 10, 0, 90 ),
-             
+
              ( 1, CIRCLE, GREEN, BLUE, 10, -20, -20, 80 ),
              ( 0.1, RING, WHITE, WHITE, 10, -20, -20, 80 ),
              ( 0.5, CIRCLE, GREEN, BLUE, 10, 20, -20, 80 ),
@@ -654,27 +654,27 @@ shows = {
              ( 0.1, RING, WHITE, WHITE, 10, -20, 20, 80 ),
              ( 0.5, CIRCLE, GREEN, BLUE, 10, 20, 20, 80 ),
              ( 0.1, RING, WHITE, WHITE, 10, 20, 20, 80 ),
-             
+
              ( 2, ROCKET, WHITE, YELLOW, 3, -60, 0, 0 ),
              ( 0.5, ROCKET, WHITE, YELLOW, 3, -40, 0, 0 ),
              ( 0.5, ROCKET, WHITE, YELLOW, 3, -20, 0, 0 ),
              ( 0.5, ROCKET, WHITE, YELLOW, 3, 0, 0, 0 ),
              ( 0.5, ROCKET, WHITE, YELLOW, 3, 20, 0, 0 ),
-             
+
              ( 1, CIRCLELARGE, BLUE, WHITE, 16, 0, 0, 100 ),
              ( 0.1, ROCKET, WHITE, YELLOW, 3, 120, 21, 30 ),
              ( 0.1, ROCKET, WHITE, YELLOW, 3, 120, -21, 30 ),
              ( 1, CIRCLELARGE, BLUE, WHITE, 16, 0, 0, 100 ),
              ( 0.1, ROCKET, WHITE, YELLOW, 3, 120, 21, 30 ),
              ( 0.1, ROCKET, WHITE, YELLOW, 3, 120, -21, 30 ),
-             
+
              ( 0.1, ROCKET, WHITE, YELLOW, 3, -23, 3, 0 ),
              ( 2, CIRCLE, BLUE, BLUE, 10, -23, 3, 80 ),
              ( 0.1, ROCKET, WHITE, YELLOW, 4, -23, 3, 0 ),
              ( 2, CIRCLE, BLUE, BLUE, 14, -23, 3, 90 ),
              ( 0.1, ROCKET, WHITE, YELLOW, 5, -23, 3, 0 ),
              ( 2, CIRCLE, BLUE, BLUE, 18, -23, 3, 100 ),
-             
+
              ( 1.5, ROCKET, WHITE, RED, 6, 120, 21, 30 ),
              ( 0.1, ROCKET, WHITE, RED, 6, 120, -21, 30 ),
              ( 0.3, CIRCLE, WHITE, RED, 10, 0, 20, 60 ),
@@ -684,7 +684,7 @@ shows = {
              ( 0.2, CIRCLE, WHITE, RED, 8, -10, 0, 90 ),
              ( 0.3, CIRCLE, WHITE, RED, 10, 0, -20, 80 ),
              ( 0.2, CIRCLE, WHITE, RED, 5, 10, 0, 90 ),
-             
+
              ( 2, ROCKET, WHITE, YELLOW, 6, 120, 21, 30 ),
              ( 0.1, ROCKET, WHITE, YELLOW, 6, 120, -21, 30 ),
              ( 0.2, CIRCLE, WHITE, YELLOW, 5, 10, 10, 80 ),
@@ -694,7 +694,7 @@ shows = {
              ( 0.4, CIRCLE, WHITE, YELLOW, 10, 0, -20, 80 ),
              ( 0.3, CIRCLE, WHITE, YELLOW, 10, 0, 20, 60 ),
              ( 0.2, CIRCLE, WHITE, YELLOW, 5, 10, 0, 110 ),
-             
+
              ( 2, ROCKET, WHITE, BLUE, 6, 120, 21, 30 ),
              ( 0.1, ROCKET, WHITE, BLUE, 6, 120, -21, 30 ),
              ( 0.3, CIRCLE, WHITE, BLUE, 10, 0, 20, 60 ),
@@ -704,12 +704,12 @@ shows = {
              ( 0.2, CIRCLE, WHITE, BLUE, 8, -10, 0, 90 ),
              ( 0.4, CIRCLE, WHITE, BLUE, 10, 0, -20, 80 ),
              ( 0.2, CIRCLE, WHITE, BLUE, 5, 10, 0, 90 ),
-             
+
              ( 2.5, ROCKET, WHITE, YELLOW, 3, -28, 8, 0 ),
              ( 0.5, ROCKET, WHITE, YELLOW, 3, -18, 8, 0 ),
              ( 0.5, ROCKET, WHITE, YELLOW, 3, -28, -2, 0 ),
              ( 0.5, ROCKET, WHITE, YELLOW, 3, -18, -2, 0 ),
-             
+
              ( 2, CIRCLE, BLUE, GREEN, 8, -60, 20, 60 ),
              ( 0.2, CIRCLE, BLUE, BLUE, 8, 20, -20, 60 ),
              ( 0.6, CIRCLE, GREEN, BLUE, 9, -40, 20, 60 ),
@@ -720,12 +720,12 @@ shows = {
              ( 0.2, CIRCLE, GREEN, BLUE, 9, -40, -20, 60 ),
              ( 0.6, CIRCLE, BLUE, BLUE, 8, 20, 20, 60 ),
              ( 0.2, CIRCLE, BLUE, GREEN, 8, -60, -20, 60 ),
-             
+
              ( 2, ROCKET, WHITE, YELLOW, 3, -28, 8, 0 ),
              ( 0.5, ROCKET, WHITE, YELLOW, 3, -18, 8, 0 ),
              ( 0.5, ROCKET, WHITE, YELLOW, 3, -28, -2, 0 ),
              ( 0.5, ROCKET, WHITE, YELLOW, 3, -18, -2, 0 ),
-             
+
              ( 2, RING, BLUE, GREEN, 8, -60, 20, 60 ),
              ( 0.1, RING, BLUE, BLUE, 8, 20, -20, 60 ),
              ( 0.5, RING, GREEN, BLUE, 9, -40, 20, 60 ),
@@ -736,7 +736,7 @@ shows = {
              ( 0.1, RING, GREEN, BLUE, 9, -40, -20, 60 ),
              ( 0.5, RING, BLUE, BLUE, 8, 20, 20, 60 ),
              ( 0.1, RING, BLUE, GREEN, 8, -60, -20, 60 ),
-             
+
              ( 2, ROCKET, WHITE, YELLOW, 3, -28, 8, 0 ),
              ( 1, ROCKET, WHITE, YELLOW, 3, -18, 8, 0 ),
              ( 0.4, CIRCLE, RED, RED, 15, -30, -10, 80 ),
@@ -757,7 +757,7 @@ shows = {
              ( 0.3, CIRCLELARGE, WHITE, WHITE, 16, -23, 3, 100 ),
         )
     ],
-    
+
     ToontownGlobals.NEWYEARS_FIREWORKS : [
         # Toontown Central
         (
@@ -928,7 +928,7 @@ shows = {
             ( 0.31, CIRCLELARGE, WHITE, WHITE, 5.00, 79.35, 8.71, 77.00 ),
             ( 0.19, CIRCLELARGE, BLUE, BLUE, 5.00, 66.08, 0.98, 68.80 ),
         ),
-        
+
         # Daisy Garden
         (
             ( 3, ROCKET, RED, WHITE, 1, 1.44, 92.5, -5 ),
@@ -1008,7 +1008,7 @@ shows = {
             ( 0.06, CIRCLELARGE, RED, WHITE, 30, 6.44, 92.5, 120 ),
             ( 0.06, CIRCLELARGE, WHITE, WHITE, 30, 6.44, 88.5, 120 ),
         ),
-        
+
         # Dreamland
         (
             ( 1.00, ROCKET, PURPLE, PURPLE, 4.00, -120.00, -71.66, 52.06 ),
@@ -1231,7 +1231,7 @@ shows = {
             ( 0.06, RING, PURPLE, PURPLE, 5.00, -89.41, -0.94, 44.71 ),
             ( 0.06, RING, BLUE, BLUE, 5.00, -89.41, -0.94, 44.71 ),
         ),
-        
+
         # Minnies Melodyland
         (
             ( 0.56, CIRCLELARGE, WHITE, PEACH, 10.00, 137.92, -20.14, 107.40 ),
@@ -1429,7 +1429,7 @@ shows = {
             ( 0.03, RING, PEACH, PEACH, 4.00, 141.96, -20.09, 92.36 ),
             ( 0.03, RING, RED, RED, 4.00, 141.96, -20.09, 92.36 ),
         ),
-        
+
         # The Burrrgh
         (
             ( 4, POP, PURPLE, WHITE, 20, -107.67, -39.76, 9 ),
@@ -1715,7 +1715,7 @@ shows = {
             ( 0.06, CIRCLELARGE, PURPLE, WHITE, 20, 54.79, 127.03, 100 ),
         ),
     ],
-    
+
     PartyGlobals.FireworkShows.NewYears : [
         # copy of Toontown Central New Years
         (
@@ -1909,5 +1909,3 @@ def getShowDuration(eventId, index):
     duration += postShowPauseDuration
     duration += preNormalMusicPauseDuration
     return duration
-
-    

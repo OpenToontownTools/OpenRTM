@@ -75,7 +75,7 @@ particleModel = None
 
 # Where should we look to find a particle file?
 particleSearchPath = None
-     
+
 def loadParticles():
     global particleModel
     if (particleModel == None):
@@ -87,7 +87,7 @@ def unloadParticles():
         particleModel.removeNode()
     del(particleModel)
     particleModel = None
-    
+
 def getParticle(name):
     global particleModel
     if (name in ParticleNames):
@@ -123,7 +123,7 @@ def loadParticleFile(name):
     # print "particle filename = ", pfile.getFullpath()
     effect.loadConfig(pfile)
     return effect
-    
+
 def createParticleEffect(name=None, file=None, numParticles=None, color=None):
     # If don't provide name, grabbing the particle effect straight from the file name given
     if not name:
@@ -211,7 +211,7 @@ def __makeGearExplosion(numParticles=None, style = 'Normal'):
         particles = effect.getParticlesNamed('particles-1')
         particles.setPoolSize(numParticles)
     return effect
-        
+
 def __makeRubOut(color=None):
     effect = loadParticleFile('demotionUnFreeze.ptf')
     loadParticles()
@@ -236,6 +236,3 @@ def __makeShiftLift():
     effect.setHpr(0, 180, 0)
     effect.setPos(0, 0, 0)
     return effect
-    
-
-

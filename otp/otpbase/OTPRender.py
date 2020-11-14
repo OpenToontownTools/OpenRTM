@@ -56,7 +56,7 @@ def setCameraBitmask (default, node_path, camera_bitmask, tag = None, tag_functi
 # shortcut function just for reflections
 def renderReflection (default, node_path, tag = None, tag_function = None, context = None):
     setCameraBitmask (default, node_path, ReflectionCameraBitmask, tag, tag_function, context)
-    
+
 # similar shortcut function for shadows
 def renderShadow (default, node_path, tag = None, tag_function = None, context = None):
     setCameraBitmask (default, node_path, ShadowCameraBitmask, tag, tag_function, context)

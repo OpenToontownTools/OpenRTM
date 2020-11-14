@@ -133,7 +133,7 @@ ToonTopsDict = {
     78 : '78 - Racing Shirt 1',
     79 : '79 - Racing Shirt 2',
     80 : '80 - Summer Shirt 1',
-    81 : '81 - Summer Shirt 2',    
+    81 : '81 - Summer Shirt 2',
     82 : '82 - Golf Shirt 1',
     83 : '83 - Golf Shirt 2',
     84 : '84 - Halloween Costume Shirt 1',
@@ -509,7 +509,7 @@ rtmHelp = "\n- Once the program has loaded hit the ADD RANDOM TOON Button. \
 \n- For quickly changing through animations simply RIGHT CLICK anywhere on the screen. \
 \n- If the Animation panel is closed you can hit the ANIMS button(in the bottom row) to open it again. \
 \n- If you have multiple characters on screen, first select the character with the mouse and then open thier Aimation Panel \
-\n- Use the RADIO BUTTONS to change TOON DNA." 
+\n- Use the RADIO BUTTONS to change TOON DNA."
 
 # NEIGHBORHOOD DATA
 # If you run this from the command line you can pass in the hood codes
@@ -673,19 +673,19 @@ class RobotToonManager(DirectObject):
 ##                                   action = self.pieMenuCommand)
 
         self.animDisplay = TextNode('Animation Name')
-        self.animDisplay.setText('Animation: None')            
-        self.animDisplay.setTextColor(0.5, 0.5, 1.0, 1.0)            
+        self.animDisplay.setText('Animation: None')
+        self.animDisplay.setTextColor(0.5, 0.5, 1.0, 1.0)
         self.animDisplay.setShadow(0.1, 0.1)
-        self.animDisplayNP = aspect2d.attachNewNode(self.animDisplay)        
-        self.animDisplayNP.setScale(0.05)  
+        self.animDisplayNP = aspect2d.attachNewNode(self.animDisplay)
+        self.animDisplayNP.setScale(0.05)
         self.animDisplayNP.setPos(-1.0,0.0,0.85)
 
         # [gjeon] to find out currently moving camera in maya mode
         self.mouseMayaCamera = True
-        base.direct.cameraControl.useMayaCamControls = True        
+        base.direct.cameraControl.useMayaCamControls = True
         base.direct.cameraControl.lockRoll = True
         self.styleManager = LevelStyleManager(NEIGHBORHOODS, NEIGHBORHOOD_CODES)
-        
+
         # And only the appropriate handles are showing
         base.direct.widget.disableHandles(['x-ring', 'x-disc',
                                            'y-ring', 'y-disc',
@@ -814,7 +814,7 @@ class RobotToonManager(DirectObject):
         a.nametag.manage(self.marginManager)
         self.avatarDict[a.get_key()] = a
         a.select()
-        if self.avatarType == 't':        
+        if self.avatarType == 't':
             self.setToonAnimState('neutral')
         self.faceCamera()
         a.setStartHpr(a.getHpr())
@@ -1279,56 +1279,56 @@ class RobotToonManager(DirectObject):
     def getLastAngle(self):
         return self.lastAngle
 
-    def setToonAnimState(self,anim):    
-        self.selectedToon.setAnimState(anim)    
-        self.animDisplay.setText("Animation: "+str(anim))   
-        
-        if not self.animPanel:        
-            self.showAnimPanel()            
-            
-        self.animPanel.actorControlList[0].selectAnimNamed(anim)            
-        self.animPanel.actorControlList[0].updateDisplay()            
-        self.animPanel.actorControlList[0].animMenu.selectitem(anim)            
+    def setToonAnimState(self,anim):
+        self.selectedToon.setAnimState(anim)
+        self.animDisplay.setText("Animation: "+str(anim))
+
+        if not self.animPanel:
+            self.showAnimPanel()
+
+        self.animPanel.actorControlList[0].selectAnimNamed(anim)
+        self.animPanel.actorControlList[0].updateDisplay()
+        self.animPanel.actorControlList[0].animMenu.selectitem(anim)
         self.animPanel.playActorControls()
-        self.animPanel.loopVar.set(1)                       
-        
+        self.animPanel.loopVar.set(1)
+
     def showAnimPanel(self):
         # show animation panel for currently selected actors
-        from direct.tkpanels import AnimPanel        
+        from direct.tkpanels import AnimPanel
         if self.selectedToon:
             self.animPanel = AnimPanel.AnimPanel(
-                self.selectedToon,session = self)                      
+                self.selectedToon,session = self)
             self.animPanel.setDestroyCallBack(self.animPanelClosed)
-                                
-        if self.selectedToon and self.selectedToon.state:        
-            self.setToonAnimState(self.selectedToon.state)            
-                        
-    def animPanelClosed(self):    
-        self.animPanel = None        
-                
-    def getState(self):        
-        if not self.animPanel:        
+
+        if self.selectedToon and self.selectedToon.state:
+            self.setToonAnimState(self.selectedToon.state)
+
+    def animPanelClosed(self):
+        self.animPanel = None
+
+    def getState(self):
+        if not self.animPanel:
             self.showAnimPanel()
         if self.selectedToon:
-            self.selectedToon.state = self.animPanel.actorControlList[0]['active'] 
+            self.selectedToon.state = self.animPanel.actorControlList[0]['active']
             return self.selectedToon.state
-                
+
     def nextAnim(self, modifiers = 0):
-        if not self.animPanel:        
+        if not self.animPanel:
             self.showAnimPanel()
-        if self.selectedToon and modifiers==0:        
-            currState = self.getState()       
+        if self.selectedToon and modifiers==0:
+            currState = self.getState()
             try:
-                i = self.animPanel.actorControlList[0]['animList'].index(currState)        
-            except:      
-                i = -1            
-                    
+                i = self.animPanel.actorControlList[0]['animList'].index(currState)
+            except:
+                i = -1
+
             newIndex = i+1
-            if (newIndex) < len(ToonAnimList):        
-                self.setToonAnimState(self.animPanel.actorControlList[0]['animList'][newIndex])                
-            else:            
-                self.setToonAnimState(self.animPanel.actorControlList[0]['animList'][0])                
-        
+            if (newIndex) < len(ToonAnimList):
+                self.setToonAnimState(self.animPanel.actorControlList[0]['animList'][newIndex])
+            else:
+                self.setToonAnimState(self.animPanel.actorControlList[0]['animList'][0])
+
 
 """ Robot Toon Manager Control Panel module """
 class RobotToonControlPanel(AppShell):
@@ -1503,7 +1503,7 @@ class RobotToonControlPanel(AppShell):
                 command = lambda id=id: self.rtm.makeRandomToon(id))
 
         dnaFrame.pack(fill = X, expand = 0)
-        
+
         # LOD
         self.lod = StringVar()
         self.lod.set('1000')
@@ -1626,35 +1626,35 @@ class RobotToonControlPanel(AppShell):
         self.muzzle = StringVar()
         self.muzzle.set('normal')
         self.normalMuzzleButton = self.newCreateRadiobutton(
-            muzzleFrame, 'Muzzle', 'normal', self.muzzle, 
+            muzzleFrame, 'Muzzle', 'normal', self.muzzle,
             'normal', self.setMuzzle,
             help = 'Set muzzle to normal',
             side = LEFT)
-            
+
         self.angryMuzzleButton = self.newCreateRadiobutton(
             muzzleFrame, 'Muzzle', 'angry',
             self.muzzle, 'angry', self.setMuzzle,
             help = 'Set muzzle to angry',
             side = LEFT)
-            
+
         self.sadMuzzleButton = self.newCreateRadiobutton(
             muzzleFrame, 'Muzzle', 'sad',
             self.muzzle, 'sad', self.setMuzzle,
             help = 'Set muzzle to sad',
             side = LEFT)
-            
+
         self.smileMuzzleButton = self.newCreateRadiobutton(
             muzzleFrame, 'Muzzle', 'smile',
             self.muzzle, 'smile', self.setMuzzle,
             help = 'Set muzzle to smile',
             side = LEFT)
-            
+
         self.laughMuzzleButton = self.newCreateRadiobutton(
             muzzleFrame, 'Muzzle', 'laugh',
             self.muzzle, 'laugh', self.setMuzzle,
             help = 'Set muzzle to laugh',
             side = LEFT)
-            
+
         self.surpriseMuzzleButton = self.newCreateRadiobutton(
             muzzleFrame, 'Muzzle', 'surprise',
             self.muzzle, 'surprise', self.setMuzzle,
@@ -1762,7 +1762,7 @@ class RobotToonControlPanel(AppShell):
 
         # COLOR TABLETS
         colorFrame = Frame(self.pageOne)
-        
+
         Label(colorFrame, text = 'Toontown Online Colors', width=20, anchor = W, justify = LEFT).pack(expand = 0, fill = X)
         for i in range(2):
             cf = Frame(colorFrame)
@@ -1777,7 +1777,7 @@ class RobotToonControlPanel(AppShell):
                     self.colorButtonList.append(b)
 
             cf.pack(fill = X, expand = 0)
-            
+
         # Clash Colors
         Label(colorFrame, text = 'Clash Colors', width=20, anchor = W, justify = LEFT).pack(expand = 0, fill = X)
         for i in range(3):
@@ -1793,9 +1793,9 @@ class RobotToonControlPanel(AppShell):
                            command = lambda ci=index+27: self.setToonColor(ci))
                     b.pack(side = LEFT, fill = X, expand = 0)
                     self.colorButtonList.append(b)
-                    
+
             cf.pack(fill = X, expand = 0)
-            
+
         # Put an RGB picker button below the presets
         self.toonRgbPicker = Button(colorFrame, text = 'From RGB', command = self.openRGBPanel)
         self.toonRgbPicker.pack(side = LEFT, fill = X, expand = 0)
@@ -1922,8 +1922,8 @@ class RobotToonControlPanel(AppShell):
         self.clearChat.pack(side = LEFT, fill = X, expand = 1)
         chatFrame.pack(fill = X, expand = 0)
 
-        animFrame = Frame(self.pageOne)        
-                
+        animFrame = Frame(self.pageOne)
+
         if not base.config.GetBool('want-new-anims', 1):
             self.animButton = Menubutton(animFrame, width = 18,
                                          text = 'Anims',
@@ -1943,8 +1943,8 @@ class RobotToonControlPanel(AppShell):
                 subMenu.add_command(
                     label = anim,
                     command = lambda a = anim: self.setToonAnim(a))
-                animIndex += 1                
-        else:        
+                animIndex += 1
+        else:
             self.buttonAdd('Anims',
                        helpMessage='Bring Up Anim Panel',
                        statusMessage='Control Animations!',
@@ -1994,7 +1994,7 @@ class RobotToonControlPanel(AppShell):
         takeOffSuitButton = Button(frame, text = 'Take off Cog Suit',
                                    command = self.takeOffSuitSuit)
         takeOffSuitButton.pack(side = LEFT, fill = X, expand = 0)
-        
+
         self.handPropChoiceButton = Menubutton(frame, width = 18,
                                          text = 'Choose prop',
                                          relief = RAISED,
@@ -2570,12 +2570,12 @@ class RobotToonControlPanel(AppShell):
         self.createButtons()
 
         self.initialiseoptions(RobotToonControlPanel)
-        
+
         # Camera tab
         # A way to make sequenced camera animations for renders
         cameraPage = self.notebook.add('Camera')
 
-        
+
         # Enable widget commands
         self.updateToonInfo()
         self.setSuitTrack()
@@ -2753,8 +2753,8 @@ class RobotToonControlPanel(AppShell):
         handHigh = hands[0].attachNewNode('highLODHand')
         handMed = hands[1].attachNewNode('medLODHand')
         self.propHandle.reparentTo(handHigh)
-        
-        handHigh.instanceTo(handMed)        
+
+        handHigh.instanceTo(handMed)
         return prop
 
     def addSuit(self):
@@ -3136,8 +3136,8 @@ class RobotToonControlPanel(AppShell):
                 self.poseSlider['max'] = numFrames
 
                 #self.rtm.selectedToon.loop(anim)
-                
-                # This will maintain the animation as the body parts change   
+
+                # This will maintain the animation as the body parts change
                 self.rtm.setToonAnimState(anim)
 
     def poseToon(self, frame):
@@ -3425,42 +3425,42 @@ class RobotToonControlPanel(AppShell):
         render2d.show()
 
     def appendRtmState(self):
-        comments = askstring("Comments", "Type your comments", parent = self.component('hull'))        
+        comments = askstring("Comments", "Type your comments", parent = self.component('hull'))
 
         self.filename = asksaveasfilename(
             initialdir = self.lastPath,
             title = 'Enter name of file...',
-            parent = self.component('hull'))            
-                        
-        self.lastPath = os.path.dirname(self.filename)        
-        strList = []   
-        strList.append("\nCOMMENTS: ")  
-        strList.append(comments)         
-        strList.append("\nSPECIES: ")  
-        strList.append(self.species.get())   
-        strList.append("\nGENDER: ")       
-        strList.append(self.gender.get()) 
-        strList.append("\nHEAD: ")       
-        strList.append(self.head.get()) 
-        strList.append("\nTORSO: ")          
-        strList.append(self.torso.get())    
-        strList.append("\nLEGS: ")     
-        strList.append(self.legs.get())  
-        strList.append("\nANIM: ")     
+            parent = self.component('hull'))
+
+        self.lastPath = os.path.dirname(self.filename)
+        strList = []
+        strList.append("\nCOMMENTS: ")
+        strList.append(comments)
+        strList.append("\nSPECIES: ")
+        strList.append(self.species.get())
+        strList.append("\nGENDER: ")
+        strList.append(self.gender.get())
+        strList.append("\nHEAD: ")
+        strList.append(self.head.get())
+        strList.append("\nTORSO: ")
+        strList.append(self.torso.get())
+        strList.append("\nLEGS: ")
+        strList.append(self.legs.get())
+        strList.append("\nANIM: ")
         strList.append(str(self.rtm.getState()))
 
-        rtmState = "".join(strList)        
+        rtmState = "".join(strList)
 
         if os.path.isfile(self.filename):
-            rtmFile = open(self.filename, "r+")    
-            rtmFile.seek(0,2)    
-            rtmFile.writelines(rtmState)   
+            rtmFile = open(self.filename, "r+")
+            rtmFile.seek(0,2)
+            rtmFile.writelines(rtmState)
         else:
             rtmFile = open(self.filename, "w")
-            rtmFile.writelines(rtmState)        
-                
-        rtmFile.close()           
-                
+            rtmFile.writelines(rtmState)
+
+        rtmFile.close()
+
     def showHelp(self):
         showinfo(title='RTM HELP', message = rtmHelp, parent = self.component('hull'))
 
@@ -3493,7 +3493,7 @@ class RobotToonControlPanel(AppShell):
 
     def setStomperSize(self, size):
         print('New Stomper Size:', size)
-        
+
     def openRGBPanel(self):
         print("coming soon yay")
 

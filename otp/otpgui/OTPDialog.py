@@ -39,15 +39,15 @@ class OTPDialog(DirectDialog):
             cancelImageList = (buttons.find('**/CloseBtn_UP'),
                                buttons.find('**/CloseBtn_DN'),
                                buttons.find('**/CloseBtn_Rllvr'))
-            buttonImage = [okImageList, cancelImageList]         
+            buttonImage = [okImageList, cancelImageList]
             buttonValue = [DGG.DIALOG_OK, DGG.DIALOG_CANCEL]
             if 'buttonText' in kw:
                 buttonText =  kw['buttonText']
                 del kw['buttonText']
             else:
                 buttonText = [OTPLocalizer.DialogOK, OTPLocalizer.DialogCancel]
-                
-            
+
+
         elif (self.style == TwoChoice):
             okImageList = (buttons.find('**/ChtBx_OKBtn_UP'),
                            buttons.find('**/ChtBx_OKBtn_DN'),
@@ -91,7 +91,7 @@ class OTPDialog(DirectDialog):
         else:
             "Sanity check"
             self.notify.error("No such style as: " + str(self.style))
-        
+
         optiondefs = (
             # Define type of DirectGuiWidget
             ('buttonImageList', buttonImage,          DGG.INITOPT),
@@ -131,13 +131,13 @@ class GlobalDialog(OTPDialog):
         if not hasattr(self, 'path'):
             # load out of TTMODELS
             self.path = 'phase_3/models/gui/dialog_box_buttons_gui'
-          
+
         # Sanity check
         if (doneEvent == None) and (style != NoButtons):
             self.notify.error("Boxes with buttons must specify a doneEvent.")
-            
+
         self.__doneEvent = doneEvent
-        
+
         if style == NoButtons:
             buttonText = []
         elif style == Acknowledge:
@@ -167,4 +167,3 @@ class GlobalDialog(OTPDialog):
         elif value == DGG.DIALOG_CANCEL:
             self.doneStatus = "cancel"
             messenger.send(self.__doneEvent)
-

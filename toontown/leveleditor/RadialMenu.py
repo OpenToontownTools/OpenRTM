@@ -15,7 +15,7 @@ class RadialItem:
 
 class RadialMenu(DirectObject):
     def __init__(self, *items):
-        ''' 
+        '''
             Initialize using the set of items specified
             Set of items should be passed as RadialItems
         '''
@@ -94,7 +94,7 @@ class RadialMenu(DirectObject):
         self.selected = int(math.floor((menuAngle % 360) / self.itemAngle))
 
         # Set the rotation of the selector
-        # The selector image is from 12 o'clock to 3 o'clock, so we need to 
+        # The selector image is from 12 o'clock to 3 o'clock, so we need to
         # rotate it counter clockwise 45 degrees
         self.selector.setR(-self.itemAngle * self.selected + 45)
 

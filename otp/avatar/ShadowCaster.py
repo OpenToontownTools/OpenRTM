@@ -27,11 +27,11 @@ def setGlobalDropShadowGrayLevel(grayLevel):
 
 # I made this inherit from DirectObject so that non-distributed things can cast shadows
 
-class ShadowCaster: 
+class ShadowCaster:
 
     notify = DirectNotifyGlobal.directNotify.newCategory("ShadowCaster")
     #notify.setDebug(1)
-    
+
     def __init__(self, squareShadow = False):
         assert self.notify.debugStateCall(self)
         # some shadow initialization stuff
@@ -84,7 +84,7 @@ class ShadowCaster:
         # load and prep the drop shadow
         dropShadow = loader.loadModel(self.shadowFileName)
         dropShadow.setScale(0.4) # Slightly smaller to compensate for billboard
-        
+
         dropShadow.flattenMedium()
         dropShadow.setBillboardAxis(2) # slide the shadow towards the camera
         dropShadow.setColor(0.0, 0.0, 0.0, globalDropShadowGrayLevel, 1) # override of 1 to prevent avatar.setColor() from affecting shadows.
@@ -95,7 +95,7 @@ class ShadowCaster:
         if not globalDropShadowFlag:
             self.dropShadow.hide()
         dropShadow.reparentTo(self.getShadowJoint())
-        
+
         # Set the state of the shadow placers (in case someone set the
         # value before now):
         self.setActiveShadow(self.wantsActive)
@@ -176,7 +176,7 @@ class ShadowCaster:
             self.dropShadow.hide()
         else:
             self.dropShadow.show()
-    
+
     def __globalDropShadowFlagChanged(self):
         if (self.dropShadow != None):
             if(globalDropShadowFlag == 0):
@@ -186,7 +186,7 @@ class ShadowCaster:
             elif(self.activeShadow == 0):
                 self.setActiveShadow(1)
             self.showShadow()
-            
+
     def __globalDropShadowGrayLevelChanged(self):
         if (self.dropShadow != None):
             self.dropShadow.setColor(0.0, 0.0, 0.0, globalDropShadowGrayLevel, 1)

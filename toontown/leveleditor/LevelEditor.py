@@ -304,7 +304,7 @@ class LevelEditor(NodePath, DirectObject):
         self.vgpanel = None
         # Start off enabled
         self.enable()
-        
+
         base.direct.selectedNPReadout['font'] = ToontownGlobals.getToonFont()
         base.direct.activeParentReadout['font'] = ToontownGlobals.getToonFont()
         base.direct.directMessageReadout['font'] = ToontownGlobals.getToonFont()
@@ -1131,7 +1131,7 @@ class LevelEditor(NodePath, DirectObject):
                 self.np2EdgeDict[nodePath.id()] = [suitEdge, newVisGroupDNA]
 
         self.popupNotification(f"{nodePath.getName()} reparented to {newParent.getName()}")
-        
+
     def setActiveParent(self, nodePath = None):
         """ Set NPParent and DNAParent to node path and its DNA """
         # If we've got a valid node path
@@ -3508,7 +3508,7 @@ class LevelEditor(NodePath, DirectObject):
     async def renderMap(self):
         """
         Screenshot for making maps. Hides drop shadows and markers
-        
+
         Steps to making a screenshot:
         1. Shift + O to toggle ORTHO camera
         2. press '5' to position camera directly overhead
@@ -5370,10 +5370,10 @@ class LevelEditorPanel(Pmw.MegaToplevel):
                                          #variable = self.fMapVis,
                                          #command = self.toggleMapVis)
         # self.mapSnapButton.pack(side = LEFT, expand = 1, fill = X)
-        
+
         Label(snapFrame, text = 'Snapping', width = 8, anchor = 'nw',
             font = ('Calibri', 10, 'bold')).pack(padx = 5, side = LEFT, expand = 1, fill = X)
-              
+
         self.fXyzSnap = IntVar()
         self.fXyzSnap.set(0)
         self.xyzSnapButton = ttk.Checkbutton(snapFrame,
@@ -5410,8 +5410,8 @@ class LevelEditorPanel(Pmw.MegaToplevel):
         self.planeSnapButton.pack(side = LEFT, expand = 1, fill = X)
 
         snapFrame.pack(fill = X)
-        
-        
+
+
         # Visual Options
         visualFrame = Frame(hull)
         Label(visualFrame, text = 'Visual', width = 8,anchor = 'nw',
@@ -5425,7 +5425,7 @@ class LevelEditorPanel(Pmw.MegaToplevel):
                                        variable = self.fLabel,
                                        command = self.toggleZoneLabels)
         self.labelButton.pack(side = LEFT, expand = 1, fill = X)
-        
+
         self.fGrid = IntVar()
         self.fGrid.set(0)
         base.direct.gridButton = ttk.Checkbutton(visualFrame,
@@ -5450,7 +5450,7 @@ class LevelEditorPanel(Pmw.MegaToplevel):
         visualFrame.pack(fill = X)
 
         # experimental stuff
-        
+
         if ConfigVariableBool("want-experimental", False):
             buttonFrame4 = Frame(hull)
             Label(buttonFrame4, text = 'Experimental', width = 8,anchor = 'nw',
@@ -5464,7 +5464,7 @@ class LevelEditorPanel(Pmw.MegaToplevel):
                     variable = self.driveMode,
                     command = self.toggleDrive)
             self.driveModeButton.pack(side = LEFT, fill = X, expand = 1)
-            
+
             self.fColl = IntVar()
             self.fColl.set(1)
             base.direct.collButton = ttk.Checkbutton(
@@ -5496,7 +5496,7 @@ class LevelEditorPanel(Pmw.MegaToplevel):
         self.colorEntry.menu.add_command(
                 label = 'Save Color', command = self.levelEditor.saveColor)
         self.colorEntry.pack(side = LEFT, expand = 1, fill = X)
-        
+
         self.selectButton = ttk.Button(objectFrame,
                                    text = 'Place Selected',
                                    width = 18,
@@ -6053,7 +6053,7 @@ class LevelEditorPanel(Pmw.MegaToplevel):
             self.levelEditor.useDriveMode()
         else:
             self.levelEditor.useDirectFly()
-            
+
 class VisGroupsEditor(Pmw.MegaToplevel):
     def __init__(self, levelEditor, visGroups = ['None'],
                  parent = None, **kw):

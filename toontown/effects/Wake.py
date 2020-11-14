@@ -31,7 +31,7 @@ class Wake(NodePath):
         self.trackId = Wake.wakeCount
         # Increment instance counter
         Wake.wakeCount += 1
-    
+
     def createRipple(self, zPos, rate = 1.0, startFrame = 0):
         # Make a copy of the master tflip, inheriting its xform and rate
         ripple = self.ripples.copyTo(self)
@@ -72,7 +72,7 @@ class Wake(NodePath):
             if self.doLaters[i]:
                 taskMgr.remove(self.doLaters[i])
                 self.doLaters[i] = None
-        
+
     def destroy(self):
         self.stop()
         self.removeNode()
@@ -120,7 +120,7 @@ class WakeSequence(NodePath):
         Wake.wakeCount += 1
         self.setBin('fixed', 10, 1)
         self.hide()
-    
+
     def createTracks(self, rate = 1):
         # Stop existing track, if one exists
         self.stop()
@@ -179,18 +179,18 @@ class WakeSequence(NodePath):
             self.createTracks(rate)
         # Start track
         self.tracks[trackId].start()
-    
+
     def loop(self, trackId, rate = 1):
         # Create new track if necessary
         if self.rate != rate:
             self.createTracks(rate)
         # Start track
         self.tracks[trackId].loop()
-    
+
     def stop(self):
         for track in self.tracks:
             track.finish()
-    
+
     def destroy(self):
         self.stop()
         self.tracks = None

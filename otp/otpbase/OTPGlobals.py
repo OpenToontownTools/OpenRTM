@@ -32,9 +32,9 @@ CameraTransparentBitmask = BitMask32(0x08)
 # by the player; this helps the collision system do the right thing;
 # toons that are not on the platform do not react to this bit mask):
 SafetyNetBitmask = BitMask32(0x200)
-# Collision polygons for _near_ moving platforms (normally these are 
-# not seen by the player; this helps the collision system do the 
-# right thing; toons that _are_ on the platform do not react to 
+# Collision polygons for _near_ moving platforms (normally these are
+# not seen by the player; this helps the collision system do the
+# right thing; toons that _are_ on the platform do not react to
 # this bit mask):
 SafetyGateBitmask = BitMask32(0x400)
 
@@ -43,10 +43,10 @@ GhostBitmask = BitMask32(0x800)
 
 # Determined empirically
 # Do not change this one
-OriginalCameraFov = 52.0 
+OriginalCameraFov = 52.0
 # Feel free to override this when you need to
 # But set it back to the original when you are done
-DefaultCameraFov = 52.0 
+DefaultCameraFov = 52.0
 
 # This should actually be 280, but the sky does not fit inside
 # so I am temporarily cranking it up
@@ -204,8 +204,8 @@ def getSignFont():
 def setSignFont(path):
     global SignFontPath
     SignFontPath = path
-    
-    
+
+
 def getFancyFont():
     global FancyFont
     if (FancyFont == None):
@@ -219,8 +219,8 @@ def getFancyFont():
 def setFancyFont(path):
     global FancyFontPath
     FancyFontPath = path
-    
-    
+
+
 def getNametagFont(index):
     global NametagFonts
     if ((not NametagFonts.has_key(index) )or NametagFonts[index] == None):
@@ -233,22 +233,22 @@ def getNametagFont(index):
 
 def setNametagFont(index, path):
     global NametagFontPaths
-    NametagFontPaths[index] = path    
-    
-    
+    NametagFontPaths[index] = path
+
+
 
 def getDialogClass():
     global DialogClass
-    
+
     if DialogClass == None:
         from otp.otpgui.OTPDialog import OTPDialog
         DialogClass = OTPDialog
-        
+
     return DialogClass
 
 def getGlobalDialogClass():
     global GlobalDialogClass
-    
+
     if DialogClass == None:
         from otp.otpgui.OTPDialog import GlobalDialog
         GlobalDialogClass = GlobalDialog
@@ -328,7 +328,7 @@ DefaultBackgroundColor = (0.3, 0.3, 0.3, 1)
 
 # Various scales and parameters for Toon.py
 
-# These scales came from Bruce's line-up. The body scales were globally 
+# These scales came from Bruce's line-up. The body scales were globally
 # reduced by about 10 percent to get the overall height he wanted
 toonBodyScales = {
     'mouse':  0.60,
@@ -416,11 +416,11 @@ headHeightDict = {
     'bss': 0.50,
     'bsl': 0.50,
     'bll': 0.75,
-    
+
     'sls': 0.75,
     'sss': 0.50,
     'ssl': 0.50,
-    'sll': 0.75,    
+    'sll': 0.75,
 
 }
 

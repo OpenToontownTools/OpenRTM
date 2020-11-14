@@ -52,14 +52,14 @@ GenericBodies = ['dots', 'threeStripe', 'tigerStripe', 'tummy']
 # these are specific animals and have a restricted color palette
 SpecificBodies = ['turtle', 'giraffe', 'leopard']
 BodyTypes = GenericBodies + SpecificBodies
-PetRarities2 = ( 
-    ('leopard', 0.005),    
-    ('giraffe', 0.015),    
-    ('turtle', 0.045),     
+PetRarities2 = (
+    ('leopard', 0.005),
+    ('giraffe', 0.015),
+    ('turtle', 0.045),
     ('tigerStripe', 0.115),
-    ('dots', 0.265),      
-    ('tummy', 0.525),     
-    ('threeStripe', 1.0), 
+    ('dots', 0.265),
+    ('tummy', 0.525),
+    ('threeStripe', 1.0),
     )
 
 # the value is the chance out of the sum of the values.  To keep things
@@ -138,7 +138,7 @@ AllPetColors = (
     VBase4(0.996094, 0.957031, 0.597656, 1.0),
     VBase4(0.855469, 0.933594, 0.492188, 1.0),
     VBase4(0.550781, 0.824219, 0.324219, 1.0),
-    VBase4(0.242188, 0.742188, 0.515625, 1.0),    
+    VBase4(0.242188, 0.742188, 0.515625, 1.0),
     VBase4(0.304688, 0.96875, 0.402344, 1.0),
     VBase4(0.433594, 0.90625, 0.835938, 1.0),
     VBase4(0.347656, 0.820312, 0.953125, 1.0),
@@ -153,7 +153,7 @@ AllPetColors = (
     )
 
 GenericPetColors = [0, 1, 3, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 21, 22, 23, 24, 25]
-SpecificPetColors = [0, 1, 3, 5, 6, 7, 8, 9, 10, 11, 12, 16, 17, 18, 23, 24, 25] 
+SpecificPetColors = [0, 1, 3, 5, 6, 7, 8, 9, 10, 11, 12, 16, 17, 18, 23, 24, 25]
 
 ColorScales = [0.8, 0.85, 0.9, 0.95, 1.0, 1.05, 1.1, 1.15, 1.2]
 
@@ -167,7 +167,7 @@ PetEyeColors = (
     )
 
 # 0 = female, 1 = male
-PetGenders = [0, 1] 
+PetGenders = [0, 1]
 
 def getRandomPetDNA(zoneId=ToontownGlobals.DonaldsDreamland):
     from random import choice
@@ -186,7 +186,7 @@ def getRandomPetDNA(zoneId=ToontownGlobals.DonaldsDreamland):
 def getSpecies(zoneId):
     body = PythonUtil.weightedRand(PetRarities['body'][zoneId])
     return BodyTypes.index(body)
-    
+
 def getColors(bodyType):
     if BodyTypes[bodyType] in GenericBodies:
         return GenericPetColors
@@ -218,7 +218,7 @@ def getBodyRarity(bodyIndex):
 
     # total weight for this body type(from each zone) / total of all weight
     bodyName = BodyTypes[bodyIndex]
-    
+
     totalWeight = 0.0
     weight = {}
     for zoneId in PetRarities['body']:
@@ -237,7 +237,7 @@ def getBodyRarity(bodyIndex):
     #print "Rarity of %s is %f" % (bodyName, rarity)
 
     return rarity
-    
+
 def getRarity(dna):
     """
     returns a float between 0(very rare) and 1(common).
@@ -261,11 +261,8 @@ def getGenderString(dna = None, gender = -1):
 
     if dna != None:
         gender = getGender(dna)
-        
+
     if gender:
         return TTLocalizer.GenderShopBoyButtonText
     else:
         return TTLocalizer.GenderShopGirlButtonText
-
-
-

@@ -118,14 +118,14 @@ Props = (
     (3.5, 'stun', 'stun-mod', 'stun-chan'),
     (3.5, 'glow', 'glow'),
     (3.5, 'suit_explosion', 'suit_explosion-mod', 'suit_explosion-chan'),
-    (3.5, 'suit_explosion_dust', 'dust_cloud'),    
+    (3.5, 'suit_explosion_dust', 'dust_cloud'),
 
     #
     # water effects
     #
     (4, 'ripples', 'ripples'),
     (4, 'wake', 'wake'),
-    (4, 'splashdown', 'SZ_splashdown-mod', 'SZ_splashdown-chan'),        
+    (4, 'splashdown', 'SZ_splashdown-mod', 'SZ_splashdown-chan'),
     )
 
 # splat dict: pie-name: (scale, color)
@@ -159,7 +159,7 @@ class PropPool:
         self.propStrings = {}
         self.propTypes = {}
         self.maxPoolSize = base.config.GetInt("prop-pool-size", 8)
-        
+
         # load ref's to the props enumerated above
         for p in Props:
             phase = p[0]
@@ -307,7 +307,7 @@ class PropPool:
                 cloud = self.props[name].find(cloudName)
                 cloud.setBin('fixed', bin)
                 bin -= 10
-            
+
         # set the draw order on the kapow
         elif (name == 'kapow'):
             l = self.props[name].find('**/letters')
@@ -343,7 +343,7 @@ class PropPool:
             pass
             #prop.setBin('shadow', -5)
             #prop.setDepthWrite(0)
-            prop.find('**/tracksA').setPos(0, 0, OTPGlobals.FloorOffset)            
+            prop.find('**/tracksA').setPos(0, 0, OTPGlobals.FloorOffset)
 
 
         # make the geyser tflip animate
@@ -372,7 +372,7 @@ class PropPool:
                 self.__delProp(p)
         self.props = {}
         self.propCache = []
-        
+
     def getProp(self, name):
         """ getProp(name)
         """
@@ -397,8 +397,8 @@ class PropPool:
                     self.makeVariant(name)
             return Actor.Actor(other=self.props[name])
         else:
-            # make sure the props is loaded            
-            if not name in self.props:            
+            # make sure the props is loaded
+            if not name in self.props:
                 prop = loader.loadModel(self.propStrings[name][0])
                 prop.setName(name)
                 self.storeProp(name, prop)
@@ -423,10 +423,10 @@ class PropPool:
             del(self.props[oldest.getName()])
             # cleanup the prop
             self.__delProp(oldest)
-            
+
         self.notify.debug("props = %s" % self.props)
         self.notify.debug("propCache = %s" % self.propCache)
-        
+
     def getPropType(self, name):
         assert(name in self.propTypes)
         return self.propTypes[name]

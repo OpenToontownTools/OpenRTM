@@ -4,7 +4,7 @@ from direct.task.Task import Task
 from direct.directnotify import DirectNotifyGlobal
 
 notify = DirectNotifyGlobal.directNotify.newCategory("SkyUtil")
-    
+
 def cloudSkyTrack(task):
     # Every frame nail the sky to 0, with no rotation
     # Actually we can raise the sky to the lowest point
@@ -18,11 +18,11 @@ def cloudSkyTrack(task):
     # keep it at 0
     # Rotate the sky slowly to simulate clouds passing
     task.h += (globalClock.getDt() * 0.25)
-    
+
     if task.cloud1.isEmpty() or task.cloud2.isEmpty():
         self.notify.warning("Couln't find clouds!")
         return Task.done
-    
+
     task.cloud1.setH(task.h)
     task.cloud2.setH(-task.h * 0.8)
     return Task.cont

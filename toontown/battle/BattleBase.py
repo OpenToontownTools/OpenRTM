@@ -11,13 +11,13 @@ from toontown.toon import NPCToons
 # used when calculating attack damage, accuracy bonus, and damage bonus
 #
 TOON_ID_COL             = 0
-TOON_TRACK_COL          = 1 
-TOON_LVL_COL            = 2 
-TOON_TGT_COL            = 3 
-TOON_HP_COL             = 4 
-TOON_ACCBONUS_COL       = 5 
-TOON_HPBONUS_COL        = 6 
-TOON_KBBONUS_COL        = 7 
+TOON_TRACK_COL          = 1
+TOON_LVL_COL            = 2
+TOON_TGT_COL            = 3
+TOON_HP_COL             = 4
+TOON_ACCBONUS_COL       = 5
+TOON_HPBONUS_COL        = 6
+TOON_KBBONUS_COL        = 7
 SUIT_DIED_COL           = 8
 SUIT_REVIVE_COL         = 9
 
@@ -39,15 +39,15 @@ NO_ATTACK = -1
 UN_ATTACK = -2
 NO_TRAP = -1
 LURE_SUCCEEDED = -1
-PASS = 98 
-SOS = 99 
+PASS = 98
+SOS = 99
 NPCSOS = 97
 PETSOS = 96
 FIRE = 100
 # Defined in ToontownBattleGlobals.py
 HEAL = HEAL_TRACK
 TRAP = TRAP_TRACK
-LURE = LURE_TRACK 
+LURE = LURE_TRACK
 SOUND = SOUND_TRACK
 THROW = THROW_TRACK
 SQUIRT = SQUIRT_TRACK
@@ -66,20 +66,20 @@ TOON_TRAP_DELAY = 0.8
 
 TOON_SOUND_DELAY = 1.0
 
-TOON_THROW_DELAY = 0.5 
+TOON_THROW_DELAY = 0.5
 TOON_THROW_SUIT_DELAY = 1.0
 
 TOON_SQUIRT_DELAY = 0.5
 TOON_SQUIRT_SUIT_DELAY = 1.0
 
-TOON_DROP_DELAY = 0.8 
+TOON_DROP_DELAY = 0.8
 TOON_DROP_SUIT_DELAY = 1.0
 
 
 TOON_RUN_T = 3.3
 TIMEOUT_PER_USER = 5
 
-TOON_FIRE_DELAY = 0.5 
+TOON_FIRE_DELAY = 0.5
 TOON_FIRE_SUIT_DELAY = 1.0
 
 
@@ -127,9 +127,9 @@ def getToonAttack(id, track=NO_ATTACK, level=-1, target=-1):
 def getDefaultSuitAttacks():
     """ getDefaultSuitAttacks()
     """
-    suitAttacks = [[NO_ID, NO_ATTACK, -1, [], 0, 0, 0], 
-                   [NO_ID, NO_ATTACK, -1, [], 0, 0, 0], 
-                   [NO_ID, NO_ATTACK, -1, [], 0, 0, 0], 
+    suitAttacks = [[NO_ID, NO_ATTACK, -1, [], 0, 0, 0],
+                   [NO_ID, NO_ATTACK, -1, [], 0, 0, 0],
+                   [NO_ID, NO_ATTACK, -1, [], 0, 0, 0],
                    [NO_ID, NO_ATTACK, -1, [], 0, 0, 0]]
     return suitAttacks
 
@@ -139,7 +139,7 @@ def getDefaultSuitAttack():
     return [NO_ID, NO_ATTACK, -1, [], 0, 0, 0]
 
 def findToonAttack(toons, attacks, track):
-    """ findToonAttack(toons, attacks, track) 
+    """ findToonAttack(toons, attacks, track)
         Return all attacks of the specified track sorted by increasing level
     """
     foundAttacks = []
@@ -149,7 +149,7 @@ def findToonAttack(toons, attacks, track):
             local_track = attack[TOON_TRACK_COL]
             # If it's an NPC, convert to the appropriate track
             if (track != NPCSOS and attack[TOON_TRACK_COL] == NPCSOS):
-                local_track = NPCToons.getNPCTrack(attack[TOON_TGT_COL])    
+                local_track = NPCToons.getNPCTrack(attack[TOON_TGT_COL])
             if (local_track == track):
                 if local_track == FIRE:
                     canFire = 1
@@ -161,7 +161,7 @@ def findToonAttack(toons, attacks, track):
                     if canFire:
                         assert(t == attack[TOON_ID_COL])
                         foundAttacks.append(attack)
-                        
+
                 else:
                     assert(t == attack[TOON_ID_COL])
                     foundAttacks.append(attack)
@@ -172,7 +172,7 @@ def findToonAttack(toons, attacks, track):
             return -1
         return 0
     foundAttacks.sort(compFunc)
-    return foundAttacks 
+    return foundAttacks
 
 # A little pad time added to server time calculations, to allow for
 # slow or out-of-sync clients.  In general, the AI server will give
@@ -210,7 +210,7 @@ class BattleBase:
     # For each number of suits in the battle (1, 2, 3, or 4), the
     # corresponding element of suitPoints is a list of n (pos, heading)
     # pairs for each of the n suits to stand.
-    
+
     suitPoints = (
         ((Point3(0, 5, 0), 179),
          ),
@@ -226,7 +226,7 @@ class BattleBase:
          (Point3(-2, 6.3, 0), 190),
          (Point3(-6, 4.4, 0), 200),
          ))
-    
+
     # And this defines the single set of points for suits who are
     # "pending": they have joined the battle, but are waiting for the
     # next round to begin before they take their place.
@@ -241,7 +241,7 @@ class BattleBase:
     toonPoints = (
         ((Point3(0, -6, 0), 0),
          ),
-        ((Point3(1.5, -6.5, 0), 5), 
+        ((Point3(1.5, -6.5, 0), 5),
          (Point3(-1.5, -6.5, 0), -5),
          ),
         ((Point3(3, -6.75, 0), 5),
@@ -260,7 +260,7 @@ class BattleBase:
         (Point3(3, -8, 0), 5),
         (Point3(5.5, -5.5, 0), 20),
         )
-    
+
     # These define the points on the perimeter of the battle circle
     # for suits and toons who are "joining"; this allows the avatar to
     # walk a circle around the battle to get to its pending point,
@@ -344,12 +344,12 @@ class BattleBase:
         # In the default case, avatars walk around the perimeter of
         # the battle cell to get to their target point.  Figure out
         # the shortest path around the circle.
-        
+
         # First, find the closest battle join point
         minDist = 999999.0
         nearestP = None
         for p in BattleBase.allPoints:
-            dist = Vec3(avPos - p).length()    
+            dist = Vec3(avPos - p).length()
             if (dist < minDist):
                 nearestP = p
                 minDist = dist
@@ -366,7 +366,7 @@ class BattleBase:
         if (toon == 1):
             if (nearestP == BattleBase.posE):
                 self.notify.debug('buildJoinPointList() - posE')
-                plist = [BattleBase.posE] 
+                plist = [BattleBase.posE]
             elif (BattleBase.toonCwise.count(nearestP) == 1):
                 self.notify.debug('buildJoinPointList() - clockwise')
                 index = BattleBase.toonCwise.index(nearestP)
@@ -397,4 +397,3 @@ class BattleBase:
         """Add toonId to our helpful toons, make sure it's in the list at most once."""
         if toonId not in self.helpfulToons:
             self.helpfulToons.append(toonId)
-        

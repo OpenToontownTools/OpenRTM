@@ -13,7 +13,7 @@ SFXPATHS = {
 class DustCloud(NodePath):
     dustCloudCount = 0
     sounds = {}
-    
+
     def __init__(self, parent = hidden, fBillboard = 1, wantSound = 0):
         """__init()"""
         # Initialize the superclass
@@ -63,7 +63,7 @@ class DustCloud(NodePath):
             Func(self.hide),
             name = 'dustCloud-track-%d' % self.trackId
             )
-    
+
     def play(self, rate = 24):
         # Stop existing track, if one exists
         self.stop()
@@ -71,7 +71,7 @@ class DustCloud(NodePath):
         self.createTrack(rate)
         # Start track
         self.track.start()
-    
+
     def loop(self, rate = 24):
         # Stop existing track, if one exists
         self.stop()
@@ -79,11 +79,11 @@ class DustCloud(NodePath):
         self.createTrack(rate)
         # Start track
         self.track.loop()
-    
+
     def stop(self):
         if self.track:
             self.track.finish()
-    
+
     def destroy(self):
         self.stop()
         del self.track

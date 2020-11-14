@@ -11,7 +11,7 @@ class Emote:
     # count goes above zero, it means that the emote is disabled.  Fo
     # a minigame might increment the reference count if it wants to e
     # disable emotes.
-    
+
     def __init__(self):
         self.emoteFunc = None
 
@@ -26,4 +26,4 @@ class Emote:
             return 1
         return 0
 
-globalEmote = None 
+globalEmote = None

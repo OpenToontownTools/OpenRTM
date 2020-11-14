@@ -4308,7 +4308,7 @@ MickeyChatter = (
         "It's time for a nap. I'm going to Dreamland.",
         ]
     )
-    
+
 VampireMickeyChatter = (
         [ # Greetings specific to Vampire Mickey
         "Welcome to "+lToontownCentral+".",
@@ -4705,7 +4705,7 @@ EventsPageTooLateToStart = "Sorry, it is too late to start your party. You can c
 EventsPageHostTabName = "Hosting" # displayed on the physical tab
 EventsPageHostTabTitle = "My Next Party" # banner text displayed across the top
 EventsPageHostTabTitleNoParties = "No Parties"
-EventsPageHostTabDateTimeLabel = "You are having a party on %s at %s Toontown Time." 
+EventsPageHostTabDateTimeLabel = "You are having a party on %s at %s Toontown Time."
 EventsPageHostingTabNoParty = "Go to a playground\nParty Gate to plan\nyour own party!"
 EventsPageHostTabPublicPrivateLabel = "This party is:"
 EventsPageHostTabToggleToPrivate = "Private"
@@ -5064,7 +5064,7 @@ PartyCannonResults = "You collected %d jelly beans!\n\nNumber of Clouds Hit: %d"
 FireworksActivityInstructions = "Hit the \"Page Up\" key to see better."
 FireworksActivityBeginning = "Party fireworks are about to start! Enjoy the show!"
 FireworksActivityEnding = "Hope you enjoyed the show!"
-PartyFireworksAlreadyActive = "The fireworks show has already started." 
+PartyFireworksAlreadyActive = "The fireworks show has already started."
 PartyFireworksAlreadyDone = "The fireworks show is over."
 
 # DistributedPartyTrampolineActivity.py
@@ -9505,7 +9505,7 @@ BossbotRTMaxed = "\aI see that you have a level %s Cog Suit. Very impressive!\aO
 GolfAreaAttackTaunt = "Fore!"
 OvertimeAttackTaunts = [ "It's time to reorganize.",
                         "Now let's downsize."]
-                        
+
 #ElevatorDestination Names
 ElevatorBossBotBoss = "C.E.O Battle"
 ElevatorBossBotCourse0 = "The Front Three"
@@ -9524,7 +9524,7 @@ ElevatorLawBotCourse1 = "Office B"
 ElevatorLawBotCourse2 = "Office C"
 ElevatorLawBotCourse3 = "Office D"
 
-                        
+
 
 # CatalogNameTagItem.py
 DaysToGo = "Wait\n%s Days"
@@ -9673,8 +9673,7 @@ HolidayNamesInCalendar = {
    46: ("The Trouble With Bossbots 2", "The Trouble with Bossbots. Stop the Pencil Pusher Cogs from invading Toontown!"),
    47: ("The Trouble With Bossbots 3", "The Trouble with Bossbots. Stop the Micromanager Cogs from invading Toontown!"),
    48: ("The Trouble With Bossbots 4", "The Trouble with Bossbots. Stop the Downsizer Cogs from invading Toontown!"),
-   
+
     }
 
-UnknownHoliday = "Unknown Holiday %d" 
-
+UnknownHoliday = "Unknown Holiday %d"

@@ -197,7 +197,7 @@ become True Friends, one of them must request a new True Friend Code from the Se
 
 True Friends communicate with one another in a free-form interactive open chat.  The content of this chat is directly entered by the participating member and is processed through the Service, which is operated by the Walt Disney Internet Group ("WDIG"), 500 S. Buena Vista St., Burbank, CA 91521-7691.  While we advise members not to exchange personal information such as first and last names, e-mail addresses, postal addresses, or phone numbers while using Open Chat with True Friends, we cannot guarantee that such exchanges of personal information will not happen. Although the True Friends chat is automatically filtered for most bad words, Open Chat with True Friends may be moderated, and Disney reserves the right to moderate any part of the Service that Disney,
 ""","""
-in its sole and absolute discretion, deems necessary. However, because Open Chat with True Friends will not always be moderated, if the Parent Account allows a child to use his or her account with the Open Chat with True Friends feature enabled, we strongly encourage parents to supervise their child or children while they play in the Service. By enabling the Open Chat with True Friends feature, the Parent Account acknowledges that there are some risks inherent in the Open Chat with True Friends feature and that the Parent Account has been informed of, and agrees to accept, any such risks, whether foreseeable or otherwise. 
+in its sole and absolute discretion, deems necessary. However, because Open Chat with True Friends will not always be moderated, if the Parent Account allows a child to use his or her account with the Open Chat with True Friends feature enabled, we strongly encourage parents to supervise their child or children while they play in the Service. By enabling the Open Chat with True Friends feature, the Parent Account acknowledges that there are some risks inherent in the Open Chat with True Friends feature and that the Parent Account has been informed of, and agrees to accept, any such risks, whether foreseeable or otherwise.
 
 WDIG does not use the content of True Friends chat for any purpose other than communicating that content to the member's true friend, and does not disclose that content to any third party except: (1) if required by law, for example, to comply with a court order or subpoena; (2) to enforce the Terms of Use
 ""","""
@@ -1113,7 +1113,7 @@ SpeedChatStaticText = {
     816 : "I can't get on the elevator now.",
     817 : "Sorry, I'm busy golfing!",
     818 : "Sorry, my Friends List is full.",
-    
+
     # Stinky
     900 : "Hey!",
     901 : "Please go away!",
@@ -1409,7 +1409,7 @@ SpeedChatStaticText = {
     2220 : "I have a bonus weight of 9.",
     2221 : "I have a bonus weight of 10.",
     2222 : "I have a bonus weight of 11.",
-    2223 : "I have a bonus weight of 12.",    
+    2223 : "I have a bonus weight of 12.",
 
     # CEO battle
     2300 : "You feed the Cogs on the left.",
@@ -1430,8 +1430,8 @@ SpeedChatStaticText = {
     2315 : "Hurry, your cog is hungry!",
     2316 : "Please save the snacks for sadder toons.",
     2317 : "Take the snacks before they fall.",
-    
-    
+
+
     #Kart Racing Phrases
     #IMPORTANT: if you change numbers or add/subtract lines here than be
     # sure to adjust the kart racing menu guid dict below
@@ -1562,7 +1562,7 @@ SpeedChatStaticText = {
     5004 : "Leave your Boarding Group.",
     5005 : "We are boarding now.",
     5006 : "Where are we going?",
-    5007 : "Are we ready?",    
+    5007 : "Are we ready?",
     5008 : "Let's Go!",
     5009 : "Don't leave this area or you will leave the Boarding Group.",
 
@@ -1573,7 +1573,7 @@ SpeedChatStaticText = {
     5103 : "Let's go to the C.E.O. Battle.",
     5104 : "Let's go to the Senior V.P Battle.",
     5105 : "Let's go to the Front Entrance.",
-    5106 : "Let's go to the Side Entrance.",    
+    5106 : "Let's go to the Side Entrance.",
     5107 : "Let's go to the Coin Mint.",
     5108 : "Let's go to the Dollar Mint.",
     5109 : "Let's go to the Bullion Mint.",
@@ -1591,7 +1591,7 @@ SpeedChatStaticText = {
     5203 : "We're going to the C.E.O. Battle.",
     5204 : "We're going to the Senior V.P Battle.",
     5205 : "We're going to the Front Entrance.",
-    5206 : "We're going to the Side Entrance.",    
+    5206 : "We're going to the Side Entrance.",
     5207 : "We're going to the Coin Mint.",
     5208 : "We're going to the Dollar Mint.",
     5209 : "We're going to the Bullion Mint.",
@@ -1626,7 +1626,7 @@ SpeedChatStaticText = {
     5319 : "I wish I could eat this cake!",
     5320 : "These fireworks are beautiful!",
     5321 : "No cogs allowed!",
-    
+
     # Promotional Considerations
     10000 : "The choice is yours!",
     10001 : "Who are you voting for?",
@@ -2059,7 +2059,7 @@ SpeedChatStaticText = {
     50104 : "Dead men tell no tales....",
     50105 : "Shiver me timbers!",
     50106 : "Salty as a Kraken's kiss.",
-    
+
 
     # EXPRESSIONS - GREETINGS
     50700 : "Ahoy!",
@@ -2146,11 +2146,11 @@ SpeedChatStaticText = {
     51510 : "Let's sail to Cutthroat.",
     51511 : "Let's sail to Rumrunner's Isle.",
     51512 : "Let's sail to Isla Cangrejos.",
-    
+
     # PLACES - LETS HEAD TO...
     51600 : "Let's head into town.",
     51601 : "Let's go to the docks.",
-    51602 : "Let's head to the tavern.",    
+    51602 : "Let's head to the tavern.",
 
     # PLACES - LETS HEAD TO... - PORT ROYAL
     51800 : "Let's go to Fort Charles.",
@@ -2349,7 +2349,7 @@ Emotes_General = "General"
 Emotes_Music = "Music"
 Emotes_Expressions = "Emotions"
 Emote_ShipDenied = "Cannot emote while sailing."
-Emote_MoveDenied = "Cannot emote while moving." 
+Emote_MoveDenied = "Cannot emote while moving."
 Emote_CombatDenied = "Cannot emote while in combat."
 Emote_CannonDenied = "Cannot emote while using a cannon."
 Emote_SwimDenied = "Cannot emote while swimming."
@@ -3063,5 +3063,3 @@ def timeElapsedString(timeDelta):
             return "1 minute ago"
         else:
             return "%s minutes ago" % (timeDelta.seconds / 60)
-
-
