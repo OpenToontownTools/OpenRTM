@@ -15,6 +15,12 @@ RobotToon was a development tool for Disney's Toontown Online artists to create 
 
 ~~### You can also pick up a pre-built build in the releases tab~~ *Coming Soon*
 
+## Credits
+* [Disyer](https://github.com/darktohka/) - Project Lead | Developer
+* [Loonatic](https://github.com/loonaticx/) - Project Lead | Developer
+* [drewcification](https://github.com/drewc5131) - Open Toontown Tools Project Lead | Developer
+* [Any other contributors are listed on the side](https://github.com/OpenToontownTools/OpenRTM/graphs/contributors)
+
 # FAQ
 
 ### Some of my props are using textures as if they were in a different playground?
