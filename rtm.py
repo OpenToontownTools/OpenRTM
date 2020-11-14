@@ -8,7 +8,7 @@ from pandac.PandaModules import *
 class RTMBase(ShowBase.ShowBase):
     def __init__(self):
         ShowBase.ShowBase.__init__(self)
-        
+
         # Load the prc file prior to launching showbase in order
         # to have it affect window related stuff
         loadPrcFile("Configrc.prc")
@@ -22,6 +22,6 @@ class RTMBase(ShowBase.ShowBase):
         base.rtm = RobotToonManager.RobotToonManager()
         base.rtm.popupControls()
         camera.setPosHpr(0, -60, 5, 0, 0, 0)
-        
+
 base = RTMBase
 RTMBase().run()
