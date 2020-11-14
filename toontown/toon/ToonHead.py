@@ -20,28 +20,43 @@ from direct.fsm.State import State
 from direct.directnotify import DirectNotifyGlobal
 
 # toon head models dictionary
-HeadDict = {"dls": "/models/char/tt_a_chr_dgm_shorts_head_",
-            "dss": "/models/char/tt_a_chr_dgm_skirt_head_",
-            "dsl": "/models/char/tt_a_chr_dgs_shorts_head_",
-            "dll": "/models/char/tt_a_chr_dgl_shorts_head_",
-            "c":"/models/char/cat-heads-",
-            "h":"/models/char/horse-heads-",
-            "m":"/models/char/mouse-heads-",
-            "r":"/models/char/rabbit-heads-",
-            "f":"/models/char/duck-heads-",
-            "p":"/models/char/monkey-heads-",
-            "b":"/models/char/bear-heads-",
-            "s":"/models/char/pig-heads-"
-             }
+if not base.config.GetBool('want-new-anims', 1):
+    HeadDict = { "dls": "/models/char/dogMM_Shorts-head-", \
+                "dss":"/models/char/dogMM_Skirt-head-", \
+                "dsl":"/models/char/dogSS_Shorts-head-", \
+                "dll":"/models/char/dogLL_Shorts-head-", \
+                "c":"/models/char/cat-heads-", \
+                "h":"/models/char/horse-heads-", \
+                "m":"/models/char/mouse-heads-", \
+                "r":"/models/char/rabbit-heads-", \
+                "f":"/models/char/duck-heads-", \
+                "p":"/models/char/monkey-heads-", \
+                "b":"/models/char/bear-heads-",\
+                "s":"/models/char/pig-heads-"
+                 }
+else:
+    HeadDict = { "dls": "/models/char/tt_a_chr_dgm_shorts_head_", \
+                "dss":"/models/char/tt_a_chr_dgm_skirt_head_", \
+                "dsl":"/models/char/tt_a_chr_dgs_shorts_head_", \
+                "dll":"/models/char/tt_a_chr_dgl_shorts_head_", \
+                "c":"/models/char/cat-heads-", \
+                "h":"/models/char/horse-heads-", \
+                "m":"/models/char/mouse-heads-", \
+                "r":"/models/char/rabbit-heads-", \
+                "f":"/models/char/duck-heads-", \
+                "p":"/models/char/monkey-heads-", \
+                "b":"/models/char/bear-heads-",\
+                "s":"/models/char/pig-heads-"
+                 }
 
-EyelashDict = {"d": "/models/char/dog-lashes",
-               "c": "/models/char/cat-lashes",
-               "h": "/models/char/horse-lashes",
-               "m": "/models/char/mouse-lashes",
-               "r": "/models/char/rabbit-lashes",
-               "f": "/models/char/duck-lashes",
-               "p": "/models/char/monkey-lashes",
-               "b": "/models/char/bear-lashes",
+EyelashDict = {"d": "/models/char/dog-lashes", \
+               "c": "/models/char/cat-lashes", \
+               "h": "/models/char/horse-lashes", \
+               "m": "/models/char/mouse-lashes", \
+               "r": "/models/char/rabbit-lashes", \
+               "f": "/models/char/duck-lashes", \
+               "p": "/models/char/monkey-lashes", \
+               "b": "/models/char/bear-lashes",\
                "s": "/models/char/pig-lashes"
                }
 
@@ -538,6 +553,7 @@ class ToonHead(Actor.Actor):
                            copy)
             if not forGui:
                 pLoaded = self.loadPumpkin(headStyle[1], None, copy)
+                self.loadSnowMan(headStyle[1], None, copy)
 
             if not copy:
                 self.showAllParts('head')
@@ -558,6 +574,7 @@ class ToonHead(Actor.Actor):
                 self.loadModel("phase_3" + filePrefix + lod, "head", lod, copy)
                 if not forGui:
                     pLoaded = self.loadPumpkin(headStyle[1], lod, copy)
+                    self.loadSnowMan(headStyle[1], lod, copy)
 
                 if not copy:
                     self.showAllParts('head', lod)
@@ -583,44 +600,67 @@ class ToonHead(Actor.Actor):
         return headHeight
 
     def loadPumpkin(self,headStyle, lod, copy):
-        if (hasattr(base, 'launcher') and
-            ((not base.launcher) or
-             (base.launcher and base.launcher.getPhaseComplete(4)))):
+        if not hasattr(self,'pumpkins'):
+            self.pumpkins = NodePathCollection()
 
-            if not hasattr(self,'pumpkins'):
-                self.pumpkins = NodePathCollection()
+        ppath = 'phase_4/models/estate/pumpkin_'
 
-            ppath = 'phase_4/models/estate/pumpkin_'
-            if(headStyle is 'l'):
-                if copy:
-                    pmodel = loader.loadModel(ppath + 'tall')
-                else:
-                    pmodel = loader.loadModel(ppath + 'tall')
-                ptype = 'tall'
+        if headStyle == 'l':
+            if copy:
+                pmodel = loader.loadModel(ppath + 'tall')
             else:
-                if copy:
-                    pmodel = loader.loadModel(ppath + 'short')
-                else:
-                    pmodel = loader.loadModel(ppath + 'short')
-                ptype = 'short'
-
-            if pmodel:
-                p = pmodel.find('**/pumpkin_'+ptype+'*')
-                p.setScale(0.5)
-                p.setZ(-0.5)
-                p.setH(180)
-                if lod:
-                    p.reparentTo(self.find('**/' + lod + '/**/__Actor_head'))
-                else:
-                    p.reparentTo(self.find('**/__Actor_head'))
-                self.pumpkins.addPath(p)
-                pmodel.remove()
-                return True
-            else:
-                del self.pumpkins
-                return False
+                pmodel = loader.loadModel(ppath + 'tall')
+            ptype = 'tall'
         else:
-            ToonHead.notify.debug("phase_4 not complete yet. Postponing pumpkin head load.")
+            if copy:
+                pmodel = loader.loadModel(ppath + 'short')
+            else:
+                pmodel = loader.loadModel(ppath + 'short')
+            ptype = 'short'
+
+        if pmodel:
+            p = pmodel.find('**/pumpkin_'+ptype+'*')
+            p.setScale(0.5)
+            p.setZ(-0.5)
+            p.setH(180)
+            if lod:
+                p.reparentTo(self.find('**/' + lod + '/**/__Actor_head'))
+            else:
+                p.reparentTo(self.find('**/__Actor_head'))
+            self.pumpkins.addPath(p)
+            pmodel.remove()
+            return True
+        else:
+            del self.pumpkins
+            return False
+
+    def loadSnowMan(self, headStyle, lod, copy):
+        if not hasattr(self, 'snowMen'):
+            self.snowMen = NodePathCollection()
+
+        snowManPath = 'phase_4/models/props/tt_m_efx_snowmanHead_'
+
+        if headStyle == 'l':
+            snowManPath = snowManPath + 'tall'
+        else:
+            snowManPath = snowManPath + 'short'
+
+        model = loader.loadModel(snowManPath)
+
+        if model:
+            model.setScale(0.4)
+            model.setZ(-0.5)
+            model.setH(180)
+            if lod:
+                model.reparentTo(self.getPart('head',lod))
+            else:
+                model.reparentTo(self.find('**/__Actor_head'))
+            self.snowMen.addPath(model)
+            model.stash()
+            return True
+        else:
+            del self.snowMen
+            return False
 
     def __fixPumpkin(self, style, lodName = None, copy = 1):
         if (lodName == None):
@@ -665,6 +705,28 @@ class ToonHead(Actor.Actor):
                     self.__eyelashClosed.unstash()
                 self.pumpkins.stash()
 
+    def enableSnowMen(self, enable):
+        if not hasattr(self, 'snowMen'):
+            if len(self.__lods) == 1:
+                self.loadSnowMan(self.__headStyle[1], None, self.__copy)
+            else:
+                for lod in self.__lds:
+                    self.loadSnowMan(self.__headStyle[1], lod, self.__copy)
+
+        if hasattr(self, 'snowMen'):
+            if enable:
+                if self.__eyelashOpen:
+                    self.__eyelashOpen.stash()
+                if self.__eyelashClosed:
+                    self.__eyelashClosed.stash()
+                self.snowMen.unstash()
+            else:
+                if self.__eyelashOpen:
+                    self.__eyelashOpen.unstash()
+                if self.__eyelashClosed:
+                    self.__eyelashClosed.unstash()
+                self.snowMen.stash()
+
     def generateToonColor(self, style):
         """generateToonColor(self, AvatarDNA style)
         Color the toon's parts as specified by the dna.
@@ -700,7 +762,14 @@ class ToonHead(Actor.Actor):
                 self.drawInFront("eyes*", "head-front*", mode, lodName=lodName)
                 # NOTE: had to change all ref's to "joint-" to "joint_" as Maya
                 # does not support "-" in node names
-                self.drawInFront("joint_pupil*", "eyes*", -1, lodName=lodName)
+                if base.config.GetBool('want-new-anims', 1):
+                    if not self.find("**/joint_pupil*").isEmpty():
+                        self.drawInFront("joint_pupil*", "eyes*", -1, lodName=lodName)
+                    else:
+                        self.drawInFront("def_*_pupil", "eyes*", -1, lodName=lodName)
+                else:
+                    self.drawInFront("joint_pupil*", "eyes*", -1, lodName=lodName)
+
             # Save the various eye LODs for blinking.
             self.__eyes = self.getLOD(1000).find('**/eyes*')
             self.__lod500Eyes = self.getLOD(500).find('**/eyes*')
@@ -713,17 +782,39 @@ class ToonHead(Actor.Actor):
                 self.__lod500Eyes = None
             else:
                 self.__lod500Eyes.setColorOff()
-                self.__lod500lPupil = self.__lod500Eyes.find('**/joint_pupilL*')
-                self.__lod500rPupil = self.__lod500Eyes.find('**/joint_pupilR*')
+                if base.config.GetBool('want-new-anims', 1):
+                    if not self.find('**/joint_pupilL*').isEmpty():
+                        self.__lod500lPupil = self.__lod500Eyes.find('**/joint_pupilL*')
+                        self.__lod500rPupil = self.__lod500Eyes.find('**/joint_pupilR*')
+                    else:
+                        self.__lod500lPupil = self.__lod500Eyes.find('**/def_left_pupil*')
+                        self.__lod500rPupil = self.__lod500Eyes.find('**/def_right_pupil*')
+                else:
+                    self.__lod500lPupil = self.__lod500Eyes.find('**/joint_pupilL*')
+                    self.__lod500rPupil = self.__lod500Eyes.find('**/joint_pupilR*')
             if self.__lod250Eyes.isEmpty():
                 self.__lod250Eyes = None
             else:
                 self.__lod250Eyes.setColorOff()
-                self.__lod250lPupil = self.__lod250Eyes.find('**/joint_pupilL*')
-                self.__lod250rPupil = self.__lod250Eyes.find('**/joint_pupilR*')
+                if base.config.GetBool('want-new-anims', 1):
+                    if not self.find('**/joint_pupilL*').isEmpty():
+                        self.__lod250lPupil = self.__lod250Eyes.find('**/joint_pupilL*')
+                        self.__lod250rPupil = self.__lod250Eyes.find('**/joint_pupilR*')
+                    else:
+                        self.__lod250lPupil = self.__lod250Eyes.find('**/def_left_pupil*')
+                        self.__lod250rPupil = self.__lod250Eyes.find('**/def_right_pupil*')
+                else:
+                    self.__lod250lPupil = self.__lod250Eyes.find('**/joint_pupilL*')
+                    self.__lod250rPupil = self.__lod250Eyes.find('**/joint_pupilR*')
         else:
             self.drawInFront("eyes*", "head-front*", mode)
-            self.drawInFront("joint_pupil*", "eyes*", -1)
+            if base.config.GetBool('want-new-anims', 1):
+                if not self.find("joint_pupil*").isEmpty():
+                    self.drawInFront("joint_pupil*", "eyes*", -1)
+                else:
+                    self.drawInFront("def_*_pupil", "eyes*", -1)
+            else:
+                self.drawInFront("joint_pupil*", "eyes*", -1)
             # Save the eyes for blinking.
             self.__eyes = self.find('**/eyes*')
 
@@ -733,8 +824,25 @@ class ToonHead(Actor.Actor):
             self.__eyes.setColorOff()
             self.__lpupil = None
             self.__rpupil = None
-            lp = self.__eyes.find('**/joint_pupilL*')
-            rp = self.__eyes.find('**/joint_pupilR*')
+            if base.config.GetBool('want-new-anims', 1):
+                if not self.find('**/joint_pupilL*').isEmpty():
+                    if self.getLOD(1000):
+                        lp = self.getLOD(1000).find('**/joint_pupilL*')
+                        rp = self.getLOD(1000).find('**/joint_pupilR*')
+                    else:
+                        lp = self.find('**/joint_pupilL*')
+                        rp = self.find('**/joint_pupilR*')
+                else:
+                    if not self.getLOD(1000):
+                        lp = self.find('**/def_left_pupil*')
+                        rp = self.find('**/def_right_pupil*')
+                    else:
+                        lp = self.getLOD(1000).find('**/def_left_pupil*')
+                        rp = self.getLOD(1000).find('**/def_right_pupil*')
+            else:
+                lp = self.__eyes.find('**/joint_pupilL*')
+                rp = self.__eyes.find('**/joint_pupilR*')
+
             if lp.isEmpty() or rp.isEmpty():
                 print("Unable to locate pupils.")
             else:
@@ -772,6 +880,7 @@ class ToonHead(Actor.Actor):
                 # Also bump up the override parameter on the pupil
                 # textures so they won't get overridden when we set
                 # the blink texture.
+
                 self.__lpupil.adjustAllPriorities(1)
                 self.__rpupil.adjustAllPriorities(1)
                 if self.__lod500Eyes:
@@ -1241,7 +1350,6 @@ class ToonHead(Actor.Actor):
         # around our head.
 
         frac = 2 * globalClock.getDt()  # controls speed of head turning
-
         reachedTarget = self.__lookHeadAt(
             self.__stareAtNode, self.__stareAtPoint, frac)
         self.__lookPupilsAt(self.__stareAtNode, self.__stareAtPoint)
@@ -1593,9 +1701,12 @@ class ToonHead(Actor.Actor):
                     if (lodName == '1000') or (lodName == '500'):
                         filePrefix = DogMuzzleDict[style.head]
                         muzzles = loader.loadModel("phase_3" + filePrefix + lodName)
-                        if not self.find('**/' + lodName + '/**/__Actor_head/def_head').isEmpty():
-                            muzzles.reparentTo(self.find('**/' + lodName + '/**/__Actor_head/def_head'))
-                        else:
+                        if base.config.GetBool('want-new-anims', 1):
+                            if not self.find('**/' + lodName + '/**/def_head').isEmpty():
+                                muzzles.reparentTo(self.find('**/' + lodName + '/**/def_head'))
+                            else:
+                                muzzles.reparentTo(self.find('**/' + lodName + '/**/joint_toHead'))
+                        elif self.find('**/' + lodName + '/**/joint_toHead'):
                             muzzles.reparentTo(self.find('**/' + lodName + '/**/joint_toHead'))
 
                 surpriseMuzzle = self.find('**/' + lodName + '/**/muzzle*surprise')
@@ -1628,8 +1739,11 @@ class ToonHead(Actor.Actor):
                 muzzle = self.find('**/muzzle*')
                 filePrefix = DogMuzzleDict[style.head]
                 muzzles = loader.loadModel("phase_3" + filePrefix + '1000')
-                if not self.find('**/def_head').isEmpty():
-                    muzzles.reparentTo(self.find('**/def_head'))
+                if base.config.GetBool('want-new-anims', 1):
+                    if not self.find('**/def_head').isEmpty():
+                        muzzles.reparentTo(self.find('**/def_head'))
+                    else:
+                        muzzles.reparentTo(self.find('**/joint_toHead'))
                 else:
                     muzzles.reparentTo(self.find('**/joint_toHead'))
 
@@ -1772,7 +1886,11 @@ class ToonHead(Actor.Actor):
 
     def isIgnoreCheesyEffect(self):
         if hasattr(self, 'savedCheesyEffect'):
-            # Do nothing if the Invisible, NoColor or BigWhite cheesy effect is ON
-            if (self.savedCheesyEffect == 10) or (self.savedCheesyEffect == 11) or (self.savedCheesyEffect == 13):
+            # Do nothing if the Invisible, NoColor, Pumpkin or BigWhite cheesy effect is ON
+            if (self.savedCheesyEffect == 10) \
+            or (self.savedCheesyEffect == 11) \
+            or (self.savedCheesyEffect == 12) \
+            or (self.savedCheesyEffect == 13)  \
+            or (self.savedCheesyEffect == 14):
                 return True
         return False
