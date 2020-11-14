@@ -1,12 +1,10 @@
 """Toon module: contains the Toon class"""
-"""Toon module: contains the Toon class"""
 
 from otp.avatar import Avatar
 from . import ToonDNA
 from direct.task.Task import Task
 from toontown.suit import SuitDNA
 from direct.actor import Actor
-import string
 from .ToonHead import *
 from pandac.PandaModules import *
 from direct.interval.IntervalGlobal import *
@@ -225,6 +223,12 @@ Phase4AnimList = (
     ("pet-start", "petin"),
     ("pet-loop", "petloop"),
     ("pet-end", "petend"),
+
+    # For toonhall
+    ("scientistJealous", "scientistJealous"),
+    ("scientistEmcee", "scientistEmcee"),
+    ("scientistWork", "scientistWork"),
+    ("scientistGame", "scientistGame"),
     )
 
 # battle
@@ -297,22 +301,38 @@ Phase10AnimList = (
 Phase12AnimList = (
     )
 
-# toon leg models dictionary
-LegDict = { 's': '/models/char/tt_a_chr_dgs_shorts_legs_',
-            'm': '/models/char/tt_a_chr_dgm_shorts_legs_',
-            'l': '/models/char/tt_a_chr_dgl_shorts_legs_'}
+if not base.config.GetBool('want-new-anims', 1):
+    # toon leg models dictionary
+    LegDict = { "s":"/models/char/dogSS_Shorts-legs-", \
+                "m":"/models/char/dogMM_Shorts-legs-", \
+                "l":"/models/char/dogLL_Shorts-legs-" }
 
-# toon torso models dictionary
-TorsoDict = {   's': '/models/char/dogSS_Naked-torso-',
-                'm': '/models/char/dogMM_Naked-torso-',
-                'l': '/models/char/dogLL_Naked-torso-',
-                'ss': '/models/char/tt_a_chr_dgs_shorts_torso_',
-                'ms': '/models/char/tt_a_chr_dgm_shorts_torso_',
-                'ls': '/models/char/tt_a_chr_dgl_shorts_torso_',
-                'sd': '/models/char/tt_a_chr_dgs_skirt_torso_',
-                'md': '/models/char/tt_a_chr_dgm_skirt_torso_',
-                'ld': '/models/char/tt_a_chr_dgl_skirt_torso_'
-}
+    # toon torso models dictionary
+    TorsoDict = { "s":"/models/char/dogSS_Naked-torso-", \
+                  "m":"/models/char/dogMM_Naked-torso-", \
+                  "l":"/models/char/dogLL_Naked-torso-", \
+                  "ss":"/models/char/dogSS_Shorts-torso-", \
+                  "ms":"/models/char/dogMM_Shorts-torso-", \
+                  "ls":"/models/char/dogLL_Shorts-torso-", \
+                  "sd":"/models/char/dogSS_Skirt-torso-", \
+                  "md":"/models/char/dogMM_Skirt-torso-", \
+                  "ld":"/models/char/dogLL_Skirt-torso-" }
+else:
+    # toon leg models dictionary
+    LegDict = { "s":"/models/char/tt_a_chr_dgs_shorts_legs_", \
+                "m":"/models/char/tt_a_chr_dgm_shorts_legs_", \
+                "l":"/models/char/tt_a_chr_dgl_shorts_legs_" }
+
+    # toon torso models dictionary
+    TorsoDict = { "s":"/models/char/dogSS_Naked-torso-", \
+                  "m":"/models/char/dogMM_Naked-torso-", \
+                  "l":"/models/char/dogLL_Naked-torso-", \
+                  "ss":"/models/char/tt_a_chr_dgs_shorts_torso_", \
+                  "ms":"/models/char/tt_a_chr_dgm_shorts_torso_", \
+                  "ls":"/models/char/tt_a_chr_dgl_shorts_torso_", \
+                  "sd":"/models/char/tt_a_chr_dgs_skirt_torso_", \
+                  "md":"/models/char/tt_a_chr_dgm_skirt_torso_", \
+                  "ld":"/models/char/tt_a_chr_dgl_skirt_torso_" }
 
 # toon head models dictionary is in ToonHead.py.
 
@@ -523,7 +543,7 @@ def loadPhaseAnims(phaseStr="phase_3", loadFlag = 1):
 
     for key in HeadDict.keys():
         # only load anims for dog heads
-        if (string.find(key,"d") >= 0):
+        if (key.find("d") >= 0):
             for anim in animList:
                 #file = phaseStr + HeadDict[key] + anim[1]
                 if loadFlag:
@@ -719,6 +739,55 @@ class Toon(Avatar.Avatar, ToonHead):
 
     afkTimeout = base.config.GetInt('afk-timeout', 600)
 
+    # This is the tuple of allowed animations that can be set by using toon.setAnimState().
+    # If you add an animation that you want to do a setAnimState on please add this
+    # animation to this list.
+    setAnimStateAllowedList = (
+        'off',
+        'neutral',
+        'victory',
+        'Happy',
+        'Sad',
+        'Catching',
+        'CatchEating',
+        'Sleep',
+        'walk',
+        'jumpSquat',
+        'jump',
+        'jumpAirborne',
+        'jumpLand',
+        'run',
+        'swim',
+        'swimhold',
+        'dive',
+        'cringe',
+        'OpenBook',
+        'ReadBook',
+        'CloseBook',
+        'TeleportOut',
+        'Died',
+        'TeleportIn',
+        'Emote',
+        'SitStart',
+        'Sit',
+        'Push',
+        'Squish',
+        'FallDown',
+        'GolfPuttLoop',
+        'GolfRotateLeft',
+        'GolfRotateRight',
+        'GolfPuttSwing',
+        'GolfGoodPutt',
+        'GolfBadPutt',
+        'Flattened',
+        'CogThiefRunning',
+        'ScientistJealous',
+        'ScientistEmcee',
+        'ScientistWork',
+        'ScientistLessWork',
+        'ScientistPlay'
+        )
+
     def __init__(self):
         try:
             self.Toon_initialized
@@ -824,6 +893,11 @@ class Toon(Avatar.Avatar, ToonHead):
             State('GolfBadPutt', self.enterGolfBadPutt, self.exitGolfBadPutt),
             State('Flattened', self.enterFlattened, self.exitFlattened),
             State('CogThiefRunning', self.enterCogThiefRunning, self.exitCogThiefRunning),
+            State('ScientistJealous', self.enterScientistJealous, self.exitScientistJealous),
+            State('ScientistEmcee', self.enterScientistEmcee, self.exitScientistEmcee),
+            State('ScientistWork', self.enterScientistWork, self.exitScientistWork),
+            State('ScientistLessWork', self.enterScientistLessWork, self.exitScientistLessWork),
+            State('ScientistPlay', self.enterScientistPlay, self.enterScientistPlay),
             ],
             # Initial State
             'off',
@@ -831,6 +905,8 @@ class Toon(Avatar.Avatar, ToonHead):
             'off',
             )
         self.animFSM.enterInitialState()
+        # Note: When you add an animation to this animFSM list also add it to
+        # setAnimStateAllowedList if you want to use setAnimState to change to that animation.
 
     def stopAnimations(self):
         assert self.notify.debugStateCall(self, "animFsm")
@@ -937,20 +1013,23 @@ class Toon(Avatar.Avatar, ToonHead):
         """
         attach the toon's parts - recurse over all LODs
         """
+        #import pdb; pdb.set_trace()
         assert self.notify.debugStateCall(self, "animFsm")
+        # import pdb; pdb.set_trace()
         # attach all the various toon pieces
         if (self.hasLOD()):
             for lodName in self.getLODNames():
-                if not self.getPart('torso', lodName).find('**/def_head').isEmpty():
-                    self.attach('head', 'torso', 'def_head', lodName)
+                if base.config.GetBool('want-new-anims', 1):
+                    if not self.getPart("torso", lodName).find('**/def_head').isEmpty():
+                        self.attach("head", "torso", "def_head", lodName)
+                    else:
+                        self.attach("head", "torso", "joint_head", lodName)
                 else:
-                    self.attach('head', 'torso', 'joint_head', lodName)
-                self.attach('torso', 'legs', 'joint_hips', lodName)
+                    self.attach("head", "torso", "joint_head", lodName)
+                self.attach("torso", "legs", "joint_hips", lodName)
         else:
             self.attach("head", "torso", "joint_head")
             self.attach("torso", "legs", "joint_hips")
-
-        self.setBlend(frameBlend = 1)
 
 
     def unparentToonParts(self):
@@ -1024,13 +1103,19 @@ class Toon(Avatar.Avatar, ToonHead):
         self.leftHand = None
         for lodName in self.getLODNames():
             hand = self.getPart('torso', lodName).find('**/joint_Rhold')
-            if not self.getPart('torso', lodName).find('**/def_joint_right_hold').isEmpty():
+            if base.config.GetBool('want-new-anims', 1):
+                if not self.getPart('torso', lodName).find('**/def_joint_right_hold').isEmpty():
                     hand = self.getPart('torso', lodName).find('**/def_joint_right_hold')
+            else:
+                hand = self.getPart('torso', lodName).find('**/joint_Rhold')
             self.rightHands.append(hand)
+            #import pdb; pdb.set_trace()
             rightHand = rightHand.instanceTo(hand)
-            hand = self.getPart('torso', lodName).find('**/joint_Lhold')
-            if not self.getPart('torso', lodName).find('**/def_joint_left_hold').isEmpty():
+            if base.config.GetBool('want-new-anims', 1):
+                if not self.getPart('torso', lodName).find('**/def_joint_left_hold').isEmpty():
                     hand = self.getPart('torso', lodName).find('**/def_joint_left_hold')
+            else:
+                hand = self.getPart('torso', lodName).find('**/joint_Lhold')
             self.leftHands.append(hand)
             leftHand = leftHand.instanceTo(hand)
             # It's important that self.rightHand and self.leftHand
@@ -1161,10 +1246,6 @@ class Toon(Avatar.Avatar, ToonHead):
         self.loadAnims(LegsAnimDict[legStyle], "legs", "1000")
         self.loadAnims(LegsAnimDict[legStyle], "legs", "500")
         self.loadAnims(LegsAnimDict[legStyle], "legs", "250")
-        # Hide the shoes
-        self.findAllMatches('**/boots_short').stash()
-        self.findAllMatches('**/boots_long').stash()
-        self.findAllMatches('**/shoes').stash()
 
     def swapToonLegs(self, legStyle, copy = 1):
         """swapToonLegs(self, string, bool = 1)
@@ -1327,6 +1408,7 @@ class Toon(Avatar.Avatar, ToonHead):
             hands = torso.find('**/hands')
             hands.setColor(gloveColor)
             # Color the lower body
+            # import pdb; pdb.set_trace()
             legs = self.getPart('legs', lodName)
             for pieceName in ('legs', 'feet'):
                 piece = legs.find('**/' + pieceName)
@@ -1425,6 +1507,7 @@ class Toon(Avatar.Avatar, ToonHead):
             # Fix the alpha back to 1.0
             darkBottomColor.setW(1.0)
 
+            # import pdb; pdb.set_trace()
             # Now apply all the colors and textures
             for lodName in self.getLODNames():
                 thisPart = self.getPart("torso", lodName)
@@ -1982,11 +2065,12 @@ class Toon(Avatar.Avatar, ToonHead):
         self.loop("swim")
         #self.pose('swim', 55)
         # 40 is arms back, 20 is arms middle
-        self.getGeomNode().setPos(0,0,-2)
-        self.setPlayRate(animMultiplier,"swim")
-        self.setActiveShadow(0)
-        self.dropShadow.hide()
-        self.nametag3d.setPos(0,-2,1)
+        if hasattr(self.getGeomNode(), 'setPos'):
+            self.getGeomNode().setPos(0,0,-2)
+            self.setPlayRate(animMultiplier,"swim")
+            self.setActiveShadow(0)
+            self.dropShadow.hide()
+            self.nametag3d.setPos(0,-2,1)
 
     def exitDive(self):
         #print "end swim"
@@ -2292,7 +2376,7 @@ class Toon(Avatar.Avatar, ToonHead):
         if self and not self.isEmpty():
             self.show()
 
-    def enterTeleportedOut(self):
+    def enterTeleportedOut(self, animMultiplier=1, ts=0, callback=None, extraArgs=[]):
         # In this state, the toon has finished teleporting out and is
         # gone.  This state is normally transitioned to when the
         # teleportOut animation finishes (but it might be skipped if
@@ -2852,7 +2936,7 @@ class Toon(Avatar.Avatar, ToonHead):
             return Sequence(
                 Func(dustCloud.reparentTo, self),
                 dustCloud.track,
-                Func(dustCloud.detachNode),
+                Func(dustCloud.destroy),
                 name = 'dustCloadIval'
                 )
 
@@ -2865,29 +2949,107 @@ class Toon(Avatar.Avatar, ToonHead):
             if(lerpTime > 0.0): # this is to keep the dust cloud from occuring with every generate
                 track.append(Func(dust.start))
                 track.append(Wait(0.5))
-            track.append(Func(self.enablePumpkins,True))
+            else:
+                dust.finish()
 
-            for hi in range(self.headParts.getNumPaths()):
-                head = self.headParts[hi]
-                parts = head.getChildren()
-                for pi in range(parts.getNumPaths()):
-                    p = parts[pi]
-                    track.append(Func(p.hide))
+            def hideParts():
+                self.notify.debug("HidePaths")
+                for hi in range(self.headParts.getNumPaths()):
+                    head = self.headParts[hi]
+                    parts = head.getChildren()
+                    for pi in range(parts.getNumPaths()):
+                        p = parts[pi]
+                        if not p.isHidden():
+                            p.hide()
+                            p.setTag("pumpkin", "enabled")
+
+            track.append(Func(hideParts))
+            track.append(Func(self.enablePumpkins,True))
         else:
             if(lerpTime > 0.0):
                 track.append(Func(dust.start))
                 track.append(Wait(0.5))
-            for hi in range(self.headParts.getNumPaths()):
-                head = self.headParts[hi]
-                parts = head.getChildren()
-                for pi in range(parts.getNumPaths()):
-                    p = parts[pi]
-                    if not self.pumpkins.hasPath(p):
-                        track.append(Func(p.show))
+            else:
+                dust.finish()
 
+            def showHiddenParts():
+                self.notify.debug("ShowHiddenPaths")
+                for hi in range(self.headParts.getNumPaths()):
+                    head = self.headParts[hi]
+                    parts = head.getChildren()
+                    for pi in range(parts.getNumPaths()):
+                        p = parts[pi]
+                        if (not self.pumpkins.hasPath(p)) and p.getTag("pumpkin") == "enabled":
+                            p.show()
+                            p.setTag("pumpkin", "disabled")
+
+            track.append(Func(showHiddenParts))
             track.append(Func(self.enablePumpkins,False))
             track.append(Func(self.startBlink))
+        return track
 
+    def __doSnowManHeadSwitch(self, lerpTime, toSnowMan):
+        node = self.getGeomNode()
+
+        def getDustCloudIval():
+            dustCloud = DustCloud.DustCloud(fBillboard=0,wantSound=0)
+            dustCloud.setBillboardAxis(2.)
+            dustCloud.setZ(3)
+            dustCloud.setScale(0.4)
+            dustCloud.createTrack()
+            return Sequence(
+                Func(dustCloud.reparentTo, self),
+                dustCloud.track,
+                Func(dustCloud.destroy),
+                name = 'dustCloadIval'
+                )
+
+        dust = getDustCloudIval()
+
+        track = Sequence()
+        if toSnowMan:
+            track.append(Func(self.stopBlink))
+            track.append(Func(self.closeEyes))
+            if(lerpTime > 0.0): # this is to keep the dust cloud from occuring with every generate
+                track.append(Func(dust.start))
+                track.append(Wait(0.5))
+            else:
+                dust.finish()
+
+            def hideParts():
+                self.notify.debug("HidePaths")
+                for hi in range(self.headParts.getNumPaths()):
+                    head = self.headParts[hi]
+                    parts = head.getChildren()
+                    for pi in range(parts.getNumPaths()):
+                        p = parts[pi]
+                        if not p.isHidden():
+                            p.hide()
+                            p.setTag("snowman", "enabled")
+
+            track.append(Func(hideParts))
+            track.append(Func(self.enableSnowMen,True))
+        else:
+            if(lerpTime > 0.0):
+                track.append(Func(dust.start))
+                track.append(Wait(0.5))
+            else:
+                dust.finish()
+            def showHiddenParts():
+                self.notify.debug("ShowHiddenPaths")
+
+                for hi in range(self.headParts.getNumPaths()):
+                    head = self.headParts[hi]
+                    parts = head.getChildren()
+                    for pi in range(parts.getNumPaths()):
+                        p = parts[pi]
+                        if (not self.snowMen.hasPath(p)) and p.getTag("snowman") == "enabled":
+                            p.show()
+                            p.setTag("snowman", "disabled")
+
+            track.append(Func(showHiddenParts))
+            track.append(Func(self.enableSnowMen,False))
+            track.append(Func(self.startBlink))
         return track
 
     def __doBigAndWhite(self, color, scale, lerpTime):
@@ -3077,6 +3239,8 @@ class Toon(Avatar.Avatar, ToonHead):
             return self.__doPumpkinHeadSwitch(lerpTime,toPumpkin = True)
         elif effect == ToontownGlobals.CEBigWhite:
             return self.__doBigAndWhite(VBase4(1, 1, 1, 1), ToontownGlobals.BigToonScale, lerpTime)
+        elif effect == ToontownGlobals.CESnowMan:
+            return self.__doSnowManHeadSwitch(lerpTime, toSnowMan = True)
         elif effect == ToontownGlobals.CEVirtual:
             return self.__doVirtual()
         elif effect == ToontownGlobals.CEGhost:
@@ -3118,6 +3282,8 @@ class Toon(Avatar.Avatar, ToonHead):
             return self.__doPumpkinHeadSwitch(lerpTime,toPumpkin = False)
         elif effect == ToontownGlobals.CEBigWhite:
             return self.__doBigAndWhite(None, None, lerpTime)
+        elif effect == ToontownGlobals.CESnowMan:
+            return self.__doSnowManHeadSwitch(lerpTime, toSnowMan = False)
         elif effect == ToontownGlobals.CEVirtual:
             return self.__doUnVirtual()
         elif effect == ToontownGlobals.CEGhost:
@@ -3244,8 +3410,10 @@ class Toon(Avatar.Avatar, ToonHead):
         suitType = self.suit.style.name
 
         # put the toon head back on the toon body
-        toonHeadNull = self.find("**/1000/**/joint_head")
-        toonHead = self.getHeadParts()[2]
+        toonHeadNull = self.find("**/1000/**/def_head")
+        if not toonHeadNull:
+            toonHeadNull = self.find("**/1000/**/joint_head")
+        toonHead = self.getPart('head', '1000')
         toonHead.reparentTo(toonHeadNull)
 
         # reset the scale and position on the toon head
@@ -3557,6 +3725,43 @@ class Toon(Avatar.Avatar, ToonHead):
         self.stop()
         self.motion.exit()
 
+    def enterScientistJealous(self, animMultiplier=1, ts=0,
+                      callback=None, extraArgs=[]):
+        self.loop("scientistJealous")
+
+    def exitScientistJealous(self):
+        self.stop()
+
+    def enterScientistEmcee(self, animMultiplier=1, ts=0,
+                      callback=None, extraArgs=[]):
+        #self.loop("scientistEmcee", fromFrame = 1, toFrame = 315)
+        self.loop("scientistEmcee")
+
+    def exitScientistEmcee(self):
+        self.stop()
+
+    def enterScientistWork(self, animMultiplier=1, ts=0,
+                      callback=None, extraArgs=[]):
+        self.loop("scientistWork")
+
+    def exitScientistWork(self):
+        self.stop()
+
+    def enterScientistLessWork(self, animMultiplier=1, ts=0,
+                      callback=None, extraArgs=[]):
+        self.loop("scientistWork", fromFrame = 319, toFrame=619)
+
+    def exitScientistLessWork(self):
+        self.stop()
+
+    def enterScientistPlay(self, animMultiplier=1, ts=0,
+                      callback=None, extraArgs=[]):
+        self.loop("scientistGame")
+        if hasattr(self, 'scientistPlay'):
+            self.scientistPlay()
+
+    def exitScientistPlay(self):
+        self.stop()
 
 # module calls
 loadModels()

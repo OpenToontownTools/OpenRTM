@@ -16,6 +16,17 @@ notify = directNotify.newCategory("ToonDNA")
 # things to the middle, or all toons already stored in the database
 # will get screwed up.
 
+toonSpeciesTypes = ['d',    # Dog
+                    'c',    # Cat
+                    'h',    # Horse
+                    'm',    # Mouse
+                    'r',    # Rabbit
+                    'f',    # Duck
+                    'p',    # Monkey
+                    'b',    # Bear
+                    's'     # Pig (swine)
+                    ]
+
 toonHeadTypes = [ "dls", "dss", "dsl", "dll",  # Dog
                   "cls", "css", "csl", "cll",  # Cat
                   "hls", "hss", "hsl", "hll",  # Horse
@@ -26,6 +37,60 @@ toonHeadTypes = [ "dls", "dss", "dsl", "dll",  # Dog
                   "bls", "bss", "bsl", "bll",  # Bear
                   "sls", "sss", "ssl", "sll"   # Pig (swine)
                   ]
+
+def getHeadList(species):
+    """
+    Returns a list of head types given the species.
+    This list returned is a subset of toonHeadTypes pertaining to only that species.
+    """
+    headList = []
+    for head in toonHeadTypes:
+        if (head[0] == species):
+            headList.append(head)
+    return headList
+
+def getHeadStartIndex(species):
+    """
+    Returns an index of toonHeadTypes which corresponds to the start of
+    the given species.
+    """
+    for head in toonHeadTypes:
+        if (head[0] == species):
+            return toonHeadTypes.index(head)
+
+def getSpecies(head):
+    """
+    Returns the species when the head is given.
+    """
+    for species in toonSpeciesTypes:
+        if (species == head[0]):
+            return species
+
+def getSpeciesName(head):
+    """
+    Returns the full name of the species in small letters
+    given the head of the species.
+    """
+    species = getSpecies(head)
+    if (species == 'd'):
+        speciesName = 'dog'
+    elif (species == 'c'):
+        speciesName = 'cat'
+    elif (species == 'h'):
+        speciesName = 'horse'
+    elif (species == 'm'):
+        speciesName = 'mouse'
+    elif (species == 'r'):
+        speciesName = 'rabbit'
+    elif (species == 'f'):
+        speciesName = 'duck'
+    elif (species == 'p'):
+        speciesName = 'monkey'
+    elif (species == 'b'):
+        speciesName = 'bear'
+    elif (species == 's'):
+        speciesName = 'pig'
+    return speciesName
 
 # TODO: if base.wantNewSpecies
 
@@ -42,14 +107,16 @@ toonHeadAnimalIndices = [ 0, # start of dog heads
                           30, # start of pig heads
                           ]
 
-# free trialers cannot be monkeys, bears, or horses
-toonHeadAnimalIndicesTrial = [ 0, # start of dog heads
-                               4, # start of cat heads
-                               12, # start of mouse heads
-                               14, # start of rabbit heads
-                               18, # start of duck heads
-                               30, # start of pig heads
-                               ]
+allToonHeadAnimalIndices = [ 0, 1, 2, 3,     # Dog
+                             4, 5, 6, 7,     # Cat
+                             8, 9, 10, 11,   # Horse
+                             12, 13,         # Mouse
+                             14, 15, 16, 17, # Rabbit
+                             18, 19, 20, 21, # Duck
+                             22, 23, 24, 25, # Monkey
+                             26, 27, 28, 29, # Bear
+                             30, 31, 32, 33, # Pig
+                            ]
 
 toonTorsoTypes = [ "ss", "ms", "ls", "sd", "md", "ld", "s", "m", "l" ]
 #    short shorts, medium shorts, long shorts,
@@ -546,6 +613,7 @@ ClothesColors = [
     VBase4(0.447058, 0.0, 0.901960, 1.0),      # (30) Purple Glasses Pajama
     ]
 
+# If you add to this, please add to TTLocalizer.ShirtStyleDescriptions
 ShirtStyles = {
     # name : [ shirtIdx, sleeveIdx, [(ShirtColorIdx, sleeveColorIdx), ... ]]
     # -------------------------------------------------------------------------
@@ -1477,6 +1545,66 @@ class ToonDNA(AvatarDNA.AvatarDNA):
 
         return dg.getMessage()
 
+    def isValidNetString(self, string):
+        dg=PyDatagram(string)
+        dgi=PyDatagramIterator(dg)
+        if dgi.getRemainingSize() != 15:
+            return False
+        type = dgi.getFixedString(1)
+        if type not in ('t', ):
+            return False
+
+        headIndex = dgi.getUint8()
+        torsoIndex = dgi.getUint8()
+        legsIndex = dgi.getUint8()
+
+        if headIndex >= len(toonHeadTypes):
+            return False
+        if torsoIndex >= len(toonTorsoTypes):
+            return False
+        if legsIndex >= len(toonLegTypes):
+            return False
+
+        gender = dgi.getUint8()
+        if gender == 1:
+            gender = 'm'
+        else:
+            gender = 'f'
+
+        topTex = dgi.getUint8()
+        topTexColor = dgi.getUint8()
+        sleeveTex = dgi.getUint8()
+        sleeveTexColor = dgi.getUint8()
+        botTex = dgi.getUint8()
+        botTexColor = dgi.getUint8()
+        armColor = dgi.getUint8()
+        gloveColor = dgi.getUint8()
+        legColor = dgi.getUint8()
+        headColor = dgi.getUint8()
+
+        if topTex >= len(Shirts):
+            return False
+        if topTexColor >= len(ClothesColors):
+            return False
+        if sleeveTex >= len(Sleeves):
+            return False
+        if sleeveTexColor >= len(ClothesColors):
+            return False
+        if botTex >= choice(gender == 'm', len(BoyShorts), len(GirlBottoms)):
+            return False
+        if botTexColor >= len(ClothesColors):
+            return False
+        if armColor >= len(allColorsList):
+            return False
+        if gloveColor >= len(allColorsList):
+            return False
+        if legColor >= len(allColorsList):
+            return False
+        if headColor >= len(allColorsList):
+            return False
+
+        return True
+
     def makeFromNetString(self, string):
         dg=PyDatagram(string)
         dgi=PyDatagramIterator(dg)
@@ -1638,7 +1766,7 @@ class ToonDNA(AvatarDNA.AvatarDNA):
 
         return
 
-    def newToonRandom(self, seed=None, gender="m", npc=0):
+    def newToonRandom(self, seed = None, gender = "m", npc = 0, stage = None):
         """newToonRandom(self, float=None, float=None, float=None)
         Return the dna tuple for a random toon.  Use random
         colors and random clothes textures.
@@ -1658,7 +1786,12 @@ class ToonDNA(AvatarDNA.AvatarDNA):
         # We have added the monkey species. It would be weird for existing NPCs
         # to change into monkeys so don't use those heads for NPCs.
         if not npc:
-            self.head = generator.choice(toonHeadTypes)
+            if (stage == MAKE_A_TOON):
+                animalIndicesToUse = allToonHeadAnimalIndices
+                animal = generator.choice(animalIndicesToUse)
+                self.head = toonHeadTypes[animal]
+            else:
+                self.head = generator.choice(toonHeadTypes)
         else:
             self.head = generator.choice(toonHeadTypes[:22])
         top, topColor, sleeve, sleeveColor = getRandomTop(gender, generator = generator)
@@ -1682,15 +1815,24 @@ class ToonDNA(AvatarDNA.AvatarDNA):
             self.topTexColor = topColor
             self.sleeveTex = sleeve
             self.sleeveTexColor = sleeveColor
+
+##            # Make sure the bottom type matches the torso type
+##            if (self.torso[1] == 'd'):
+##                tex, color = getRandomGirlBottomAndColor(SKIRT)
+##                self.botTex = tex
+##                self.botTexColor = color
+##            else:
+##                tex, color = getRandomGirlBottomAndColor(SKIRT)
+##                self.botTex = tex
+##                self.botTexColor = color
+
             # Make sure the bottom type matches the torso type
             if (self.torso[1] == 'd'):
-                tex, color = getRandomGirlBottomAndColor(SKIRT)
-                self.botTex = tex
-                self.botTexColor = color
+                bottom, bottomColor = getRandomBottom(gender, generator = generator, girlBottomType = SKIRT)
             else:
-                tex, color = getRandomGirlBottomAndColor(SKIRT)
-                self.botTex = tex
-                self.botTexColor = color
+                bottom, bottomColor = getRandomBottom(gender, generator = generator, girlBottomType = SHORTS)
+            self.botTex = bottom
+            self.botTexColor = bottomColor
             color = generator.choice(defaultGirlColorList)
             self.armColor = color
             self.legColor = color

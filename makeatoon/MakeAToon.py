@@ -29,7 +29,7 @@ class MakeAToon(StateData.StateData):
     """MakeAToon class"""
 
     # special methods
-    
+
     def __init__(self, parentFSM, avList, doneEvent, index, isPaid):
         """
         MakeAToon constructor: create a toon and let the guest customize it
@@ -64,7 +64,7 @@ class MakeAToon(StateData.StateData):
                 self.warp = 1
                 self.namelessPotAv = av
             self.nameList.append(av.name)
-            
+
         self.fsm = ClassicFSM.ClassicFSM('MakeAToon',
                         [State.State('Init',
                                      self.enterInit,
@@ -99,7 +99,7 @@ class MakeAToon(StateData.StateData):
                            # Final state
                            'Done',
                            )
-        
+
         self.parentFSM = parentFSM
         self.parentFSM.getStateNamed('createAvatar').addChild(self.fsm)
 
@@ -114,7 +114,7 @@ class MakeAToon(StateData.StateData):
 
         if self.warp:
             self.shopsVisited = [GENDERSHOP, BODYSHOP, COLORSHOP, CLOTHESSHOP]
-            
+
         # sound
         self.music = None
         self.soundBack = None
@@ -128,7 +128,7 @@ class MakeAToon(StateData.StateData):
     def enter(self):
         base.camLens.setFov(ToontownGlobals.MakeAToonCameraFov)
 
-        
+
         base.playMusic(self.music, looping = 1, volume = self.musicVolume)
 
         self.toon.startBlink()
@@ -140,7 +140,7 @@ class MakeAToon(StateData.StateData):
         self.toon.loop("neutral")
         self.room.reparentTo(render)
         camera.setPosHpr(0.75, -22, 5.35, 0, -7.12, 0)
-        
+
         if self.warp:
             if (self.toon.style.torso[1] == 's'):
                 self.toon.gender = 's'
@@ -157,7 +157,7 @@ class MakeAToon(StateData.StateData):
             self.toon.reparentTo(render)
             self.toon.loop("neutral")
             self.toon.setPosHpr(-4.1, -2, 0, 200, 0, 0)
-        else: 
+        else:
             self.mickey.reparentTo(render)
             self.mickey.loop("neutral")
             self.mickey.setPosHpr(4.2, -1.9, 0, 160, 0, 0)
@@ -172,7 +172,7 @@ class MakeAToon(StateData.StateData):
 
         self.guiTopBar.show()
         self.guiBottomBar.show()
-        self.guiCancelButton.show()       
+        self.guiCancelButton.show()
 
         if self.warp:
             self.progressing = 0
@@ -186,7 +186,7 @@ class MakeAToon(StateData.StateData):
 
         self.guiTopBar.hide()
         self.guiBottomBar.hide()
-        
+
         self.music.stop()
         self.fsm.request("Done")
 
@@ -328,15 +328,12 @@ class MakeAToon(StateData.StateData):
         # create an initial random, naked, grey toon
         if not self.warp:
             self.dna = ToonDNA.ToonDNA()
-            if not base.cr.isPaid():
-                animalIndicesToUse = ToonDNA.toonHeadAnimalIndicesTrial
-            else:
-                animalIndicesToUse = ToonDNA.toonHeadAnimalIndices
+            animalIndicesToUse = ToonDNA.toonHeadAnimalIndices
             animal = random.choice(animalIndicesToUse)
             head = ToonDNA.toonHeadTypes[animal]
             torso = random.choice(ToonDNA.toonTorsoTypes[-3:])
-            leg = random.choice(ToonDNA.toonLegTypes)        
-            self.dna.newToon( (head, torso, leg, 'm') ) 
+            leg = random.choice(ToonDNA.toonLegTypes)
+            self.dna.newToon( (head, torso, leg, 'm') )
         else:
             self.dna = ToonDNA.ToonDNA()
             self.dna.makeFromNetString(self.namelessPotAv.dna)
@@ -349,7 +346,7 @@ class MakeAToon(StateData.StateData):
         self.toon.setNameVisible(0)
         self.toon.startBlink()
         self.toon.startLookAround()
-      
+
         # Create Mickey
         self.mickey = Char.Char()
         mickeyDNA = CharDNA.CharDNA()
@@ -435,7 +432,7 @@ class MakeAToon(StateData.StateData):
         del self.sewingMachine
         self.room.removeNode()
         del self.room
-                
+
         self.toon.stopBlink()
         self.toon.stopLookAroundNow()
 
@@ -470,7 +467,7 @@ class MakeAToon(StateData.StateData):
         del self.names
         del self.dnastring
         del self.nameList
-        
+
         del self.music
         del self.soundBack
 
@@ -485,7 +482,7 @@ class MakeAToon(StateData.StateData):
         self.minnie.stopEarTask()
         self.minnie.delete()
         del self.minnie
-        
+
         self.parentFSM.getStateNamed('createAvatar').removeChild(self.fsm)
         del self.parentFSM
         del self.fsm
@@ -514,7 +511,7 @@ class MakeAToon(StateData.StateData):
 
     def __handleCancel(self):
         self.doneStatus = "cancel"
-        
+
         #if self.fsm.getCurrentState().getName() == 'NameShop':
         self.shopsVisited = []
 
@@ -522,12 +519,12 @@ class MakeAToon(StateData.StateData):
 
     def toggleSlide(self):
         self.slide = 1 - self.slide
-        
+
     def goToNextShop(self):
         self.progressing = 1
         # go to the next shop
         if self.shop == GENDERSHOP:
-            self.fsm.request("BodyShop")            
+            self.fsm.request("BodyShop")
         elif self.shop == BODYSHOP:
             self.fsm.request("ColorShop")
         elif self.shop == COLORSHOP:
@@ -539,7 +536,7 @@ class MakeAToon(StateData.StateData):
         self.progressing = 0
         # go to the last shop
         if self.shop == BODYSHOP:
-            self.fsm.request("GenderShop")            
+            self.fsm.request("GenderShop")
         elif self.shop == COLORSHOP:
             self.fsm.request("BodyShop")
         elif self.shop == CLOTHESSHOP:
@@ -552,7 +549,7 @@ class MakeAToon(StateData.StateData):
 
     def charSez(self, char, statement, dialogue = None):
         char.setChatAbsolute(statement, CFSpeech, dialogue)
-    
+
     # Specific State functions
 
     def enterInit(self):
@@ -595,7 +592,7 @@ class MakeAToon(StateData.StateData):
                 Func(comm, *eA)
                 )
         return myInterval
-        
+
     def charRunToLeft(self, char, timelimit=1.6, comm=None, eA=[]):
         myInterval = Sequence()
         if not self.slide:
@@ -623,7 +620,7 @@ class MakeAToon(StateData.StateData):
                 Func(comm, *eA)
                 )
         return myInterval
-        
+
     def charRunFromRight(self, char, newpos, newhpr, timelimit=1, comm=None, eA=[]):
         myInterval = Sequence()
         myInterval.append(
@@ -654,7 +651,7 @@ class MakeAToon(StateData.StateData):
                 Func(comm, *eA)
                 )
         return myInterval
-        
+
     def charRunToRight(self, char, timelimit=1, comm=None, eA=[]):
         myInterval = Sequence()
         if not self.slide:
@@ -677,7 +674,7 @@ class MakeAToon(StateData.StateData):
         myInterval.append(
             Func(char.loop, "neutral")
             )
-        
+
         if comm:
             myInterval.append(
                 Func(comm, *eA)
@@ -700,7 +697,7 @@ class MakeAToon(StateData.StateData):
         self.host = self.mickey
         self.hostSez([TTLocalizer.GenderShopQuestionMickey,], self.mickeyDialogueArray[0])
         return Task.done
-        
+
     def enterGenderShop(self):
         self.toon.hide()
         # self.roomWalls.setColorScale(0.829, 0.541, 0.271, 1)
@@ -802,8 +799,8 @@ class MakeAToon(StateData.StateData):
             ])
         self.bs.showButtons()
         self.guiNextButton.show()
-        self.guiLastButton.show() 
-    
+        self.guiLastButton.show()
+
     def enterBodyShop(self):
         self.toon.show()
         # self.roomWalls.setColorScale(0.49, 0.612, 0.380, 1)
@@ -814,7 +811,7 @@ class MakeAToon(StateData.StateData):
         self.guiTopBar['text_scale'] = 0.18
         #base.transitions.fadeIn()
         self.accept("BodyShop-done", self.__handleBodyShopDone)
-        self.draftingTable.show()       
+        self.draftingTable.show()
 
         # we need to do this first for setup...
         self.bs.enter(self.toon, self.shopsVisited)
@@ -824,7 +821,7 @@ class MakeAToon(StateData.StateData):
 
         if self.progressing:
             self.hostTrack = self.charRunFromLeft(
-                char=self.host, newpos=self.hostPosition, 
+                char=self.host, newpos=self.hostPosition,
                 newhpr=self.hostHpr, comm=self.bodyShopOpening)
             self.hostTrack.start()
         else:
@@ -900,7 +897,7 @@ class MakeAToon(StateData.StateData):
                                       comm=self.colorShopOpening),
                 self.charRunFromRight(self.toon, newpos=self.toonPosition, newhpr=self.toonHpr))
             self.hostTrack.start()
-            
+
         self.cos.enter(self.toon, self.shopsVisited)
 
         if (COLORSHOP not in self.shopsVisited):
@@ -923,7 +920,7 @@ class MakeAToon(StateData.StateData):
 
     def __handleColorShopDone(self):
         self.guiNextButton.hide()
-        self.guiLastButton.hide()   
+        self.guiLastButton.hide()
         if self.cos.doneStatus == 'next':
             self.cos.hideButtons()
             self.hostTrack = Parallel(self.charRunToRight(char=self.host, comm=self.goToNextShop),
@@ -961,7 +958,7 @@ class MakeAToon(StateData.StateData):
         self.toon.setScale(1.2, 1.2, 1.2)
         self.host.setScale(1, 1, 1)
         #End of new enlarging code
-            
+
         if self.progressing:
             self.hostTrack = Parallel( \
                 self.charRunFromLeft(self.host, newpos=self.hostPosition, newhpr=self.hostHpr, \
@@ -974,7 +971,7 @@ class MakeAToon(StateData.StateData):
                                       comm=self.clothesShopOpening), \
                 self.charRunFromRight(self.toon, newpos=self.toonPosition, newhpr=self.toonHpr))
             self.hostTrack.start()
-            
+
         self.cls.enter(self.toon)
         if (CLOTHESSHOP not in self.shopsVisited):
             self.shopsVisited.append(CLOTHESSHOP)
@@ -988,7 +985,7 @@ class MakeAToon(StateData.StateData):
 
     def __handleClothesShopDone(self):
         self.guiNextButton.hide()
-        self.guiLastButton.hide()    
+        self.guiLastButton.hide()
         if self.cls.doneStatus == 'next':
             self.cls.hideButtons()
             self.hostTrack = Parallel(self.charRunToRight(char=self.host), \
@@ -1037,7 +1034,7 @@ class MakeAToon(StateData.StateData):
         # self.host.setScale(.8, .8, .8)
         self.host.setScale(.9, .9, .9)
         # End of new shrinking code
-    
+
         if self.progressing:
             self.hostTrack = Parallel( \
                 self.charRunFromLeft(self.host, newpos=Point3(4.9, -1.9, 0), newhpr=self.hostHpr, \
@@ -1072,7 +1069,7 @@ class MakeAToon(StateData.StateData):
 
     def __changeHost(self, newText):
         self.hostSez(newText)
-        
+
     def __handleNameShopDone(self):
         self.guiLastButton.hide()
         self.guiCheckButton.hide()
@@ -1103,19 +1100,3 @@ class MakeAToon(StateData.StateData):
 
     def exitDone(self):
         pass
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
