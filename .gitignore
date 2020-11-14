@@ -132,3 +132,4 @@ phase_*/
 # VS Code
 .history
 build.py
+*.tcf
