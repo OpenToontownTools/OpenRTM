@@ -1,4 +1,4 @@
-# Open Robot Toon manager
+# Open Robot Toon Manager (RTM)
 ## About RobotToon ##
 RobotToon was a development tool for Disney's Toontown Online artists to create scenes for backgrounds to be used as wallpapers, blog posts, and various graphic design related assets. OpenRTM is an open source project aimed to update the RTM to be compatible with the latest verisons of Panda3D, Python 3, and with feature improvements.
 
