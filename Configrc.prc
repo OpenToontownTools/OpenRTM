@@ -18,6 +18,8 @@ sync-video #f
 
 # Configrc for running the Robot Toon Manager
 
+want-anim-panel #f
+
 # Use local copy of ttmodels
 #model-path /e/Clash/resources/
 model-path .

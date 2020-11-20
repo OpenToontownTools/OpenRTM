@@ -1922,7 +1922,7 @@ class RobotToonControlPanel(AppShell):
 
         animFrame = Frame(self.pageOne)
 
-        if not base.config.GetBool('want-new-anims', 1):
+        if not base.config.GetBool('want-anim-panel', 1):
             self.animButton = Menubutton(animFrame, width = 18,
                                          text = 'Anims',
                                          relief = RAISED,
