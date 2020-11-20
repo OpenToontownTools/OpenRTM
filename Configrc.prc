@@ -4,7 +4,7 @@
 level-editor-hoods TT DD DG MM BR DL PA
 style-path-prefix /i
 
-#load-display pandadx8
+#load-display pandadx9
 load-display pandagl
 
 framebuffer-multisample 1

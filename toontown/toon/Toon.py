@@ -1030,6 +1030,7 @@ class Toon(Avatar.Avatar, ToonHead):
         else:
             self.attach("head", "torso", "joint_head")
             self.attach("torso", "legs", "joint_hips")
+        self.setBlend(frameBlend = True)
 
 
     def unparentToonParts(self):

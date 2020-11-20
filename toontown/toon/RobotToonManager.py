@@ -661,16 +661,16 @@ class RobotToonManager(DirectObject):
         self.accept('f10', self.makeRandomToon)
         self.accept('f11', self.toggleRender2d)
         self.accept('DIRECT_selectedNodePath', self.findSelectedToon)
-        self.accept('DIRECT-mouse3', self.nextAnim)
+        #elf.accept('DIRECT-mouse3', self.nextAnim)
         if base.__class__ != ShowBase.ShowBase:
             # If not a plain showbase object, add these key bindings
             self.accept('f9', base.screenshot)
             self.accept('f12', self.toggleDirectMode)
-##        self.pieMenu = TextPieMenu(['start pos', 'end pos',
-##                                    'walk', 'sad-walk', 'run',
-##                                    'victory', 'neutral'],
-##                                   radius = 0.35,
-##                                   action = self.pieMenuCommand)
+        self.pieMenu = TextPieMenu(['start pos', 'end pos',
+                                    'walk', 'sad-walk', 'run',
+                                    'victory', 'neutral'],
+                                    radius = 0.35,
+                                    action = self.pieMenuCommand)
 
         self.animDisplay = TextNode('Animation Name')
         self.animDisplay.setText('Animation: None')
@@ -1017,8 +1017,6 @@ class RobotToonManager(DirectObject):
                         (type,styleStr,pose,startPose,endPose,state))
             f.close()
     def pieMenuCommand(self, cmd):
-        if base.config.GetBool('want-new-anims', 1):
-            return
         if self.selectedToon:
             if cmd == 'start pos':
                 self._setStartPos()
@@ -1208,7 +1206,7 @@ class RobotToonManager(DirectObject):
         self.ignore('DIRECT_selectedNodePath')
         self.s1.removeNode()
         self.s2.removeNode()
-        #self.pieMenu.destroy()
+        self.pieMenu.destroy()
         self.clearToons()
 
     def getAttribute(self, attribute):
@@ -1945,10 +1943,9 @@ class RobotToonControlPanel(AppShell):
                     command = lambda a = anim: self.setToonAnim(a))
                 animIndex += 1
         else:
-            self.buttonAdd('Anims',
-                       helpMessage='Bring Up Anim Panel',
-                       statusMessage='Control Animations!',
+            self.animButton = Button(animFrame, text = 'Anims',
                        command=self.rtm.showAnimPanel)
+            self.animButton.pack(side = LEFT, expand = 0, fill = X)
         self.neutralButton = Button(
             animFrame, text = 'Neutral', width = 18,
             command = lambda s=self: s.setToonAnim('neutral'))
