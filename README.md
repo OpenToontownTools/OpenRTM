@@ -1,4 +1,4 @@
-![](https://i.imgur.com/D1XeLMQ.png)
+![thumbnail](https://github.com/OpenToontownTools/web/blob/master/assets/openrtm_thumb.png)
 
 # Open Robot Toon Manager (RTM)
 ## About RobotToon ##
