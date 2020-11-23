@@ -68,3 +68,4 @@ notify-level-chan   error
 
 # This is a MACOS fix, we don't need it as it locks framerates and can cause other issues
 tk-main-loop #f
+model-path resources
