@@ -27,9 +27,7 @@ dna-directory .
 # Putting this line after ttmodels means models will be read from here first
 # model-path     /tt
 model-path     $DMODELS
-
 model-path resources
-
 sound-path     .
 dna-preload    phase_4/dna/storage.dna
 default-model-extension .bam
