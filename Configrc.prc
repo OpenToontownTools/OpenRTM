@@ -27,7 +27,7 @@ dna-directory .
 # Putting this line after ttmodels means models will be read from here first
 # model-path     /tt
 model-path     $DMODELS
-model-path resources
+model-path     resources
 sound-path     .
 dna-preload    phase_4/dna/storage.dna
 default-model-extension .bam
@@ -69,4 +69,3 @@ notify-level-chan   error
 
 # This is a MACOS fix, we don't need it as it locks framerates and can cause other issues
 tk-main-loop #f
-
