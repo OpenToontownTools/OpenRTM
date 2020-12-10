@@ -9,6 +9,7 @@ from toontown.battle.BattleProps import *
 from direct.gui.DirectGui import *
 from direct.gui import DirectGuiGlobals
 from toontown.leveleditor.PieMenu import *
+from toontown.leveleditor import LevelEditorGlobals
 from direct.directtools.DirectSelection import SelectionRay
 from direct.showbase.TkGlobal import *
 from tkinter import *
@@ -35,6 +36,7 @@ from toontown.pets import PetDNA
 import sys, os
 import string
 import Pmw
+import json
 
 from libotp import *
 from libtoontown import *
@@ -541,64 +543,34 @@ hoodIds = {'TT' : 'toontown_central',
            'DL' : 'donalds_dreamland',
            'PA' : 'party_zone',
            }
-
-# Init neighborhood arrays
-NEIGHBORHOODS = []
-NEIGHBORHOOD_CODES = {}
-for hoodId in hoods:
-    if hoodId in hoodIds:
-        hoodName = hoodIds[hoodId]
-        NEIGHBORHOOD_CODES[hoodName] = hoodId
-        NEIGHBORHOODS.append(hoodName)
-    else:
-        print('Error: no hood defined for: ', hoodId)
-
 # Load DNA
 dnaDirectory = Filename.expandFrom(DConfig.GetString("dna-directory", "$TTMODELS/src/dna"))
 
-try:
-    if dnaLoaded:
-        pass
-except NameError:
-    print("Loading LevelEditor for hoods: ", hoods)
-    # DNAStorage instance for storing level DNA info
-    # We need to use the builtins.foo syntax, not the
-    # __builtins__["foo"] syntax, since this file runs at the top
-    # level.
-    builtins.DNASTORE = DNASTORE = DNAStorage()
-    # Load the generic storage files
-    loadDNAFile(DNASTORE, 'phase_4/dna/storage.dna', CSDefault, 1)
-    loadDNAFile(DNASTORE, 'phase_5/dna/storage_town.dna', CSDefault, 1)
-    loadDNAFile(DNASTORE, 'phase_5.5/dna/storage_estate.dna', CSDefault, 1)
-    loadDNAFile(DNASTORE, 'phase_5.5/dna/storage_house_interior.dna', CSDefault, 1)
-    # Load all the neighborhood specific storage files
-    if 'TT' in hoods:
-        loadDNAFile(DNASTORE, 'phase_4/dna/storage_TT.dna', CSDefault, 1)
-        loadDNAFile(DNASTORE, 'phase_4/dna/storage_TT_sz.dna', CSDefault, 1)
-        loadDNAFile(DNASTORE, 'phase_5/dna/storage_TT_town.dna', CSDefault, 1)
-    if 'DD' in hoods:
-        loadDNAFile(DNASTORE, 'phase_6/dna/storage_DD.dna', CSDefault, 1)
-        loadDNAFile(DNASTORE, 'phase_6/dna/storage_DD_sz.dna', CSDefault, 1)
-        loadDNAFile(DNASTORE, 'phase_6/dna/storage_DD_town.dna', CSDefault, 1)
-    if 'MM' in hoods:
-        loadDNAFile(DNASTORE, 'phase_6/dna/storage_MM.dna', CSDefault, 1)
-        loadDNAFile(DNASTORE, 'phase_6/dna/storage_MM_sz.dna', CSDefault, 1)
-        loadDNAFile(DNASTORE, 'phase_6/dna/storage_MM_town.dna', CSDefault, 1)
-    if 'BR' in hoods:
-        loadDNAFile(DNASTORE, 'phase_8/dna/storage_BR.dna', CSDefault, 1)
-        loadDNAFile(DNASTORE, 'phase_8/dna/storage_BR_sz.dna', CSDefault, 1)
-        loadDNAFile(DNASTORE, 'phase_8/dna/storage_BR_town.dna', CSDefault, 1)
-    if 'DG' in hoods:
-        loadDNAFile(DNASTORE, 'phase_8/dna/storage_DG.dna', CSDefault, 1)
-        loadDNAFile(DNASTORE, 'phase_8/dna/storage_DG_sz.dna', CSDefault, 1)
-        loadDNAFile(DNASTORE, 'phase_8/dna/storage_DG_town.dna', CSDefault, 1)
-    if 'DL' in hoods:
-        loadDNAFile(DNASTORE, 'phase_8/dna/storage_DL.dna', CSDefault, 1)
-        loadDNAFile(DNASTORE, 'phase_8/dna/storage_DL_sz.dna', CSDefault, 1)
-        loadDNAFile(DNASTORE, 'phase_8/dna/storage_DL_town.dna', CSDefault, 1)
-    if 'PA' in hoods:
-        loadDNAFile(DNASTORE, 'phase_13/dna/storage_party_sz.dna', CSDefault, 1)
-    builtins.dnaLoaded = 1
+builtins.DNASTORE = DNASTORE = DNAStorage()
+
+loadDNAFile(DNASTORE, 'phase_4/dna/storage.dna', CSDefault, 1)
+loadDNAFile(DNASTORE, 'phase_5/dna/storage_town.dna', CSDefault, 1)
+
+builtins.NEIGHBORHOODS = []
+NEIGHBORHOOD_CODES = {}
+for hood in base.hoods:
+    with open(f'{userfiles}/hoods/{hood}.json') as info:
+        data = json.load(info)
+        hoodName = data.get(LevelEditorGlobals.HOOD_NAME_LONGHAND)
+        NEIGHBORHOOD_CODES[hoodName] = hood
+        NEIGHBORHOODS.append(hoodName)
+        storages = data.get(LevelEditorGlobals.HOOD_PATH)
+        # Holidays
+        holiday = ConfigVariableString("holiday", "none")
+        if LevelEditorGlobals.HOOD_HOLIDAY_PATH in data:
+            if holiday == 'halloween':
+                if LevelEditorGlobals.HOOD_HALLOWEEN_PATH in data[LevelEditorGlobals.HOOD_HOLIDAY_PATH]:
+                    storages += data[LevelEditorGlobals.HOOD_HOLIDAY_PATH][LevelEditorGlobals.HOOD_HALLOWEEN_PATH]
+            elif holiday == 'winter':
+                if LevelEditorGlobals.HOOD_WINTER_PATH in data[LevelEditorGlobals.HOOD_HOLIDAY_PATH]:
+                    storages += data[LevelEditorGlobals.HOOD_HOLIDAY_PATH][LevelEditorGlobals.HOOD_WINTER_PATH]
+        for storage in storages:
+            loadDNAFile(DNASTORE, storage, CSDefault, 1)
 
 class RobotToonManager(DirectObject):
     def __init__(self, toonParent = None):

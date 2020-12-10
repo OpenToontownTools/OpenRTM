@@ -1,4 +1,4 @@
-from pandac.PandaModules import *
+from panda3d.core import *
 
 # Valid Toontown projects
 TOONTOWN_ONLINE = 0
@@ -41,6 +41,9 @@ BUILDING_TYPES = ['10_10', '20', '10_20', '20_10', '10_10_10',
 BUILDING_HEIGHTS = [10, 14, 20, 24, 25, 30]
 NUM_WALLS = [1, 2, 3]
 LANDMARK_SPECIAL_TYPES = ['', 'hq', 'gagshop', 'clotheshop', 'petshop', 'kartshop']
+# Corporate Clash has an UNCAPTURABLE building type to flag uncapturable buildings
+if base.server == TOONTOWN_CORPORATE_CLASH:
+    LANDMARK_SPECIAL_TYPES.append('uncapturable')
 
 OBJECT_SNAP_POINTS = {
     'street_5x20':                  [(Vec3(5.0, 0, 0), Vec3(0)),
@@ -167,7 +170,6 @@ DNA_GROUP = DNAGroup.getClassType()
 DNA_VIS_GROUP = DNAVisGroup.getClassType()
 DNA_LANDMARK_BUILDING = DNALandmarkBuilding.getClassType()
 DNA_ANIM_BUILDING = DNAAnimBuilding.getClassType()
-DNA_NODE = DNANode.getClassType()
 DNA_PROP = DNAProp.getClassType()
 DNA_ANIM_PROP = DNAAnimProp.getClassType()
 DNA_INTERACTIVE_PROP = DNAInteractiveProp.getClassType()
@@ -189,6 +191,14 @@ SUB_DNAS = [DNA_CORNICE,
             DNA_WALL,
             DNA_WINDOWS]
 
+DNA_PROP_SETS = {'tree': ["prop_tree_small_ul",
+                      "prop_tree_small_ur",
+                      "prop_tree_large_ur",
+                      "prop_tree_large_ul"],
+                 'snow_tree': ["prop_snow_tree_small_ul",
+                                       "prop_snow_tree_small_ur",
+                                       "prop_snow_tree_large_ur",
+                                       "prop_snow_tree_large_ul"]}
 CONTROLS = '''
 --Camera--
 Note: All camera transformations orbit the currently selected object
@@ -226,6 +236,7 @@ Change direction of wall part: Alt + Hold Right Click on part (MayaCam MUST be d
 --Landmark Buildings--
 Change door: Hold Right Click bottom half of building
 Change sign background: Hold Right Click on top half of building
+Show suit building previews: Alt + S
 
 --Flat Building Linking--
 Toggle Flat Building Linking mode: Shift + K
@@ -234,6 +245,8 @@ Link Flat Building to Landmark Building: Left click Flat Building and press K
 
 --All Objects--
 Change Color: Control + Hold Right Click on object
+Set active parent to selected object: P
+Reparent selected object to active parent: R
 
 --Suits--
 Place Suit Point: Shift + S
@@ -245,7 +258,10 @@ Save: Control + S
 Screenshot: F12
 Toggle Ortho Camera: Shift + O
 Take Map Screenshot: Shift + F12
+Global Radial Menu: Hold Tab
+Enter Box Selection mode: S
 '''
+
 
 
 # DNA Utility functions (possible class extensions?)

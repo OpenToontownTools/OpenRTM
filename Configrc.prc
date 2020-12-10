@@ -31,6 +31,7 @@ model-path     resources
 sound-path     .
 dna-preload    phase_4/dna/storage.dna
 default-model-extension .bam
+userfiles-directory ./leveleditor
 
 
 window-title Toontown

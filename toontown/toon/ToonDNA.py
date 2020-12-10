@@ -1186,12 +1186,10 @@ def getRandomBottom(gender, tailorId = MAKE_A_TOON, generator = None, girlBottom
         if (girlBottomType is None):
             style = generator.choice(collection[GIRL_BOTTOMS])
         elif (girlBottomType == SKIRT):
-            skirtCollection = filter(lambda style: GirlBottoms[BottomStyles[style][0]][1] == SKIRT,
-                                     collection[GIRL_BOTTOMS])
+            skirtCollection = [style for style in collection[GIRL_BOTTOMS] if GirlBottoms[BottomStyles[style][0]][1] == SKIRT]
             style = generator.choice(skirtCollection)
         elif (girlBottomType == SHORTS):
-            shortsCollection = filter(lambda style: GirlBottoms[BottomStyles[style][0]][1] == SHORTS,
-                                      collection[GIRL_BOTTOMS])
+            shortsCollection = [style for style in collection[GIRL_BOTTOMS] if GirlBottoms[BottomStyles[style][0]][1] == SHORTS]
             style = generator.choice(shortsCollection)
         else:
             notify.error("Bad girlBottomType: %s" % girlBottomType)
