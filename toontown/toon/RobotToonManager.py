@@ -910,6 +910,7 @@ class RobotToonManager(DirectObject):
             gloveColor = int(line[i]);i+=1
             legColor = int(line[i]);i+=1
             headColor = int(line[i]);i+=1
+            eyeColor = int(line[i]);i+=1
             topTexture = int(line[i]);i+=1
             topTextureColor = int(line[i]);i+=1
             sleeveTexture = int(line[i]);i+=1
@@ -917,7 +918,7 @@ class RobotToonManager(DirectObject):
             bottomTexture = int(line[i]);i+=1
             bottomTextureColor = int(line[i]);i+=1
             props = [head, torso, legs, gender,
-                    armColor, gloveColor, legColor, headColor,
+                    armColor, gloveColor, legColor, headColor, eyeColor,
                     topTexture, topTextureColor, sleeveTexture,
                     sleeveTextureColor, bottomTexture,
                     bottomTextureColor]
@@ -1727,6 +1728,11 @@ class RobotToonControlPanel(AppShell):
             colorModeFrame, 'ColorMode', 'Head',
             self.colorMode, 'head', None,
             help = 'Set head color',
+            side = LEFT)
+        self.newCreateRadiobutton(
+            colorModeFrame, 'ColorMode', 'Eyes',
+            self.colorMode, 'eyes', None,
+            help = 'Set eye color',
             side = LEFT)
         colorModeFrame.pack(fill = X, expand = 0)
 
@@ -2837,6 +2843,8 @@ class RobotToonControlPanel(AppShell):
                 dna.legColor = colorIndex
             elif cm == 'head':
                 dna.headColor = colorIndex
+            elif cm == 'eyes': 
+                dna.eyeColor = colorIndex
             st.swapToonColor(dna)
 
     def updateToonInfo(self):

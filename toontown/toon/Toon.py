@@ -1247,6 +1247,10 @@ class Toon(Avatar.Avatar, ToonHead):
         self.loadAnims(LegsAnimDict[legStyle], "legs", "1000")
         self.loadAnims(LegsAnimDict[legStyle], "legs", "500")
         self.loadAnims(LegsAnimDict[legStyle], "legs", "250")
+        #get rid of the shoes bc we dont need them rn
+        self.findAllMatches('**/boots_short').stash()
+        self.findAllMatches('**/boots_long').stash()
+        self.findAllMatches('**/shoes').stash()
 
     def swapToonLegs(self, legStyle, copy = 1):
         """swapToonLegs(self, string, bool = 1)
