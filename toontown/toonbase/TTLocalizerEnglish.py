@@ -1,23 +1,23 @@
-InterfaceFont = 'phase_3/models/fonts/ImpressBT.ttf'
-ToonFont = 'phase_3/models/fonts/ImpressBT.ttf'
-SuitFont = 'phase_3/models/fonts/vtRemingtonPortable.ttf'
-SignFont = 'phase_3/models/fonts/MickeyFont'
-MinnieFont = 'phase_3/models/fonts/MinnieFont'
-FancyFont = 'phase_3/models/fonts/Comedy'
-NametagFonts = ('phase_3/models/fonts/AnimGothic',      #0 *
-                'phase_3/models/fonts/Aftershock',      #1 *
-                'phase_3/models/fonts/JiggeryPokery',   #2 *
-                'phase_3/models/fonts/Ironwork',        #3 *
-                'phase_3/models/fonts/HastyPudding',    #4 *
-                'phase_3/models/fonts/Comedy',          #5 *
-                'phase_3/models/fonts/Humanist',        #6 *
-                'phase_3/models/fonts/Portago',         #7 *
-                'phase_3/models/fonts/Musicals',        #8 *
-                'phase_3/models/fonts/Scurlock',        #9 *
-                'phase_3/models/fonts/Danger',          #10 *
-                'phase_3/models/fonts/Alie',            #11 *
-                'phase_3/models/fonts/OysterBar',       #12 *
-                'phase_3/models/fonts/RedDogSaloon',    #13 *
+InterfaceFont = 'fonts/ToonFont.ttf'
+ToonFont = 'fonts/ToonFont.ttf'
+SuitFont = 'fonts/vtRemingtonPortable.ttf'
+SignFont = 'fonts/MickeyFont'
+MinnieFont = 'fonts/MinnieFont'
+FancyFont = 'fonts/Comedy'
+NametagFonts = ('fonts/AnimGothic',      #0 *
+                'fonts/Aftershock',      #1 *
+                'fonts/JiggeryPokery',   #2 *
+                'fonts/Ironwork',        #3 *
+                'fonts/HastyPudding',    #4 *
+                'fonts/Comedy',          #5 *
+                'fonts/Humanist',        #6 *
+                'fonts/Portago',         #7 *
+                'fonts/Musicals',        #8 *
+                'fonts/Scurlock',        #9 *
+                'fonts/Danger',          #10 *
+                'fonts/Alie',            #11 *
+                'fonts/OysterBar',       #12 *
+                'fonts/RedDogSaloon',    #13 *
                 )
 NametagFontNames = ('Member',      #0 *
                 'Shivering',      #1 *
@@ -39,7 +39,7 @@ NametagLabel = " Nametag"
 
 UnpaidNameTag = "Basic"
 
-BuildingNametagFont = 'phase_3/models/fonts/MickeyFont'
+BuildingNametagFont = 'fonts/MickeyFont'
 BuildingNametagShadow = None
 
 # Product prefix
