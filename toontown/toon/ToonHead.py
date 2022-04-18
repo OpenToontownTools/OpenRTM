@@ -66,6 +66,34 @@ DogMuzzleDict = { 'dls': '/models/char/dogMM_Shorts-headMuzzles-',
                   'dll': '/models/char/dogLL_Shorts-headMuzzles-'
                 }
 
+#tti preloader
+PreloadHeads = {}
+
+def preloadToonHeads():
+    global PreloadHeads
+    if not PreloadHeads:
+        print ('Preloading Toon heads...')
+
+        def preload(task):
+            for key in HeadDict.keys():
+                fileRoot = HeadDict[key]
+
+                PreloadHeads['phase_3' + fileRoot + '1000'] = loader.loadModel('phase_3' + fileRoot + '1000')
+                PreloadHeads['phase_3' + fileRoot + '1000'].flattenMedium()
+
+                PreloadHeads['phase_3' + fileRoot + '500'] = loader.loadModel('phase_3' + fileRoot + '500')
+                PreloadHeads['phase_3' + fileRoot + '500'].flattenMedium()
+
+                PreloadHeads['phase_3' + fileRoot + '250'] = loader.loadModel('phase_3' + fileRoot + '250')
+                PreloadHeads['phase_3' + fileRoot + '250'].flattenMedium()
+
+            return task.done
+
+        taskMgr.add(preload, 'reload-toon')
+
+preloadToonHeads()
+
+
 class ToonHead(Actor.Actor):
     """Toon class:"""
 
@@ -358,6 +386,7 @@ class ToonHead(Actor.Actor):
     # by Toon.py to create and color a head.
 
     def generateToonHead(self, copy, style, lods, forGui = 0):
+        global PreloadHeads
         """generateToonHead(self, bool copy, AvatarDNA style,
                             tuple lods)
         Load the head model for the toon.
@@ -542,8 +571,8 @@ class ToonHead(Actor.Actor):
 
         # load the model and massage the geometry
         if len(lods) == 1:
-            self.loadModel("phase_3" + filePrefix + lods[0], "head", "lodRoot",
-                           copy)
+            filepath = 'phase_3' + filePrefix + lods[0]
+            self.loadModel(PreloadHeads[filepath], 'head', 'lodRoot', copy = True)
             if not forGui:
                 pLoaded = self.loadPumpkin(headStyle[1], None, copy)
                 self.loadSnowMan(headStyle[1], None, copy)
@@ -564,7 +593,9 @@ class ToonHead(Actor.Actor):
 
         else:
             for lod in lods:
-                self.loadModel("phase_3" + filePrefix + lod, "head", lod, copy)
+                filepath = 'phase_3' + filePrefix + lod
+                self.loadModel(PreloadHeads[filepath], 'head', lod, True)
+                
                 if not forGui:
                     pLoaded = self.loadPumpkin(headStyle[1], lod, copy)
                     self.loadSnowMan(headStyle[1], lod, copy)
@@ -745,6 +776,8 @@ class ToonHead(Actor.Actor):
             (animalType == "horse")):
             parts = self.findAllMatches("**/ear?-*")
             parts.setColor(style.getHeadColor())
+            dogears = self.findAllMatches('**/ear*')
+            dogears.setColor(style.getHeadColor())
 
     def __fixEyes(self, style, forGui = 0):
         """__fixEyes(self, AvatarDNA style)
@@ -1115,25 +1148,24 @@ class ToonHead(Actor.Actor):
             searchRoot = self.find("**/" + str(lodName))
 
         # if there are ears to switch
-        if (animalType != "duck") and (animalType != "horse"):
+        if (animalType != "duck"):
             # rabbits are reversed
             if (animalType == "rabbit"):
                 if copy:
-                    searchRoot.find("**/ears-long").removeNode()
+                    searchRoot.find('**/ears-long').removeNode()
                 else:
-                    searchRoot.find("**/ears-long").hide()
+                    searchRoot.find('**/ears-long').hide()
+            elif copy:
+                searchRoot.find('**/ears-short').removeNode()
             else:
-                if  copy:
-                    searchRoot.find("**/ears-short").removeNode()
-                else:
-                    searchRoot.find("**/ears-short").hide()
+                searchRoot.find('**/ears-short').hide()
 
         # rabbits only have one type of eye poly
-        if (animalType != "rabbit"):
-            if copy:
-                searchRoot.find("**/eyes-short").removeNode()
-            else:
-                searchRoot.find("**/eyes-short").hide()
+        #if (animalType != "rabbit"):
+        if copy:
+            searchRoot.find("**/eyes-short").removeNode()
+        else:
+            searchRoot.find("**/eyes-short").hide()
 
         # Now every animal except dog has 2 types of pupils except the dog
         if animalType != 'dog':
@@ -1179,7 +1211,7 @@ class ToonHead(Actor.Actor):
             searchRoot = self.find("**/" + str(lodName))
 
         # if there are ears to switch
-        if (animalType != "duck") and (animalType != "horse") :
+        if (animalType != "duck"):
             # rabbits are reversed
             if (animalType == "rabbit"):
                 if copy:
@@ -1193,11 +1225,11 @@ class ToonHead(Actor.Actor):
                     searchRoot.find("**/ears-long").hide()
 
         # rabbits only have one type of eye poly
-        if (animalType != "rabbit"):
-            if copy:
-                searchRoot.find("**/eyes-long").removeNode()
-            else:
-                searchRoot.find("**/eyes-long").hide()
+        #if (animalType != "rabbit"):
+        if copy:
+            searchRoot.find("**/eyes-long").removeNode()
+        else:
+            searchRoot.find("**/eyes-long").hide()
 
         # Now every animal except dog has 2 types of pupils except the dog
         if animalType != 'dog':
