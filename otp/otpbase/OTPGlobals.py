@@ -331,15 +331,22 @@ DefaultBackgroundColor = (0.3, 0.3, 0.3, 1)
 # These scales came from Bruce's line-up. The body scales were globally
 # reduced by about 10 percent to get the overall height he wanted
 toonBodyScales = {
-    'mouse':  0.60,
-    'cat':    0.73,
-    'duck':   0.66,
-    'rabbit': 0.74,
-    'horse':  0.85,
-    'dog':    0.85,
-    'monkey': 0.68,
-    'bear':   0.85,
-    'pig':    0.77
+    'mouse':     0.60,
+    'cat':       0.73,
+    'duck':      0.66,
+    'rabbit':    0.74,
+    'horse':     0.85,
+    'dog':       0.85,
+    'monkey':    0.68,
+    'bear':      0.85,
+    'pig':       0.77,
+    'deer':      0.70,
+    'beaver':    0.65,
+    'alligator': 0.77,
+    'fox':       0.73,
+    'bat':       0.60,
+    'raccoon':   0.73,
+    'turkey':    0.66
     }
 
 # These are vec3s since they are non uniform
@@ -351,15 +358,24 @@ toonHeadScales = {
     #    'rabbit': Point3(1.0000),
     #    'horse':  Point3(1.0000),
     #    'dog':    Point3(1.0857),
-    'mouse':  Point3(1.0),
-    'cat':    Point3(1.0),
-    'duck':   Point3(1.0),
-    'rabbit': Point3(1.0),
-    'horse':  Point3(1.0),
-    'dog':    Point3(1.0),
-    'monkey': Point3(1.0),
-    'bear':   Point3(1.0),
-    'pig':    Point3(1.0)
+    'mouse':       Point3(1.0),
+    'cat':         Point3(1.0),
+    'duck':        Point3(1.0),
+    'rabbit':      Point3(1.0),
+    'horse':       Point3(1.0),
+    'dog':         Point3(1.0),
+    'monkey':      Point3(1.0),
+    'bear':        Point3(1.0),
+    'pig':         Point3(1.0),
+    'deer':        Point3(1.0),
+    'beaver':      Point3(1.0),
+    'alligator':   Point3(1.0),
+    'fox':         Point3(1.0),
+    'bat':         Point3(1.0),
+    'raccoon':     Point3(1.0),
+    'turkey':      Point3(1.0),
+    'bear':        Point3(1.0),
+    'pig':         Point3(1.0),
     }
 
 legHeightDict = {
@@ -396,6 +412,8 @@ headHeightDict = {
 
     'mls': 0.75,
     'mss': 0.50,
+    'msl': 0.50,
+    'mll': 0.75,
 
     'rls': 0.75,
     'rss': 0.50,
@@ -421,6 +439,41 @@ headHeightDict = {
     'sss': 0.50,
     'ssl': 0.50,
     'sll': 0.75,
+
+    'xls': 0.75,
+    'xss': 0.50,
+    'xsl': 0.50,
+    'xll': 0.75,
+
+    'zls': 0.75,
+    'zss': 0.50,
+    'zsl': 0.50,
+    'zll': 0.75,
+
+    'als': 0.75,
+    'ass': 0.50,
+    'asl': 0.50,
+    'all': 0.75,
+
+    'vls': 0.75,
+    'vss': 0.50,
+    'vsl': 0.50,
+    'vll': 0.75,
+
+    'nls': 0.75,
+    'nss': 0.50,
+    'nsl': 0.50,
+    'nll': 0.75,
+
+    'tls': 0.75,
+    'tss': 0.50,
+    'tsl': 0.50,
+    'tll': 0.75,
+
+    'gls': 0.75,
+    'gss': 0.50,
+    'gsl': 0.50,
+    'gll': 0.75,
 
 }
 

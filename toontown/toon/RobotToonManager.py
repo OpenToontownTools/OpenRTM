@@ -1519,7 +1519,10 @@ class RobotToonControlPanel(AppShell):
         # HEAD
         self.speciesDict = { 'c' : 'Cat', 'd' : 'Dog', 'f' : 'Duck',
                              'h' : 'Horse', 'm' : 'Mouse', 'r' : 'Rabbit',
-                             'p' : 'Monkey', 'b' : 'Bear', 's' : 'Pig' }
+                             'p' : 'Monkey', 'b' : 'Bear', 's' : 'Pig',
+                             'x' : 'Deer', 'z' : 'Beaver', 'a' : 'Alligator',
+                             'v' : 'Fox', 'n' : 'Bat', 't': 'Raccoon',
+                             'g' : 'Turkey',}
         speciesList = sorted(self.speciesDict.values())
         self.headDict = {}
         for head in ToonDNA.toonHeadTypes:
@@ -1759,7 +1762,7 @@ class RobotToonControlPanel(AppShell):
         for i in range(3):
             cf = Frame(colorFrame)
             for j in range(20):
-                index = i * 14 + j
+                index = i * 20 + j
                 if index < 39:
                     color = self.transformRGB(ToonDNA.allClashColorsList[index])
                     b = Button(cf, width = 1, height = 1, background = color,
@@ -2962,8 +2965,8 @@ class RobotToonControlPanel(AppShell):
 
     def setSpecies(self, fUpdateHead = 1):
         if self.species.get() == 'Mouse':
-            self.slHeadButton['state'] = DGG.DISABLED
-            self.llHeadButton['state'] = DGG.DISABLED
+            self.slHeadButton['state'] = DGG.NORMAL
+            self.llHeadButton['state'] = DGG.NORMAL
             if self.head.get() in ['sl', 'll']:
                 self.head.set('ss')
         else:
@@ -2979,6 +2982,20 @@ class RobotToonControlPanel(AppShell):
             prefix = 'p' # primate
         elif self.species.get() == 'Pig':
             prefix = 's' # swine
+        elif self.species.get() == 'Deer':
+            prefix = 'x' # deer
+        elif self.species.get() == 'Beaver':
+            prefix = 'z' # beaver
+        elif self.species.get() == 'Alligator':
+            prefix = 'a' # alligator
+        elif self.species.get() == 'Fox':
+            prefix = 'v' # fox
+        elif self.species.get() == 'Bat':
+            prefix = 'n' # bat
+        elif self.species.get() == 'Raccoon':
+            prefix = 't' # raccoon
+        elif self.species.get() == 'Turkey':
+            prefix = 'g' # turkey
         else:
             prefix = self.species.get()[0].lower()
         self.setHeadType(prefix + self.head.get())
@@ -3472,7 +3489,11 @@ class RobotToonControlPanel(AppShell):
         print('New Stomper Size:', size)
 
     def openRGBPanel(self):
-        print("coming soon yay")
+        from tkinter import colorchooser
+        cusRGB = colorchooser.askcolor(title ="Choose color")
+        ci = cusRGB
+        self.setToonColor(ci)
+        print("Custom Color: " + str(ci))
 
 
 
