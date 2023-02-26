@@ -229,8 +229,11 @@ Phase4AnimList = (
     ("scientistEmcee", "scientistEmcee"),
     ("scientistWork", "scientistWork"),
     ("scientistGame", "scientistGame"),
-    )
+    
 
+    # unused taunt anim
+    ("taunt", "taunt")
+    )
 # battle
 Phase5AnimList = (
     ("water-gun", "water-gun"),
@@ -287,6 +290,7 @@ Phase6AnimList = (
 
 # sellbotHQ
 Phase9AnimList = (
+    ("block", "block"),
     ("push", "push"),
     )
 
