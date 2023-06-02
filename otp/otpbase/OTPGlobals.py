@@ -373,9 +373,7 @@ toonHeadScales = {
     'fox':         Point3(1.0),
     'bat':         Point3(1.0),
     'raccoon':     Point3(1.0),
-    'turkey':      Point3(1.0),
-    'bear':        Point3(1.0),
-    'pig':         Point3(1.0),
+    'turkey':      Point3(1.0)
     }
 
 legHeightDict = {
