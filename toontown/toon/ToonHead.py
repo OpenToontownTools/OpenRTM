@@ -743,7 +743,7 @@ class ToonHead(Actor.Actor):
         elif headStyle == "tll":
             # raccoon, long head, long muzzle
             filePrefix = HeadDict["t"]
-            fix = self.__fixHeadShortLong
+            fix = self.__fixHeadLongLong
             headHeight = 0.5
         
         # TURKEY
