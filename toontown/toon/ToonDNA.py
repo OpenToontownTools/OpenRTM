@@ -1594,10 +1594,13 @@ class ToonDNA(AvatarDNA.AvatarDNA):
             dg.addUint8(self.botTex)
             dg.addUint8(self.botTexColor)
             # Colors
-            dg.addUint8(self.armColor) # We assume < 256 colors.
+            self.armColor = self.migrateColor(self.armColor)
             dg.addUint8(self.gloveColor)
-            dg.addUint8(self.legColor)
-            dg.addUint8(self.headColor)
+            self.legColor = self.migrateColor(self.legColor)
+            self.headColor = self.migrateColor(self.headColor)
+            for colors in (self.armColor, self.legColor, self.headColor):
+                for color in colors[:-1]:
+                    dg.addFloat64(color)
         elif (self.type == 'u'):
             notify.error("undefined avatar")
         else:
@@ -1637,10 +1640,10 @@ class ToonDNA(AvatarDNA.AvatarDNA):
         sleeveTexColor = dgi.getUint8()
         botTex = dgi.getUint8()
         botTexColor = dgi.getUint8()
-        armColor = dgi.getUint8()
+        armColor = (dgi.getFloat64(), dgi.getFloat64(), dgi.getFloat64(), 1.0)
         gloveColor = dgi.getUint8()
-        legColor = dgi.getUint8()
-        headColor = dgi.getUint8()
+        legColor = (dgi.getFloat64(), dgi.getFloat64(), dgi.getFloat64(), 1.0)
+        headColor = (dgi.getFloat64(), dgi.getFloat64(), dgi.getFloat64(), 1.0)
 
         if topTex >= len(Shirts):
             return False
@@ -1687,10 +1690,10 @@ class ToonDNA(AvatarDNA.AvatarDNA):
             self.sleeveTexColor = dgi.getUint8()
             self.botTex = dgi.getUint8()
             self.botTexColor = dgi.getUint8()
-            self.armColor = dgi.getUint8()
+            self.armColor = (dgi.getFloat64(), dgi.getFloat64(), dgi.getFloat64(), 1.0)
             self.gloveColor = dgi.getUint8()
-            self.legColor = dgi.getUint8()
-            self.headColor = dgi.getUint8()
+            self.legColor = (dgi.getFloat64(), dgi.getFloat64(), dgi.getFloat64(), 1.0)
+            self.headColor = (dgi.getFloat64(), dgi.getFloat64(), dgi.getFloat64(), 1.0)
         else:
             notify.error("unknown avatar type: ", self.type)
 
@@ -1742,6 +1745,9 @@ class ToonDNA(AvatarDNA.AvatarDNA):
         else:
             notify.error("tuple must be in format ('%s', '%s', '%s', '%s')")
 
+    def migrateColor(self, color):
+        return allColorsList[color] if isinstance(color, int) else color
+
     def newToonFromProperties(self, head, torso, legs, gender,
                               armColor, gloveColor, legColor, headColor,
                               topTexture, topTextureColor, sleeveTexture,
@@ -1756,10 +1762,10 @@ class ToonDNA(AvatarDNA.AvatarDNA):
         self.torso = torso
         self.legs = legs
         self.gender = gender
-        self.armColor = armColor
+        self.armColor = self.migrateColor(armColor)
         self.gloveColor = gloveColor
-        self.legColor = legColor
-        self.headColor = headColor
+        self.legColor = self.migrateColor(legColor)
+        self.headColor = self.migrateColor(headColor)
         self.topTex = topTexture
         self.topTexColor = topTextureColor
         self.sleeveTex = sleeveTexture
@@ -1791,13 +1797,13 @@ class ToonDNA(AvatarDNA.AvatarDNA):
         if gender:
             self.gender = gender
         if armColor:
-            self.armColor = armColor
+            self.armColor = self.migrateColor(armColor)
         if gloveColor:
             self.gloveColor = gloveColor
         if legColor:
-            self.legColor = legColor
+            self.legColor = self.migrateColor(legColor)
         if headColor:
-            self.headColor = headColor
+            self.headColor = self.migrateColor(headColor)
         if topTexture:
             self.topTex = topTexture
         if topTextureColor:
@@ -2024,28 +2030,23 @@ class ToonDNA(AvatarDNA.AvatarDNA):
             notify.error("unknown clothing type: ", self.torso[1])
 
     def getArmColor(self):
-        try:
-            return allColorsList[self.armColor]
-        except:
-            return allColorsList[0]
-
+        return self.armColor
+         
     def getLegColor(self):
-        try:
-            return allColorsList[self.legColor]
-        except:
-            return allColorsList[0]
-
+        return self.legColor
+         
     def getHeadColor(self):
         try:
-            return allColorsList[self.headColor]
+            return self.headColor
         except:
-            return allColorsList[0]
+            return allColorsList[self.headColor]
             
     def getEyeColor(self):
         try:
             return allColorsList[self.eyeColor]
         except:
             return allColorsList[0]
+            
     def getGloveColor(self):
         try:
             return allColorsList[self.gloveColor]

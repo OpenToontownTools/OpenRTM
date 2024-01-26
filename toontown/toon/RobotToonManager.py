@@ -2837,19 +2837,40 @@ class RobotToonControlPanel(AppShell):
         if st:
             dna = st.style
             if cm == 'all':
-                dna.armColor = colorIndex
-                dna.legColor = colorIndex
-                dna.headColor = colorIndex
+                dna.armColor = ToonDNA.allColorsList[colorIndex]
+                dna.legColor = ToonDNA.allColorsList[colorIndex]
+                dna.headColor = ToonDNA.allColorsList[colorIndex]
             elif cm == 'arms':
-                dna.armColor = colorIndex
+                dna.armColor = ToonDNA.allColorsList[colorIndex]
             elif cm == 'gloves':
-                dna.gloveColor = colorIndex
+                dna.gloveColor = ToonDNA.allColorsList[colorIndex]
             elif cm == 'legs':
-                dna.legColor = colorIndex
+                dna.legColor = ToonDNA.allColorsList[colorIndex]
             elif cm == 'head':
-                dna.headColor = colorIndex
+                dna.headColor = ToonDNA.allColorsList[colorIndex]
             elif cm == 'eyes': 
                 dna.eyeColor = colorIndex
+            st.swapToonColor(dna)
+            
+    def setToonColorFromRGB(self, r, g, b, a):
+        cm = self.colorMode.get()
+        st = self.rtm.selectedToon
+        if st:
+            dna = st.style
+            if cm == 'all':
+                dna.armColor = r, g, b, a
+                dna.legColor = r, g, b, a
+                dna.headColor = r, g, b, a
+            elif cm == 'arms':
+                dna.armColor = r, g, b, a
+            elif cm == 'gloves':
+                dna.gloveColor = r, g, b, a
+            elif cm == 'legs':
+                dna.legColor = r, g, b, a
+            elif cm == 'head':
+                dna.headColor = r, g, b, a
+            elif cm == 'eyes': 
+                dna.eyeColor = r, g, b, a
             st.swapToonColor(dna)
 
     def updateToonInfo(self):
@@ -3493,9 +3514,12 @@ class RobotToonControlPanel(AppShell):
     def openRGBPanel(self):
         from tkinter import colorchooser
         cusRGB = colorchooser.askcolor(title ="Choose color")
-        ci = cusRGB
-        self.setToonColor(ci)
-        print("Custom Color: " + str(ci))
+        r = cusRGB[0][0] / 255
+        g = cusRGB[0][1] / 255
+        b = cusRGB[0][2] / 255 
+        a = 1.0
+        print("Output color is: (%.2f, %.2f, %.2f, %.2f)" % (r, g, b, a))
+        self.setToonColorFromRGB(r, g, b, a)
 
 
 
