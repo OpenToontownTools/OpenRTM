@@ -337,6 +337,7 @@ ToonAnimList = [
     "angry",
     "applause",
     "bank",
+    "block",
     "book",
     "bored",
     "bow",
@@ -397,6 +398,7 @@ ToonAnimList = [
     "struggle",
     "swim",
     "takePhone",
+    "taunt",
     "teleport",
     "think",
     "throw",
@@ -914,6 +916,7 @@ class RobotToonManager(DirectObject):
             gloveColor = int(line[i]);i+=1
             legColor = int(line[i]);i+=1
             headColor = int(line[i]);i+=1
+            eyeColor = int(line[i]);i+=1
             topTexture = int(line[i]);i+=1
             topTextureColor = int(line[i]);i+=1
             sleeveTexture = int(line[i]);i+=1
@@ -921,7 +924,7 @@ class RobotToonManager(DirectObject):
             bottomTexture = int(line[i]);i+=1
             bottomTextureColor = int(line[i]);i+=1
             props = [head, torso, legs, gender,
-                    armColor, gloveColor, legColor, headColor,
+                    armColor, gloveColor, legColor, headColor, eyeColor,
                     topTexture, topTextureColor, sleeveTexture,
                     sleeveTextureColor, bottomTexture,
                     bottomTextureColor]
@@ -1513,7 +1516,10 @@ class RobotToonControlPanel(AppShell):
         # HEAD
         self.speciesDict = { 'c' : 'Cat', 'd' : 'Dog', 'f' : 'Duck',
                              'h' : 'Horse', 'm' : 'Mouse', 'r' : 'Rabbit',
-                             'p' : 'Monkey', 'b' : 'Bear', 's' : 'Pig' }
+                             'p' : 'Monkey', 'b' : 'Bear', 's' : 'Pig',
+                             'x' : 'Deer', 'z' : 'Beaver', 'a' : 'Alligator',
+                             'v' : 'Fox', 'n' : 'Bat', 't': 'Raccoon',
+                             'g' : 'Turkey',}
         speciesList = sorted(self.speciesDict.values())
         self.headDict = {}
         for head in ToonDNA.toonHeadTypes:
@@ -1723,6 +1729,11 @@ class RobotToonControlPanel(AppShell):
             self.colorMode, 'head', None,
             help = 'Set head color',
             side = LEFT)
+        self.newCreateRadiobutton(
+            colorModeFrame, 'ColorMode', 'Eyes',
+            self.colorMode, 'eyes', None,
+            help = 'Set eye color',
+            side = LEFT)
         colorModeFrame.pack(fill = X, expand = 0)
 
         # COLOR TABLETS
@@ -1748,7 +1759,7 @@ class RobotToonControlPanel(AppShell):
         for i in range(3):
             cf = Frame(colorFrame)
             for j in range(20):
-                index = i * 14 + j
+                index = i * 20 + j
                 if index < 39:
                     color = self.transformRGB(ToonDNA.allClashColorsList[index])
                     b = Button(cf, width = 1, height = 1, background = color,
@@ -2821,17 +2832,40 @@ class RobotToonControlPanel(AppShell):
         if st:
             dna = st.style
             if cm == 'all':
-                dna.armColor = colorIndex
-                dna.legColor = colorIndex
-                dna.headColor = colorIndex
+                dna.armColor = ToonDNA.allColorsList[colorIndex]
+                dna.legColor = ToonDNA.allColorsList[colorIndex]
+                dna.headColor = ToonDNA.allColorsList[colorIndex]
             elif cm == 'arms':
-                dna.armColor = colorIndex
+                dna.armColor = ToonDNA.allColorsList[colorIndex]
             elif cm == 'gloves':
-                dna.gloveColor = colorIndex
+                dna.gloveColor = ToonDNA.allColorsList[colorIndex]
             elif cm == 'legs':
-                dna.legColor = colorIndex
+                dna.legColor = ToonDNA.allColorsList[colorIndex]
             elif cm == 'head':
-                dna.headColor = colorIndex
+                dna.headColor = ToonDNA.allColorsList[colorIndex]
+            elif cm == 'eyes': 
+                dna.eyeColor = colorIndex
+            st.swapToonColor(dna)
+            
+    def setToonColorFromRGB(self, r, g, b, a):
+        cm = self.colorMode.get()
+        st = self.rtm.selectedToon
+        if st:
+            dna = st.style
+            if cm == 'all':
+                dna.armColor = r, g, b, a
+                dna.legColor = r, g, b, a
+                dna.headColor = r, g, b, a
+            elif cm == 'arms':
+                dna.armColor = r, g, b, a
+            elif cm == 'gloves':
+                dna.gloveColor = r, g, b, a
+            elif cm == 'legs':
+                dna.legColor = r, g, b, a
+            elif cm == 'head':
+                dna.headColor = r, g, b, a
+            elif cm == 'eyes': 
+                dna.eyeColor = r, g, b, a
             st.swapToonColor(dna)
 
     def updateToonInfo(self):
@@ -2949,8 +2983,8 @@ class RobotToonControlPanel(AppShell):
 
     def setSpecies(self, fUpdateHead = 1):
         if self.species.get() == 'Mouse':
-            self.slHeadButton['state'] = DGG.DISABLED
-            self.llHeadButton['state'] = DGG.DISABLED
+            self.slHeadButton['state'] = DGG.NORMAL
+            self.llHeadButton['state'] = DGG.NORMAL
             if self.head.get() in ['sl', 'll']:
                 self.head.set('ss')
         else:
@@ -2966,6 +3000,20 @@ class RobotToonControlPanel(AppShell):
             prefix = 'p' # primate
         elif self.species.get() == 'Pig':
             prefix = 's' # swine
+        elif self.species.get() == 'Deer':
+            prefix = 'x' # deer
+        elif self.species.get() == 'Beaver':
+            prefix = 'z' # beaver
+        elif self.species.get() == 'Alligator':
+            prefix = 'a' # alligator
+        elif self.species.get() == 'Fox':
+            prefix = 'v' # fox
+        elif self.species.get() == 'Bat':
+            prefix = 'n' # bat
+        elif self.species.get() == 'Raccoon':
+            prefix = 't' # raccoon
+        elif self.species.get() == 'Turkey':
+            prefix = 'g' # turkey
         else:
             prefix = self.species.get()[0].lower()
         self.setHeadType(prefix + self.head.get())
@@ -3459,7 +3507,14 @@ class RobotToonControlPanel(AppShell):
         print('New Stomper Size:', size)
 
     def openRGBPanel(self):
-        print("coming soon yay")
+        from tkinter import colorchooser
+        cusRGB = colorchooser.askcolor(title ="Choose color")
+        r = cusRGB[0][0] / 255
+        g = cusRGB[0][1] / 255
+        b = cusRGB[0][2] / 255 
+        a = 1.0
+        print("Output color is: (%.2f, %.2f, %.2f, %.2f)" % (r, g, b, a))
+        self.setToonColorFromRGB(r, g, b, a)
 
 
 
